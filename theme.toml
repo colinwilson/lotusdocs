@@ -1,0 +1,15 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "LotusDocs"
+license = "MIT"
+licenselink = "https://github.com/colinwilson/lotusdocs/release/LICENSE"
+description = ""
+homepage = "https://lotusdocs.vercel.app"
+tags = ["documentation", "responsive", "minimal", "secure", "search", "customizable", "tailwind", "modern", "dark mode", "landing page"]
+features = ["security aware", "fast by default", "seo-ready", "development tools", "tailwind css", "deploy to vercel", "full text search", "page layouts", "dark mode"]
+min_version = "0.100.0"
+
+[author]
+  name = "Colin Wilson"
+  homepage = "https://colinwilson.uk"
