@@ -7,9 +7,9 @@
 <hr>
 
 <h3 align="center">
-  A Modern Documentation Theme Built with Tailwind CSS
+  A Modern Documentation Theme for Hugo
 </h3>
 
 <p align="center">
-  Lotus Docs is a Hugo theme for building fast, secure, and SEO-friendly documentation sites. It's built using Tailwind CSS and is easily updated and customised.
+  Lotus Docs is an easily updated and customised Hugo theme for building fast, secure, and SEO-friendly documentation sites.
 </p>
