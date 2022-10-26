@@ -2,10 +2,6 @@
 // menu.scss
 //
 
-/*********************************/
-/*         Menu                  */
-/*===============================*/
-
 #topnav {
     .logo {
         float: left;
@@ -387,29 +383,6 @@
         display: block;
     }
 }
-
-//Tagline
-.tagline {
-    position: absolute;
-    width: 100%;
-    z-index: 99;
-    font-size: 14px;
-    padding: 13px 0;
-    @media screen and (max-width: 575px) {
-        display: none;
-    }
-}
-
-.tagline-height {
-    @media screen and (max-width: 575px) {
-        top: 0px !important;
-    }
-
-    @media (min-width: 576px) {
-        top: 47px !important;
-    }
-}
-
 
 #navmenu-nav {
     li {

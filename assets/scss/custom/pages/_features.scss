@@ -163,41 +163,6 @@ $value in $theme-colors {
             }
         }
     }
-
-    &.course-feature {
-        transition: all 0.5s ease;
-        .full-img {
-            position: absolute;
-            bottom: 50%;
-            transform: translateY(50%);
-            left: 0;
-            right: 0;
-            opacity: 0;
-            margin: 0 auto;
-            z-index: -2;
-            transition: all 0.5s ease;
-            font-size: 250px;
-        }
-        &:hover {
-            transform: translateY(-10px);
-            .full-img {
-                opacity: 0.05;
-            }
-        }
-    }
-
-    &.explore-feature {
-        transition: all 0.5s ease;
-        .icons {
-            height: 80px;
-            width: 80px;
-            line-height: 80px;
-            transition: all 0.5s ease;
-        }
-        &:hover {
-            box-shadow: $shadow-lg !important;
-        }
-    }
 }
 .features,
 .key-feature {
