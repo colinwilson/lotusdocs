@@ -1,0 +1,49 @@
+/* Template Name: LotusLabs Docs
+   Author: Colin Wilson
+   E-mail: colin.wilson@proton.me
+   Created: October 2022
+   Version: 1.0.0
+   File Description: Main CSS file of the docs template
+*/
+
+
+//Fonts
+// @import "custom/fonts/fonts";
+
+//Core files
+@import "../../scss/bootstrap/functions";
+@import "../../scss/bootstrap/variables";
+// @import "variables";
+@import "../../scss/bootstrap/mixins";
+@import "../../scss/bootstrap/bootstrap";
+
+// Structure
+// @import "custom/structure/general";
+// @import "custom/structure/content";
+// @import "custom/structure/sidebar-layouts";
+// @import "custom/structure/doc-nav";
+// @import "custom/structure/toc-layouts";
+// @import "custom/structure/footer";
+
+// // Components
+// @import "custom/components/buttons";
+// @import "custom/components/badge";
+// @import "custom/components/backgrounds";
+// @import "custom/components/alerts";
+// @import "custom/components/card";
+
+// // Pages
+// @import "custom/pages/blog";
+// @import "custom/pages/calendar";
+// @import "custom/pages/chat";
+// @import "custom/pages/features";
+// @import "custom/pages/helper";
+// @import "custom/pages/home";
+// @import "custom/pages/price";
+// @import "custom/pages/shop";
+// @import "custom/pages/simplebar";
+// @import "custom/pages/team";
+// @import "custom/pages/testi";
+// @import "custom/pages/user";
+// @import "custom/pages/work";
+// @import "custom/pages/switcher";

@@ -1,0 +1,23 @@
+body {
+    font-family: $font-family-secondary;
+    overflow-x: hidden !important;
+    font-size: $font-size-base;
+    color: $body-color;
+    background-color: $body-bg;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: $font-family-base;
+    line-height: 1.4;
+    font-weight: 600;
+}
+::selection {
+    background: rgba($primary, 0.9);
+    color: $white;
+}
+a {
+    text-decoration: none !important;
+    transition: all 0.5s ease;
+}
+p {
+    line-height: 1.6;
+}

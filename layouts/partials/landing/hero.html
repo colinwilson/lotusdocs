@@ -1,0 +1,54 @@
+{{ if .Site.Data.landing.hero.enable }}
+<!-- Hero Start -->
+<section class="d-table w-100 overflow-hidden">
+    <div class="container">
+        <div class="row mt-5 align-items-center">
+            <div class="col-lg-6 col-md-6">
+                <div class="title-heading">
+                    {{ if .Site.Data.landing.hero.badge }}
+                    <span class="badge {{ if eq .Site.Data.landing.hero.badge.pill true }}rounded-pill{{ end }} bg-{{ if eq .Site.Data.landing.hero.badge.soft true }}soft-{{ end }}{{ .Site.Data.landing.hero.badge.color }} mb-1">{{ .Site.Data.landing.hero.badge.text }}</span>
+                    {{ end }}
+                    <h4 class="heading mt-0 mb-3">{{ .Site.Data.landing.hero.title }}</h4>
+                    <p class="para-desc text-muted mb-0">{{ .Site.Data.landing.hero.subtitle }}</p>
+
+                    <div class="mt-3">
+                        {{ if .Site.Data.landing.hero.ctaButton }}
+                            <a href="{{ .Site.Data.landing.hero.ctaButton.url }}" class="btn btn-lg btn-primary me-2 mt-2">
+                                {{ if .Site.Data.landing.hero.ctaButton.icon }}
+                                    <span class="material-icons align-middle">{{ .Site.Data.landing.hero.ctaButton.icon }}</span>
+                                {{ end }}
+                                {{ if .Site.Data.landing.hero.ctaButton.btnText }}
+                                    {{ .Site.Data.landing.hero.ctaButton.btnText }}
+                                {{ end }}
+                            </a>
+                        {{ end }}
+                        {{ if .Site.Data.landing.hero.cta2Button }}
+                        <a href="{{ .Site.Data.landing.hero.cta2Button.url }}" class="btn btn-lg btn-soft-primary mt-2">
+                            {{ if .Site.Data.landing.hero.cta2Button.icon }}
+                                    <span class="material-icons align-middle">{{ .Site.Data.landing.hero.cta2Button.icon }}</span>
+                                {{ end }}
+                            {{ if .Site.Data.landing.hero.cta2Button.btnText }}
+                                {{ .Site.Data.landing.hero.cta2Button.btnText }}
+                            {{ end }}
+                        </a>
+                        {{ end }}
+                    </div>
+
+                    {{ if .Site.Data.landing.hero.info }}
+                    <p class="text-muted mb-0 mt-3">{{ .Site.Data.landing.hero.info }}</p>
+                    {{ end }}
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                <!-- <div class="ms-lg-4">
+                    {{ $svg := resources.Get "images/documents_feature.svg" }}
+                        {{ $svg.Content | safeHTML }}
+
+                </div> -->
+            </div><!--end col-->
+        </div><!--end row-->
+    </div> <!--end container-->
+</section><!--end section-->
+<!-- Hero End -->
+{{ end }}

@@ -1,11 +1,32 @@
 <!DOCTYPE html>
-<html>
+{{ $.Scratch.Delete "social_list" }}
+<!-- social_list -->
+{{ $social_params := slice "github" "twitter" "instagram" "rss" }}
+{{ range $social_params }}
+{{ if isset site.Params.social . }}
+{{ $.Scratch.Add "social_list" (slice .) }}
+{{ end }}
+{{ end }}
+
+<html lang="{{ site.LanguageCode }}" dir="ltr">
     {{- partial "head.html" . -}}
     <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
+        <div>
+            {{- partial "header.html" . -}}
         </div>
-        {{- partial "footer.html" . -}}
+        <div id="content">
+            {{- block "main" . }}{{- end }}
+        </div>
+            {{- partial "footer.html" . -}}
+
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        {{ $app := resources.Get "/js/app.js" }}
+        {{- if not .Site.IsServer }}
+            {{- $js := (slice $app) | resources.Concat "/js/bundle.js" | minify | resources.Fingerprint "sha384" }}
+            <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+        {{- else }}
+            {{- $js := (slice $app) | resources.Concat "/js/bundle.js" }}
+            <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+        {{- end }}
     </body>
 </html>
