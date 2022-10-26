@@ -40,7 +40,7 @@ features:
 
     - title: Optional Settings
       icon: settings
-      description: Many of Lotus Docs' features are configurable via optional parameters. Don't need a fancy 'Table of Contents'? Then disable it via a single setting.
+      description: Many of Lotus Docs' features are configurable via optional parameters. Need a particular feature? Then enable it via a single setting.
 
     - title: Deploy to Vercel
       icon: change_history
@@ -52,11 +52,11 @@ features:
 
     - title: Search by DocSearch
       icon: search
-      description: Search your docs with DocSearch. A powerful, efficient and accessible search solution built on top of Algolia Autocomplete.
+      description: Search your docs with DocSearch. A powerful, efficient and accessible search solution built on top of Algolia Autocomplete. TBC.
 
     - title: Versioning
       icon: dynamic_feed
-      description: Support for creating and managing different versions of your docs. Let your users access previous versions of your documentation.
+      description: Support for maintaining multiple versions of your docs. Let your users access previous versions of your documentation.
 
     - title: Bootstrap v5.2
       icon: palette
