@@ -12,9 +12,9 @@ hero:
   subtitle: "An easily updated and customised Hugo theme for building fast, secure, and SEO-friendly documentation sites."
 
   ctaButton:
-    icon: menu_book
-    btnText: "Get Started"
-    url: "/docs"
+    icon: code_blocks
+    btnText: "In Development"
+    url: "/"
   # cta2Button:
   #   icon: menu_book
   #   btnText: "Get Started"
