@@ -29,7 +29,7 @@
             {{ range . }}
                 {{ $path := printf "images/social/%s.%s" . "svg" }}
                 <li class="list-inline-item mb-0">
-                    <a href="{{ if eq . `rss` }} {{ `index.xml` | absURL }} {{ else }} https://{{ . }}.com/{{ site.Params.social.Get . }} {{ end }}" alt="{{ . }}" target="_blank">
+                    <a href="{{ if eq . `rss` }} {{ `index.xml` | absURL }} {{ else }} https://{{ . }}.com/{{ site.Params.social.Get . }} {{ end }}" alt="{{ . }}" rel="noopener noreferrer" target="_blank">
                         <div class="btn btn-icon">
                             {{ with resources.Get $path }}
                                 {{ .Content | safeHTML }}
