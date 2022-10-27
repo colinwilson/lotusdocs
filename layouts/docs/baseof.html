@@ -28,11 +28,11 @@
                                 </div>
                                 <div class="row flex-xl-nowrap">
 
-                                        <div class="docs-toc col-xl-3 {{ if .IsNode }}visually-hidden{{ else }}{{end}} {{ if and (ne .Params.toc false) (ne .TableOfContents "") }}{{ else }}visually-hidden{{ end }} {{ if site.Params.docs.toc | default true }}{{ else }}visually-hidden{{ end }} d-xl-block">
+                                        <div class="docs-toc col-xl-3 {{ if .IsNode }}visually-hidden{{ else }}{{end}} {{ if and (ne .Params.toc false) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}{{ else }}visually-hidden{{ end }} {{ if site.Params.docs.toc | default true }}{{ else }}visually-hidden{{ end }} d-xl-block">
                                             {{- partial "docs/toc.html" . -}}
                                         </div>
 
-                                    <div class="docs-content col-12 {{ if .IsNode }}{{ else }}{{ if site.Params.docs.toc | default true }}{{ if and (ne .Params.toc false) (ne .TableOfContents "") }}col-xl-9{{else}}{{end}}{{ else }}{{ end }}{{ end }} mt-0">
+                                    <div class="docs-content col-12 {{ if .IsNode }}{{ else }}{{ if site.Params.docs.toc | default true }}{{ if and (ne .Params.toc false) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}col-xl-9{{else}}{{end}}{{ else }}{{ end }}{{ end }} mt-0">
                                         <div class="mb-3">
                                             <h1 class="content-title fw-bold mb-0">
                                                 {{ if site.Params.docs.titleIcon | default false }}
