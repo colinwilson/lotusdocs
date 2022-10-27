@@ -12,9 +12,9 @@ hero:
   subtitle: "An easily updated and customised Hugo theme for building fast, secure, and SEO-friendly documentation sites."
 
   ctaButton:
-    icon: code_blocks
+    icon: construction
     btnText: "In Development"
-    url: "/"
+    url: "https://github.com/colinwilson/lotusdocs"
   # cta2Button:
   #   icon: menu_book
   #   btnText: "Get Started"

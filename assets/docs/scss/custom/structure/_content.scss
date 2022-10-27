@@ -1,0 +1,122 @@
+// Docs main content
+//
+// _content.scss
+//
+
+.docs-content .main-content li {
+    color: $gray-700;
+}
+
+.docs-content .main-content h1,
+.docs-content .main-content h2,
+.docs-content .main-content h3,
+.docs-content .main-content h4,
+.docs-content .main-content h5 {
+    font-weight: 700;
+    color: $body-color;
+}
+
+.docs-content .content-title i {
+    width: 44px;
+    height: 44px;
+    color: $primary;
+    background-color: $sidebar-icon-bg;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    // border: solid 1px;
+    border-radius: 5px;
+}
+
+// Images
+.docs-content .main-content img {
+    max-width: 100%;
+}
+
+// Unordered List Styling
+.docs-content .main-content ul {
+    list-style: none;
+    font-size: 16px;
+    line-height: 26px;
+    padding-left: 0;
+
+    li {
+        position: relative;
+        padding-left: 32px;
+    }
+
+    li::before {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        left: 8px;
+        top: 10px;
+        border-radius: 30%;
+        background: $gray-400;
+    }
+}
+
+// Ordered List Styling
+.docs-content .main-content ol {
+    list-style: none;
+    line-height: 26px;
+
+    li {
+        counter-increment: listitem;
+        position: relative;
+        padding-left: 32px;
+    }
+
+    li::before {
+        content: counter(listitem);
+        background: $gray-200;
+        color: inherit;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 10px;
+        text-align: center;
+        padding: 5px 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        position: absolute;
+        left: 0;
+        top: 3px;
+    }
+}
+
+// Blockquote
+.docs-content .main-content blockquote {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    border-left: 3px solid $gray-300;
+    padding-left: 1rem;
+}
+
+// Code
+.docs-content .main-content code {
+    font-size: 15px;
+    color: $gray-700;
+    font-weight: 500;
+    padding: 1px 2px;
+    background: $gray-50;
+    border: 1px solid $gray-200;
+    border-radius: 4px;
+}
+
+.docs-content .main-content pre {
+    margin: 2rem 0;
+    background-color: transparent !important;
+
+    code {
+        display: block;
+        overflow-x: auto;
+        line-height: $line-height-base;
+        padding: 1.25rem 1.5rem;
+        tab-size: 4;
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+    }
+}

@@ -1,0 +1,23 @@
+{{ define "main" }}
+    <div class="row flex-xl-wrap">
+        {{ range .Pages.ByWeight }}
+        <div class="col-md-4 col-12 mt-4 pt-2">
+            <a class="text-decoration-none text-reset" href="{{ .Permalink }}">
+                <div class="card h-100 features feature-primary feature-full-bg rounded p-4 position-relative overflow-hidden border-1">
+                    <span class="h1 icon-color">
+                        <i class="material-icons align-middle">{{- .Params.icon | default "article" }}</i>
+                        {{ if .Draft }}<span class="badge bg-soft-dark fs-6 align-middle">DRAFT</span>{{ end }}
+                    </span>
+                    <div class="card-body p-0 content">
+                        <p class="fs-5 fw-semibold text-reset mb-1">{{ .Title }}</p>
+                        <p class="para text-muted mb-0">{{ .Description | truncate (.Site.Params.docs.listDescTrunc | default 100) }}</p>
+                    </div>
+                    <!-- <div class="position-absolute top-0 end-0">
+                        <i class="material-icons opacity-05">{{- .Params.icon }}</i>
+                    </div> -->
+                </div>
+            </a>
+        </div><!--end col-->
+        {{ end }}
+    </div>
+{{ end }}

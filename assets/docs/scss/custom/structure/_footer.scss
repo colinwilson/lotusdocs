@@ -1,0 +1,32 @@
+//
+// _footer.scss
+//
+footer {
+    position: relative;
+    color: $gray-500;
+    background: $footer-bg;
+    height: 58px;
+    .text-foot {
+        color: $gray-500;
+    }
+    .footer-head {
+        font-size: 18px !important;
+        letter-spacing: 1px;
+        font-weight: 500;
+    }
+    .footer-list {
+        margin-bottom: 0;
+        li {
+            margin-bottom: 10px;
+            a{
+                transition: all 0.5s ease;
+                &:hover {
+                    color: lighten($gray-500, 20%);
+                }
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+}

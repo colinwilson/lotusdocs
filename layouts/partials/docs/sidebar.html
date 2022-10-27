@@ -1,0 +1,56 @@
+<!-- sidebar-wrapper -->
+<nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content" data-simplebar style="height: calc(100% - 60px);">
+        <div class="sidebar-brand">
+            <a href="/" alt="home">
+                {{ with resources.Get "images/logos/logo.svg" }}
+                    {{ .Content | safeHTML }}
+                {{ end }}
+            </a>
+            <span class="fw-bold"><a class="text-dark" href="/docs">DOCS</a></span>
+        </div>
+        <ul class="sidebar-menu">
+            {{ $currentPage := . -}}
+            {{ $section := $currentPage.Section -}}
+            {{ range (where .Site.Sections.ByWeight "Section" "in" $section) }}
+                {{ $child_pages := union .Sections .Pages }}
+                {{ range $child_pages.ByWeight }}
+                    {{ if or (.Sections) (.Pages) }}
+                    {{ $active := in $currentPage.RelPermalink .RelPermalink }}
+                        <li class="sidebar-dropdown {{ if $active }}active{{ end }}">
+                            <button class="btn">
+                                <i class="material-icons me-2">{{- .Params.icon }}</i>
+                                {{- .Title }}
+                            </button>
+                            <div class="sidebar-submenu {{ if $active }}d-block{{ end }}">
+                                <ul>
+                                    {{ range .Pages }}
+                                        {{ $active := in $currentPage.RelPermalink .RelPermalink }}
+                                        <li {{ if $active }}class="active"{{ end }}><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                                    {{ end }}
+                                </ul>
+                            </div>
+                        </li>
+                    {{ else }}
+                        {{ $active := in $currentPage.RelPermalink .RelPermalink }}
+                        <li {{ if $active }}class="active"{{ end }}>
+                            <a href="{{ .Permalink }}"><i class="material-icons me-2">{{ .Params.icon }}</i>{{ .Title }}</a>
+                        </li>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        </ul>
+        <!-- sidebar-menu  -->
+    </div>
+    <!-- Sidebar Footer -->
+        <!-- <ul class="sidebar-footer list-unstyled mb-0">
+            <li class="list-inline-item mb-0">
+                <a href="#" target="_blank" class="btn btn-icon btn-soft-light">
+                    <span class="material-icons size-20 menu-icon align-middle text-primary">star</span>
+                </a>
+                <small class="text-muted fw-medium ms-1">Placeholder</small>
+            </li>
+        </ul> -->
+    <!-- Sidebar Footer -->
+</nav>
+<!-- sidebar-wrapper  -->

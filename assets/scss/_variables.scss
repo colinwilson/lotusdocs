@@ -9,10 +9,11 @@ $fw-medium: 600;
 //Custom Fonts
 // $font-family-secondary:     'Nunito', sans-serif;
 
+$text-default:              #3C4257;
 $muted:                     #6b7686;
 $dark:                      #3c4858;
 $btn-color:                 #ffffff;
-$body-color:                #161c2d;
+$body-color:                $text-default;
 
 //Body Background
 $shadow-sm:                 0 .125rem .25rem rgba($dark,.15);
@@ -53,12 +54,6 @@ $foot-social-color:         #adb5bd;
 $social-icon-color:         #adb5bd;
 $social-border-color:       #adb5bd;
 $foot-social-color-white:   $white;
-
-
-//Blog & Works
-$blog-overlay-dark:         $dark;
-$overlay-work-bg:           $dark;
-$content-bg:                $white;
 
 //CTA
 $play-btn-border:           $white;

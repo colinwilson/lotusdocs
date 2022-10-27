@@ -1,0 +1,44 @@
+<head>
+    <meta charset="utf-8" />
+    <title>
+        {{- $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+        {{- if eq $url "/" }}
+            {{- .Site.Title }}
+        {{- else }}
+            {{- if .Params.heading }}
+                {{ .Params.heading }}
+            {{ else }}
+                {{- if eq .Title .Site.Title }}
+                    {{- .Title }}
+                {{- else }}
+                    {{- .Title }} | {{ .Site.Params.docs.Title | default (.Site.Title) }}
+                {{- end }}
+            {{- end }}
+        {{- end -}}
+    </title>
+    {{- if not hugo.IsProduction }}
+    <meta name="robots" content="noindex">
+    {{- end }}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lotus Docs Documentation" />
+    <meta name="keywords" content="Hugo, IaC, Kubernetes, GitOps" />
+    <meta name="author" content="Colin Wilson - Lotus Labs" />
+    <meta name="email" content="support@aigis.uk" />
+    <meta name="website" content="https://lotusdocs.vercel.app" />
+    <meta name="Version" content="v1.0.0" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBkPSJNNDcxLjI3LDQwLjczQzQzMC41MzksMCwzNjguMTc4LDAsMjU2LDBWMzE5LjEyYTI1LjYsMjUuNiwwLDAsMCwyNS42LDI1LjZoNTYuMzJhMTUuMzYsMTUuMzYsMCwwLDEsMTUuMzYsMTUuMzZ2NjYuNTZBMTUuMzYsMTUuMzYsMCwwLDEsMzM3LjkyLDQ0MkgyMzUuNTJhNzYuOCw3Ni44LDAsMCwxLTc2LjgtNzYuOFYxLjU0OUMxMDQuMzU5LDQuNiw2Ny43NzIsMTMuNjg5LDQwLjczLDQwLjczLDAsODEuNDYxLDAsMTQzLjgyMiwwLDI1NlMwLDQzMC41MzksNDAuNzMsNDcxLjI3LDE0My44MjIsNTEyLDI1Niw1MTJzMTc0LjUzOSwwLDIxNS4yNy00MC43M1M1MTIsMzY4LjE3OCw1MTIsMjU2LDUxMiw4MS40NjEsNDcxLjI3LDQwLjczWiIgc3R5bGU9ImZpbGw6IzA2ZiIvPjwvc3ZnPg==" type="image/svg+xml" />
+    <!-- Google Fonts -->
+    {{- partial "google-fonts" . }}
+    <!-- Custom Css -->
+    {{- $options := dict "enableSourceMap" true }}
+    {{- if hugo.IsProduction}}
+        {{- $options := dict "enableSourceMap" false "outputStyle" "compressed" }}
+    {{- end }}
+    {{- $style := resources.Get "/docs/scss/style.scss" }}
+    {{- $style = $style | resources.ExecuteAsTemplate "/docs/scss/style.scss" . | resources.ToCSS $options }}
+    {{- if hugo.IsProduction }}
+        {{- $style = $style | minify | resources.Fingerprint "sha384" }}
+    {{- end -}}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
+</head>

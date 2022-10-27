@@ -1,0 +1,13 @@
+{{ define "main" }}
+    <!-- {{ range (where .Site.RegularPages.ByWeight "Section" "docs") }}
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+    <div class="mb4 w-70-l">
+        {{/* $rel := printf "%s#" ( .RelPermalink | replaceRE "/$" "") */}}
+        {{ $rel := printf "%s#" .RelPermalink }}
+        {{ .TableOfContents | replaceRE "#" $rel | safeHTML }}
+    </div>
+    {{ end }} -->
+
+    {{ .Content }}
+
+{{ end }}

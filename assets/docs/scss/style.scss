@@ -1,47 +1,55 @@
 /* Template Name: LotusLabs Docs
    Author: Colin Wilson
-   E-mail: colin.wilson@proton.me
+   E-mail: colin@aigis.uk
    Created: October 2022
    Version: 1.0.0
-   File Description: Main CSS file of the docs template
+   File Description: Main Css file of the docs template
 */
 
+//Custom Font Variables
+$font-family-secondary:  {{ .Site.Params.secondary_font | default "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Ubuntu'" }};
+$font-family-sans-serif: {{ .Site.Params.sans_serif_font | default "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Ubuntu'" }};
+$font-family-monospace:  {{ .Site.Params.mono_font | default "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" }};
 
-//Fonts
-// @import "custom/fonts/fonts";
+// Plugins
+@import "custom/plugins/icons/google-material";
 
 //Core files
 @import "../../scss/bootstrap/functions";
 @import "../../scss/bootstrap/variables";
-// @import "variables";
+@import "variables";
 @import "../../scss/bootstrap/mixins";
 @import "../../scss/bootstrap/bootstrap";
 
 // Structure
-// @import "custom/structure/general";
-// @import "custom/structure/content";
-// @import "custom/structure/sidebar-layouts";
-// @import "custom/structure/doc-nav";
-// @import "custom/structure/toc-layouts";
-// @import "custom/structure/footer";
+@import "custom/structure/general";
+@import "custom/structure/content";
+@import "custom/structure/sidebar";
+@import "custom/structure/doc-nav";
+@import "custom/structure/toc";
+@import "custom/structure/footer";
 
 // // Components
-// @import "custom/components/buttons";
-// @import "custom/components/badge";
-// @import "custom/components/backgrounds";
-// @import "custom/components/alerts";
-// @import "custom/components/card";
+@import "custom/components/buttons";
+@import "custom/components/badge";
+@import "custom/components/backgrounds";
+@import "custom/components/alerts";
+@import "custom/components/card";
+// @import "custom/components/avatar";
+// @import "custom/components/accordion";
+// @import "custom/components/preloader";
+// @import "custom/components/forms";
 
 // // Pages
 // @import "custom/pages/blog";
 // @import "custom/pages/calendar";
 // @import "custom/pages/chat";
-// @import "custom/pages/features";
-// @import "custom/pages/helper";
+@import "custom/pages/features";
+@import "custom/pages/helper";
 // @import "custom/pages/home";
 // @import "custom/pages/price";
 // @import "custom/pages/shop";
-// @import "custom/pages/simplebar";
+@import "custom/pages/simplebar";
 // @import "custom/pages/team";
 // @import "custom/pages/testi";
 // @import "custom/pages/user";
