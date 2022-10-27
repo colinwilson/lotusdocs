@@ -9,7 +9,7 @@ hero:
   #   soft: true # boolean
 
   title: "Lotus Docs"
-  subtitle: "An easily updated and customised Hugo theme for building fast, secure, and SEO-friendly documentation sites."
+  subtitle: A lightweight, **modern documentation** theme for Hugo. Easily customised for building **fast**, **secure**, and **SEO-friendly** documentation sites.
 
   ctaButton:
     icon: construction

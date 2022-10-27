@@ -9,7 +9,7 @@
                     <span class="badge {{ if eq .Site.Data.landing.hero.badge.pill true }}rounded-pill{{ end }} bg-{{ if eq .Site.Data.landing.hero.badge.soft true }}soft-{{ end }}{{ .Site.Data.landing.hero.badge.color }} mb-1">{{ .Site.Data.landing.hero.badge.text }}</span>
                     {{ end }}
                     <h4 class="heading mt-0 mb-3">{{ .Site.Data.landing.hero.title }}</h4>
-                    <p class="para-desc text-muted mb-0">{{ .Site.Data.landing.hero.subtitle }}</p>
+                    <p class="para-desc text-muted mb-0">{{ .Site.Data.landing.hero.subtitle | markdownify }}</p>
 
                     <div class="mt-3">
                         {{ if .Site.Data.landing.hero.ctaButton }}
