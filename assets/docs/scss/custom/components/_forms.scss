@@ -1,0 +1,45 @@
+//
+// Forms.scss
+//
+
+//Form
+.form-label,
+.form-check-label {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.form-control {
+    border: 1px solid $border-color;
+    font-size: 14px;
+    line-height: 26px;
+    border-radius: 6px;
+    color: $dark !important;
+    text-align: left;
+    &:focus {
+        border-color: $primary;
+        box-shadow: none;
+    }
+    &[readonly] {
+        background-color: $white;
+    }
+    &:disabled {
+        background-color: $gray-300;
+    }
+    &::placeholder{
+        color: $form-placeholder;
+    }
+}
+
+.form-check-input {
+    border: 1px solid $border-color;
+    background-color: $form-check-input-bg;
+    &:focus {
+        border-color: $primary;
+        box-shadow: none;
+    }
+    &.form-check-input:checked {
+        background-color: $primary;
+        border-color: $primary;
+    }
+}

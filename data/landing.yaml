@@ -60,4 +60,4 @@ features:
 
     - title: Bootstrap v5.2
       icon: palette
-      description: Build robust, flexible, and intuitive websites with Bootstrap 5. Easily customise your docs site via Sass variables abd files.
+      description: Built on Bootstrap 5 allows for a robust, flexible, and intuitive website. Easily customise your site via SCSS variables and files.

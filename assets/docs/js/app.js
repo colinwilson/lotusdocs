@@ -225,3 +225,11 @@ var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggl
 var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     return new bootstrap.Popover(popoverTriggerEl)
 })
+
+//Last Modified Date of current page (relative time format)
+if (document.getElementById("relativetime")) {
+    dayjs.extend(window.dayjs_plugin_relativeTime);
+    const modId = document.getElementById('relativetime');
+    let modAgo = dayjs(modId.getAttribute('data-authdate')).fromNow();
+    document.getElementById("relativetime").innerHTML = modAgo;
+};
