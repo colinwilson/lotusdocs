@@ -3,13 +3,19 @@ hero:
   enable: true
 
   # badge:
-  #   text: v0.0.2 BETA
+  #   text: v0.0.2
   #   color: primary # primary, secondary, success, danger, warning, info, light, dark
   #   pill: false # boolean
   #   soft: true # boolean
 
   title: "Lotus Docs"
   subtitle: A lightweight, **modern documentation** theme for Hugo. Easily customised for building **fast**, **secure**, and **SEO-friendly** documentation sites.
+
+  image:
+    path: "images" # path to image under configured assets directory. default 'images'
+    filename: "screenshot_lotus_docs.png" # filename of your hero image (including file extension)
+    alt: "Lotus Docs Screenshot" # Optional but recommended
+    boxShadow: true # default 'false'
 
   ctaButton:
     icon: construction
@@ -28,11 +34,11 @@ features:
   items:
     - title: Fast
       icon: speed
-      description: A 4 x 100 score on Google Lighthouse by default. Lotus Docs removes unused css, prefetches asset links, and lazy loads content images.
+      description: 4 x 100's score on Google Lighthouse by default. Lotus Docs removes unused CSS, prefetches asset links, and lazy loads content images.
 
     - title: SEO Friendly
       icon: trending_up
-      description: Data is automatically structured to be SEO friendly. Includes Meta tags, Open graph, and Twitter cards. Choose the settings that best suit you.
+      description: Data is automatically structured to be SEO friendly. Includes Meta tags, Opengraph, and Twitter cards. Choose the settings that best suit you.
 
     - title: Secure by default
       icon: lock
@@ -40,24 +46,24 @@ features:
 
     - title: Optional Settings
       icon: settings
-      description: Many of Lotus Docs' features are configurable via optional parameters. Need a particular feature? Then enable it via a single setting.
+      description: Many Lotus Docs features are configurable via optional parameters. Require DocSearch for your site? Then enable it via a single setting.
 
     - title: Deploy to Vercel
       icon: change_history
-      description: Deploy to Vercel in seconds. Vercel Functions, Vercel Redirects/Rewrites, and Vercel Headers can all be utilised for an enriched experience.
+      description: Deploy to Vercel in seconds. Vercel Functions, Vercel Redirects/Rewrites, and Vercel Headers are all configurable for an enriched experience.
 
     - title: Dark Mode
       icon: dark_mode
-      description: Prefer not be blasted by the sun when reading? Switch to a low-light UI with the click of a button. Modify colour variables to match your branding.
+      description: "Prefer not to be blasted by the sun when reading? Switch to a low-light UI with the click of a button. Modify colour variables to match your branding."
 
     - title: Search by DocSearch
       icon: search
-      description: Search your docs with DocSearch. A powerful, efficient and accessible search solution built on top of Algolia Autocomplete. TBC.
+      description: Search your docs with DocSearch. A powerful, efficient and accessible search solution built on Algolia Crawler & Autocomplete. TBC.
 
     - title: Versioning
       icon: dynamic_feed
-      description: Support for maintaining multiple versions of your docs. Let your users access previous versions of your documentation.
+      description: Support for maintaining multiple versions of your docs. Let your users access previous versions of your documentation via a simple dropdown menu.
 
-    - title: Bootstrap v5.2
+    - title: Bootstrap v5
       icon: palette
-      description: Built on Bootstrap 5 allows for a robust, flexible, and intuitive website. Easily customise your site via SCSS variables and files.
+      description: Built on Bootstrap 5, Lotus Docs allows for a familiar, flexible, and intuitive developer experience. Easily customise your site via SCSS variables and files.

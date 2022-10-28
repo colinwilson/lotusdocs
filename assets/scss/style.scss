@@ -45,5 +45,6 @@ $font-family-monospace:  {{ .Site.Params.mono_font | default "SFMono-Regular, Me
 
 @import "custom/pages/features";
 @import "custom/pages/helper";
+@import "custom/pages/hero";
 
 // @import "custom/pages/simplebar";

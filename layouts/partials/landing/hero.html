@@ -3,6 +3,7 @@
 <section class="d-table w-100 overflow-hidden">
     <div class="container">
         <div class="row mt-5 align-items-center">
+
             <div class="col-lg-6 col-md-6">
                 <div class="title-heading">
                     {{ if .Site.Data.landing.hero.badge }}
@@ -40,13 +41,31 @@
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
-                <!-- <div class="ms-lg-4">
-                    {{ $svg := resources.Get "images/documents_feature.svg" }}
-                        {{ $svg.Content | safeHTML }}
-
-                </div> -->
+            <div class="col-lg-6 col-md-6 mt-4 pt-4 mt-sm-0 pt-sm-0">
+                {{ with .Site.Data.landing.hero.image }}
+                    {{ $path := .path | default "images" }}
+                    {{ $filename := .filename }}
+                    {{ $alt := .alt | default "hero image" }}
+                    {{ $boxShadow := .boxShadow | default false }}
+                    {{ $path := printf "%s/%s" $path $filename }}
+                    {{ with $filename }}
+                        <div class="ms-lg-4 {{ if $boxShadow }}shadow-lg{{ else }}{{ end }} rounded-4">
+                            <div class="classic-hero-image">
+                                {{ with $image := resources.Get $path }}
+                                    {{ if eq .MediaType.SubType "svg" }}
+                                        {{ .Content | safeHTML }}
+                                    {{ else }}
+                                        {{ with .Resize (printf "%dx%d webp q85 drawing Lanczos" .Width .Height) }}
+                                            <img src="{{ .RelPermalink }}" class="mx-auto d-block" alt="{{ $alt }}">
+                                        {{ end }}
+                                    {{ end }}
+                                {{ end }}
+                            </div>
+                        </div>
+                    {{ end }}
+                {{ end }}
             </div><!--end col-->
+
         </div><!--end row-->
     </div> <!--end container-->
 </section><!--end section-->

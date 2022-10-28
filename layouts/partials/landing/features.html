@@ -13,7 +13,7 @@
                                 </div>
                                 <div class="flex-1">
                                     <h4 class="title">{{ .title }}</h4>
-                                    <p class="text-muted para mb-0">{{ .description }}</p>
+                                    <p class="text-muted para mb-0">{{ .description | markdownify }}</p>
                                 </div>
                             </div>
                         </div>
