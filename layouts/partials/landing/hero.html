@@ -56,7 +56,7 @@
                                         {{ .Content | safeHTML }}
                                     {{ else }}
                                         {{ with .Resize (printf "%dx%d webp q85 drawing Lanczos" .Width .Height) }}
-                                            <img src="{{ .RelPermalink }}" class="mx-auto d-block" alt="{{ $alt }}">
+                                            <img src="{{ .RelPermalink }}" class="mx-auto d-block" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $alt }}">
                                         {{ end }}
                                     {{ end }}
                                 {{ end }}
