@@ -1,6 +1,7 @@
 <nav aria-label="breadcrumb" class="d-inline-block pb-2 mt-2 mt-sm-0">
-    <!-- Via: https://hugocodex.org/add-ons/breadcrumbs/ -->
+    <!-- Credit: https://hugocodex.org/add-ons/breadcrumbs/ -->
     <ul id="breadcrumbs" class="breadcrumb bg-transparent mb-0 p-0">
+        {{ $docRoot := (humanize .FirstSection.RelPermalink) }}
         {{- $.Scratch.Set "url" "" -}}
         {{- range (split .RelPermalink "/") -}}
             {{- if (gt (len .) 0) -}}
@@ -18,7 +19,15 @@
                         <li class="breadcrumb-item text-capitalize active" aria-current="page">{{ .Title }}</li>
                     {{- end -}}
                 {{- else -}}
-                    <li class="breadcrumb-item text-capitalize"><a href="{{ $.Scratch.Get `url` }}">{{ humanize . }}</a></li>
+                    {{ if eq (humanize .) $docRoot }}
+                        <li class="breadcrumb-item">
+                            <a href="{{ $.Scratch.Get `url` }}">
+                                <span class="material-icons size-20 align-text-bottom text-primary">home</span>
+                            </a>
+                        </li>
+                    {{ else }}
+                        <li class="breadcrumb-item text-capitalize"><a href="{{ $.Scratch.Get `url` }}">{{ humanize . }}</a></li>
+                    {{ end }}
                 {{- end -}}
             {{- end -}}
         {{- end -}}
