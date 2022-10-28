@@ -47,16 +47,17 @@
                     {{ $filename := .filename }}
                     {{ $alt := .alt | default "hero image" }}
                     {{ $boxShadow := .boxShadow | default false }}
+                    {{ $rounded := .rounded | default false }}
                     {{ $path := printf "%s/%s" $path $filename }}
                     {{ with $filename }}
-                        <div class="ms-lg-4 {{ if $boxShadow }}shadow-lg{{ else }}{{ end }} rounded-4">
+                        <div class="ms-lg-4">
                             <div class="classic-hero-image">
                                 {{ with $image := resources.Get $path }}
                                     {{ if eq .MediaType.SubType "svg" }}
                                         {{ .Content | safeHTML }}
                                     {{ else }}
                                         {{ with .Resize (printf "%dx%d webp q85 drawing Lanczos" .Width .Height) }}
-                                            <img src="{{ .RelPermalink }}" class="mx-auto d-block" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $alt }}">
+                                            <img src="{{ .RelPermalink }}" class="{{ if $boxShadow }}shadow-lg{{ else }}{{ end }} mx-auto d-block {{ if $rounded }}rounded-top-4{{ else }}{{ end }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $alt }}">
                                         {{ end }}
                                     {{ end }}
                                 {{ end }}
