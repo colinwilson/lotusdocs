@@ -1,11 +1,13 @@
 <div class="gitinfo d-flex justify-content-between align-items-center {{ if and .Site.Params.docs.lastMod .Site.Params.docs.editPage -}}pt-4{{ else }}visually-hidden{{ end }}">
     {{ if .Site.Params.docs.editPage | default false -}}
-    <div class="d-flex align-items-center">
+    <div>
         <a href="https://{{ .Site.Params.docs.ghrepo }}/blob/{{ .GitInfo.Hash }}/content/{{ path.Clean .File.Path }}/" alt="{{ .Title }}" rel="noopener noreferrer" target="_blank">
             <!-- <span class="material-icons size-20 align-text-bottom text-primary">edit</span> -->
-            {{ with resources.Get "images/social/github_icon.svg" }}
+            <span class="me-1 align-text-bottom">
+                {{ with resources.Get "images/social/github_icon.svg" }}
                     {{ .Content | safeHTML }}
-            {{ end }}
+                {{ end }}
+            </span>
             Edit this page
             <!-- <span class="material-icons size-20 align-text-bottom text-primary">open_in_new</span> -->
         </a>
