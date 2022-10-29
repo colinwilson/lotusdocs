@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://lotusdocs.vercel.app/">
-    <img alt="Lotus Docs" src="https://user-images.githubusercontent.com/12916656/197901853-fc2ac182-ddd6-48e7-87fe-c6ede5f72974.svg" width="200">
+    <img alt="Lotus Docs" src="https://user-images.githubusercontent.com/12916656/198838286-d1279f56-e52b-40bc-aa5b-f6d344d1fddc.svg" width="120">
   </a>
 </p>
 
