@@ -1,4 +1,4 @@
-#Hero
+# Hero
 hero:
   enable: true
 
@@ -15,8 +15,8 @@ hero:
     path: "images" # path to image under configured assets directory. default 'images'
     filename: "screenshot_lotus_docs.png" # filename of your hero image (including file extension)
     alt: "Lotus Docs Screenshot" # Optional but recommended
-    boxShadow: true # default 'false' (excludes vector images)
-    rounded: true # rounded the image corners? default 'false' (excludes vector images)
+    boxShadow: true # default 'false' (excludes .svg images)
+    rounded: true # round the image corners? default 'false' (excludes .svg images)
 
   ctaButton:
     icon: construction
@@ -29,6 +29,7 @@ hero:
 
   info: "Open-source MIT Licensed."
 
+# Features Grid
 features:
   enable: true
 
