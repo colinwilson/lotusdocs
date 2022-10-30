@@ -19,7 +19,9 @@
                     {{ $active := in $currentPage.RelPermalink .RelPermalink }}
                         <li class="sidebar-dropdown {{ if $active }}active{{ end }}">
                             <button class="btn">
-                                <i class="material-icons me-2">{{- .Params.icon }}</i>
+                                {{ if eq .Site.Params.docs.sidebarIcons true -}}
+                                    <i class="material-icons me-2">{{- .Params.icon }}</i>
+                                {{ end }}
                                 {{- .Title }}
                             </button>
                             <div class="sidebar-submenu {{ if $active }}d-block{{ end }}">
@@ -34,7 +36,12 @@
                     {{ else }}
                         {{ $active := in $currentPage.RelPermalink .RelPermalink }}
                         <li {{ if $active }}class="active"{{ end }}>
-                            <a href="{{ .Permalink }}"><i class="material-icons me-2">{{ .Params.icon }}</i>{{ .Title }}</a>
+                            <a href="{{ .Permalink }}">
+                                {{ if eq .Site.Params.docs.sidebarIcons true -}}
+                                    <i class="material-icons me-2">{{ .Params.icon }}</i>
+                                {{ end }}
+                                {{ .Title }}
+                            </a>
                         </li>
                     {{ end }}
                 {{ end }}

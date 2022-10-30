@@ -89,7 +89,7 @@
                     width: 100%;
                     text-decoration: none;
                     position: relative;
-                    padding: 8px 24px 8px 20px;
+                    padding: 6px 24px 6px 20px;
                     border: none;
                     letter-spacing: normal;
                     transition: all 0.3s ease;
@@ -97,11 +97,11 @@
                     align-items: center;
 
                     @media (max-width: 1024px) {
-                        padding: 8px 24px 8px 24px;
+                        padding: 6px 24px 6px 24px;
                     }
 
                     @media screen and (max-width: 425px) {
-                        padding: 8px 24px 8px 12px;
+                        padding: 6px 24px 6px 12px;
                     }
                     &:hover > i::before {
                         display: inline-block;
