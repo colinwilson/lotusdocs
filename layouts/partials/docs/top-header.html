@@ -36,7 +36,7 @@
                 <li class="list-inline-item mb-0">
                     <a href="{{ if eq . `rss` }} {{ `index.xml` | absURL }} {{ else }} https://{{ . }}.com/{{ site.Params.social.Get . }} {{ end }}" alt="{{ . }}" rel="noopener noreferrer" target="_blank">
                         <div class="btn btn-icon btn-soft-light">
-                            <span class="text-primary">
+                            <span class="text-primary lh-1">
                                 {{ with resources.Get $path }}
                                     {{ .Content | safeHTML }}
                                 {{ end }}
