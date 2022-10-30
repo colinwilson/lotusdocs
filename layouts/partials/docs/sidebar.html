@@ -17,7 +17,7 @@
                 {{ range $child_pages.ByWeight }}
                     {{ if or (.Sections) (.Pages) }}
                     {{ $active := in $currentPage.RelPermalink .RelPermalink }}
-                        <li class="sidebar-dropdown {{ if $active }}active{{ end }}">
+                        <li class="sidebar-dropdown {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }} {{ if $active }}active{{ end }}">
                             <button class="btn">
                                 {{ if eq .Site.Params.docs.sidebarIcons true -}}
                                     <i class="material-icons me-2">{{- .Params.icon }}</i>
