@@ -146,7 +146,7 @@ if (document.getElementById("sidebar")) {
             //     document.querySelectorAll("div.sidebar-submenu.d-block")[0]?.classList?.toggle("d-block");
             // }
             // if(elem.target.getAttribute("href") === "javascript:void(0)") {
-            elem.target.parentElement.classList.toggle("active");
+            // elem.target.parentElement.classList.toggle("active");
             elem.target.nextElementSibling.classList.toggle("d-block");
             // }
         }

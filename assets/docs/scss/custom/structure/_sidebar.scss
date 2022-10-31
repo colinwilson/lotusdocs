@@ -73,7 +73,7 @@
         }
 
         .sidebar-menu {
-            padding: 16px 0;
+            padding: 16px 0 16px 10px;
             .header-menu {
                 span {
                     font-weight: bold;
@@ -90,7 +90,7 @@
                     width: 100%;
                     text-decoration: none;
                     position: relative;
-                    padding: 6px 24px 6px 20px;
+                    padding: 6px 24px 6px 10px;
                     border: none;
                     letter-spacing: normal;
                     transition: all 0.3s ease;
@@ -122,6 +122,11 @@
                         border-radius: 5px;
                         transition: all 0.3s ease;
                     }
+                }
+                a:hover,
+                &.sidebar-dropdown button:hover {
+                    background-color: darken($sidebar-icon-bg, 3%);
+                    border-radius: 4px 0 0 4px;
                 }
                 &:hover,
                 &.active {
@@ -183,7 +188,7 @@
                         right: 17px;
                     }
                 }
-                &:hover,
+                // &:hover,
                 &.active {
                     > button:after {
                         color: $sidebar-primary;
@@ -212,6 +217,10 @@
                                     float: right;
                                     margin-top: 0px;
                                 }
+                            }
+                            &.active a {
+                                background-color: darken($sidebar-icon-bg, 1%);
+                                border-radius: 4px 0 0 4px;
                             }
                         }
                     }
@@ -335,11 +344,11 @@
             color: $sidebar-text-color;
             font-weight: 600;
         }
-        .sidebar-menu li:hover > a,
+        // .sidebar-menu li:hover > a,
         .sidebar-menu li.active > a,
         .sidebar-menu li:active > a,
         .sidebar-menu li:active > a:before,
-        .sidebar-menu li:hover > a:before,
+        // .sidebar-menu li:hover > a:before,
         .sidebar-menu li.active > a:before,
         // .sidebar-menu .sidebar-dropdown.active > a,
         .sidebar-header .user-info,
@@ -347,7 +356,7 @@
             color: $sidebar-primary !important;
         }
 
-        .sidebar-menu li:hover > button,
+        // .sidebar-menu li:hover > button,
         .sidebar-menu .sidebar-dropdown.active > button {
             color: $sidebar-primary !important;
         }
