@@ -129,22 +129,53 @@
                         background-color: darken($sidebar-icon-bg, 1%);
                     }
                 }
+                &.no-icon a:before {
+                    // content: "\e931" !important;
+                    content: none !important;
+                }
             }
 
             .sidebar-dropdown {
+                &.no-icon {
+                    > button:after {
+                        top: inherit !important;
+                    }
+                }
                 > button:after {
                     content: "\e5cc" !important;
-                    color: $dark;
+                    color: $sidebar-text-color;
                     font-family: 'Material Symbols Outlined';
-                    font-weight: 700;
-                    font-size: 14px;
+                    font-weight: 500;
+                    font-size: 22px;
                     position: absolute;
                     right: 15px;
-                    top: 15px;
+                    top: 7px;
                     transition: all 0.3s ease;
                 }
-                &.no-icon > button:after {
-                    top: inherit;
+                &.nested {
+                    &.no-icon {
+                        > button:after {
+                            top: inherit !important;
+                        }
+                        > button:before {
+                            // content: "\e5da" !important;
+                            content: none !important;
+                        }
+                    }
+                    button {
+                        font-size: 14px;
+                        &:before {
+                            content: "\e2c7";
+                            color: $dark;
+                            font-family: 'Material Symbols Outlined';
+                            margin-right: 4px;
+                            font-size: 16px;
+                            transition: all 0.3s ease;
+                        }
+                        &:after {
+                            top: inherit;
+                        }
+                    }
                 }
                 &.active {
                     > button:after {
@@ -167,8 +198,9 @@
                             padding-left: 25px;
                             font-size: 14px;
                             a {
+                                font-weight: 400;
                                 &:before {
-                                    content: "\f88a" !important;
+                                    content: "\ef42";
                                     color: $dark;
                                     font-family: 'Material Symbols Outlined';
                                     margin-right: 4px;
