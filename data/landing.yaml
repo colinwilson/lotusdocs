@@ -46,7 +46,7 @@ features:
       icon: lock
       description: Lotus Docs' default configuration scores A+ on Mozilla Observatory. You can update the default Security Headers to suit your requirements.
 
-    - title: Optional Settings
+    - title: Optional Features
       icon: settings
       description: Many Lotus Docs features are configurable via optional parameters. Require DocSearch for your site? Then enable it via a single setting.
 
@@ -56,7 +56,7 @@ features:
 
     - title: Dark Mode
       icon: dark_mode
-      description: "Prefer not to be blasted by the sun when reading? Switch to a low-light UI with the click of a button. Modify colour variables to match your branding."
+      description: "Prefer not to be blasted by the sun while reading? Switch to a low-light UI with the click of a button. Modify colour variables to match your branding."
 
     - title: Search by DocSearch
       icon: search

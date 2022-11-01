@@ -91,6 +91,7 @@
                     text-decoration: none;
                     position: relative;
                     padding: 6px 24px 6px 10px;
+                    margin: 4px 0 4px 0;
                     border: none;
                     letter-spacing: normal;
                     transition: all 0.3s ease;
@@ -127,6 +128,7 @@
                 &.sidebar-dropdown button:hover {
                     background-color: darken($sidebar-icon-bg, 3%);
                     border-radius: 4px 0 0 4px;
+                    margin: 4px 0 4px 0;
                 }
                 &:hover,
                 &.active {
@@ -189,7 +191,7 @@
                     }
                 }
                 // &:hover,
-                &.active {
+                &.current {
                     > button:after {
                         color: $sidebar-primary;
                     }
@@ -217,10 +219,6 @@
                                     float: right;
                                     margin-top: 0px;
                                 }
-                            }
-                            &.active a {
-                                background-color: darken($sidebar-icon-bg, 1%);
-                                border-radius: 4px 0 0 4px;
                             }
                         }
                     }
@@ -345,19 +343,26 @@
             font-weight: 600;
         }
         // .sidebar-menu li:hover > a,
-        .sidebar-menu li.active > a,
+        .sidebar-menu li.current > a,
         .sidebar-menu li:active > a,
         .sidebar-menu li:active > a:before,
         // .sidebar-menu li:hover > a:before,
-        .sidebar-menu li.active > a:before,
+        .sidebar-menu li.current > a:before,
+        .sidebar-menu li.current > button:before,
         // .sidebar-menu .sidebar-dropdown.active > a,
         .sidebar-header .user-info,
         .sidebar-brand > a:hover {
             color: $sidebar-primary !important;
         }
 
+        .sidebar-menu li.current > a {
+            background-color: darken($sidebar-icon-bg, 1%);
+            border-radius: 4px 0 0 4px;
+            margin: 4px 0 4px 0;
+        }
+
         // .sidebar-menu li:hover > button,
-        .sidebar-menu .sidebar-dropdown.active > button {
+        .sidebar-menu .sidebar-dropdown.current > button {
             color: $sidebar-primary !important;
         }
 
