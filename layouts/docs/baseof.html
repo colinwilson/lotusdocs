@@ -47,7 +47,7 @@
                                             <p class="lead mb-0 text-muted">{{ $currentPage.Description }}</p>
                                             {{ end }}
                                         </div>
-                                        <div class="main-content">
+                                        <div id="content" class="main-content">
                                             {{ block "main" . }}{{ end }}
                                         </div>
                                         <div>
@@ -67,7 +67,6 @@
     <button onclick="topFunction()" id="back-to-top" class="back-to-top fs-5"><i class="material-icons icons" style="width: 24px;height: 24px;">keyboard_arrow_up</i></button>
     <!-- Back to top -->
     {{ end }}
-
     {{ $app := resources.Get "/docs/js/app.js" }}
     {{ $simplebar := resources.Get "/docs/js/simplebar.min.js" }}
     {{ $simplescrollspy := resources.Get "/docs/js/simple-scrollspy.min.js" }}
@@ -82,5 +81,6 @@
         {{- $js := (slice $dayjs $relativeTime $simplescrollspy $simplebar $app $scrollspyScript $prismjs) | resources.Concat "/docs/js/bundle.js" }}
         <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
     {{- end }}
+
 </body>
 </html>
