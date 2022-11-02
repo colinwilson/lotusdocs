@@ -90,7 +90,7 @@
                     width: 100%;
                     text-decoration: none;
                     position: relative;
-                    padding: 6px 24px 6px 10px;
+                    padding: 4px 24px 5px 10px;
                     margin: 4px 0 4px 0;
                     border: none;
                     letter-spacing: normal;
@@ -172,11 +172,11 @@
                     button {
                         font-size: 14px;
                         &:before {
-                            content: "\e2c7";
-                            color: $dark;
+                            content: $sidebar-directory-icon;
+                            color: $sidebar-text-color;
                             font-family: 'Material Symbols Outlined';
                             margin-right: 4px;
-                            font-size: 16px;
+                            font-size: 14px;
                             transition: all 0.3s ease;
                         }
                         &:after {
@@ -200,18 +200,18 @@
                 .sidebar-submenu {
                     display: none;
                     ul {
-                        padding: 5px 0;
+                        padding: 3px 0;
                         li {
                             padding-left: 25px;
                             font-size: 14px;
                             a {
                                 font-weight: 400;
                                 &:before {
-                                    content: "\ef42";
-                                    color: $dark;
+                                    content: $sidebar-file-icon;
+                                    color: $sidebar-text-color;
                                     font-family: 'Material Symbols Outlined';
                                     margin-right: 4px;
-                                    font-size: 16px;
+                                    font-size: 14px;
                                     transition: all 0.3s ease;
                                 }
                                 .badge,

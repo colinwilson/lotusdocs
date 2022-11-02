@@ -506,24 +506,28 @@ $value in $theme-colors {
 }
 
 /* Recommended icon sizes */
-span.size-20 {
-    font-size: 20px;
-    font-variation-settings: 'OPSZ' 20;
-}
-
-span.size-24 {
-    font-size: 24px;
-    font-variation-settings: 'OPSZ' 24;
-}
-
-span.size-40 {
-    font-size: 40px;
-    font-variation-settings: 'OPSZ' 40;
-}
-
-span.size-48 {
-    font-size: 48px;
-    font-variation-settings: 'OPSZ' 48;
+span,
+i {
+    &.size-16 {
+        font-size: 16px !important;
+        font-variation-settings: 'OPSZ' 16;
+    }
+    &.size-20 {
+        font-size: 20px !important;
+        font-variation-settings: 'OPSZ' 20;
+    }
+    &.size-24 {
+        font-size: 24px !important;
+        font-variation-settings: 'OPSZ' 24;
+    }
+    &.size-40 {
+        font-size: 40px !important;
+        font-variation-settings: 'OPSZ' 40;
+    }
+    &.size-48 {
+        font-size: 48px !important;
+        font-variation-settings: 'OPSZ' 48;
+    }
 }
 
 // Content Anchors
