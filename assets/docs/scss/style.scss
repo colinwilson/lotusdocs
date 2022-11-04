@@ -14,6 +14,10 @@ $font-family-monospace:  {{ .Site.Params.mono_font | default "SFMono-Regular, Me
 // Plugins
 @import "custom/plugins/icons/google-material";
 
+{{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
+@import "custom/plugins/docsearch/style";
+{{ end }}
+
 //Core files
 @import "../../scss/bootstrap/functions";
 @import "../../scss/bootstrap/variables";

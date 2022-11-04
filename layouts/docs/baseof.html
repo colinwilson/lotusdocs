@@ -67,17 +67,29 @@
     <button onclick="topFunction()" id="back-to-top" class="back-to-top fs-5"><i class="material-icons icons" style="width: 24px;height: 24px;">keyboard_arrow_up</i></button>
     <!-- Back to top -->
     {{ end }}
-    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
-    <script>
-        //DocSearch
-        docsearch({
-            container: '#docsearch',
-            appId: 'O2QIOCBDAK',
-            apiKey: 'fdc60eee76a72a35d739b54521498b77',
-            indexName: 'dev_lotusdocs.dev',
-            placeholder: 'Search Documentation'
-        });
-    </script>
+
+    {{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
+        <!-- DocSearch -->
+        {{ $docsearch := resources.Get "/docs/js/docsearch.min.js" }}
+        {{- if not .Site.IsServer }}
+            {{- $docsearch := $docsearch | resources.Fingerprint "sha384" }}
+            <script type="text/javascript" src="{{ $docsearch.Permalink }}" integrity="{{ $docsearch.Data.Integrity }}"></script>
+        {{- else }}
+            {{- $docsearch := $docsearch }}
+            <script type="text/javascript" src="{{ $docsearch.Permalink }}" integrity="{{ $docsearch.Data.Integrity }}"></script>
+        {{- end }}
+        <script>
+            //DocSearch
+            docsearch({
+                container: '#docsearch',
+                appId: '{{ .Site.Params.docsearch.appID }}',
+                apiKey: '{{ .Site.Params.docsearch.apiKey }}',
+                indexName: '{{ .Site.Params.docsearch.indexName }}',
+                placeholder: 'Search Documentation'
+            });
+        </script>
+    {{ end }}
+
     {{ $app := resources.Get "/docs/js/app.js" }}
     {{ $simplebar := resources.Get "/docs/js/simplebar.min.js" }}
     {{ $simplescrollspy := resources.Get "/docs/js/simple-scrollspy.min.js" }}
