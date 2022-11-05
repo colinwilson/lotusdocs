@@ -683,10 +683,10 @@ svg.DocSearch-Hit-Select-Icon {
     .DocSearch-Modal {
         border-radius: 0;
         box-shadow: none;
-        height: 100vh;
-        height: -webkit-fill-available;
-        height: calc(var(--docsearch-vh, 1vh)*100);
-        margin: 0;
+        // height: 100vh;
+        height: -webkit-calc(100% - 72px);
+        height: calc(100% - 72px);
+        margin: 72px 0 0 0;
         max-width: 100%;
         width: 100%
     }
