@@ -3,6 +3,8 @@
 //
 //card
 .card {
+    background: var(--card-bg);
+    border-color: var(--card-border-color);
     border-radius: 4px;
     .card-body {
         padding: 1.5rem;

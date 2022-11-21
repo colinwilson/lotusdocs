@@ -3,7 +3,7 @@
         {{ range .Pages.ByWeight }}
         <div class="col-md-4 col-12 mt-4 pt-2">
             <a class="text-decoration-none text-reset" href="{{ .Permalink }}">
-                <div class="card h-100 features feature-primary feature-full-bg rounded p-4 position-relative overflow-hidden border-1">
+                <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1">
                     <span class="h1 icon-color">
                         <i class="material-icons align-middle">{{- .Params.icon | default "article" }}</i>
                         {{ if .Draft }}<span class="badge bg-soft-dark fs-6 align-middle">DRAFT</span>{{ end }}

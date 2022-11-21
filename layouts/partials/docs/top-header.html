@@ -14,8 +14,8 @@
                     {{ end }}
                 </div>
             </a>
-            <button id="close-sidebar" class="btn btn-icon btn-soft-light">
-                <span class="material-icons size-20 menu-icon align-middle text-primary">menu</span>
+            <button id="close-sidebar" class="btn btn-icon btn-soft">
+                <span class="material-icons size-20 menu-icon align-middle">menu</span>
             </button>
             <span><div id="docsearch"></div></span>
             <!-- <div class="search-bar p-0 d-none d-md-block ms-2">
@@ -30,118 +30,34 @@
             </div> -->
         </div>
 
-        <ul class="list-unstyled mb-0">
-            {{ with $.Scratch.Get "social_list" }}
-            {{ range . }}
-                {{ $path := printf "images/social/%s.%s" . "svg" }}
-                <li class="list-inline-item mb-0">
-                    <a href="{{ if eq . `rss` }} {{ `index.xml` | absURL }} {{ else }} https://{{ . }}.com/{{ site.Params.social.Get . }} {{ end }}" alt="{{ . }}" rel="noopener noreferrer" target="_blank">
-                        <div class="btn btn-icon btn-soft-light">
-                            <span class="text-primary lh-1">
+        <div class="d-flex align-items-center">
+            <ul class="list-unstyled mb-0">
+                {{ with $.Scratch.Get "social_list" }}
+                {{ range . }}
+                    {{ $path := printf "images/social/%s.%s" . "svg" }}
+                    <li class="list-inline-item mb-0">
+                        <a href="{{ if eq . `rss` }} {{ `index.xml` | absURL }} {{ else }} https://{{ . }}.com/{{ site.Params.social.Get . }} {{ end }}" alt="{{ . }}" rel="noopener noreferrer" target="_blank">
+                            <div class="btn btn-icon btn-default border-0">
                                 {{ with resources.Get $path }}
                                     {{ .Content | safeHTML }}
                                 {{ end }}
-                            </span>
-                        </div>
-                    </a>
-                </li>
-                {{ end }}
-            {{ end }}
-
-            <!-- <li class="list-inline-item mb-0 ms-1">
-                <div class="dropdown dropdown-primary">
-                    <button type="button" class="btn btn-icon btn-soft-light dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti ti-bell"></i></button>
-                    <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
-                        <span class="visually-hidden">New alerts</span>
-                    </span>
-
-                    <div class="dropdown-menu dd-menu shadow rounded border-0 mt-3 p-0" data-simplebar style="height: 320px; width: 290px;">
-                        <div class="d-flex align-items-center justify-content-between p-3 border-bottom">
-                            <h6 class="mb-0 text-dark">Notifications</h6>
-                            <span class="badge bg-soft-danger rounded-pill">3</span>
-                        </div>
-                        <div class="p-3">
-                            <a href="#!" class="dropdown-item features feature-primary key-feature p-0">
-                                <div class="d-flex align-items-center">
-                                    <div class="icon text-center rounded-circle me-2">
-                                        <i class="ti ti-shopping-cart"></i>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h6 class="mb-0 text-dark title">Order Complete</h6>
-                                        <small class="text-muted">15 min ago</small>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#!" class="dropdown-item features feature-primary key-feature p-0 mt-3">
-                                <div class="d-flex align-items-center">
-                                    <img src="assets/images/client/04.jpg" class="avatar avatar-md-sm rounded-circle border shadow me-2" alt="">
-                                    <div class="flex-1">
-                                        <h6 class="mb-0 text-dark title"><span class="fw-bold">Message</span> from Luis</h6>
-                                        <small class="text-muted">1 hour ago</small>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#!" class="dropdown-item features feature-primary key-feature p-0 mt-3">
-                                <div class="d-flex align-items-center">
-                                    <div class="icon text-center rounded-circle me-2">
-                                        <i class="ti ti-currency-dollar"></i>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h6 class="mb-0 text-dark title"><span class="fw-bold">One Refund Request</span></h6>
-                                        <small class="text-muted">2 hour ago</small>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#!" class="dropdown-item features feature-primary key-feature p-0 mt-3">
-                                <div class="d-flex align-items-center">
-                                    <div class="icon text-center rounded-circle me-2">
-                                        <i class="ti ti-truck-delivery"></i>
-                                    </div>
-                                    <div class="flex-1">
-                                        <h6 class="mb-0 text-dark title">Deliverd your Order</h6>
-                                        <small class="text-muted">Yesterday</small>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#!" class="dropdown-item features feature-primary key-feature p-0 mt-3">
-                                <div class="d-flex align-items-center">
-                                    <img src="assets/images/client/15.jpg" class="avatar avatar-md-sm rounded-circle border shadow me-2" alt="">
-                                    <div class="flex-1">
-                                        <h6 class="mb-0 text-dark title"><span class="fw-bold">Cally</span> started following you</h6>
-                                        <small class="text-muted">2 days ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </li> -->
-
-            <!-- <li class="list-inline-item mb-0 ms-1">
-                <div class="dropdown dropdown-primary">
-                    <button type="button" class="btn btn-soft-light dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/client/05.jpg" class="avatar avatar-ex-small rounded" alt=""></button>
-                    <div class="dropdown-menu dd-menu dropdown-menu-end shadow border-0 mt-3 py-3" style="min-width: 200px;">
-                        <a class="dropdown-item d-flex align-items-center text-dark pb-3" href="profile.html">
-                            <img src="assets/images/client/05.jpg" class="avatar avatar-md-sm rounded-circle border shadow" alt="">
-                            <div class="flex-1 ms-2">
-                                <span class="d-block">Cristina Julia</span>
-                                <small class="text-muted">UI / UX Designer</small>
                             </div>
                         </a>
-                        <a class="dropdown-item text-dark" href="index.html"><span class="mb-0 d-inline-block me-1"><i class="ti ti-home"></i></span> Dashboard</a>
-                        <a class="dropdown-item text-dark" href="profile.html"><span class="mb-0 d-inline-block me-1"><i class="ti ti-settings"></i></span> Profile</a>
-                        <a class="dropdown-item text-dark" href="email.html"><span class="mb-0 d-inline-block me-1"><i class="ti ti-mail"></i></span> Email</a>
-                        <div class="dropdown-divider border-top"></div>
-                        <a class="dropdown-item text-dark" href="lock-screen.html"><span class="mb-0 d-inline-block me-1"><i class="ti ti-lock"></i></span> Lockscreen</a>
-                        <a class="dropdown-item text-dark" href="login.html"><span class="mb-0 d-inline-block me-1"><i class="ti ti-logout"></i></span> Logout</a>
-                    </div>
-                </div>
-            </li> -->
-        </ul>
+                    </li>
+                    {{ end }}
+                {{ end }}
+            </ul>
+            {{ if eq .Site.Params.docs.darkMode true -}}
+            <button id="mode" class="btn btn-icon btn-default ms-2" type="button" aria-label="Toggle user interface mode">
+                <span class="toggle-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 48 48" fill="currentColor"><path d="M24 42q-7.5 0-12.75-5.25T6 24q0-7.5 5.25-12.75T24 6q.4 0 .85.025.45.025 1.15.075-1.8 1.6-2.8 3.95-1 2.35-1 4.95 0 4.5 3.15 7.65Q28.5 25.8 33 25.8q2.6 0 4.95-.925T41.9 22.3q.05.6.075.975Q42 23.65 42 24q0 7.5-5.25 12.75T24 42Zm0-3q5.45 0 9.5-3.375t5.05-7.925q-1.25.55-2.675.825Q34.45 28.8 33 28.8q-5.75 0-9.775-4.025T19.2 15q0-1.2.25-2.575.25-1.375.9-3.125-4.9 1.35-8.125 5.475Q9 18.9 9 24q0 6.25 4.375 10.625T24 39Zm-.2-14.85Z"/></svg>
+                </span>
+                <span class="toggle-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 48 48" fill="currentColor"><path d="M24 31q2.9 0 4.95-2.05Q31 26.9 31 24q0-2.9-2.05-4.95Q26.9 17 24 17q-2.9 0-4.95 2.05Q17 21.1 17 24q0 2.9 2.05 4.95Q21.1 31 24 31Zm0 3q-4.15 0-7.075-2.925T14 24q0-4.15 2.925-7.075T24 14q4.15 0 7.075 2.925T34 24q0 4.15-2.925 7.075T24 34ZM3.5 25.5q-.65 0-1.075-.425Q2 24.65 2 24q0-.65.425-1.075Q2.85 22.5 3.5 22.5h5q.65 0 1.075.425Q10 23.35 10 24q0 .65-.425 1.075-.425.425-1.075.425Zm36 0q-.65 0-1.075-.425Q38 24.65 38 24q0-.65.425-1.075.425-.425 1.075-.425h5q.65 0 1.075.425Q46 23.35 46 24q0 .65-.425 1.075-.425.425-1.075.425ZM24 10q-.65 0-1.075-.425Q22.5 9.15 22.5 8.5v-5q0-.65.425-1.075Q23.35 2 24 2q.65 0 1.075.425.425.425.425 1.075v5q0 .65-.425 1.075Q24.65 10 24 10Zm0 36q-.65 0-1.075-.425-.425-.425-.425-1.075v-5q0-.65.425-1.075Q23.35 38 24 38q.65 0 1.075.425.425.425.425 1.075v5q0 .65-.425 1.075Q24.65 46 24 46ZM12 14.1l-2.85-2.8q-.45-.45-.425-1.075.025-.625.425-1.075.45-.45 1.075-.45t1.075.45L14.1 12q.4.45.4 1.05 0 .6-.4 1-.4.45-1.025.45-.625 0-1.075-.4Zm24.7 24.75L33.9 36q-.4-.45-.4-1.075t.45-1.025q.4-.45 1-.45t1.05.45l2.85 2.8q.45.45.425 1.075-.025.625-.425 1.075-.45.45-1.075.45t-1.075-.45ZM33.9 14.1q-.45-.45-.45-1.05 0-.6.45-1.05l2.8-2.85q.45-.45 1.075-.425.625.025 1.075.425.45.45.45 1.075t-.45 1.075L36 14.1q-.4.4-1.025.4-.625 0-1.075-.4ZM9.15 38.85q-.45-.45-.45-1.075t.45-1.075L12 33.9q.45-.45 1.05-.45.6 0 1.05.45.45.45.45 1.05 0 .6-.45 1.05l-2.8 2.85q-.45.45-1.075.425-.625-.025-1.075-.425ZM24 24Z"/></svg>
+                </span>
+            </button>
+            {{ end -}}
+        </div>
     </div>
 </div>
 <!-- Top Header -->

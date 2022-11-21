@@ -14,16 +14,16 @@ $font-family-monospace:  {{ .Site.Params.mono_font | default "SFMono-Regular, Me
 // Plugins
 @import "custom/plugins/icons/google-material";
 
-{{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
-@import "custom/plugins/docsearch/style";
-{{ end }}
-
 //Core files
 @import "../../scss/bootstrap/functions";
 @import "../../scss/bootstrap/variables";
 @import "variables";
 @import "../../scss/bootstrap/mixins";
 @import "../../scss/bootstrap/bootstrap";
+
+{{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
+@import "custom/plugins/docsearch/style";
+{{ end }}
 
 // Structure
 @import "custom/structure/general";
@@ -35,6 +35,7 @@ $font-family-monospace:  {{ .Site.Params.mono_font | default "SFMono-Regular, Me
 
 // // Components
 @import "custom/components/buttons";
+@import "custom/components/breadcrumb";
 @import "custom/components/badge";
 @import "custom/components/backgrounds";
 @import "custom/components/alerts";

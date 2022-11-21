@@ -1,4 +1,4 @@
-// 
+//
 // backgrounds.scss
 //
 
@@ -12,8 +12,4 @@ $value in $theme-colors {
         border: 1px solid rgba($value, 0.1) !important;
         color: #{$value} !important;
     }
-}
-
-.bg-white-color {
-    background-color: $bg-white-color !important;
 }

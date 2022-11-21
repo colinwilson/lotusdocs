@@ -15,7 +15,7 @@
     order: 2;
 
     scrollbar-width: thin;
-    scrollbar-color: $simplebar-color rgba(var(--bs-light-rgb), var(--bs-bg-opacity));
+    scrollbar-color: var(--simplebar-color) rgba(var(--bs-light-rgb), var(--bs-bg-opacity));
 
     // visually-hidden
     @media (max-width: 1199px) {
@@ -54,13 +54,14 @@
 
 #TableOfContents a,
 #toc a {
-    color: $dark;
+    color: var(--text-default);
     font-size: 16px;
     transition: all 0.2s;
     -webkit-transition: all 0.2s;
 
     &:hover {
-        background-color: $gray-300;
+        background-color: var(--gray-300);
+        color: var(--text-dark);
         margin: 0 0 0 -10px;
         padding: 0 10px 0.2em 10px;
         border-radius: 4px;
@@ -72,7 +73,7 @@
 
 #toc a.active {
     color: $white;
-    background-color: $primary;
+    background-color: var(--primary);
     // font-weight: 400;
     margin: 0 0 0 -10px;
     padding: 0 10px 0.2em 10px;

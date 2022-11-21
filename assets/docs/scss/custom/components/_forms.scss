@@ -14,7 +14,7 @@
     font-size: 14px;
     line-height: 26px;
     border-radius: 6px;
-    color: $dark !important;
+    color: var(--dark) !important;
     text-align: left;
     &:focus {
         border-color: $primary;
@@ -27,7 +27,7 @@
         background-color: $gray-300;
     }
     &::placeholder{
-        color: $form-placeholder;
+        color: var(--form-placeholder);
     }
 }
 

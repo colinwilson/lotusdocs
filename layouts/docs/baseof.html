@@ -44,7 +44,7 @@
                                                 {{ end }}
                                             </h1>
                                             {{ if site.Params.docs.descriptions | default false }}
-                                            <p class="lead mb-0 text-muted">{{ $currentPage.Description }}</p>
+                                            <p class="lead mb-0">{{ $currentPage.Description }}</p>
                                             {{ end }}
                                         </div>
                                         <div id="content" class="main-content">
@@ -89,6 +89,12 @@
             });
         </script>
     {{ end }}
+
+    <!-- Dark Mode Switch JS -->
+    {{ if eq .Site.Params.docs.darkMode true -}}
+        {{ $darkModeSwitch := resources.Get "/docs/js/darkmode-switch.js" | js.Build | minify }}
+        <script>{{ $darkModeSwitch.Content | safeJS }}</script>
+    {{ end -}}
 
     {{ $app := resources.Get "/docs/js/app.js" }}
     {{ $simplebar := resources.Get "/docs/js/simplebar.min.js" }}

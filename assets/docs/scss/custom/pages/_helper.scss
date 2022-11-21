@@ -2,7 +2,7 @@
 // _helper.scss
 //
 .fw-medium {
-    font-weight: $fw-medium;
+    font-weight: var(--fw-medium);
 }
 
 .section {
@@ -15,7 +15,7 @@
 }
 
 .bg-overlay {
-    background-color: $overlay;
+    background-color: var(--overlay);
     position: absolute;
     top: 0;
     right: 0;
@@ -26,7 +26,7 @@
 }
 
 .bg-overlay-white {
-    background-color: $bg-overlay-white;
+    background-color: var(--bg-overlay-white);
 }
 
 //Title
@@ -85,8 +85,8 @@
     text-align: -moz-center;
     text-align: -webkit-center;
     padding-top: 5px;
-    background: $primary;
-    color: $back-to-top-color  !important;
+    background: var(--primary);
+    color: var(--back-to-top-color)  !important;
 
     .icons {
         transition: all 0.5s ease;
@@ -164,7 +164,7 @@
     &.integration-hero {
         clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         height: 250px;
-        background: $white;
+        background: var(--white);
 
         @media (max-width: 768px) {
             height: 140px;
@@ -222,7 +222,7 @@
         height: 95%;
         margin: auto;
         width: 2px;
-        background-color: $gray-200 !important;
+        background-color: var(--gray-200) !important;
     }
 
     .timeline-item {
@@ -238,7 +238,7 @@
                 width: 12px;
                 height: 12px;
                 z-index: 1;
-                background-color: $primary;
+                background-color: var(--primary);
                 border-radius: 4px;
                 transform: rotate(45deg);
             }
@@ -378,8 +378,8 @@
 .social-icon {
     li {
         a {
-            color: $dark;
-            border: 1px solid $dark;
+            color: var(--dark);
+            border: 1px solid var(--dark);
             height: 32px;
             width: 32px;
             display: inline-flex;
@@ -395,12 +395,12 @@
             }
 
             &:hover {
-                background-color: $primary;
-                border-color: $primary !important;
-                color: $foot-social-color-white !important;
+                background-color: var(--primary);
+                border-color: var(--primary) !important;
+                color: var(--foot-social-color-white) !important;
 
                 .fea-social {
-                    fill: $primary;
+                    fill: var(--primary);
                 }
             }
         }
@@ -409,8 +409,8 @@
     &.social {
         li {
             a {
-                color: $foot-social-color;
-                border-color: $social-border-color;
+                color: var(--foot-social-color);
+                border-color: var(--social-border-color);
             }
         }
     }
@@ -418,8 +418,9 @@
     &.foot-social-icon {
         li {
             a {
-                color: $foot-social-color;
-                border-color: lighten($footer, 5%);
+                color: var(--foot-social-color);
+                // border-color: lighten($footer, 5%);
+                border-color: hsl(var(--footer), 100%,calc(var(--l) + 5%));
             }
         }
     }
@@ -468,7 +469,7 @@ $value in $theme-colors {
 
 
 .bg-white-color {
-    background: $bg-white-color;
+    background: var(--bg-white-color);
 }
 
 .d-flex {

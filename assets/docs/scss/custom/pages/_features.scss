@@ -5,87 +5,82 @@
 /*********************************/
 /*     Features & Services       */
 /*===============================*/
-@each $name,
-$value in $theme-colors {
-    .features {
-        &.feature-#{$name} {
-            .icon {
-                background: rgba($value, 0.1);
-            }
+.features {
+    .icon {
+        background: rgba(var(--primary), 0.1);
+    }
 
-            .image {
-                &:before {
-                    background: linear-gradient(45deg, transparent, rgba($value, 0.1));
-                }
-            }
+    .image {
+        &:before {
+            background: linear-gradient(45deg, transparent, rgba(var(--primary), 0.1));
+        }
+    }
 
-            .read-more,
-            .color {
-                color: $value !important;
-            }
+    .read-more,
+    .color {
+        color: var(--primary) !important;
+    }
 
-            &.feature-clean {
-                .icons {
-                    color: $value !important;
-                    i {
-                        background-color: rgba($value, 0.1);
-                    }
-                }
-                .title {
-                    &:hover {
-                        color: $value !important;
-                    }
-                }
+    &.feature-clean {
+        .icons {
+            color: var(--primary) !important;
+            i {
+                background-color: rgba(var(--primary), 0.1);
             }
-
-            &.feature-full-bg {
-                .icon-color {
-                    color: $value !important;
-                }
-                &:hover {
-                    background-color: $value !important;
-                }
-            }
-
-            &.key-feature {
-                .icon {
-                    background: linear-gradient(45deg, transparent, rgba($value, 0.15));
-                    color: $value;
-                }
-            }
-            &.course-feature {
-                .full-img {
-                    color: $value !important;
-                }
-            }
-
-            &.explore-feature {
-                &:hover {
-                    .icons,
-                    .title {
-                        color: $value !important;
-                    }
-                }
-            }
-
-            .btn-soft {
-                background-color: rgba($value, 0.05) !important;
-                border: 1px solid rgba($value, 0.05) !important;
-                color: #{$value} !important;
-                box-shadow: 0 3px 5px 0 rgba($value, 0.1);
-                &:hover, &:focus, &:active, &.active, &.focus{
-                    background-color: #{$value} !important;
-                    border-color: #{$value} !important;
-                    color: $white !important;
-                }
-            }
-
+        }
+        .title {
             &:hover {
-                .image {
-                    &:before {
-                        background: rgba($value, 0.1);
-                    }
-                }
+                color: var(--primary-800) !important;
+            }
+        }
+    }
+
+    &.feature-full-bg {
+        .icon-color {
+            color: var(--primary) !important;
+        }
+        &:hover {
+            background-color: var(--primary) !important;
+        }
+    }
+
+    &.key-feature {
+        .icon {
+            background: linear-gradient(45deg, transparent, rgba(var(--primary), 0.15));
+            color: var(--primary);
+        }
+    }
+    &.course-feature {
+        .full-img {
+            color: var(--primary) !important;
+        }
+    }
+
+    &.explore-feature {
+        &:hover {
+            .icons,
+            .title {
+                color: var(--primary) !important;
+            }
+        }
+    }
+
+    .btn-soft {
+        background-color: rgba(var(--primary), 0.05) !important;
+        border: 1px solid rgba(var(--primary), 0.05) !important;
+        color: var(--primary) !important;
+        box-shadow: 0 3px 5px 0 rgba(var(--primary), 0.1);
+        &:hover, &:focus, &:active, &.active, &.focus{
+            background-color: var(--primary) !important;
+            border-color: var(--primary) !important;
+            color: var(--white) !important;
+        }
+    }
+
+    &:hover {
+        .image {
+            &:before {
+                background: rgba(var(--primary), 0.1);
             }
         }
     }
@@ -105,7 +100,7 @@ $value in $theme-colors {
         }
     }
     &.feature-clean {
-        background-color: $body-bg;
+        background-color: var(--body-bg);
         .icons {
             i {
                 height: 65px;
@@ -125,7 +120,7 @@ $value in $theme-colors {
         transition: all 0.3s ease;
         &:hover {
             transform: scale(1.05);
-            box-shadow: $shadow-md !important;
+            box-shadow: var(--shadow-md) !important;
         }
     }
 
@@ -148,12 +143,13 @@ $value in $theme-colors {
             font-size: 180px;
         }
         &:hover {
-            box-shadow: $shadow-lg;
-            color: $white !important;
+            box-shadow: var--(shadow-lg);
+            color: var(--white) !important;
             .icon-color i,
             .badge,
             .para {
-                color: rgba($white, 0.5) !important;
+                color: var(--white) !important;
+                opacity: 0.5;
             }
             .content,
             .icon-color {
@@ -163,7 +159,7 @@ $value in $theme-colors {
                 opacity: 0.05;
             }
             .readmore {
-                color: $white !important;
+                color: var(--white) !important;
             }
         }
     }
@@ -199,7 +195,7 @@ $value in $theme-colors {
             transition: all 0.5s ease;
         }
         &:hover {
-            box-shadow: $shadow-lg !important;
+            box-shadow: var(--shadow-lg) !important;
         }
     }
 }
@@ -358,8 +354,8 @@ $value in $theme-colors {
 .social-feature-left,
 .social-feature-right {
     &:after {
-        background: rgba($primary, 0.1);
-        box-shadow: 0 0 40px rgba($primary, 0.1);
+        background: rgba(var(--primary), 0.1);
+        box-shadow: 0 0 40px rgba(var(--primary), 0.1);
     }
 }
 
@@ -417,112 +413,4 @@ $value in $theme-colors {
     position: absolute;
     bottom: 0;
     right: 20px;
-}
-
-/*********************************/
-/*          NFT                  */
-/*===============================*/
-@each $name,
-$value in $theme-colors {
-    .nft {
-        &.nft-#{$name} {
-            .title,
-            .read-more {
-                &:hover {
-                    color: $value !important;
-                }
-            }
-
-            .link {
-                color: $value !important;
-            }
-
-            .author {
-                .name {
-                    &:hover {
-                        color: $value !important;
-                    }
-                }
-            }
-
-            .bg-soft {
-                background-color: rgba($value, 0.1) !important;
-                border: 1px solid rgba($value, 0.1) !important;
-                color: #{$value} !important;
-            }
-
-            .btn {
-                background-color: #{$value} !important;
-                border: 1px solid #{$value} !important;
-                color: $white !important;
-                box-shadow: 0 3px 5px 0 rgba($value, 0.1);
-                &:hover, &:focus, &:active, &.active, &.focus{
-                    background-color: darken($value, 10%) !important;
-                    border-color: darken($value, 10%) !important;
-                    color: $white !important;
-                }
-            }
-        }
-    }
-}
-
-.nft {
-    &.nft-item {
-        transition: all 0.5s ease;
-        .nft-image {
-            .item-img {
-                transition: all 0.5s ease;
-            }
-            .overlay {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                opacity: 0;
-                transition: all 0.5s ease;
-                background: $dark;
-            }
-        }
-
-        &:hover {
-            box-shadow: $shadow-md !important;
-        }
-    }
-
-    .bid-btn {
-        position: absolute;
-        transition: all 0.5s ease;
-        bottom: -100px;
-        right: 0;
-        left: 0;
-    }
-
-    &.nft-creator {
-        transition: all 0.5s ease;
-        img {
-            transition: all 0.5s ease;
-        }
-        &:hover {
-            img {
-                height: 90px !important;
-                width: 90px !important;
-            }
-        }
-    }
-
-    &:hover {
-        .nft-image {
-            .item-img {
-                transform: scale(1.1) rotate(3deg);
-            }
-            .overlay {
-                opacity: 0.7;
-            }
-        }
-
-        .bid-btn {
-            bottom: 0;
-        }
-    }
 }

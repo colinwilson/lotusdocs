@@ -3,11 +3,11 @@
 //
 footer {
     position: relative;
-    color: $gray-500;
-    background: $footer-bg;
+    color: var(--text-muted);
+    background: var(--body-bg);
     height: 58px;
     .text-foot {
-        color: $gray-500;
+        color: var(--gray-500);
     }
     .footer-head {
         font-size: 18px !important;

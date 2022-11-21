@@ -226,7 +226,7 @@
         .simplebar-scrollbar {
             &:before {
                 width: 4px !important;
-                background: $simplebar-color !important;
+                background: var(--simplebar-color) !important;
             }
         }
     }

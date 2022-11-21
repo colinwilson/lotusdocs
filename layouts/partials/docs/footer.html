@@ -4,7 +4,7 @@
         <div class="row align-items-center">
             <div class="col">
                 <div class="text-sm-start text-center mx-md-2">
-                    <p class="mb-0 text-muted">
+                    <p class="mb-0">
                         {{ $yearToken := (cond (isset .Site.Params (lower "copyrightYearToken")) $.Site.Params.copyrightYearToken ":YEAR:") }}
                         {{ replace $.Site.Params.footer.copyright $yearToken (string (now.Format "2006")) }}
                     </p>

@@ -2,7 +2,7 @@
     // font-family: $font-family-monospace;
     font-size: $font-size-sm;
     border-radius: 4px;
-    color: $gray-700;
+    color: var(--gray-700);
 
     p:last-child {
         margin-bottom: 0;
@@ -14,8 +14,8 @@
 }
 
 .alert-default {
-    background-color: $blue-50;
-    border-color: $gray-300;
+    background-color: var(--blue-50);
+    border-color: var(--gray-300);
 }
 
 /*
@@ -34,8 +34,8 @@
 }
 
 .alert-primary {
-    background-color: $blue-50;
-    border-color: $gray-300;
+    background-color: var(--blue-50);
+    border-color: var(--gray-300);
 }
 
 .alert-primary a {
@@ -66,8 +66,8 @@
 }
 
 .alert-success {
-    background-color: $green-50;
-    border-color: $gray-300;
+    background-color: var(--green-50);
+    border-color: var(--gray-300);
 }
 
 .alert-success a {
@@ -75,8 +75,8 @@
 }
 
 .alert-info {
-    background-color: $gray-50;
-    border-color: $gray-300;
+    background-color: var(--gray-50);
+    border-color: var(--gray-300);
 }
 
 .alert-info a {
@@ -85,8 +85,8 @@
 }
 
 .alert-warning {
-    background-color: $yellow-50;
-    border-color: $gray-300;
+    background-color: var(--yellow-50);
+    border-color: var(--gray-300);
 }
 
 .alert-warning .alert-link {
@@ -95,7 +95,7 @@
 
 .alert-danger {
     background-color: #f8d7da;
-    border-color: $gray-300;
+    border-color: var(--gray-300);
 }
 
 .alert-danger .alert-link {
@@ -104,7 +104,7 @@
 
 .alert-light {
     background-color: #fefefe;
-    border-color: $gray-300;
+    border-color: var(--gray-300);
 }
 
 .alert-light .alert-link {
