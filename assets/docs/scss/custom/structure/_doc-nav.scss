@@ -2,6 +2,25 @@
 // doc-nav.scss
 //
 
+:root {
+    --doc-nav-title-link-color: var(--primary);
+}
+
+[data-dark-mode] {
+    --doc-nav-title-link-color: var(--primary-300);
+}
+
+#doc-nav {
+
+    .card-title {
+        color: var(--doc-nav-title-link-color);
+    }
+
+    .card-text {
+        color: var(--text-muted);
+    }
+}
+
 @media (max-width: 425px) {
     .doc-next {
         order: 2;

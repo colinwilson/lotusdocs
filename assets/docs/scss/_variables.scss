@@ -351,7 +351,7 @@ $stretched-link-z-index:                  1;
     // Core
     --text-default: var(--text-dark);
     --text-default-inv: var(--text-light);
-    --text-muted: var(--gray-700);
+    --text-muted: var(--gray-600);
 
     --body-color: var(--text-default);
 
@@ -395,14 +395,6 @@ $stretched-link-z-index:                  1;
 
     --sidebar-directory-icon: var(--dir-right);
     --sidebar-file-icon: var(--dash);
-
-    // Content
-    --content-icon-color: var(--primary);
-    --content-icon-bg: var(--sidebar-icon-bg);
-    --content-icon-border: var(--sidebar-icon-bg);
-
-    --ordered-list-bg: var(--gray-200);
-    --blockquote-border-color: var(--gray-300);
 }
 
 [data-dark-mode] {
@@ -433,7 +425,7 @@ $stretched-link-z-index:                  1;
     --card-border-color: var(--gray-800);
 
     // sidebar
-    --sidebar-primary: var(--primary);
+    --sidebar-primary: var(--primary-300);
     --sidebar-bg: var(--dark);
     --top-header-bg: var(--dark);
     --sidebar-text-color: #b6bbc9;
@@ -442,12 +434,4 @@ $stretched-link-z-index:                  1;
     --sidebar-menu-active-bg: #2b303b;
     --sidebar-icon-bg: #2b303b;
     --sidebar-light-icon: #f8f9fa;
-
-    // content
-    --content-icon-color: var(--primary-200);
-    --content-icon-bg: hsl(var(--primary-hsl), 0.15);
-    --content-icon-border: var(--primary-800);
-
-    --blockquote-border-color: var(--primary-200);
-    --ordered-list-bg: var(--gray-700);
 }

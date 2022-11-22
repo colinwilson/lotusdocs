@@ -1,4 +1,5 @@
 <hr class="doc-hr">
+<div id="doc-nav">
 {{ if or .Prev .Next -}}
 	<!-- https://www.feliciano.tech/blog/custom-sort-hugo-single-pages/ -->
 	{{ $pages := where .Site.RegularPages "Section" .Section -}}
@@ -10,7 +11,7 @@
 				<div class="card-body py-2">
                     <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> {{ .Title }}</p>
 					{{ if eq .Site.Params.docs.navDesc true -}}
-                    	<p class="card-text ms-2 text-muted">{{ .Description | truncate (.Site.Params.docs.navDescTrunc | default 40) }}</p>
+                    	<p class="card-text ms-2">{{ .Description | truncate (.Site.Params.docs.navDescTrunc | default 40) }}</p>
 					{{ end }}
 				</div>
 			</div>
@@ -24,7 +25,7 @@
 				<div class="card-body py-2">
                     <p class="card-title fs-5 fw-semibold lh-base mb-0">{{ .Title }} <i class="material-icons align-middle">navigate_next</i></p>
 					{{ if eq .Site.Params.docs.navDesc true -}}
-                    	<p class="card-text me-2 text-muted">{{ .Description | truncate (.Site.Params.docs.navDescTrunc | default 40) }}</p>
+                    	<p class="card-text me-2">{{ .Description | truncate (.Site.Params.docs.navDescTrunc | default 40) }}</p>
 					{{ end }}
 				</div>
 			</div>
@@ -33,3 +34,4 @@
 	{{ end -}}
     </div>
 {{ end -}}
+</div>

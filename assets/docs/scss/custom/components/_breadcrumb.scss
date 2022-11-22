@@ -1,6 +1,18 @@
 //
 // breadcrumb.scss
 //
+
+:root {
+    --breadcrumb-item-color: var(--primary);
+}
+
+[data-dark-mode] {
+    --breadcrumb-item-color: var(--primary-300);
+}
+
+.breadcrumb-item a {
+    color: var(--breadcrumb-item-color);
+}
 .breadcrumb-item.active {
     color: var(--text-muted);
 }

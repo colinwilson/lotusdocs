@@ -3,6 +3,34 @@
 // _content.scss
 //
 
+:root {
+
+    --content-icon-color: var(--primary);
+    --content-icon-bg: var(--sidebar-icon-bg);
+    --content-icon-border: var(--sidebar-icon-bg);
+    --content-link-color: var(--primary);
+
+    --ordered-list-bg: var(--gray-200);
+    --blockquote-border-color: var(--gray-300);
+
+}
+
+[data-dark-mode] {
+
+    --content-icon-color: var(--primary-200);
+    --content-icon-bg: hsl(var(--primary-hsl), 0.15);
+    --content-icon-border: var(--primary-800);
+    --content-link-color: var(--primary-300);
+
+    --blockquote-border-color: var(--primary-200);
+    --ordered-list-bg: var(--gray-700);
+
+}
+
+.docs-content .main-content a {
+    color: var(--content-link-color);
+}
+
 .docs-content .main-content li {
     color: var(--text-muted);
 }
