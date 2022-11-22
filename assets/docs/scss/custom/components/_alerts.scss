@@ -1,3 +1,88 @@
+:root {
+    --alert-border-color: #dee2e6;
+
+    // Default
+    --alert-default-color: 225.9, 68%, 95.1%;
+    --alert-default-bg: hsl(var(--alert-default-color));
+    --alert-default-border-color: var(--alert-border-color);
+
+    // Primary
+    --alert-primary-color: var(--primary-50-hsl);
+    --alert-primary-bg: hsl(var(--alert-primary-color));
+    --alert-primary-border-color: var(--alert-border-color);
+
+    // Info
+    --alert-info-color: 204, 45.5%, 97.8%;
+    --alert-info-bg: hsl(var(--alert-info-color));
+    --alert-info-border-color: var(--alert-border-color);
+
+    // Success
+    --alert-success-color: var(--emerald-50-hsl);
+    --alert-success-bg: hsl(var(--alert-success-color),0.5);
+    --alert-success-border-color: var(--alert-border-color);
+
+    // Danger
+    --alert-danger-color: var(--cardinal-50-hsl);
+    --alert-danger-bg: hsl(var(--alert-danger-color),0.7);
+    --alert-danger-border-color: var(--alert-border-color);
+
+    // Warning
+    --alert-warning-color: var(--yellow-50-hsl);
+    --alert-warning-bg: hsl(var(--alert-warning-color),0.7);
+    --alert-warning-border-color: var(--alert-border-color);
+
+    // Light
+    --alert-light-bg: var(--gray-200);
+    --alert-light-border-color: var(--alert-border-color);
+
+    // Dark
+    --alert-dark-bg: var(--gray-800);
+    --alert-dark-border-color: var(--alert-border-color);
+
+}
+
+[data-dark-mode] {
+    --alert-border-color: var(--gray-800);
+
+    // Default
+    --alert-default-bg: hsl(var(--alert-default-color),0.05);
+    --alert-default-border-color: var(--alert-border-color);
+
+    // Primary
+    --alert-primary-bg: hsl(var(--primary-hsl),0.1);
+    --alert-primary-icon-color: var(--primary-200);
+    --alert-primary-border-color: var(--primary-800);
+
+    // Info
+    --alert-info-bg: hsl(var(--blue-500-hsl),0.1);
+    --alert-info-icon-color: var(--blue-200);
+    --alert-info-border-color: var(--blue-800);
+
+    // Success
+    --alert-success-bg: hsl(var(--emerald-500-hsl),0.1);
+    --alert-success-icon-color: var(--emerald-200);
+    --alert-success-border-color: var(--emerald-800);
+
+    // Danger
+    --alert-danger-bg: hsl(var(--cardinal-500-hsl),0.1);
+    --alert-danger-icon-color: var(--cardinal-200);
+    --alert-danger-border-color: var(--cardinal-800);
+
+    // Warning
+    --alert-warning-bg: hsl(var(--yellow-500-hsl),0.1);
+    --alert-warning-icon-color: var(--yellow-200);
+    --alert-warning-border-color: var(--yellow-800);
+
+    // Light
+    --alert-light-bg: var(--gray-900);
+    --alert-light-icon-color: var(--gray-200);
+    --alert-light-border-color: var(--gray-800);
+
+    // Dark
+    --alert-dark-bg: var(--gray-400);
+    --alert-dark-icon-color: var(--gray-800);
+    --alert-dark-border-color: var(--gray-200);
+}
 .alert {
     // font-family: $font-family-monospace;
     font-size: $font-size-sm;
@@ -14,28 +99,23 @@
 }
 
 .alert-default {
-    background-color: var(--blue-50);
-    border-color: var(--gray-300);
+    background-color: var(--alert-default-bg);
+    border-color: var(--alert-border-color);
+    color: var(--text-default);
 }
-
-/*
-  .alert-light {
-    color: #215888;
-    background: linear-gradient(-45deg, rgb(212, 245, 255), rgb(234, 250, 255), rgb(234, 250, 255), #d3f6ef);
-  }
-
-  .alert-light .alert-link {
-    color: #215888;
-  }
-  */
 
 .alert-white {
     background-color: rgba(255, 255, 255, 0.95);
 }
 
 .alert-primary {
-    background-color: var(--blue-50);
-    border-color: var(--gray-300);
+    background-color: var(--alert-primary-bg);
+    border-color: var(--alert-primary-border-color);
+    color: var(--text-default);
+
+    > .alert-icon span {
+        color: var(--alert-primary-icon-color);
+    }
 }
 
 .alert-primary a {
@@ -43,31 +123,14 @@
     // color: $white;
 }
 
-/*
-  .alert-primary {
-    color: #084298;
-    background-color: #cfe2ff;
-    border-color: #b6d4fe;
-  }
-
-  .alert-primary .alert-link {
-    color: #06357a;
-  }
-  */
-
-.alert-secondary {
-    background-color: #e2e3e5;
-    border-color: #d3d6d8;
-}
-
-.alert-secondary a {
-    font-weight: bold;
-    // color: #34383c;
-}
-
 .alert-success {
-    background-color: var(--green-50);
-    border-color: var(--gray-300);
+    background-color: var(--alert-success-bg);
+    border-color: var(--alert-success-border-color);
+    color: var(--text-default);
+
+    > .alert-icon span {
+        color: var(--alert-success-icon-color);
+    }
 }
 
 .alert-success a {
@@ -75,8 +138,13 @@
 }
 
 .alert-info {
-    background-color: var(--gray-50);
-    border-color: var(--gray-300);
+    background-color: var(--alert-info-bg);
+    border-color: var(--alert-info-border-color);
+    color: var(--text-default);
+
+    > .alert-icon span {
+        color: var(--alert-info-icon-color);
+    }
 }
 
 .alert-info a {
@@ -85,8 +153,13 @@
 }
 
 .alert-warning {
-    background-color: var(--yellow-50);
-    border-color: var(--gray-300);
+    background-color: var(--alert-warning-bg);
+    border-color: var(--alert-warning-border-color);
+    color: var(--text-default);
+
+    > .alert-icon span {
+        color: var(--alert-warning-icon-color);
+    }
 }
 
 .alert-warning .alert-link {
@@ -94,8 +167,13 @@
 }
 
 .alert-danger {
-    background-color: #f8d7da;
-    border-color: var(--gray-300);
+    background-color: var(--alert-danger-bg);
+    border-color: var(--alert-danger-border-color);
+    color: var(--text-default);
+
+    > .alert-icon span {
+        color: var(--alert-danger-icon-color);
+    }
 }
 
 .alert-danger .alert-link {
@@ -103,8 +181,13 @@
 }
 
 .alert-light {
-    background-color: #fefefe;
-    border-color: var(--gray-300);
+    background-color: var(--alert-light-bg);
+    border-color: var(--alert-light-border-color);
+    color: var(--text-default);
+
+    > .alert-icon span {
+        color: var(--alert-light-icon-color);
+    }
 }
 
 .alert-light .alert-link {
@@ -112,9 +195,13 @@
 }
 
 .alert-dark {
-    color: #141619;
-    background-color: #d3d3d4;
-    border-color: #bcbebf;
+    background-color: var(--alert-dark-bg);
+    border-color: var(--alert-dark-border-color);
+    color: var(--text-default-inv);
+
+    > .alert-icon span {
+        color: var(--alert-dark-icon-color);
+    }
 }
 
 .alert-dark .alert-link {
