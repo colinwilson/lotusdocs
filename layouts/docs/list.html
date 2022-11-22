@@ -6,7 +6,7 @@
                 <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1">
                     <span class="h1 icon-color">
                         <i class="material-icons align-middle">{{- .Params.icon | default "article" }}</i>
-                        {{ if .Draft }}<span class="badge bg-soft-dark fs-6 align-middle">DRAFT</span>{{ end }}
+                        {{ if .Draft }}<span class="badge bg-default fs-6 align-middle">DRAFT</span>{{ end }}
                     </span>
                     <div class="card-body p-0 content">
                         <p class="fs-5 fw-semibold text-reset mb-1">{{ .Title }}</p>

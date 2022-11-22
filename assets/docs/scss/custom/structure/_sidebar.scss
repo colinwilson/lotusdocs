@@ -267,6 +267,7 @@
         }
 
         .sidebar-menu li.current > a {
+            font-weight: 600 !important;
             background-color: var(--sidebar-menu-active-bg);
             border-right: 3px solid var(--primary);
             border-radius: 4px 0 0 4px;

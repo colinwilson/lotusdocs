@@ -369,6 +369,11 @@ $stretched-link-z-index:                  1;
     // Icons
     --icon-color: var(--primary);
 
+    --folder: "\e2c7";
+    --article: "\ef42";
+    --dash: "\f88a";
+    --dir-right: "\e5da";
+
     // Cards
     --card-bg: var(--white);
     --card-border-color: var(--gray-400);
@@ -384,8 +389,8 @@ $stretched-link-z-index:                  1;
     --sidebar-icon-bg: #f8f9fa;
     --sidebar-light-icon: #f8f9fa;
 
-    --sidebar-directory-icon: "\e2c7"; // "\e5da"
-    --sidebar-file-icon: "\ef42"; // "\f88a"
+    --sidebar-directory-icon: var(--dir-right);
+    --sidebar-file-icon: var(--dash);
 
     // Content
     --content-icon-color: var(--primary);
@@ -423,6 +428,7 @@ $stretched-link-z-index:                  1;
     --card-border-color: var(--gray-800);
 
     // sidebar
+    --sidebar-primary: var(--primary);
     --sidebar-bg: var(--dark);
     --top-header-bg: var(--dark);
     --sidebar-text-color: #b6bbc9;
