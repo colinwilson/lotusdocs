@@ -39,6 +39,7 @@
                                                 <div class="sidebar-submenu {{ if $active }}d-block{{ end }}">
                                                     <ul>
                                                         {{ range .Pages }}
+                                                            {{ $active := in $currentPage.RelPermalink .RelPermalink }}
                                                             <li class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
                                                         {{ end }}
                                                     </ul>

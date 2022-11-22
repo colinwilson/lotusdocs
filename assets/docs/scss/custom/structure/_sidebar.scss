@@ -137,9 +137,18 @@
                         background-color: var(--sidebar-menu-active-bg);
                     }
                 }
-                &.no-icon a:before {
+                &.no-icon {
+                    > a:before {
                     // content: "\e931" !important;
                     content: none !important;
+                    }
+
+                    > button {
+                        margin: 1px 0 1px 0;
+                        &:hover {
+                            margin: 1px 0 1px 0;
+                        }
+                    }
                 }
             }
 
