@@ -367,6 +367,7 @@ $stretched-link-z-index:                  1;
     --btn-primary-border: transparent;
 
     --btn-default-color: var(--text-default);
+    --btn-default-hover-color: var(--primary);
     --btn-default-bg: transparent;
     --btn-default-border: transparent;
 
@@ -414,6 +415,7 @@ $stretched-link-z-index:                  1;
     --btn-primary-border: var(--gray-200);
 
     --btn-default-color: var(--text-default);
+    --btn-default-hover-color: var(--primary-300);
     --btn-default-bg: transparent;
     --btn-default-border: transparent;
 

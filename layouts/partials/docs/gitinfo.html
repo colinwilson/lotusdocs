@@ -15,7 +15,7 @@
     {{ end }}
     {{ if .Site.Params.docs.lastMod | default false -}}
     <div id="last-modified" class="mt-1">
-        <p class="mb-0 fw-semibold">Last modified <span
+        <p class="mb-0 fw-semibold">Last updated <span
             {{ if .Site.Params.docs.lastModRelative | default true -}}id="relativetime"{{ else }}{{ end }}
             data-authdate="{{ dateFormat "2006-01-02T15:04:05Z0700" .GitInfo.AuthorDate }}"
             {{ if .Site.Params.docs.lastModRelative | default true -}}title="{{ dateFormat "02 Jan 2006, 15:04 MST" .GitInfo.AuthorDate }}"{{ else }}{{ end }}>
