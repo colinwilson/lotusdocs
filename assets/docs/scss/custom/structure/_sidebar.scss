@@ -212,7 +212,7 @@
                     ul {
                         padding: 3px 0;
                         li {
-                            padding-left: 25px;
+                            padding-left: 15px;
                             font-size: 14px;
                             a {
                                 font-weight: 400;
@@ -229,6 +229,9 @@
                                     float: right;
                                     margin-top: 0px;
                                 }
+                            }
+                            &.no-icon {
+                                padding-left: 10px;
                             }
                         }
                     }
