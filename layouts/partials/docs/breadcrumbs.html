@@ -26,7 +26,7 @@
                             </a>
                         </li>
                     {{ else }}
-                        <li class="breadcrumb-item text-capitalize active"><a href="{{ $.Scratch.Get `url` }}">{{ humanize . }}</a></li>
+                        <li class="breadcrumb-item text-capitalize"><a href="{{ $.Scratch.Get `url` }}">{{ humanize . }}</a></li>
                     {{ end }}
                 {{- end -}}
             {{- end -}}
