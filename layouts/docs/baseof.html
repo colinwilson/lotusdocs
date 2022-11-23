@@ -38,7 +38,9 @@
                                                 {{ if site.Params.docs.titleIcon | default false }}
                                                     <i class="material-icons me-0">{{- .Params.icon | default "article" }}</i>
                                                 {{ end }}
-                                                {{ $currentPage.Title }}
+                                                <span class="title-text">
+                                                    {{ $currentPage.Title }}
+                                                </span>
                                                 {{ if .Draft }}
                                                     <span class="badge bg-default fs-6 mb-1 align-middle">DRAFT</span>
                                                 {{ end }}
