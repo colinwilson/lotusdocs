@@ -1,6 +1,6 @@
 <div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-75 {{ if and .Site.Params.docs.lastMod .Site.Params.docs.editPage -}}pt-3{{ else }}visually-hidden{{ end }}">
     {{ if .Site.Params.docs.editPage | default false -}}
-    <div class="mt-1">
+    <div id="edit-this-page" class="mt-1">
         <a href="https://{{ .Site.Params.docs.ghrepo }}/blob/{{ .GitInfo.Hash }}/content/{{ path.Clean .File.Path }}/" alt="{{ .Title }}" rel="noopener noreferrer" target="_blank">
             <!-- <span class="material-icons size-20 align-text-bottom text-primary">edit</span> -->
             <span class="me-1 align-text-bottom">
@@ -14,8 +14,8 @@
     </div>
     {{ end }}
     {{ if .Site.Params.docs.lastMod | default false -}}
-    <div class="mt-1">
-        <p class="mb-0 fw-semibold text-muted">Last modified <span
+    <div id="last-modified" class="mt-1">
+        <p class="mb-0 fw-semibold">Last modified <span
             {{ if .Site.Params.docs.lastModRelative | default true -}}id="relativetime"{{ else }}{{ end }}
             data-authdate="{{ dateFormat "2006-01-02T15:04:05Z0700" .GitInfo.AuthorDate }}"
             {{ if .Site.Params.docs.lastModRelative | default true -}}title="{{ dateFormat "02 Jan 2006, 15:04 MST" .GitInfo.AuthorDate }}"{{ else }}{{ end }}>

@@ -2,9 +2,14 @@
 // features.scss
 //
 
-/*********************************/
-/*     Features & Services       */
-/*===============================*/
+:root {
+    --icon-color: var(--primary);
+}
+
+[data-dark-mode] {
+    --icon-color: var(--primary-300);
+}
+
 .features {
     .icon {
         background: rgba(var(--primary), 0.1);
@@ -37,7 +42,7 @@
 
     &.feature-full-bg {
         .icon-color {
-            color: var(--primary) !important;
+            color: var(--icon-color) !important;
         }
         &:hover {
             background-color: var(--primary) !important;
