@@ -189,6 +189,12 @@
     position: relative
 }
 
+@media (max-width:1024px) {
+    .DocSearch-Modal {
+        margin: 65px calc(100vw - 640px) auto auto;
+    }
+}
+
 .DocSearch-SearchBar {
     display: flex;
     padding: var(--docsearch-spacing) var(--docsearch-spacing) 0
