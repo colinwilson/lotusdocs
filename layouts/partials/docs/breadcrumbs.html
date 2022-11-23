@@ -1,6 +1,6 @@
 <nav aria-label="breadcrumb" class="d-inline-block pb-2 mt-2 mt-sm-0">
     <!-- Credit: https://hugocodex.org/add-ons/breadcrumbs/ -->
-    <ul id="breadcrumbs" class="breadcrumb bg-transparent mb-0 p-0">
+    <ul class="breadcrumb bg-transparent mb-0 p-0">
         {{ $docRoot := (humanize .FirstSection.RelPermalink) }}
         {{- $.Scratch.Set "url" "" -}}
         {{- range (split .RelPermalink "/") -}}

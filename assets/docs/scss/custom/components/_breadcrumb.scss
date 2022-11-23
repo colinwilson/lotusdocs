@@ -10,9 +10,9 @@
     --breadcrumb-item-color: var(--primary-300);
 }
 
-#breadcrumbs .breadcrumb-item {
+.breadcrumb .breadcrumb-item {
     color: var(--breadcrumb-item-color);
 }
-#breadcrumbs .breadcrumb-item.active {
+.breadcrumb .breadcrumb-item.active {
     color: var(--text-muted);
 }
