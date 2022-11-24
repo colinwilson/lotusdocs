@@ -379,6 +379,7 @@
 }
 
 .DocSearch-Hits mark {
+    padding: 0;
     background: none;
     color: var(--docsearch-highlight-color)
 }
@@ -544,7 +545,7 @@ svg.DocSearch-Hit-Select-Icon {
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
-    font-weight: 500;
+    font-weight: 600;
     justify-content: center;
     line-height: 1.2em;
     margin: 0 8px;
