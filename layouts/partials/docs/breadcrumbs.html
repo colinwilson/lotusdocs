@@ -1,4 +1,4 @@
-<nav aria-label="breadcrumb" class="d-inline-block pb-2 mt-2 mt-sm-0">
+<nav aria-label="breadcrumb" class="{{ if site.Params.docs.breadcrumbs | default true }}d-inline-block{{ else }}d-none{{ end }} pb-2 mt-2 mt-sm-0">
     <!-- Credit: https://hugocodex.org/add-ons/breadcrumbs/ -->
     <ul class="breadcrumb bg-transparent mb-0 p-0">
         {{ $docRoot := (humanize .FirstSection.RelPermalink) }}
