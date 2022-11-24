@@ -16,15 +16,19 @@
                 {{- end -}}
                 {{- if eq ($.Scratch.Get "isPage") "true" -}}
                     {{- with $.Site.GetPage (print . ".md") -}}
-                        <a class="breadcrumb-item text-capitalize active" aria-current="page">{{ .Title }}</a>
+                        <li class="breadcrumb-item breadcrumb-link text-capitalize active" aria-current="page">{{ .Title }}</li>
                     {{- end -}}
                 {{- else -}}
                     {{ if eq (humanize .) $docRoot }}
-                        <a class="breadcrumb-item" href="{{ $.Scratch.Get `url` }}">
-                            <span class="material-icons size-24 align-text-bottom">home</span>
-                        </a>
+                        <li class="breadcrumb-item">
+                            <a class="breadcrumb-link" href="{{ $.Scratch.Get `url` }}">
+                                <span class="material-icons size-24 align-text-bottom">home</span>
+                            </a>
+                        </li>
                     {{ else }}
-                        <a class="breadcrumb-item text-capitalize" href="{{ $.Scratch.Get `url` }}">{{ humanize . }}</a>
+                        <li class="breadcrumb-item text-capitalize">
+                            <a class="breadcrumb-link" href="{{ $.Scratch.Get `url` }}">{{ humanize . }}</a>
+                        </li>
                     {{ end }}
                 {{- end -}}
             {{- end -}}
