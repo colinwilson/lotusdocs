@@ -10,7 +10,7 @@
     --breadcrumb-item-color: var(--primary-300);
 }
 
-.breadcrumb .breadcrumb-link {
+.breadcrumb .breadcrumb-item a {
     color: var(--breadcrumb-item-color);
 }
 .breadcrumb .breadcrumb-item.active {
