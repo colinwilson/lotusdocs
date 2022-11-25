@@ -15,7 +15,7 @@
             {{- partial "docs/sidebar.html" . -}}
                 <!-- Start Page Content -->
                 <main class="page-content bg-transparent">
-                    {{- partial "docs/top-header.html" . -}}
+                    {{- partialCached "docs/top-header.html" . -}}
                         <div class="container-fluid">
                             <div class="layout-spacing">
                                 <div class="d-md-flex justify-content-between align-items-center">
@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                         </div>
-                        {{- partial "docs/footer.html" . -}}
+                        {{- partialCached "docs/footer.html" . -}}
                 </main>
         </div>
     </div>
