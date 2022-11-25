@@ -108,5 +108,10 @@
         {{- $js := (slice $dayjs $relativeTime $simplescrollspy $simplebar $app $scrollspyScript $prismjs) | resources.Concat "/docs/js/bundle.js" }}
         <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
     {{- end }}
+    <script>
+        //PrismJS
+        Prism.plugins.autoloader.languages_path = '/docs/js/components/';
+    </script>
+
 </body>
 </html>
