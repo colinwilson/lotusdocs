@@ -29,12 +29,7 @@
     <!-- favicon -->
     <link rel="shortcut icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBkPSJNNDcxLjI3LDQwLjczQzQzMC41MzksMCwzNjguMTc4LDAsMjU2LDBWMzE5LjEyYTI1LjYsMjUuNiwwLDAsMCwyNS42LDI1LjZoNTYuMzJhMTUuMzYsMTUuMzYsMCwwLDEsMTUuMzYsMTUuMzZ2NjYuNTZBMTUuMzYsMTUuMzYsMCwwLDEsMzM3LjkyLDQ0MkgyMzUuNTJhNzYuOCw3Ni44LDAsMCwxLTc2LjgtNzYuOFYxLjU0OUMxMDQuMzU5LDQuNiw2Ny43NzIsMTMuNjg5LDQwLjczLDQwLjczLDAsODEuNDYxLDAsMTQzLjgyMiwwLDI1NlMwLDQzMC41MzksNDAuNzMsNDcxLjI3LDE0My44MjIsNTEyLDI1Niw1MTJzMTc0LjUzOSwwLDIxNS4yNy00MC43M1M1MTIsMzY4LjE3OCw1MTIsMjU2LDUxMiw4MS40NjEsNDcxLjI3LDQwLjczWiIgc3R5bGU9ImZpbGw6IzA2ZiIvPjwvc3ZnPg==" type="image/svg+xml" />
     <!-- Google Fonts -->
-    {{- partial "google-fonts" . }}
-    <!-- Dark Mode -->
-    {{ if eq .Site.Params.docs.darkMode true -}}
-        {{ $darkModeInit := resources.Get "/docs/js/darkmode-init.js" | js.Build | minify -}}
-        <script>{{ $darkModeInit.Content | safeJS }}</script>
-    {{ end -}}
+    {{- partialCached "google-fonts" . }}
     <!-- Custom CSS -->
     {{- $options := dict "enableSourceMap" true }}
     {{- if hugo.IsProduction}}
@@ -46,4 +41,9 @@
         {{- $style = $style | minify | resources.Fingerprint "sha384" }}
     {{- end -}}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
+    <!-- Dark Mode -->
+    {{ if eq .Site.Params.docs.darkMode true -}}
+        {{ $darkModeInit := resources.Get "/docs/js/darkmode-init.js" | js.Build | minify -}}
+        <script>{{ $darkModeInit.Content | safeJS }}</script>
+    {{ end -}}
 </head>
