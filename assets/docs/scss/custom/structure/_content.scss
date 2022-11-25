@@ -155,11 +155,11 @@
 // Code
 .docs-content .main-content code {
     font-size: 15px;
-    color: var(--gray-700);
+    color: #f5fbff;
     font-weight: 500;
     padding: 1px 2px;
-    background: var(--gray-50);
-    border: 1px solid var(--gray-200);
+    background: var(--gray-900);
+    border: none;
     border-radius: 4px;
 }
 
@@ -169,12 +169,13 @@
 
     code {
         display: block;
+        background: #212d63;
         overflow-x: auto;
         line-height: $line-height-base;
         padding: 1.25rem 1.5rem;
         tab-size: 4;
         scrollbar-width: thin;
-        scrollbar-color: transparent transparent;
+        //scrollbar-color: transparent transparent;
     }
 }
 

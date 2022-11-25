@@ -13,6 +13,7 @@ $font-family-monospace:  {{ .Site.Params.mono_font | default "SFMono-Regular, Me
 
 // Plugins
 @import "custom/plugins/icons/google-material";
+@import "custom/plugins/prismjs/prismjs";
 
 //Core files
 @import "../../scss/bootstrap/functions";
