@@ -14,8 +14,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: 600;
 }
 ::selection {
-    background: rgba($primary, 0.9);
+    background: var(--primary);
     color: var(--white);
+    opacity: 0.9;
 }
 a {
     text-decoration: none;
