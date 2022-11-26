@@ -7,6 +7,8 @@
         {{ $fonts = $fonts | append $string }}
     {{ end }}
     {{ $url_part := (delimit $fonts "|") | safeHTMLAttr }}
-    <link {{ printf "href=\"https://fonts.googleapis.com/css?family=%s\"" $url_part | safeHTMLAttr }} rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link {{ printf "href=\"https://fonts.googleapis.com/css?family=%s%s\"" $url_part "&display=swap" | safeHTMLAttr }} rel="stylesheet">
 {{ else}}
 {{ end }}
