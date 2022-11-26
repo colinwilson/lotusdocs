@@ -9,6 +9,6 @@
     {{ $url_part := (delimit $fonts "|") | safeHTMLAttr }}
     <link rel="preconnect" href="https://fonts.gstatic.com/" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link {{ printf "href=\"https://fonts.googleapis.com/css?family=%s%s\"" $url_part "&display=swap" | safeHTMLAttr }} rel="stylesheet">
+    <link {{ printf "href=\"https://fonts.googleapis.com/css?family=%s%s\"" $url_part "&display=block" | safeHTMLAttr }} rel="stylesheet">
 {{ else}}
 {{ end }}
