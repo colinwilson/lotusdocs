@@ -66,17 +66,21 @@
     font-weight: 600;
 }
 
-.docs-content .content-title i {
-    width: 44px;
-    height: 44px;
-    color: var(--content-icon-color);
-    background-color: var(--content-icon-bg);
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    border: solid 1px var(--content-icon-border);
-    border-radius: 5px;
+.docs-content .content-title {
+    font-weight: 700;
+
+    i {
+        width: 44px;
+        height: 44px;
+        color: var(--content-icon-color);
+        background-color: var(--content-icon-bg);
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        border: solid 1px var(--content-icon-border);
+        border-radius: 5px;
+    }
 }
 
 .docs-content p {

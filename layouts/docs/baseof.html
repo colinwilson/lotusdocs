@@ -30,7 +30,7 @@
                                         </div>
                                     <div class="docs-content col-12 {{ if .IsNode }}{{ else }}{{ if site.Params.docs.toc | default true }}{{ if and (ne .Params.toc false) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}col-xl-9{{else}}{{end}}{{ else }}{{ end }}{{ end }} mt-0">
                                         <div class="mb-3">
-                                            <h1 class="content-title fw-bold mb-0">
+                                            <h1 class="content-title mb-0">
                                                 {{ if site.Params.docs.titleIcon | default false }}
                                                     <i class="material-icons me-0">{{- .Params.icon | default "article" }}</i>
                                                 {{ end }}
