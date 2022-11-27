@@ -1,6 +1,7 @@
 {{ define "main" }}
-
-    {{ .Content }}
+    <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
+        {{ .Content }}
+    </div>
 
     {{ if and .GitInfo .Site.Params.docs.ghrepo -}}
         {{ partial "docs/gitinfo" . }}
