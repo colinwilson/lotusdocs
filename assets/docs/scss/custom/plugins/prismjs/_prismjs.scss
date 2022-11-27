@@ -19,7 +19,7 @@
      color: #f5fbff;
      background: var(--prism-code-bg) !important;
      font-family: $font-family-monospace;
-     font-size: 14px;
+     font-size: 1em;
      text-align: left;
      white-space: pre;
      word-spacing: normal;
@@ -62,10 +62,10 @@
 
 /* Code blocks */
 pre[class*="language-"] {
-    border-radius: 4px;
     // padding: 1em;
     // margin: .5em 0;
     overflow: auto;
+    border-radius: 4px;
 }
 
 :not(pre) > code[class*="language-"],
@@ -96,7 +96,7 @@ pre[class*="language-"] {
 .token.attr-name,
 .token.namespace,
 .token.deleted {
-    color: #e2777a;
+    color: #7fd3ed;
 }
 
 .token.function-name {
@@ -104,9 +104,12 @@ pre[class*="language-"] {
 }
 
 .token.boolean,
-.token.number,
 .token.function {
     color: #fda3f3;
+}
+
+.token.number {
+    color: var(--cardinal-200);
 }
 
 .token.property,
@@ -122,16 +125,19 @@ pre[class*="language-"] {
 .token.atrule,
 .token.keyword,
 .token.builtin {
-    color: #8095ff;
+    color: #a4cdfe;
     font-weight: 700;
 }
 
 .token.string,
 .token.char,
 .token.attr-value,
-.token.regex,
-.token.variable {
+.token.regex {
     color: #7ec699;
+}
+
+.token.variable {
+    color: var(--yellow-100);
 }
 
 .token.operator,
@@ -158,7 +164,19 @@ pre[class*="language-"] {
 
  pre[data-line] {
      position: relative;
-     padding: 1em 0 1em 3em;
+     padding: 0;
+
+     code {
+        padding: 1.25rem 2.5rem !important;
+     }
+ }
+
+ .line-highlight:first-of-type {
+    margin-top: 1.3em;
+ }
+
+ .line-highlight:last-of-type {
+    margin-top: 1.3em !important;
  }
 
  .line-highlight {
@@ -166,7 +184,7 @@ pre[class*="language-"] {
      left: 0;
      right: 0;
      padding: inherit 0;
-     margin-top: 1em; /* Same as .prism’s padding-top */
+     margin-top: 1.3em; /* Same as .prism’s padding-top */
 
      background: hsla(24, 20%, 50%,.08);
      background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%, 0));
@@ -196,14 +214,14 @@ pre[class*="language-"] {
          left: .6em;
          min-width: 1em;
          padding: 0 .5em;
-         background-color: hsla(24, 20%, 50%,.4);
+         background-color: var(--blue-400);
          color: hsl(24, 20%, 95%);
          font: bold 65%/1.5 sans-serif;
          text-align: center;
          vertical-align: .3em;
-         border-radius: 999px;
+         border-radius: 4px;
          text-shadow: none;
-         box-shadow: 0 1px white;
+        //  box-shadow: 0 1px white;
      }
 
      .line-highlight[data-end]:after {
@@ -212,10 +230,19 @@ pre[class*="language-"] {
          bottom: .4em;
      }
 
+ .line-numbers .line-highlight {
+    margin-top: 0 !important;
+ }
+
  .line-numbers .line-highlight:before,
  .line-numbers .line-highlight:after {
      content: none;
  }
+
+//  .line-numbers .line-highlight:first-of-type,
+//  .line-numbers .line-highlight:last-of-type {
+//     margin-top: 0 !important;
+//  }
 
  pre[id].linkable-line-numbers span.line-numbers-rows {
      pointer-events: all;
@@ -229,24 +256,26 @@ pre[class*="language-"] {
 
  pre[class*="language-"].line-numbers {
      position: relative;
-     padding-left: 3.8em;
+     padding-left: 0;
      counter-reset: linenumber;
  }
 
  pre[class*="language-"].line-numbers > code {
      position: relative;
      white-space: inherit;
+     padding: 1.25rem 3.5rem !important;
  }
 
  .line-numbers .line-numbers-rows {
      position: absolute;
      pointer-events: none;
-     top: 0;
+     top: 1.25em;
      font-size: 100%;
-     left: -3.8em;
+     left: 0em;
      width: 3em; /* works for line-numbers below 1000 lines */
      letter-spacing: -1px;
-     border-right: 1px solid #999;
+    //  border-right: 1px solid #999;
+     border-right: none;
 
      -webkit-user-select: none;
      -moz-user-select: none;
@@ -262,7 +291,7 @@ pre[class*="language-"] {
 
          .line-numbers-rows > span:before {
              content: counter(linenumber);
-             color: #999;
+             color: var(--gray-400);
              display: block;
              padding-right: 0.8em;
              text-align: right;
@@ -318,6 +347,7 @@ pre[class*="language-"] {
      }
  }
 
+ // Custom Copy, Copied and Error Icons
  [data-copy-state="copy"] span:empty::before {
      content: "";
      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='48' width='48' viewBox='0 0 48 48'%3E%3Cpath d='M9 43.95q-1.2 0-2.1-.9-.9-.9-.9-2.1V10.8h3v30.15h23.7v3Zm6-6q-1.2 0-2.1-.9-.9-.9-.9-2.1v-28q0-1.2.9-2.1.9-.9 2.1-.9h22q1.2 0 2.1.9.9.9.9 2.1v28q0 1.2-.9 2.1-.9.9-2.1.9Zm0-3h22v-28H15v28Zm0 0v-28 28Z'/%3E%3C/svg%3E");
@@ -329,6 +359,10 @@ pre[class*="language-"] {
      height: 24px;
      width: 24px;
  }
+
+ [data-copy-state="copy"] span:empty:hover::before {
+    background-color: var(--white);
+}
 
  [data-copy-state="copy-success"] span:empty::before {
     content: "";
