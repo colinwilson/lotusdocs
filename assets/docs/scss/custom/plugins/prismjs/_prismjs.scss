@@ -19,8 +19,6 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
      word-wrap: normal;
      line-height: 1.3;
 
-     scrollbar-width: thin;
-
      -moz-tab-size: 4;
      -o-tab-size: 4;
      tab-size: 4;
@@ -33,12 +31,32 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
      -webkit-font-smoothing: antialiased;
      -moz-osx-font-smoothing: grayscale;
      text-rendering: optimizeLegibility;
+
+    //  scrollbar-width: thin;
+    //  scrollbar-color: rebeccapurple green;
+
+    //  &::-webkit-scrollbar {
+    //      height: 12px;
+    //      width: 12px;
+    //      background: #000;
+    //  }
+
+    //  &::-webkit-scrollbar-thumb {
+    //      background: #393812;
+    //      -webkit-border-radius: 1ex;
+    //      -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+    //  }
+
+    //  &::-webkit-scrollbar-corner {
+    //      background: #000;
+    //  }
  }
 
 /* Code blocks */
 pre[class*="language-"] {
-    padding: 1em;
-    margin: .5em 0;
+    border-radius: 4px;
+    // padding: 1em;
+    // margin: .5em 0;
     overflow: auto;
 }
 
