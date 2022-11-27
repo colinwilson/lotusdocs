@@ -8,9 +8,10 @@
     padding: 6px 8px 7px 8px;
     font-weight: 600;
     line-height: 11px;
+    border-radius: 4px;
     &.badge-link {
         &:hover {
-            color: $white !important;
+            color: var(--white) !important;
         }
     }
 }

@@ -382,6 +382,7 @@ $stretched-link-z-index:                  1;
     // Cards
     --card-bg: var(--white);
     --card-border-color: var(--gray-400);
+    --card-border-hover-color: var(--primary);
 
     // Sidebar
     --sidebar-primary: var(--primary);
@@ -425,6 +426,7 @@ $stretched-link-z-index:                  1;
     // Cards
     --card-bg: none;
     --card-border-color: var(--gray-800);
+    --card-border-hover-color: var(--primary-200);
 
     // sidebar
     --sidebar-primary: var(--primary-300);

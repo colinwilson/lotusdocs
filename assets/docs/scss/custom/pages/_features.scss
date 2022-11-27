@@ -3,11 +3,13 @@
 //
 
 :root {
-    --icon-color: var(--primary);
+    --feature-icon-color: var(--primary);
+    --feature-link-hover-bg-color: var(--primary);
 }
 
 [data-dark-mode] {
-    --icon-color: var(--primary-300);
+    --feature-icon-color: var(--primary-300);
+    --feature-link-hover-bg-color: var(--gray-900);
 }
 
 .features {
@@ -42,10 +44,10 @@
 
     &.feature-full-bg {
         .icon-color {
-            color: var(--icon-color) !important;
+            color: var(--feature-icon-color) !important;
         }
         &:hover {
-            background-color: var(--primary) !important;
+            background-color: var(--feature-link-hover-bg-color) !important;
         }
     }
 

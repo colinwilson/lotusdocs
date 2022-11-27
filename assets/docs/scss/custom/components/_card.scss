@@ -6,7 +6,12 @@
     background: var(--card-bg);
     border-color: var(--card-border-color);
     border-radius: 4px;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
     .card-body {
         padding: 1.5rem;
+    }
+    &:hover {
+        border-color: var(--card-border-hover-color);
     }
 }

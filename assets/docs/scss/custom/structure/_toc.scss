@@ -2,6 +2,14 @@
 // toc-layouts.scss
 //
 
+:root {
+    --toc-link-hover-bg-color: var(--gray-300);
+}
+
+[data-dark-mode] {
+    --toc-link-hover-bg-color: var(--gray-700);
+}
+
 .docs-content {
     order: 1;
 }
@@ -82,8 +90,7 @@
     -webkit-transition: all 0.1s;
 
     &:hover {
-        color: var(--text-dark);
-        background-color: var(--gray-300);
+        background-color: var(--toc-link-hover-bg-color);
         transition: all 0.1s;
         -webkit-transition: all 0.2s;
     }
@@ -92,6 +99,6 @@
 #toc a.active {
     color: var(--white);
     background-color: var(--primary);
-    font-weight: 600;
+    // font-weight: 600;
     opacity: 0.9;
 }
