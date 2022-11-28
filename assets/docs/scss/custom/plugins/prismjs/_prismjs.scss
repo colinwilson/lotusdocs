@@ -172,11 +172,11 @@ pre[class*="language-"] {
  }
 
  .line-highlight:first-of-type {
-    margin-top: 1.3em;
+    margin-top: 1.6em;
  }
 
  .line-highlight:last-of-type {
-    margin-top: 1.3em !important;
+    margin-top: 1.4em !important;
  }
 
  .line-highlight {
@@ -184,14 +184,14 @@ pre[class*="language-"] {
      left: 0;
      right: 0;
      padding: inherit 0;
-     margin-top: 1.3em; /* Same as .prism’s padding-top */
+     margin-top: 1.5em; /* Same as .prism’s padding-top */
 
      background: hsla(24, 20%, 50%,.08);
      background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%, 0));
 
      pointer-events: none;
 
-     line-height: inherit;
+     line-height: 1.6;
      white-space: pre;
  }
 
@@ -210,13 +210,13 @@ pre[class*="language-"] {
      .line-highlight[data-end]:after {
          content: attr(data-start);
          position: absolute;
-         top: .4em;
+         top: .15em;
          left: .6em;
          min-width: 1em;
-         padding: 0 .5em;
+         padding: 0 .4em;
          background-color: var(--blue-400);
          color: hsl(24, 20%, 95%);
-         font: bold 65%/1.5 sans-serif;
+         font: bold 85%/1.6 sans-serif;
          text-align: center;
          vertical-align: .3em;
          border-radius: 4px;
@@ -227,11 +227,11 @@ pre[class*="language-"] {
      .line-highlight[data-end]:after {
          content: attr(data-end);
          top: auto;
-         bottom: .4em;
+         bottom: .15em;
      }
 
  .line-numbers .line-highlight {
-    margin-top: 0 !important;
+    margin-top: 0em !important;
  }
 
  .line-numbers .line-highlight:before,
@@ -269,7 +269,7 @@ pre[class*="language-"] {
  .line-numbers .line-numbers-rows {
      position: absolute;
      pointer-events: none;
-     top: 1.25em;
+     top: 1.50em;
      font-size: 100%;
      left: 0em;
      width: 3em; /* works for line-numbers below 1000 lines */

@@ -17,7 +17,8 @@
       {{- if .Get "prompt" }} data-prompt="{{ .Get "prompt" }}"{{ end }}
       {{- if .Get "output" }} data-output="{{ .Get "output" }}"{{ end }}
       ><code {{ if .Get "lang" }}class="language-{{ .Get "lang" }}"{{ end }}
-      >{{ $inner }}</code></pre>
+      >{{ $inner }}</code>
+    </pre>
   {{ else }}
     <pre class="language-{{ .Get 0 }}">
       <code class="language-{{ .Get 0 }}">{{ $inner }}</code>
