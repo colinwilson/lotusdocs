@@ -3,7 +3,6 @@
   <pre><code>{{ $inner }}</code></pre>
 {{ else }}
   {{ if .IsNamedParams }}
-    <div class="codeContainer">
       <pre class="
         {{- if .Get "lang" }}language-{{ .Get "lang" }}{{ end }}
         {{- if .Get "line-numbers" }} line-numbers{{ end }}
@@ -20,12 +19,9 @@
         ><code {{ if .Get "lang" }}class="language-{{ .Get "lang" }}"{{ end }}
         >{{ $inner }}</code>
       </pre>
-    </div>
   {{ else }}
-    <div class="codeContainer">
       <pre class="language-{{ .Get 0 }}">
         <code class="language-{{ .Get 0 }}">{{ $inner }}</code>
       </pre>
-    </div>
   {{ end }}
 {{ end }}

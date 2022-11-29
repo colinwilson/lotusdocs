@@ -162,7 +162,7 @@
 
 // Code
 .docs-content .main-content code {
-    font-size: 0.81em;
+    font-size: inherit;
     color: #f5fbff;
     font-weight: 500;
     padding: 1px 2px;
@@ -176,11 +176,12 @@
     background-color: transparent !important;
 
     code {
+        font-size: 0.8rem;
         display: block;
         background: var(--code-bg);
         overflow-x: auto;
-        line-height: 1.6;
-        padding: 1.25rem 1.5rem;
+        line-height: 1.5;
+        padding: 0 0 1.25rem 2.5rem !important;
         tab-size: 4;
         scrollbar-width: thin;
         //scrollbar-color: transparent transparent;
