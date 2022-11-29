@@ -95,17 +95,16 @@
     {{ end -}}
 
     {{ $app := resources.Get "/docs/js/app.js" }}
-    {{ $simplebar := resources.Get "/docs/js/simplebar.min.js" }}
     {{ $simplescrollspy := resources.Get "/docs/js/simple-scrollspy.min.js" }}
     {{ $scrollspyScript := resources.Get "/docs/js/scrollspy-script.js" }}
     {{ $prismjs := resources.Get "/docs/js/prismjs/prismjs.js" }}
     {{ $dayjs := resources.Get "/docs/js/dayjs.min.js" }}
     {{ $relativeTime := resources.Get "/docs/js/relativeTime.min.js" }}
     {{- if not .Site.IsServer }}
-        {{- $js := (slice $dayjs $relativeTime $simplescrollspy $simplebar $app $scrollspyScript $prismjs) | resources.Concat "/docs/js/bundle.js" | minify | resources.Fingerprint "sha384" }}
+        {{- $js := (slice $dayjs $relativeTime $simplescrollspy $app $scrollspyScript $prismjs) | resources.Concat "/docs/js/bundle.js" | minify | resources.Fingerprint "sha384" }}
         <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
     {{- else }}
-        {{- $js := (slice $dayjs $relativeTime $simplescrollspy $simplebar $app $scrollspyScript $prismjs) | resources.Concat "/docs/js/bundle.js" }}
+        {{- $js := (slice $dayjs $relativeTime $simplescrollspy $app $scrollspyScript $prismjs) | resources.Concat "/docs/js/bundle.js" }}
         <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
     {{- end }}
     <script>

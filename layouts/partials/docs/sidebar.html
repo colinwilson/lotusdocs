@@ -1,14 +1,14 @@
 <!-- sidebar-wrapper -->
 <nav id="sidebar" class="sidebar-wrapper">
-    <div class="sidebar-content" data-simplebar style="height: calc(100% - 60px);">
-        <div class="sidebar-brand">
-            <a href="/" alt="home">
-                {{ with resources.Get "images/logos/logo.svg" }}
-                    {{ .Content | safeHTML }}
-                {{ end }}
-            </a>
-            <!-- <span class="fw-bold"><a href="/docs/">DOCS</a></span> -->
-        </div>
+    <div class="sidebar-brand">
+        <a href="/" alt="home">
+            {{ with resources.Get "images/logos/logo.svg" }}
+                {{ .Content | safeHTML }}
+            {{ end }}
+        </a>
+        <!-- <span class="fw-bold"><a href="/docs/">DOCS</a></span> -->
+    </div>
+    <div class="sidebar-content" style="height: calc(100% - 131px);">
         <ul class="sidebar-menu">
             {{ $currentPage := . -}}
             {{ $section := $currentPage.Section -}}

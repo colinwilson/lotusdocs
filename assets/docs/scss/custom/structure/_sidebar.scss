@@ -38,18 +38,39 @@
             background: var(--sidebar-bg);
             max-height: calc(100% - 30px);
             height: calc(100% - 30px);
-            overflow-y: auto;
+            overflow: scroll;
+            overflow-x: hidden;
+            overflow-y: overlay;
             position: relative;
             &.desktop {
                 overflow-y: hidden;
             }
             border-right: 1px solid var(--sidebar-border-color);
+
+            scrollbar-width: thin;
+            scrollbar-color: var(--sidebar-bg) var(--sidebar-bg);
+        }
+        .sidebar-content:hover {
+            scrollbar-color: var(--sidebar-scrollbar-thumb-color) var(--sidebar-bg);
+        }
+        .sidebar-content::-webkit-scrollbar {
+            width: 5px;
+            height: 8px;
+        }
+        .sidebar-content::-webkit-scrollbar-track {
+            background: var(--sidebar-bg);
+            display: none;
+        }
+        .sidebar-content:hover::-webkit-scrollbar-thumb {
+            background: var(--sidebar-scrollbar-thumb-color);
         }
         .sidebar-brand {
+            background: var(--sidebar-bg);
             padding: 10px 20px;
+            border-bottom: 1px solid var(--sidebar-border-color);
             display: flex;
             align-items: center;
-            height: 71px;
+            height: 72px;
             > a {
                 text-transform: uppercase;
                 font-weight: bold;
@@ -255,7 +276,7 @@
 
         .sidebar-header,
         .sidebar-menu {
-            border-top: 1px solid var(--sidebar-border-color);
+            // border-top: 1px solid var(--sidebar-border-color);
             // border-right: 1px solid var(--sidebar-border-color);
         }
         .sidebar-header .user-info .user-role,
@@ -380,7 +401,7 @@
             }
         }
         .top-header {
-            left: 301px;
+            left: 300px;
             @media (max-width: 1024px) {
                 left: 0;
             }

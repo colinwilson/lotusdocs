@@ -76,39 +76,6 @@ $stretched-link-z-index:                  1;
 
 :root {
 
-    // Text
-    --text-dark: #3C4257;
-    --text-light: #dee2e6;
-
-    // Fonts
-    --fw-medium: 600;
-
-    // Shadows
-    --shadow-sm: 0 .125rem .25rem rgba(var(--dark), .15);
-    --shadow: 0 0 3px rgba(var(--dark), .15);
-    --shadow-md: 0 5px 13px rgba(var(--dark), .2);
-    --shadow-lg: 0 10px 25px rgba(var(--dark), 0.15);
-
-    // Overlay
-    --overlay: rgba(var(--dark), 0.7);
-    --bg-overlay-white: rgba(var(--white), 0.5);
-
-    // Back to top
-    --back-to-top-color: var(--white);
-
-    // Simplebar
-    --simplebar-color: #adb5bd;
-
-    // Footer
-    --footer: #202942;
-    --footer-bg: var(--white);
-    --foot-social-color: #adb5bd;
-    --social-border-color: #adb5bd;
-    --foot-social-color-white: var(--white);
-
-    // lightness variables
-    --l-100: 100%;
-
     // color-variables (HSL)
 
     --blue-900-hsl: 243, 72%, 25%;
@@ -357,6 +324,39 @@ $stretched-link-z-index:                  1;
 
     --body-bg: var(--white);
 
+    // Text
+    --text-dark: #3C4257;
+    --text-light: #dee2e6;
+
+    // Fonts
+    --fw-medium: 600;
+
+    // Shadows
+    --shadow-sm: 0 .125rem .25rem rgba(var(--dark), .15);
+    --shadow: 0 0 3px rgba(var(--dark), .15);
+    --shadow-md: 0 5px 13px rgba(var(--dark), .2);
+    --shadow-lg: 0 10px 25px rgba(var(--dark), 0.15);
+
+    // Overlay
+    --overlay: rgba(var(--dark), 0.7);
+    --bg-overlay-white: rgba(var(--white), 0.5);
+
+    // Back to top
+    --back-to-top-color: var(--white);
+
+    // Simplebar
+    --simplebar-color: #adb5bd;
+
+    // Footer
+    --footer: #202942;
+    --footer-bg: var(--white);
+    --foot-social-color: #adb5bd;
+    --social-border-color: #adb5bd;
+    --foot-social-color-white: var(--white);
+
+    // lightness variables
+    --l-100: 100%;
+
     // Buttons
     --btn-soft-color: var(--primary);
     --btn-soft-bg: transparent;
@@ -394,6 +394,7 @@ $stretched-link-z-index:                  1;
     --sidebar-menu-active-bg: #f5f6f8;
     --sidebar-icon-bg: #f8f9fa;
     --sidebar-light-icon: #f8f9fa;
+    --sidebar-scrollbar-thumb-color: var(--gray-200);
 
     --sidebar-directory-icon: var(--dir-right);
     --sidebar-file-icon: var(--dash);
@@ -438,4 +439,5 @@ $stretched-link-z-index:                  1;
     --sidebar-menu-active-bg: #2b303b;
     --sidebar-icon-bg: #2b303b;
     --sidebar-light-icon: #f8f9fa;
+    --sidebar-scrollbar-thumb-color: var(--gray-800);
 }
