@@ -48,4 +48,4 @@ $font-family-monospace:  {{ .Site.Params.mono_font | default "SFMono-Regular, Me
 
 
 // Plugins
-@import "custom/plugins/prismjs/prismjs";
+{{ if eq .Site.Params.docs.prism true -}}@import "custom/plugins/prism/prism";{{ end }}

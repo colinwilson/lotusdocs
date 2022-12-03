@@ -3571,3 +3571,5 @@ Prism.languages.js = Prism.languages.javascript;
 	});
 }());
 
+//Prism Autoloader Plugin Grammar Path
+Prism.plugins.autoloader.languages_path = '/docs/js/components/';

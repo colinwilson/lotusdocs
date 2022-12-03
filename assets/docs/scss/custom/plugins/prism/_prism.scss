@@ -18,8 +18,9 @@
 
  code[class*="language-"],
  pre[class*="language-"] {
-     color: #f5fbff;
+     color: #f5fbff !important;
      background: var(--prism-code-bg) !important;
+     border: none !important;
      font-family: $font-family-monospace;
      font-size: 0.8rem;
      text-align: left;
@@ -160,10 +161,6 @@ pre[class*="language-"] {
  pre[data-line] {
      position: relative;
      padding: 0;
-
-    //  code {
-    //     padding: 1.25rem 2.5rem !important;
-    //  }
  }
 
  .line-highlight:first-of-type {

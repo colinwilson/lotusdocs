@@ -1,0 +1,21 @@
+{{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
+    <!-- DocSearch -->
+    {{ $docsearch := resources.Get "/docs/js/docsearch.min.js" }}
+    {{- if not .Site.IsServer }}
+        {{- $docsearch := $docsearch | resources.Fingerprint "sha384" }}
+        <script type="text/javascript" src="{{ $docsearch.Permalink }}" integrity="{{ $docsearch.Data.Integrity }}"></script>
+    {{- else }}
+        {{- $docsearch := $docsearch }}
+        <script type="text/javascript" src="{{ $docsearch.Permalink }}" integrity="{{ $docsearch.Data.Integrity }}"></script>
+    {{- end }}
+    <script>
+        //DocSearch
+        docsearch({
+            container: '#docsearch',
+            appId: '{{ .Site.Params.docsearch.appID }}',
+            apiKey: '{{ .Site.Params.docsearch.apiKey }}',
+            indexName: '{{ .Site.Params.docsearch.indexName }}',
+            placeholder: 'Search Documentation'
+        });
+    </script>
+{{ end }}

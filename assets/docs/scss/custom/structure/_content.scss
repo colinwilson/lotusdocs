@@ -13,7 +13,9 @@
     --ordered-list-bg: var(--gray-200);
     --blockquote-border-color: var(--gray-300);
 
-    --code-bg: #212d63;
+    --code-block-bg: #212d63;
+    --inline-code-bg: var(--gray-100);
+    --inline-code-border: 1px solid var(--gray-400);
 
 }
 
@@ -27,7 +29,9 @@
     --blockquote-border-color: var(--primary-200);
     --ordered-list-bg: var(--gray-700);
 
-    --code-bg: var(--gray-900);
+    --code-block-bg: var(--gray-900);
+    --inline-code-bg: var(--gray-800);
+    --inline-code-border: 1px solid var(--gray-600);
 
 }
 
@@ -163,11 +167,11 @@
 // Code
 .docs-content .main-content code {
     font-size: inherit;
-    color: #f5fbff;
+    color: var(--text-default);
     font-weight: 500;
     padding: 1px 2px;
-    background: var(--gray-900);
-    border: none;
+    background: var(--inline-code-bg);
+    border: var(--inline-code-border);
     border-radius: 4px;
 }
 
@@ -176,12 +180,14 @@
     background-color: transparent !important;
 
     code {
+        color: #f5fbff;
         font-size: 0.8rem;
         display: block;
-        background: var(--code-bg);
+        background: var(--code-block-bg);
+        border: none;
         overflow-x: auto;
         line-height: 1.5;
-        padding: 0 0 1.25rem 2.5rem !important;
+        padding: 0 0 1.25rem 2.5rem;
         tab-size: 4;
         scrollbar-width: thin;
         //scrollbar-color: transparent transparent;

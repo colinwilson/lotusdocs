@@ -66,27 +66,7 @@
     <!-- Back to top -->
     {{ end }}
 
-    {{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
-        <!-- DocSearch -->
-        {{ $docsearch := resources.Get "/docs/js/docsearch.min.js" }}
-        {{- if not .Site.IsServer }}
-            {{- $docsearch := $docsearch | resources.Fingerprint "sha384" }}
-            <script type="text/javascript" src="{{ $docsearch.Permalink }}" integrity="{{ $docsearch.Data.Integrity }}"></script>
-        {{- else }}
-            {{- $docsearch := $docsearch }}
-            <script type="text/javascript" src="{{ $docsearch.Permalink }}" integrity="{{ $docsearch.Data.Integrity }}"></script>
-        {{- end }}
-        <script>
-            //DocSearch
-            docsearch({
-                container: '#docsearch',
-                appId: '{{ .Site.Params.docsearch.appID }}',
-                apiKey: '{{ .Site.Params.docsearch.apiKey }}',
-                indexName: '{{ .Site.Params.docsearch.indexName }}',
-                placeholder: 'Search Documentation'
-            });
-        </script>
-    {{ end }}
+    {{- partialCached "docs/footer/docsearch.html" . -}}
 
     <!-- Dark Mode Switch JS -->
     {{ if eq .Site.Params.docs.darkMode true -}}
@@ -94,23 +74,7 @@
         <script>{{ $darkModeSwitch.Content | safeJS }}</script>
     {{ end -}}
 
-    {{ $app := resources.Get "/docs/js/app.js" }}
-    {{ $simplescrollspy := resources.Get "/docs/js/simple-scrollspy.min.js" }}
-    {{ $scrollspyScript := resources.Get "/docs/js/scrollspy-script.js" }}
-    {{ $prismjs := resources.Get "/docs/js/prismjs/prismjs.js" }}
-    {{ $dayjs := resources.Get "/docs/js/dayjs.min.js" }}
-    {{ $relativeTime := resources.Get "/docs/js/relativeTime.min.js" }}
-    {{- if not .Site.IsServer }}
-        {{- $js := (slice $dayjs $relativeTime $simplescrollspy $app $scrollspyScript $prismjs) | resources.Concat "/docs/js/bundle.js" | minify | resources.Fingerprint "sha384" }}
-        <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
-    {{- else }}
-        {{- $js := (slice $dayjs $relativeTime $simplescrollspy $app $scrollspyScript $prismjs) | resources.Concat "/docs/js/bundle.js" }}
-        <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
-    {{- end }}
-    <script>
-        //PrismJS
-        Prism.plugins.autoloader.languages_path = '/docs/js/components/';
-    </script>
+    {{- partialCached "docs/footer/footer-scripts.html" . -}}
 
 </body>
 </html>

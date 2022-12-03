@@ -1,0 +1,31 @@
+{{ $dayjs := resources.Get "/docs/js/dayjs.min.js" }}
+{{ $relativeTime := resources.Get "/docs/js/relativeTime.min.js" }}
+{{ $app := resources.Get "/docs/js/app.js" -}}
+
+{{ $slice := slice $dayjs $relativeTime $app -}}
+
+{{ if eq .Site.Params.docs.scrollSpy true -}}
+    {{ $simplescrollspy := resources.Get "/docs/js/simple-scrollspy.min.js" }}
+    {{ $slice = $slice | append $simplescrollspy -}}
+{{ end -}}
+
+{{ if eq .Site.Params.docs.scrollSpy true -}}
+    {{ $scrollspyScript := resources.Get "/docs/js/scrollspy-script.js" }}
+    {{ $scrollspyScript := $scrollspyScript | js.Build -}}
+    {{ $slice = $slice | append $scrollspyScript -}}
+{{ end -}}
+
+{{ if eq .Site.Params.docs.prism true -}}
+    {{ $prism := resources.Get "/docs/js/prism.js" }}
+    {{ $prism := $prism | js.Build -}}
+    {{ $slice = $slice | append $prism -}}
+{{ end -}}
+
+{{ $js := $slice | resources.Concat "/docs/js/bundle.js" -}}
+
+{{- if not .Site.IsServer }}
+    {{- $js := $js | minify | fingerprint "sha384" }}
+    <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous" defer></script>
+{{- else }}
+    <script type="text/javascript" src="{{ $js.Permalink }}"></script>
+{{- end }}
