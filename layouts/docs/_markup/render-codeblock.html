@@ -1,0 +1,12 @@
+{{- $attributes := .Attributes }}
+{{- $classes := slice (printf "language-%s" .Type) .Attributes.class }}
+{{- $attributes = merge $attributes (dict "class" (delimit $classes " ")) }}
+<pre
+  {{- range $k, $v := $attributes }}
+    {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+  {{- end -}}
+>
+<code>
+{{- .Inner -}}
+</code>
+</pre>

@@ -69,3 +69,46 @@ features:
     - title: Bootstrap v5
       icon: palette
       description: Built on Bootstrap 5, Lotus Docs allows for a familiar, flexible, and intuitive developer experience. Easily customise your site via SCSS variables and files.
+
+# Image compare
+image_compare:
+  enable: true
+
+  title: Customise The Lotus Docs Appearance
+  subtitle: Much of Lotus Docs' appearance can be customised. Dark mode is optional (enabled by default) and you can choose which ever Google font suites you simply by updating a single config setting.
+
+  items:
+    - title: Dark Mode
+      config: {
+        startingPoint: 50,
+        addCircle: true,
+        addCircleBlur: false,
+        showLabels: true,
+        labelOptions: {
+          before: 'Dark',
+          after: 'Light',
+          onHover: false
+        }
+      }
+      imagePath: "images/screenshots"
+      imageBefore: "lotusdocs_dark.webp"
+      imageAfter: "lotusdocs_light.webp"
+
+    - title: Custom Fonts
+      config: {
+        controlColor: "#3C4257",
+        startingPoint: 50,
+        addCircle: true,
+        addCircleBlur: false,
+        showLabels: true,
+        labelOptions: {
+          before: 'Poppins',
+          after: 'Comic Neue',
+          onHover: false
+        }
+      }
+      imagePath: "images/screenshots"
+      imageBefore: "lotusdocs_poppins.webp"
+      imageAfter: "lotusdocs_comic_neue_.webp"
+
+    # - title: Themes

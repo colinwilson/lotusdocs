@@ -1,4 +1,5 @@
 {{ define "main" }}
-    {{ partial "landing/hero.html" . }}
-    {{ partial "landing/features.html" . }}
+    {{ partialCached "landing/hero.html" . }}
+    {{ partialCached "landing/features.html" . }}
+    {{ partialCached "landing/image_compare.html" . }}
 {{ end }}

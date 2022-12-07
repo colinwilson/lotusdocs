@@ -23,7 +23,28 @@
     {{- $style := resources.Get "/scss/style.scss" }}
     {{- $style = $style | resources.ExecuteAsTemplate "/scss/style.scss" . | resources.ToCSS $options }}
     {{- if hugo.IsProduction }}
-        {{- $style = $style | minify | resources.Fingerprint "sha384" }}
+        {{- $style = $style | minify | fingerprint "sha384" }}
     {{- end -}}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $style.Data.Integrity }}"{{ end -}}/>
+    <!-- Bootstrap JS -->
+    {{ $js := resources.Get "js/bootstrap.js" }}
+    {{ $params := dict }}
+    {{ $sourceMap := cond hugo.IsProduction "" "inline" }}
+    {{ $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2018" "params" $params }}
+    {{ $js = $js | js.Build $opts }}
+    {{ if hugo.IsProduction }}
+        {{ $js = $js | fingerprint "sha384" }}
+    {{ end }}
+        <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end -}} defer></script>
+    <!-- Image Compare Viewer -->
+    {{ if .Site.Data.landing.image_compare.enable }}
+        {{ $imagecompare := resources.Get "js/image-compare-viewer.min.js" }}
+        {{- if not .Site.IsServer }}
+            {{- $js := (slice $imagecompare) | resources.Concat "/js/image-compare.js" | minify | fingerprint "sha384" }}
+            <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+        {{- else }}
+            {{- $js := (slice $imagecompare) | resources.Concat "/js/image-compare.js" }}
+            <script type="text/javascript" src="{{ $js.Permalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end }}></script>
+        {{- end }}
+    {{- end }}
 </head>
