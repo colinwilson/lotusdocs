@@ -10,6 +10,7 @@
         {{- if .Get "command-line" }} command-line{{ end }}"
         {{- /* line highlight plugin */ -}}
         {{- if .Get "line" }} data-line="{{ .Get "line" }}"{{ end }}
+        {{- if .Get "line-offset" }} data-line-offset="{{ .Get "line-offset" }}"{{ end }}
         {{- /* line number plugin */ -}}
         {{- if .Get "start" }} data-start="{{ .Get "start" }}"{{ end }}
         {{- /* command-line plugin */ -}}
