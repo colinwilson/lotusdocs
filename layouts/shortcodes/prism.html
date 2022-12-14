@@ -3,6 +3,7 @@
   <pre><code>{{ $inner }}</code></pre>
 {{ else }}
   {{ if .IsNamedParams }}
+      <div class="prism-shortcode {{- if .Get "line" }} data-line{{ end }}">
       <pre class="
         {{- if .Get "lang" }}language-{{ .Get "lang" }}{{ end }}
         {{- if .Get "line-numbers" }} line-numbers{{ end }}
@@ -17,8 +18,8 @@
         {{- if .Get "prompt" }} data-prompt="{{ .Get "prompt" }}"{{ end }}
         {{- if .Get "output" }} data-output="{{ .Get "output" }}"{{ end }}
         ><code {{ if .Get "lang" }}class="language-{{ .Get "lang" }}"{{ end }}
-        >{{ $inner }}</code>
-      </pre>
+        >{{ $inner }}</code></pre>
+      </div>
   {{ else }}
       <pre class="language-{{ .Get 0 }}">
         <code class="language-{{ .Get 0 }}">{{ $inner }}</code>

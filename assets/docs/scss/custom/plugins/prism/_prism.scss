@@ -160,7 +160,7 @@ pre[class*="language-"] {
 
  pre[data-line] {
      position: relative;
-     padding: 0;
+     padding: 0 !important;
  }
 
  .line-highlight:first-of-type {
@@ -291,9 +291,17 @@ pre[class*="language-"] {
 
  div.code-toolbar {
      position: relative;
-     padding-top: 0.25rem;
+     padding-top: 0 !important;
      background-color: var(--prism-code-bg);
      border-radius: 4px;
+ }
+
+ div.prism-codeblock[data-line] .code-toolbar {
+    padding-top: 0.25rem !important;
+ }
+
+ div.prism-shortcode.data-line .code-toolbar {
+    padding-top: 0.25rem !important;
  }
 
  div.code-toolbar > .toolbar {
