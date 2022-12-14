@@ -2,6 +2,14 @@
   {{- $attributes := .Attributes }}
   {{- $classes := slice (printf "language-%s" .Type) .Attributes.class }}
 
+  <!-- Options List -->
+  {{- $options := .Options }}
+  {{ $optionslist := newScratch }}
+  {{ range $k, $v := $options }}
+    {{ $optionslist.Add "options" (printf " %s" $k) }}
+  {{ end }}
+  {{ $optionsclasslist := $optionslist.Get "options" }}
+
   <!-- Line Number Highlight -->
   {{- if isset .Options "hl_lines" }}
     {{ $lines := .Options.hl_lines }}
@@ -49,11 +57,7 @@
 
   {{- $attributes = merge $attributes (dict "class" (delimit $classes " ")) }}
 
-  <div class="prism-codeblock"
-    {{- range $k, $v := $attributes }}
-      {{- printf  " %s" $k | safeHTMLAttr }}
-    {{- end -}}
-  >
+  <div class="prism-codeblock {{ $optionsclasslist }}">
   <pre
     {{- range $k, $v := $attributes }}
       {{- printf " %s=%q" $k $v | safeHTMLAttr }}

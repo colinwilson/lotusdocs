@@ -296,7 +296,7 @@ pre[class*="language-"] {
      border-radius: 4px;
  }
 
- div.prism-codeblock[data-line] .code-toolbar {
+ div.prism-codeblock.hl_lines .code-toolbar {
     padding-top: 0.25rem !important;
  }
 
