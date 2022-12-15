@@ -1,5 +1,10 @@
 {{ if eq .Page.Site.Params.docs.prism true }}
   {{- $attributes := .Attributes }}
+  {{- $ordinal := .Ordinal }}
+
+  {{ $inner := replaceRE "^\r?\n" "" .Inner | string }}
+  {{ $innerHash := substr (sha1 (printf "%s%s" $inner $ordinal)) 0 7 }}
+
   {{- $classes := slice (printf "language-%s" .Type) .Attributes.class }}
 
   <!-- Options List -->
@@ -58,7 +63,7 @@
   {{- $attributes = merge $attributes (dict "class" (delimit $classes " ")) }}
 
   <div class="prism-codeblock {{ $optionsclasslist }}">
-  <pre
+  <pre id="{{ $innerHash }}"
     {{- range $k, $v := $attributes }}
       {{- printf " %s=%q" $k $v | safeHTMLAttr }}
     {{- end -}}
