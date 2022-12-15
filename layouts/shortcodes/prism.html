@@ -1,6 +1,6 @@
 {{ $inner := replaceRE "^\r?\n" "" .Inner | string }}
 {{ $ordinal := .Ordinal }}
-{{ $codeHash := sha1 (delimit (slice $inner $ordinal "prism-shortcode") "") }}
+{{ $codeHash := sha1 (delimit (slice ($inner | base64Encode) $ordinal "prism-shortcode") "") }}
 {{ $codeHashShort := substr $codeHash 0 7 }}
 {{ if len .Params | eq 0 }}
   <pre id="{{ $codeHashShort }}"><code>{{ $inner }}</code></pre>
@@ -25,6 +25,7 @@
         ><code {{ if .Get "lang" }}class="language-{{ .Get "lang" }}"{{ end }}
         >{{ $inner }}</code></pre>
         {{ $codeHashShort }} {{ $ordinal }} {{ $codeHash }}
+        {{ substr ($inner | base64Encode) 0 7 }}
       </div>
   {{ else }}
       <pre id="{{ $codeHashShort }}" class="language-{{ .Get 0 }}">
