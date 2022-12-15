@@ -1,6 +1,6 @@
 {{ $inner := replaceRE "^\r?\n" "" .Inner | string }}
 {{ $ordinal := .Ordinal }}
-{{ $codeHash := sha1 (delimit (slice ($inner | base64Encode) $ordinal "prism-shortcode") "") }}
+{{ $codeHash := (delimit (slice ($inner | base64Encode) $ordinal "prismshortcode") "") }}
 {{ $codeHashShort := substr $codeHash 0 7 }}
 {{ if len .Params | eq 0 }}
   <pre id="{{ $codeHashShort }}"><code>{{ $inner }}</code></pre>
