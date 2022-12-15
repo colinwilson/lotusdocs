@@ -1,4 +1,4 @@
-{{ $inner := replaceRE "^\r?\n" "" .Inner | string }}
+{{ $inner := chomp .Inner | string }}
 {{ $ordinal := .Ordinal }}
 {{ $codeHash := (delimit (slice ($inner | sha256) $ordinal "prismshortcode") "") }}
 {{ $codeHashShort := substr $codeHash 0 7 }}
@@ -26,6 +26,7 @@
         >{{ $inner }}</code></pre>
         {{ $codeHashShort }} {{ $ordinal }} {{ $codeHash }}
         {{ $inner | base64Encode }}
+        {{ chomp .Inner | string }}
       </div>
   {{ else }}
       <pre id="{{ $codeHashShort }}" class="language-{{ .Get 0 }}">
