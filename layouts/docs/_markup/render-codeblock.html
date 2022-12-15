@@ -59,6 +59,11 @@
     {{- $attributes = merge $attributes (dict "data-start" (string .Options.linenostart)) }}
   {{ end -}}
 
+  <!-- Linkable Line Numbers -->
+  {{- if and (isset .Options "anchorlinenos") (ne .Options.anchorlinenos false) }}
+    {{- $classes = $classes | append "linkable-line-numbers" }}
+  {{ end -}}
+
 
   {{- $attributes = merge $attributes (dict "class" (delimit $classes " ")) }}
 
