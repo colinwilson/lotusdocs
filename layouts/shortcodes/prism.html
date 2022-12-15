@@ -1,4 +1,4 @@
-{{ $inner := chomp .Inner | string }}
+{{ $inner := replaceRE "^\r?\n" "" .Inner | string }}
 {{ $ordinal := .Ordinal }}
 {{ $codeHash := (delimit (slice ($inner | sha256) $ordinal "prismshortcode") "") }}
 {{ $codeHashShort := substr $codeHash 0 7 }}
