@@ -1,13 +1,13 @@
 {{ $inner := replaceRE "^\r?\n" "" .Inner | string }}
 {{ $ordinal := .Ordinal }}
-{{ $codeHash := sha1 (printf "%s" (slice $inner $ordinal)) }}
-{{ $innerHash := substr (sha1 (printf "%s" (slice $inner $ordinal))) 0 7 }}
+{{ $codeHash := sha1 (delimit (slice $inner $ordinal "prism-shortcode") "") }}
+{{ $codeHashShort := substr $codeHash 0 7 }}
 {{ if len .Params | eq 0 }}
-  <pre id="{{ $innerHash }}"><code>{{ $inner }}</code></pre>
+  <pre id="{{ $codeHashShort }}"><code>{{ $inner }}</code></pre>
 {{ else }}
   {{ if .IsNamedParams }}
       <div class="prism-shortcode {{- if .Get "line" }} data-line{{ end }}">
-      <pre {{- if .Get "id" }} id="{{ .Get "id" }}"{{ else }} id="{{ $innerHash }}"{{ end }} class="
+      <pre {{- if .Get "id" }} id="{{ .Get "id" }}"{{ else }} id="{{ $codeHashShort }}"{{ end }} class="
         {{- if .Get "lang" }}language-{{ .Get "lang" }}{{ end }}
         {{- if .Get "line-numbers" }} line-numbers{{ end }}
         {{- if .Get "linkable-line-numbers" }} linkable-line-numbers{{ end }}
@@ -24,10 +24,10 @@
         {{- if .Get "output" }} data-output="{{ .Get "output" }}"{{ end }}
         ><code {{ if .Get "lang" }}class="language-{{ .Get "lang" }}"{{ end }}
         >{{ $inner }}</code></pre>
-        {{ $innerHash }} {{ $ordinal }} {{ $codeHash }}
+        {{ $codeHashShort }} {{ $ordinal }} {{ $codeHash }}
       </div>
   {{ else }}
-      <pre id="{{ $innerHash }}" class="language-{{ .Get 0 }}">
+      <pre id="{{ $codeHashShort }}" class="language-{{ .Get 0 }}">
         <code class="language-{{ .Get 0 }}">{{ $inner }}</code>
       </pre>
   {{ end }}
