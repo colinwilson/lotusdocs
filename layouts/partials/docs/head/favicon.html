@@ -1,0 +1,8 @@
+<link rel="icon" href="{{ "/docs/favicon.ico" | absURL }}" sizes="any">
+{{ if os.FileExists "static/docs/favicon.svg" -}}
+  <link rel="icon" type="image/svg+xml" href="{{ "/docs/favicon.svg" | absURL }}">
+{{ end -}}
+<link rel="apple-touch-icon" sizes="180x180" href="{{ "/docs/apple-touch-icon.png" | absURL }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "/docs/favicon-32x32.png" | absURL }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ "/docs/favicon-16x16.png" | absURL }}">
+<link rel="manifest" crossorigin="use-credentials" href="{{ "/docs/site.webmanifest" | absURL }}">

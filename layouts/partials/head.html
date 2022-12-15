@@ -12,7 +12,7 @@
     <meta name="website" content="https://github.com/colinwilson/lotusdocs" />
     <meta name="Version" content="v0.1.0" />
     <!-- favicon -->
-    <link rel="shortcut icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBkPSJNNDcxLjI3LDQwLjczQzQzMC41MzksMCwzNjguMTc4LDAsMjU2LDBWMzE5LjEyYTI1LjYsMjUuNiwwLDAsMCwyNS42LDI1LjZoNTYuMzJhMTUuMzYsMTUuMzYsMCwwLDEsMTUuMzYsMTUuMzZ2NjYuNTZBMTUuMzYsMTUuMzYsMCwwLDEsMzM3LjkyLDQ0MkgyMzUuNTJhNzYuOCw3Ni44LDAsMCwxLTc2LjgtNzYuOFYxLjU0OUMxMDQuMzU5LDQuNiw2Ny43NzIsMTMuNjg5LDQwLjczLDQwLjczLDAsODEuNDYxLDAsMTQzLjgyMiwwLDI1NlMwLDQzMC41MzksNDAuNzMsNDcxLjI3LDE0My44MjIsNTEyLDI1Niw1MTJzMTc0LjUzOSwwLDIxNS4yNy00MC43M1M1MTIsMzY4LjE3OCw1MTIsMjU2LDUxMiw4MS40NjEsNDcxLjI3LDQwLjczWiIgc3R5bGU9ImZpbGw6IzA2ZiIvPjwvc3ZnPg==" type="image/svg+xml" />
+    {{ block "head/favicon" . }}{{ partial "head/favicon.html" . }}{{ end }}
     <!-- Google Fonts -->
     {{- partial "google-fonts" . }}
     <!-- Custom CSS -->
