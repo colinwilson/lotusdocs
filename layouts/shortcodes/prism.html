@@ -26,6 +26,7 @@
         >{{ $inner }}</code></pre>
         {{ $codeHashShort }} {{ $ordinal }} {{ $codeHash }}
         {{ $inner | base64Encode }}
+        {{ .Inner | base64Encode }}
         {{ chomp .Inner | string }}
       </div>
   {{ else }}
