@@ -2,8 +2,8 @@
   {{- $attributes := .Attributes }}
   {{- $ordinal := .Ordinal }}
 
-  {{ $inner := replaceRE "^\r?\n" "" .Inner | string }}
-  {{ $innerHash := substr (sha1 (printf "%s%s" $inner $ordinal)) 0 7 }}
+  {{ $innerRemoveLB := replaceRE "\r\n?|\n" "" .Inner | string }}
+  {{ $innerHash := substr (sha1 (printf "%s%s" $innerRemoveLB $ordinal)) 0 7 }}
 
   {{- $classes := slice (printf "language-%s" .Type) .Attributes.class }}
 

@@ -1,6 +1,7 @@
-{{ $inner := replaceRE "\r\n?|\n" "" .Inner | string }}
+{{ $inner := replaceRE "^\r?\n" "" .Inner | string }}
+{{ $innerRemoveLB := replaceRE "\r\n?|\n" "" .Inner | string }}
 {{ $ordinal := .Ordinal }}
-{{ $codeHash := sha1 (delimit (slice $inner $ordinal "prismshortcode") "") }}
+{{ $codeHash := sha1 (delimit (slice $innerRemoveLB $ordinal "prismshortcode") "") }}
 {{ $codeHashShort := substr $codeHash 0 7 }}
 {{ if len .Params | eq 0 }}
   <pre id="{{ $codeHashShort }}"><code>{{ $inner }}</code></pre>
@@ -24,10 +25,6 @@
         {{- if .Get "output" }} data-output="{{ .Get "output" }}"{{ end }}
         ><code {{ if .Get "lang" }}class="language-{{ .Get "lang" }}"{{ end }}
         >{{ $inner }}</code></pre>
-        {{ $codeHashShort }} {{ $ordinal }} {{ $codeHash }}
-        {{ $inner | base64Encode }}
-        {{ .Inner | base64Encode }}
-        {{ chomp .Inner | string }}
       </div>
   {{ else }}
       <pre id="{{ $codeHashShort }}" class="language-{{ .Get 0 }}">
