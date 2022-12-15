@@ -24,6 +24,7 @@
         ><code {{ if .Get "lang" }}class="language-{{ .Get "lang" }}"{{ end }}
         >{{ $inner }}</code></pre>
       </div>
+      {{ .Inner | base64Encode }}
   {{ else }}
       <pre id="{{ $innerHash }}" class="language-{{ .Get 0 }}">
         <code class="language-{{ .Get 0 }}">{{ $inner }}</code>
