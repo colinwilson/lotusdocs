@@ -670,17 +670,15 @@ svg.DocSearch-Hit-Select-Icon {
 
 .DocSearch-Commands-Key {
     align-items: center;
-    background: var(--docsearch-key-gradient);
-    border-radius: 2px;
-    box-shadow: var(--docsearch-key-shadow);
+    background: var(--docsearch-key-background-color);
+    border-radius: 3px;
     display: flex;
-    height: 18px;
+    height: 20px;
     justify-content: center;
     margin-right: .4em;
-    padding: 0 0 1px;
-    color: var(--docsearch-muted-color);
+    color: var(--docsearch-key-color);
     border: 0;
-    width: 20px
+    width: 30px
 }
 
 @media (max-width:768px) {
