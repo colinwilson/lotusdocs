@@ -27,7 +27,7 @@
     <meta name="website" content="https://lotusdocs.vercel.app" />
     <meta name="Version" content="v1.0.0" />
     <!-- favicon -->
-    {{ block "/docs/head/favicon" . }}{{ partial "docs/head/favicon.html" . }}{{ end }}
+    {{ block "/docs/head/favicon" . }}{{ partialCached "docs/head/favicon.html" . }}{{ end }}
     <!-- Dark Mode -->
     {{ if eq .Site.Params.docs.darkMode true -}}
         {{ $darkModeInit := resources.Get "/docs/js/darkmode-init.js" | js.Build | minify -}}

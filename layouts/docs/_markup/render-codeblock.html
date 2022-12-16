@@ -1,7 +1,9 @@
+<!-- Prism Render Hook -->
 {{ if eq .Page.Site.Params.docs.prism true }}
   {{- $attributes := .Attributes }}
   {{- $ordinal := .Ordinal }}
 
+  <!-- Create SHA1 Hash of Code Block-->
   {{ $innerRemoveLB := replaceRE "\r\n?|\n" "" .Inner | string }}
   {{ $innerHash := substr (sha1 (printf "%s%s" $innerRemoveLB $ordinal)) 0 7 }}
 
@@ -51,7 +53,7 @@
 
   <!-- Line Numbers -->
   {{- if and (isset .Options "linenos") (ne .Options.linenos false) }}
-    {{- $classes = $classes | append "line-numbers" }} <!-- https://discourse.gohugo.io/t/scope-issue-inside-conditional-block-i-think/29273/4?u=colin -->
+    {{- $classes = $classes | append "line-numbers" }} <!-- https://discourse.gohugo.io/t/scope-issue-inside-conditional-block-i-think/29273/4 -->
   {{ end -}}
 
   <!-- Line Number Start -->
@@ -63,7 +65,6 @@
   {{- if and (isset .Options "anchorlinenos") (ne .Options.anchorlinenos false) }}
     {{- $classes = $classes | append "linkable-line-numbers" }}
   {{ end -}}
-
 
   {{- $attributes = merge $attributes (dict "class" (delimit $classes " ")) }}
 

@@ -12,7 +12,7 @@
     <meta name="website" content="https://github.com/colinwilson/lotusdocs" />
     <meta name="Version" content="v0.1.0" />
     <!-- favicon -->
-    {{ block "head/favicon" . }}{{ partial "head/favicon.html" . }}{{ end }}
+    {{ block "head/favicon" . }}{{ partialCached "head/favicon.html" . }}{{ end }}
     <!-- Google Fonts -->
     {{- partial "google-fonts" . }}
     <!-- Custom CSS -->
