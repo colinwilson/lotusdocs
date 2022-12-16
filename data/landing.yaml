@@ -111,4 +111,18 @@ image_compare:
       imageBefore: "lotusdocs_poppins.webp"
       imageAfter: "lotusdocs_comic_neue_.webp"
 
-    # - title: Themes
+    - title: Accent Color
+      config: {
+        startingPoint: 25,
+        addCircle: true,
+        addCircleBlur: true,
+        showLabels: true,
+        labelOptions: {
+          before: 'Blue',
+          after: 'Emerald',
+          onHover: false
+        }
+      }
+      imagePath: "images/screenshots"
+      imageBefore: "lotusdocs_blue.webp"
+      imageAfter: "lotusdocs_emerald.webp"
