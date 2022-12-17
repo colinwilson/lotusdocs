@@ -17,7 +17,9 @@
             <button id="close-sidebar" class="btn btn-icon btn-soft">
                 <span class="material-icons size-20 menu-icon align-middle">menu</span>
             </button>
+            {{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
             <span><div id="docsearch"></div></span>
+            {{ end }}
             <!-- <div class="search-bar p-0 d-none d-md-block ms-2">
                 <div id="search" class="menu-search mb-0">
                     <form role="search" method="get" id="searchform" class="searchform">
