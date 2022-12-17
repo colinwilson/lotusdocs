@@ -66,8 +66,6 @@
     <!-- Back to top -->
     {{ end }}
 
-    {{- partialCached "docs/footer/docsearch.html" . -}}
-
     <!-- Dark Mode Switch JS -->
     {{ if eq .Site.Params.docs.darkMode true -}}
         {{ $darkModeSwitch := resources.Get "/docs/js/darkmode-switch.js" | js.Build | minify }}
@@ -75,6 +73,9 @@
     {{ end -}}
 
     {{- partialCached "docs/footer/footer-scripts.html" . -}}
+
+    <!-- DocSearch Config -->
+    {{- partialCached "docs/footer/docsearch.html" . -}}
 
 </body>
 </html>
