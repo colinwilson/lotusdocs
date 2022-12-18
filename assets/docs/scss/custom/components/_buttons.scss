@@ -105,17 +105,17 @@ body .toggle-light {
         border-radius: 30px;
     }
 
-    &.btn-light {
-        border: 1px solid darken($light, 2%);
-    }
+    // &.btn-light {
+    //     border: 1px solid darken($light, 2%);
+    // }
 
     &.btn-outline-light {
-        border-color: $gray-200 !important;
+        border-color: var(--gray-200) !important;
     }
 
     &.btn-soft-light {
-        color: $gray-500 !important;
-        border-color: $gray-200 !important;
+        color: var(--gray-500) !important;
+        border-color: var(--gray-200) !important;
     }
 
     &.btn-soft-dark {
@@ -125,18 +125,18 @@ body .toggle-light {
         &:active,
         &.active,
         &.focus {
-            color: $gray-400 !important;
-            border-color: $gray-200 !important;
+            color: var(--gray-400) !important;
+            border-color: var(--gray-200) !important;
         }
     }
 
     &.btn-dark,
     &.btn-secondary {
-        color: $gray-200;
+        color: var(--gray-200);
     }
 
     &.btn-outline-light {
-        color: $gray-900;
+        color: var(--gray-900);
     }
 
     &.btn-icon {

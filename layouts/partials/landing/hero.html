@@ -36,7 +36,7 @@
                     </div>
 
                     {{ if .Site.Data.landing.hero.info }}
-                    <p class="text-muted mb-0 mt-3">{{ .Site.Data.landing.hero.info }}</p>
+                    <p class="text-muted mb-0 mt-3">{{ .Site.Data.landing.hero.info | markdownify }}</p>
                     {{ end }}
                 </div>
             </div>

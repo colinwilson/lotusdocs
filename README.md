@@ -15,3 +15,5 @@
 <p align="center">
   Lotus Docs is an easily updated and customised Hugo theme for building fast, secure, and SEO-friendly documentation sites.
 </p>
+
+![Lotus Docs Screenshot - Dec 2022](https://res.cloudinary.com/lotuslabs/image/upload/v1671315779/Lotus%20Docs/Social%20Media/lotusdocs_readme_banner_xzzvv3.webp)

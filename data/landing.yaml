@@ -27,7 +27,7 @@ hero:
   #   btnText: "Get Started"
   #   url: "/docs"
 
-  info: "Open-source MIT Licensed."
+  info: "**Open Source** MIT Licensed."
 
 # Features Grid
 features:
@@ -75,7 +75,7 @@ image_compare:
   enable: true
 
   title: Customise The Lotus Docs Appearance
-  subtitle: Much of Lotus Docs' appearance can be customised. Dark mode is optional (enabled by default) and you can choose which ever Google font suites you simply by updating a single config setting.
+  subtitle: Much of Lotus Docs' appearance can be customised. Dark mode is optional (enabled by default) and you can choose a Google font that suites you via a single config setting.
 
   items:
     - title: Dark Mode

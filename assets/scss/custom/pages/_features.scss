@@ -10,6 +10,10 @@ $value in $theme-colors {
                 background: rgba($value, 0.05);
             }
 
+            .no-icon {
+                background: transparent;
+            }
+
             .image {
                 &:before {
                     background: linear-gradient(45deg, transparent, rgba($value, 0.1));
@@ -169,7 +173,8 @@ $value in $theme-colors {
     .title {
         font-size: 22px !important;
     }
-    .icon {
+    .icon,
+    .no-icon {
         height: 45px;
         min-width: 45px;
         display: flex;

@@ -7,7 +7,7 @@
                 {{ range .Site.Data.landing.features.items }}
                     <div class="col-md-4 col-12">
                         <div class="d-flex features feature-primary p-3">
-                            <div class="icon text-center rounded-3 text-primary me-3">
+                            <div class="{{ if .icon }}icon{{ else }}no-icon{{ end }} text-center rounded-3 text-primary me-3">
                                 <i class="material-icons align-middle h4 mb-0">{{ .icon }}</i>
                             </div>
                             <div class="flex-1">

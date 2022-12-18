@@ -123,7 +123,7 @@
         left: 8px;
         top: 10px;
         border-radius: 30%;
-        background: $gray-400;
+        background: var(--gray-400);
     }
 }
 
@@ -203,5 +203,5 @@
 }
 
 .docs-content .main-content .alert ul {
-    font-size: $font-size-sm;
+    font-size: var(--font-size-sm);
 }

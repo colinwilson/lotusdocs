@@ -14,19 +14,4 @@ footer {
         letter-spacing: 1px;
         font-weight: 500;
     }
-    .footer-list {
-        margin-bottom: 0;
-        li {
-            margin-bottom: 10px;
-            a{
-                transition: all 0.5s ease;
-                &:hover {
-                    color: lighten($gray-500, 20%);
-                }
-            }
-            &:last-child{
-                margin-bottom: 0;
-            }
-        }
-    }
 }
