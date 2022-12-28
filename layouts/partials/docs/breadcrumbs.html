@@ -9,7 +9,7 @@
                 {{ if eq $currentPage (humanize $rellink) }}
                     {{ if eq $currentPage $docRoot }}
                         <li class="breadcrumb-item text-capitalize active" aria-current="page">
-                            <span class="material-icons size-24 align-text-bottom">home</span>
+                            <span class="material-icons size-20 align-text-bottom">home</span>
                         </li>
                     {{ else }}
                         <li class="breadcrumb-item text-capitalize active" aria-current="page">{{ humanize . }}</li>
@@ -17,7 +17,7 @@
                 {{ else if eq (humanize $rellink) $docRoot }}
                     <li class="breadcrumb-item text-capitalize">
                         <a href="{{ $rellink }}">
-                            <span class="material-icons size-24 align-text-bottom">home</span>
+                            <span class="material-icons size-20 align-text-bottom">home</span>
                         </a>
                     </li>
                 {{ else }}
