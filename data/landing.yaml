@@ -97,7 +97,7 @@ image_compare:
     - title: Custom Fonts
       config: {
         controlColor: "#3C4257",
-        startingPoint: 50,
+        startingPoint: 38,
         addCircle: true,
         addCircleBlur: false,
         showLabels: true,
