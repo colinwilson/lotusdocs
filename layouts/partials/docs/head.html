@@ -46,5 +46,8 @@
         {{- $style = $style | minify | fingerprint "sha384" }}
     {{- end -}}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $style.Data.Integrity }}"{{ end -}} crossorigin="anonymous">
-    <script defer data-domain="lotusdocs-staging.vercel.app" src="https://plausible.aigis.io/js/script.js"></script>
+    <!-- Plausible Analytics Config -->
+    {{- if hugo.IsProduction }}
+        {{- partialCached "head/plausible.html" . -}}
+    {{- end -}}
 </head>
