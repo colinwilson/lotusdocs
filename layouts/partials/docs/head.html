@@ -47,7 +47,7 @@
     {{- end -}}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $style.Data.Integrity }}"{{ end -}} crossorigin="anonymous">
     <!-- Plausible Analytics Config -->
-    {{- if hugo.IsProduction }}
+    {{- if not .Site.IsServer }}
         {{- partialCached "head/plausible.html" . -}}
     {{- end -}}
 </head>
