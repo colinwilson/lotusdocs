@@ -49,6 +49,6 @@
     {{- end }}
     <!-- Plausible Analytics Config -->
     {{- if not .Site.IsServer }}
-        {{- partialCached "head/plausible.html" . }}
+        {{- partial "head/plausible.html" . }}
     {{- end -}}
 </head>
