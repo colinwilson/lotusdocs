@@ -113,6 +113,7 @@
     li {
         position: relative;
         padding-left: 32px;
+        // margin-bottom: 5px;
     }
 
     li::before {
@@ -199,6 +200,14 @@
         tab-size: 4;
         scrollbar-width: thin;
         //scrollbar-color: transparent transparent;
+    }
+}
+
+// Chroma Highlighter CSS
+.docs-content .main-content td pre {
+
+    code {
+        overflow-x: unset !important;
     }
 }
 

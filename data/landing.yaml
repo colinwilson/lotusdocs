@@ -33,6 +33,9 @@ hero:
 features:
   enable: true
 
+  title: Why choose Lotus Docs?
+  subtitle: Lotus Docs is a simple yet highly configurable Hugo theme. With Lotus Docs' default configuration you can deploy and publish documentation in a matter of minutes.
+
   items:
     - title: Fast
       icon: speed
