@@ -166,11 +166,12 @@
 }
 
 // Code
-// .docs-content .main-content div.highlight {
-//     padding: 0.25em 0 0 0;
-//     background: var(--code-block-bg);
-//     border-radius: 4px;
-// }
+.docs-content .main-content div.highlight {
+    margin: 16px 0;
+    padding: 1.25em 0 0 0;
+    background: var(--code-block-bg);
+    border-radius: 4px;
+}
 
 .docs-content .main-content code {
     font-size: inherit;
@@ -183,10 +184,10 @@
 }
 
 .docs-content .main-content pre {
-    margin: 16px 0;
+    margin: 0;
     background-color: var(--code-block-bg) !important;
     border-radius: 4px;
-    padding: 1.25rem 0 0 0;
+    padding: 0;
 
     code {
         color: #f5fbff;
