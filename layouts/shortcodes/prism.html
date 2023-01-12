@@ -13,6 +13,9 @@
         {{- if .Get "line-numbers" }} line-numbers{{ end }}
         {{- if .Get "linkable-line-numbers" }} linkable-line-numbers{{ end }}
         {{- if .Get "command-line" }} command-line{{ end }}"
+        {{- /* file highlight plugin */ -}}
+        {{- if .Get "src" }} data-src="{{ .Get "src" }}"{{ end }}
+        {{- if .Get "src-range" }} data-range="{{ .Get "src-range" }}"{{ end }}
         {{- /* line highlight plugin */ -}}
         {{- if .Get "line" }} data-line="{{ .Get "line" }}"{{ end }}
         {{- if .Get "line-offset" }} data-line-offset="{{ .Get "line-offset" }}"{{ end }}
@@ -23,8 +26,8 @@
         {{- if .Get "host" }} data-host="{{ .Get "host" }}"{{ end }}
         {{- if .Get "prompt" }} data-prompt="{{ .Get "prompt" }}"{{ end }}
         {{- if .Get "output" }} data-output="{{ .Get "output" }}"{{ end }}
-        ><code {{ if .Get "lang" }}class="language-{{ .Get "lang" }}"{{ end }}
-        >{{ $inner }}</code></pre>
+        >{{- if .Get "src" }}{{ $inner }}{{ else }}<code {{ if .Get "lang" }}class="language-{{ .Get "lang" }}"{{ end }}
+        >{{ $inner }}</code>{{ end }}</pre>
       </div>
   {{ else }}
       <pre id="{{ $codeHashShort }}" class="language-{{ .Get 0 }}">
