@@ -2,8 +2,15 @@
 // _table.scss
 //
 
-// Table
+:root {
+    --table-hover-bg: rgba(0, 0, 0, 0.075);
+}
 
+[data-dark-mode] {
+    --table-hover-bg: rgba(255, 255, 255, 0.075);
+}
+
+// Default Table
 table {
     td {
         border-top: 1px solid var(--card-border-color);
@@ -17,6 +24,7 @@ table {
     }
 }
 
+// Shortcode Table
 .table {
     color: var(--text-default);
     font-size: 0.875rem;
@@ -36,6 +44,10 @@ table {
             border-bottom-width: 1px;
         }
 
+        td:first-child {
+            border-left-width: 1px;
+        }
+
         td:last-child {
             border-right: inherit;
             border-right-width: 1px;
@@ -44,6 +56,9 @@ table {
         tr:first-child {
             td {
                 border-top-width: 1px;
+            }
+            td:first-child {
+                border-top-left-radius: 4px;
             }
             td:last-child {
                 border-top-right-radius: 4px;
@@ -104,13 +119,9 @@ table {
     }
 }
 
-.table > tbody tr:first-child > td:first-child {
-    border-top-left-radius: 4px;
-}
-
-.table tbody td:first-child, .table tbody td[rowspan] + td {
-    border-left-width: 1px;
-}
+// .table tbody td:first-child, .table tbody td[rowspan] + td {
+//     border-left-width: 1px;
+// }
 
 .table-striped-columns > :not(caption) > tr > :nth-child(2n) {
     --bs-table-accent-bg: var(--alert-primary-bg);
@@ -123,6 +134,11 @@ table {
 
 .table-striped > tbody > tr:nth-of-type(2n+1) > * {
     --bs-table-accent-bg: var(--alert-primary-bg);
+    color: var(--text-default);
+}
+
+.table-hover > tbody > tr:hover > * {
+    --bs-table-accent-bg: var(--table-hover-bg);
     color: var(--text-default);
 }
 

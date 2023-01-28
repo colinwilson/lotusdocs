@@ -42,7 +42,7 @@
                                                 {{ end }}
                                             </h1>
                                             {{ if site.Params.docs.descriptions | default false }}
-                                            <p class="lead mb-0">{{ $currentPage.Description }}</p>
+                                            <p class="lead mb-0">{{ $currentPage.Description | markdownify }}</p>
                                             {{ end }}
                                         </div>
                                         <div id="content" class="main-content">
