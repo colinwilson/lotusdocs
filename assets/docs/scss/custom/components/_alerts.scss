@@ -8,7 +8,7 @@
 
     // Primary
     --alert-primary-color: var(--primary-50-hsl);
-    --alert-primary-bg: hsl(var(--alert-primary-color));
+    --alert-primary-bg: hsl(var(--alert-primary-color),0.5);
     --alert-primary-border-color: var(--alert-border-color);
 
     // Info
@@ -18,17 +18,17 @@
 
     // Success
     --alert-success-color: var(--emerald-50-hsl);
-    --alert-success-bg: hsl(var(--alert-success-color),0.5);
+    --alert-success-bg: hsl(var(--alert-success-color),0.4);
     --alert-success-border-color: var(--alert-border-color);
 
     // Danger
     --alert-danger-color: var(--cardinal-50-hsl);
-    --alert-danger-bg: hsl(var(--alert-danger-color),0.7);
+    --alert-danger-bg: hsl(var(--alert-danger-color),0.5);
     --alert-danger-border-color: var(--alert-border-color);
 
     // Warning
     --alert-warning-color: var(--yellow-50-hsl);
-    --alert-warning-bg: hsl(var(--alert-warning-color),0.7);
+    --alert-warning-bg: hsl(var(--alert-warning-color),0.5);
     --alert-warning-border-color: var(--alert-border-color);
 
     // Light

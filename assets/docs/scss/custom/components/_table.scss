@@ -147,33 +147,4 @@ table {
     display: block;
     width: 100%;
     overflow-x: auto;
-    // background-color: $table-bg;
-    .table {
-        td,
-        th {
-            vertical-align: middle;
-        }
-        &.table-nowrap {
-            th,
-            td {
-                white-space: nowrap;
-            }
-        }
-        &>:not(:first-child) {
-            border-top: none !important;
-        }
-    }
-    .table-center {
-        th {
-            vertical-align: middle !important;
-        }
-        tbody {
-            tr {
-                &:hover {
-                    color: $dark;
-                    background-color: $gray-100;
-                }
-            }
-        }
-    }
 }
