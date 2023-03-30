@@ -124,6 +124,16 @@ if (document.getElementById("close-sidebar")) {
     });
 }
 
+// Close Sidebar by Clicking Outside
+if (document.getElementById("sidebar")) {
+    var closeSidebar = document.getElementById("close-sidebar");
+    var sidebar = document.getElementById("sidebar");
+    document.addEventListener('click', function(elem) {            
+        if (!closeSidebar.contains(elem.target) && !sidebar.contains(elem.target))
+            document.getElementsByClassName("page-wrapper")[0].classList.add("toggled");
+    });
+}
+
 // Clickable Menu
 if (document.getElementById("navigation")) {
     var elements = document.getElementById("navigation").getElementsByTagName("a");
