@@ -124,14 +124,22 @@ if (document.getElementById("close-sidebar")) {
     });
 }
 
-// Close Sidebar by Clicking Outside
+// Close Sidebar (mobile)
 if (!window.matchMedia('(min-width: 1024px)').matches) {
-    if (document.getElementById("sidebar")) {        
+    if (document.getElementById("close-sidebar")) {
         var closeSidebar = document.getElementById("close-sidebar");
         var sidebar = document.getElementById("sidebar");
-        document.addEventListener('click', function(elem) {            
+        const sidebarMenuLink = Array.from(document.getElementsByClassName("sidebar-menu-link"));
+        // Close sidebar by clicking outside
+        document.addEventListener('click', function(elem) {
             if (!closeSidebar.contains(elem.target) && !sidebar.contains(elem.target))
                 document.getElementsByClassName("page-wrapper")[0].classList.add("toggled");
+        });
+        // Close sidebar immediately when clicking sidebar menu item
+        sidebarMenuLink.forEach(menuLink => {
+            menuLink.addEventListener("click", function () {
+              document.getElementsByClassName("page-wrapper")[0].classList.add("toggled");
+            });
         });
     }
 }
