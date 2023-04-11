@@ -9,8 +9,8 @@
                         {{ if .Draft }}<span class="badge bg-default fs-6 align-middle">DRAFT</span>{{ end }}
                     </span>
                     <div class="card-body p-0 content">
-                        <p class="fs-5 fw-semibold text-reset mb-1">{{ .Title }}</p>
-                        <p class="para text-muted mb-0">{{ .Description | truncate (.Site.Params.docs.listDescTrunc | default 100) | markdownify }}</p>
+                        <p class="fs-5 fw-semibold card-title mb-1">{{ .Title }}</p>
+                        <p class="para card-text mb-0">{{ .Description | truncate (.Site.Params.docs.listDescTrunc | default 100) | markdownify }}</p>
                     </div>
                     <!-- <div class="position-absolute top-0 end-0">
                         <i class="material-icons opacity-05">{{- .Params.icon }}</i>

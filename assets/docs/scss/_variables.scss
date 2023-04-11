@@ -319,6 +319,7 @@ $stretched-link-z-index:                  1;
     --text-default: var(--text-dark);
     --text-default-inv: var(--text-light);
     --text-muted: var(--gray-600);
+    --#{$prefix}secondary-color: var(--gray-600);
 
     --body-color: var(--text-default);
 
@@ -406,6 +407,7 @@ $stretched-link-z-index:                  1;
     --text-default: var(--text-light);
     --text-default-inv: var(--text-dark);
     --text-muted: #b6b9be;
+    --#{$prefix}secondary-color: #6c757d;
 
     // Buttons
     --btn-soft-color: var(--gray-400);
