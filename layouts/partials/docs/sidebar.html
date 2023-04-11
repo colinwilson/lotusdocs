@@ -40,13 +40,13 @@
                                                     <ul>
                                                         {{ range .Pages }}
                                                             {{ $active := in $currentPage.RelPermalink .RelPermalink }}
-                                                            <li class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}"><a class="sidebar-menu-link" href="{{ .Permalink }}">{{ .Title }}</a></li>
+                                                            <li class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}"><a class="sidebar-nested-link" href="{{ .Permalink }}">{{ .Title }}</a></li>
                                                         {{ end }}
                                                     </ul>
                                                 </div>
                                             </li>
                                         {{ else }}
-                                            <li class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}"><a class="sidebar-menu-link" href="{{ .Permalink }}">{{ .Title }}</a></li>
+                                            <li class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}"><a class="sidebar-nested-link" href="{{ .Permalink }}">{{ .Title }}</a></li>
                                         {{ end }}
                                     {{ end }}
                                 </ul>
@@ -55,7 +55,7 @@
                     {{ else }}
                         {{ $active := in $currentPage.RelPermalink .RelPermalink }}
                         <li class="{{ if $active }}current{{ end }}">
-                            <a class="sidebar-menu-link" href="{{ .Permalink }}">
+                            <a class="sidebar-root-link" href="{{ .Permalink }}">
                                 {{ if eq .Site.Params.docs.sidebarIcons true -}}
                                     <i class="material-icons me-2">{{ .Params.icon }}</i>
                                 {{ end }}
