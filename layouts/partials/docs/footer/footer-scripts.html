@@ -26,6 +26,17 @@
     {{ $slice = $slice | append $prism -}}
 {{ end -}}
 
+<!-- Bootstrap JS -->
+{{ $js := resources.Get "/js/bootstrap.js" }}
+{{ $params := dict }}
+{{ $sourceMap := cond hugo.IsProduction "" "inline" }}
+{{ $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2018" "params" $params }}
+{{ $js = $js | js.Build $opts }}
+{{ if hugo.IsProduction }}
+    {{ $js = $js | fingerprint "sha384" }}
+{{ end }}
+    <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end -}} defer></script>
+
 {{ $js := $slice | resources.Concat "/docs/js/bundle.js" -}}
 
 {{- if not .Site.IsServer }}
