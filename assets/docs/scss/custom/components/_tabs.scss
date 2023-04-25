@@ -6,16 +6,19 @@
     --nav-tabs-border-width: none;
     --nav-tabs-link-active-bg: none;
     --nav-tabs-link-active-color: var(--text-default);
+    --nav-tabs-border-color: var(--gray-400);
 }
 
-[data-dark-mode] {}
+[data-dark-mode] {
+    --nav-tabs-border-color: var(--gray-800);
+}
 
 .nav-tabs {
     --#{$prefix}nav-tabs-border-width: var(--nav-tabs-border-width);
     --#{$prefix}nav-tabs-link-active-bg: var(--nav-tabs-link-active-bg);
     --#{$prefix}nav-tabs-link-active-color: var(--nav-tabs-link-active-color);
 
-    border-bottom: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--nav-tabs-border-color);
     margin-bottom: 0.8rem;
 
     .nav-link {
