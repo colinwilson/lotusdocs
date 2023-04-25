@@ -42,6 +42,7 @@ $font-family-monospace:  {{ .Site.Params.mono_font | default "SFMono-Regular, Me
 @import "custom/components/card";
 @import "custom/components/forms";
 @import "custom/components/table";
+@import "custom/components/tabs";
 
 // // Pages
 @import "custom/pages/features";

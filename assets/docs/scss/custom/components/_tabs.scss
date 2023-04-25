@@ -1,0 +1,37 @@
+//
+// _tabs.scss
+//
+
+:root {
+    --nav-tabs-border-width: none;
+    --nav-tabs-link-active-bg: none;
+    --nav-tabs-link-active-color: var(--text-default);
+}
+
+[data-dark-mode] {}
+
+.nav-tabs {
+    --#{$prefix}nav-tabs-border-width: var(--nav-tabs-border-width);
+    --#{$prefix}nav-tabs-link-active-bg: var(--nav-tabs-link-active-bg);
+    --#{$prefix}nav-tabs-link-active-color: var(--nav-tabs-link-active-color);
+
+    border-bottom: 1px solid var(--gray-200);
+    margin-bottom: 0.8rem;
+
+    .nav-link {
+
+        margin-bottom: -1px;
+
+        &:hover {
+            text-decoration: none !important;
+        }
+    }
+
+    .nav-link.active {
+        border-bottom: 2px solid var(--primary);
+    }
+}
+
+.tab-content {
+    margin-bottom: 0.8rem;
+}

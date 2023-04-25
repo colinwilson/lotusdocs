@@ -39,7 +39,7 @@
 .docs-content .main-content a {
     color: var(--content-link-color);
     &:hover {
-        text-decoration: underline 2px var(--primary-200) !important;
+        text-decoration: underline 2px var(--primary-200);
         text-underline-offset: 2.5px !important;
         transition: 0s !important;
     }
