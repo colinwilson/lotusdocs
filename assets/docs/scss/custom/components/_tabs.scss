@@ -19,7 +19,7 @@
     margin-bottom: 0.8rem;
 
     .nav-link {
-
+        color: var(--text-default) !important;
         margin-bottom: -1px;
 
         &:hover {
@@ -28,7 +28,8 @@
     }
 
     .nav-link.active {
-        border-bottom: 2px solid var(--primary);
+        border-bottom: 2px solid var(--content-link-color);
+        color: var(--content-link-color) !important;
     }
 }
 
