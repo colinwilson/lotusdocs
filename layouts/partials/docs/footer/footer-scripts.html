@@ -27,7 +27,7 @@
 {{ end -}}
 
 <!-- Bootstrap JS -->
-{{ $js := resources.Get "/js/bootstrap.js" }}
+{{ $js := resources.Get "/docs/js/bootstrap.js" }}
 {{ $params := dict }}
 {{ $sourceMap := cond hugo.IsProduction "" "inline" }}
 {{ $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2018" "params" $params }}

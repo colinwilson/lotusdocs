@@ -1,3 +1,4 @@
+<!-- https://github.com/rvanhorn/hugo-dynamic-tabs -->
 {{ $tabName := .Get "tabName" }}
 {{ $tabID := delimit (shuffle (slice "a" "b" "c" "d" "e" "f")) "" }}
 {{ .Parent.Scratch.Add "tabName" (slice $tabName) }}
