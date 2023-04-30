@@ -168,9 +168,12 @@
 // Code
 .docs-content .main-content div.highlight {
     margin: 16px 0;
-    padding: 1.25em 0 0 0;
+    padding: $code-block-padding-top;
     background: var(--code-block-bg);
     border-radius: 4px;
+    pre {
+        padding: 0;
+    }
 }
 
 .docs-content .main-content code {
@@ -187,7 +190,7 @@
     margin: 0;
     background-color: var(--code-block-bg) !important;
     border-radius: 4px;
-    padding: 0;
+    padding: $code-block-padding-top;
 
     code {
         color: #f5fbff;
