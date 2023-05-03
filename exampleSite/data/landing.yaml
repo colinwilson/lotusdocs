@@ -8,7 +8,7 @@ hero:
   #   pill: false # boolean
   #   soft: true # boolean
 
-  title: "Lotus Docs"
+  title: "Example Site"
   subtitle: A lightweight, **modern documentation** theme for Hugo. Easily customised for building **fast**, **secure**, and **SEO-friendly** documentation sites.
 
   image:
@@ -18,13 +18,13 @@ hero:
     boxShadow: true # default 'false' (excludes .svg images)
     rounded: true # round the image corners? default 'false' (excludes .svg images)
 
-  ctaButton:
-    icon: construction
-    btnText: "In Development"
-    url: "https://github.com/colinwilson/lotusdocs"
+  # ctaButton:
+  #   icon: construction
+  #   btnText: "In Development"
+  #   url: "https://github.com/colinwilson/lotusdocs"
   cta2Button:
     icon: menu_book
-    btnText: "Read the Docs"
+    btnText: "Get Started"
     url: "/docs"
 
   info: "**Open Source** MIT Licensed."

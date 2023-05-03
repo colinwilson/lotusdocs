@@ -1,0 +1,113 @@
+baseURL = "/"
+languageCode = "en-GB"
+title = "Lotus Docs Example Site"
+theme = "lotusdocs"
+contentDir = "content"
+enableEmoji = true
+enableGitInfo = true # N.B. .GitInfo does not currently function with git submodule content directories
+
+# !!! exampleSite only, you may need to delete the line: `themesDir: ../../` 
+themesDir = "../../"
+
+[module]
+  # uncomment line below for temporary local development of module
+  # replacements = "github.com/colinwilson/lotusdocs -> themes/lotusdocs"
+  [module.hugoVersion]
+    extended = true
+    min = "0.100.0"
+  [[module.imports]]
+    path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+    disable = false
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true # https://jdhao.github.io/2019/12/29/hugo_html_not_shown/
+  # [markup.highlight]
+  #   codeFences = false # disables Hugo's default syntax highlighting
+  # [markup.goldmark.parser]
+  #   [markup.goldmark.parser.attribute]
+  #     block = true
+  #     title = true
+
+[params]
+
+  google_fonts = [
+    ["Poppins", "300, 400, 600, 700"],
+    ["Source Code Pro", "500, 700"]
+  ]
+
+  sans_serif_font = "Poppins"     # Default is System font
+  secondary_font  = "Poppins"     # Default is System font
+  mono_font       = "Source Code Pro" # Default is System font
+
+    [params.footer]
+        copyright = "© :YEAR: Lotus Labs. Designed by Colin Wilson"
+        version = true # includes git commit info
+
+    [params.social]
+        github = "colinwilson/lotusdocs"        # github.com/YOUR_GITHUB_ID
+        twitter = "lotusdocs"       # twitter.com/YOUR_TWITTER_ID
+        # instagram = "colinwilson"     # instagram.com/YOUR_INSTAGRAM_ID
+        # rss = true                    # show rss icon with link
+
+    [params.docs] # Parameters for the /docs 'template'
+        title           = "Lotus Docs Example Site"          # default html title for documentation pages/sections
+
+        darkMode        = true                                # enable dark mode option? default false
+
+        prism           = true                                # enable syntax highlighting via Prism
+
+        # gitinfo
+        ghrepo          = "github.com/colinwilson/lotusdocs.dev"  # Git repository URL for your site
+        editPage        = true                                # enable 'Edit this page' feature - default false
+        lastMod         = true                                # enable 'Last modified' date on pages - default false
+        lastModRelative = true                                # format 'Last modified' time as relative - default true
+
+        sidebarIcons    = true                                # enable sidebar icons? default false
+        breadcrumbs     = true                                # default is true
+        backToTop       = true                                # enable back-to-top button? default true
+
+        # ToC
+        toc             = true                                # enable table of contents? default is true
+        scrollSpy       = true                                # enable scrollspy on ToC? default is true
+
+        # front matter
+        descriptions    = true                                # enable front matter descriptions under content title?
+        titleIcon       = true                                # enable front matter icon title prefix? default is false
+
+        # content navigation
+        navDesc         = true                                # include front matter descriptions in Prev/Next navigation cards
+        navDescTrunc    = 30                                  # Number of characters by which to truncate the Prev/Next descriptions
+
+        listDescTrunc   = 100                                 # Number of characters by which to truncate the list card description
+
+    [params.docsearch] # Parameters for DocSearch
+        # appID     = "O2QIOCBDAK" # Algolia Application ID
+        # apiKey    = "fdc60eee76a72a35d739b54521498b77" # Algolia Search-Only API (Public) Key
+        # indexName = "prod_lotusdocs.dev" # Index Name to perform search on (or set env variable HUGO_PARAM_DOCSEARCH_indexName)
+
+    [params.analytics] # Parameters for Analytics (Google, Plausible)
+        # plausibleURL    = "/docs/s" # (or set via env variable HUGO_PARAM_ANALYTICS_plausibleURL)
+        # plausibleAPI    = "/docs/s" # optional - (or set via env variable HUGO_PARAM_ANALYTICS_plausibleAPI)
+        # plausibleDomain = "lotusdocs.dev"      # (or set via env variable HUGO_PARAM_ANALYTICS_plausibleDomain)
+
+[menu]
+[[menu.primary]]
+    name  = "Docs"
+    url = "/docs"
+    identifier = "docs"
+    weight = 10
+
+# [[menu.primary]]
+#     name  = "Showcase"
+#     url = "/showcase"
+#     identifier = "showcase"
+#     weight = 20
+
+[[menu.primary]]
+    name  = "Community"
+    url = "https://github.com/colinwilson/lotusdocs/discussions"
+    identifier = "community"
+    weight = 30
