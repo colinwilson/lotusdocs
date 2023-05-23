@@ -6,7 +6,7 @@ contentDir = "content"
 enableEmoji = true
 enableGitInfo = true # N.B. .GitInfo does not currently function with git submodule content directories
 
-# !!! exampleSite only, you may need to delete the line: `themesDir: ../../` 
+# !!! exampleSite only, you may need to delete the line: `themesDir: ../../`
 themesDir = "../../"
 
 [module]
@@ -47,9 +47,9 @@ themesDir = "../../"
         version = true # includes git commit info
 
     [params.social]
-        github = ""        # github.com/YOUR_GITHUB_ID
-        twitter = ""       # twitter.com/YOUR_TWITTER_ID
-        # instagram = "colinwilson"     # instagram.com/YOUR_INSTAGRAM_ID
+        github = ""        # YOUR_GITHUB_ID or YOUR_GITHUB_URL
+        twitter = ""       # YOUR_TWITTER_ID
+        # instagram = "colinwilson"     # YOUR_INSTAGRAM_ID
         # rss = true                    # show rss icon with link
 
     [params.docs] # Parameters for the /docs 'template'
