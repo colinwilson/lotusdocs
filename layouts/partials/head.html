@@ -49,6 +49,7 @@
     {{- end }}
     <!-- Plausible Analytics Config -->
     {{- if not .Site.IsServer }}
-        b{{- partialCached "head/plausible.html" . }}
+        {{- partialCached "head/plausible" . }}
     {{- end -}}
+    {{ hugo.Environment }}
 </head>
