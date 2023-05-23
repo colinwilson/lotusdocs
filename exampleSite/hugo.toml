@@ -47,8 +47,8 @@ themesDir = "../../"
         version = true # includes git commit info
 
     [params.social]
-        github = "colinwilson/lotusdocs"        # github.com/YOUR_GITHUB_ID
-        twitter = "lotusdocs"       # twitter.com/YOUR_TWITTER_ID
+        github = ""        # github.com/YOUR_GITHUB_ID
+        twitter = ""       # twitter.com/YOUR_TWITTER_ID
         # instagram = "colinwilson"     # instagram.com/YOUR_INSTAGRAM_ID
         # rss = true                    # show rss icon with link
 
@@ -106,8 +106,8 @@ themesDir = "../../"
 #     identifier = "showcase"
 #     weight = 20
 
-[[menu.primary]]
-    name  = "Community"
-    url = "https://github.com/colinwilson/lotusdocs/discussions"
-    identifier = "community"
-    weight = 30
+# [[menu.primary]]
+#     name  = "Community"
+#     url = "https://github.com/colinwilson/lotusdocs/discussions"
+#     identifier = "community"
+#     weight = 30
