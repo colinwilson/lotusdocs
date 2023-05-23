@@ -48,8 +48,7 @@
         {{- end }}
     {{- end }}
     <!-- Plausible Analytics Config -->
-    {{- if not .Site.IsServer }}
+    {{- if ne hugo.Environment "development" }}
         {{- partialCached "head/plausible" . }}
     {{- end -}}
-    {{ hugo.Environment }}
 </head>
