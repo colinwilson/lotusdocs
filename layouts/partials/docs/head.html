@@ -48,6 +48,6 @@
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $style.Data.Integrity }}"{{ end -}} crossorigin="anonymous">
     <!-- Plausible Analytics Config -->
     {{- if not .Site.IsServer }}
-        {{- partialCached (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "head/plausible") . }}
+        {{- partialCached (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "head/plausible.html") . }}
     {{- end -}}
 </head>
