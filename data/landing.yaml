@@ -19,13 +19,13 @@ hero:
     rounded: true # round the image corners? default 'false' (excludes .svg images)
 
   ctaButton:
+    icon: menu_book
+    btnText: "Get Started"
+    url: "/docs"
+  cta2Button:
     icon: construction
     btnText: "In Development"
     url: "https://github.com/colinwilson/lotusdocs"
-  cta2Button:
-    icon: menu_book
-    btnText: "Read the Docs"
-    url: "/docs"
 
   info: "**Open Source** MIT Licensed."
 
