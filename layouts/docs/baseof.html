@@ -49,13 +49,14 @@
                                             {{ block "main" . }}{{ end }}
                                         </div>
                                         <div>
-                                            {{- partial "docs/doc-nav.html" . -}}
+                                            {{- partial (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "doc-nav.html") . -}}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        {{- partialCached "docs/footer.html" . -}}
+                        {{- partialCached (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "footer.html") . -}}
+
                 </main>
         </div>
     </div>
@@ -68,15 +69,15 @@
 
     <!-- Dark Mode Switch JS -->
     {{ if eq .Site.Params.docs.darkMode true -}}
-        {{ $darkModeSwitch := resources.Get "/docs/js/darkmode-switch.js" | js.Build | minify }}
+        {{ $darkModeSwitch := resources.Get (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "js/darkmode-switch.js") | js.Build | minify }}
         <script>{{ $darkModeSwitch.Content | safeJS }}</script>
     {{ end -}}
 
-    {{- partialCached "docs/footer/footer-scripts.html" . -}}
+    {{- partialCached (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "footer/footer-scripts.html") . -}}
 
     <!-- DocSearch Config -->
-    {{- partialCached "docs/footer/docsearch.html" . -}}
+    {{- partialCached (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "footer/docsearch.html") . -}}
 
 </body>
-{{- partial "docs/modals.html" . -}}
+{{- partial (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "modals.html") . -}}
 </html>

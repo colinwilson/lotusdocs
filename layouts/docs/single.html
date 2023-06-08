@@ -6,7 +6,7 @@
     </div>
 
     {{ if and .GitInfo .Site.Params.docs.ghrepo -}}
-        {{ partial "docs/gitinfo" . }}
+        {{ partial (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "gitinfo") . }}
     {{ end -}}
 
 {{ end }}

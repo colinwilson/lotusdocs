@@ -27,10 +27,10 @@
     <meta name="website" content="https://lotusdocs.dev" />
     <meta name="Version" content="v0.1.0" />
     <!-- favicon -->
-    {{ block "/docs/head/favicon" . }}{{ partialCached "docs/head/favicon.html" . }}{{ end }}
+    {{ block "favicon" . }}{{ partialCached (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "head/favicon.html") . }}{{ end }}
     <!-- Dark Mode -->
     {{ if eq .Site.Params.docs.darkMode true -}}
-        {{ $darkModeInit := resources.Get "/docs/js/darkmode-init.js" | js.Build | minify -}}
+        {{ $darkModeInit := resources.Get (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "js/darkmode-init.js") | js.Build | minify -}}
         <script>{{ $darkModeInit.Content | safeJS }}</script>
     {{ end -}}
     <!-- Google Fonts -->
@@ -40,14 +40,14 @@
     {{- if hugo.IsProduction}}
         {{- $options := dict "enableSourceMap" false "outputStyle" "compressed" }}
     {{- end }}
-    {{- $style := resources.Get "/docs/scss/style.scss" }}
-    {{- $style = $style | resources.ExecuteAsTemplate "/docs/scss/style.scss" . | resources.ToCSS $options }}
+    {{- $style := resources.Get (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "scss/style.scss") }}
+    {{- $style = $style | resources.ExecuteAsTemplate (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "scss/style.scss") . | resources.ToCSS $options }}
     {{- if hugo.IsProduction }}
         {{- $style = $style | minify | fingerprint "sha384" }}
     {{- end -}}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $style.Data.Integrity }}"{{ end -}} crossorigin="anonymous">
     <!-- Plausible Analytics Config -->
     {{- if not .Site.IsServer }}
-        {{- partialCached "docs/head/plausible" . }}
+        {{- partialCached (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "head/plausible") . }}
     {{- end -}}
 </head>

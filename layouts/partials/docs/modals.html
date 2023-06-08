@@ -10,7 +10,7 @@
             <div class="modal-body p-0">
                 <div class="container-fluid p-2">
                     <div class="row">
-                        {{ partial "docs/i18nlist" . }}
+                        {{ partial (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "i18nlist") . }}
                     </div>
                 </div><!--end container-->
             </div>

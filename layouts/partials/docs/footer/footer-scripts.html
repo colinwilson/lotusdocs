@@ -1,33 +1,33 @@
-{{ $dayjs := resources.Get "/docs/js/dayjs.min.js" }}
-{{ $relativeTime := resources.Get "/docs/js/relativeTime.min.js" }}
-{{ $app := resources.Get "/docs/js/app.js" -}}
+{{ $dayjs := resources.Get (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "js/dayjs.min.js") }}
+{{ $relativeTime := resources.Get (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "js/relativeTime.min.js") }}
+{{ $app := resources.Get (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "js/app.js") -}}
 
 {{ $slice := slice $dayjs $relativeTime $app -}}
 
 {{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
-    {{ $docsearch := resources.Get "/docs/js/docsearch.min.js" }}
+    {{ $docsearch := resources.Get (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "js/docsearch.min.js") }}
     {{ $slice = $slice | append $docsearch -}}
 {{ end }}
 
 {{ if eq .Site.Params.docs.scrollSpy true -}}
-    {{ $simplescrollspy := resources.Get "/docs/js/simple-scrollspy.min.js" }}
+    {{ $simplescrollspy := resources.Get (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "js/simple-scrollspy.min.js") }}
     {{ $slice = $slice | append $simplescrollspy -}}
 {{ end -}}
 
 {{ if eq .Site.Params.docs.scrollSpy true -}}
-    {{ $scrollspyScript := resources.Get "/docs/js/scrollspy-script.js" }}
+    {{ $scrollspyScript := resources.Get (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "js/scrollspy-script.js") }}
     {{ $scrollspyScript := $scrollspyScript | js.Build -}}
     {{ $slice = $slice | append $scrollspyScript -}}
 {{ end -}}
 
 {{ if eq .Site.Params.docs.prism true -}}
-    {{ $prism := resources.Get "/docs/js/prism.js" }}
+    {{ $prism := resources.Get (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "js/prism.js") }}
     {{ $prism := $prism | js.Build -}}
     {{ $slice = $slice | append $prism -}}
 {{ end -}}
 
 <!-- Bootstrap JS -->
-{{ $js := resources.Get "/docs/js/bootstrap.js" }}
+{{ $js := resources.Get (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "js/bootstrap.js") }}
 {{ $params := dict }}
 {{ $sourceMap := cond hugo.IsProduction "" "inline" }}
 {{ $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2018" "params" $params }}
@@ -37,7 +37,7 @@
 {{ end }}
     <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end -}} defer></script>
 
-{{ $js := $slice | resources.Concat "/docs/js/bundle.js" -}}
+{{ $js := $slice | resources.Concat (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "js/bundle.js") -}}
 
 {{- if not .Site.IsServer }}
     {{- $js := $js | minify | fingerprint "sha384" }}

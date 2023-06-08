@@ -1,5 +1,6 @@
 {{ $pageLang := .Page.Lang }}
 {{ $translations := slice }}
+{{ $docspath := .Site.Params.docs.pathName | default "docs" }}
 
 <!-- List available translations (excluding current page)-->
 {{ range .Translations }}
@@ -21,7 +22,7 @@
         {{ if in $translations .Lang }}
         {{ else }}
             <div class="d-flex col-md-4 col-6 py-1 justify-content-center">
-                <a class="btn btn-link-modal" role="button" rel="alternate" href="{{ .Lang | relURL }}/docs" hreflang="{{ .Lang }}" lang="{{ .Lang }}">
+                <a class="btn btn-link-modal" role="button" rel="alternate" href="{{ .Lang | relURL }}/{{ $docspath }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">
                     <span>
                         {{ .LanguageName }}
                     </span>

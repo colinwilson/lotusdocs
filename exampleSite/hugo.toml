@@ -71,6 +71,8 @@ defaultContentLanguage = 'en'
     [params.docs] # Parameters for the /docs 'template'
         title           = "Lotus Docs Example Site"          # default html title for documentation pages/sections
 
+        # pathName            = "docs"                              # path name for documentation site | default "docs"
+
         darkMode        = true                                # enable dark mode option? default false
 
         prism           = true                                # enable syntax highlighting via Prism
