@@ -2,7 +2,7 @@
 <header id="topnav">
     <div class="container d-flex justify-content-between align-items-center">
         <!-- Logo container-->
-        <a class="logo" href="/">
+        <a class="logo" href='{{ relLangURL "" }}'>
             {{ with resources.Get "images/logos/mark.svg" }}
                 {{ .Content | safeHTML }}
             {{ end }}
@@ -15,7 +15,7 @@
                 <!-- Navigation Menu -->
                 <ul class="navigation-menu nav-right">
                     {{- range .Site.Menus.primary }}
-                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    <li><a href="{{ relLangURL .URL }}">{{ .Name }}</a></li>
                     {{ end }}
                 </ul><!--end navigation menu-->
             </div><!--end navigation-->

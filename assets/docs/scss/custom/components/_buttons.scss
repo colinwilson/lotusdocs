@@ -2,6 +2,16 @@
 // _buttons.scss
 //
 
+:root {
+    --invert: invert(0%);
+    --btn-modal-hover-bg: var(--gray-200);
+}
+
+[data-dark-mode] {
+    --invert: invert(100%);
+    --btn-modal-hover-bg: var(--gray-800);
+}
+
 //Buttons
 .btn-soft {
     background-color: var(--btn-soft-bg) !important;
@@ -55,6 +65,24 @@
         border-color: var(--btn-default-border) !important;
         color: var(--btn-default-hover-color) !important;
     }
+}
+
+.btn-link-modal {
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--text-default);
+    --bs-btn-bg: none;
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--btn-default-hover-color);
+    --bs-btn-hover-bg: var(--btn-modal-hover-bg);
+    --bs-btn-hover-border-color: var(--bd-violet-bg);
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: var(--bd-violet-bg);
+    --bs-btn-active-border-color: var(--bd-violet-bg);
+}
+
+.btn-close {
+    filter: var(--invert);
 }
 
 body .toggle-dark {

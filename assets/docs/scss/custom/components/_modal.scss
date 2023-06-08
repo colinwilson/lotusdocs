@@ -1,0 +1,19 @@
+//
+// _modal.scss
+//
+
+:root {
+    --modal-bg: var(--gray-50);
+}
+
+[data-dark-mode] {
+    --modal-bg: var(--gray-900);
+}
+
+.modal {
+    --bs-modal-bg: var(--modal-bg);
+}
+
+.modal-header {
+    border-bottom: none;
+}

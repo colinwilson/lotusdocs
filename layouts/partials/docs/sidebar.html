@@ -1,7 +1,7 @@
 <!-- sidebar-wrapper -->
 <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-brand">
-        <a href="/" alt="home">
+        <a href='{{ relLangURL "" }}' alt="home">
             {{ with resources.Get "images/logos/logo.svg" }}
                 {{ .Content | safeHTML }}
             {{ end }}
@@ -71,10 +71,7 @@
     <!-- Sidebar Footer -->
         <ul class="sidebar-footer list-unstyled mb-0">
             <!-- <li class="list-inline-item mb-0">
-                <a href="#" target="_blank" class="btn btn-icon btn-soft-primary">
-                    <span class="material-icons size-20 menu-icon align-middle text-primary">star</span>
-                </a>
-                <small class="text-muted fw-medium ms-1">Placeholder</small>
+                <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#lang-selector-popup" class="btn btn-primary m-1">Language</a>
             </li> -->
         </ul>
     <!-- Sidebar Footer -->

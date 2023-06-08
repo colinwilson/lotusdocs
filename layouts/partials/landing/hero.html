@@ -14,7 +14,7 @@
 
                     <div class="mt-3">
                         {{ if .Site.Data.landing.hero.ctaButton }}
-                            <a href="{{ .Site.Data.landing.hero.ctaButton.url }}" class="btn btn-lg btn-primary me-2 mt-2">
+                            <a href="{{ relLangURL .Site.Data.landing.hero.ctaButton.url }}" class="btn btn-lg btn-primary me-2 mt-2">
                                 {{ if .Site.Data.landing.hero.ctaButton.icon }}
                                     <span class="material-icons align-middle">{{ .Site.Data.landing.hero.ctaButton.icon }}</span>
                                 {{ end }}
@@ -24,7 +24,7 @@
                             </a>
                         {{ end }}
                         {{ if .Site.Data.landing.hero.cta2Button }}
-                        <a href="{{ .Site.Data.landing.hero.cta2Button.url }}" class="btn btn-lg btn-soft-primary mt-2">
+                        <a href="{{ relLangURL .Site.Data.landing.hero.cta2Button.url }}" class="btn btn-lg btn-soft-primary mt-2">
                             {{ if .Site.Data.landing.hero.cta2Button.icon }}
                                     <span class="material-icons align-middle">{{ .Site.Data.landing.hero.cta2Button.icon }}</span>
                                 {{ end }}

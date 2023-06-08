@@ -65,9 +65,9 @@ features:
       icon: search
       description: Search your docs with DocSearch. A powerful, efficient and accessible search solution built on Algolia Crawler & Autocomplete. TBC.
 
-    - title: Versioning
-      icon: dynamic_feed
-      description: Support for maintaining multiple versions of your docs. Let your users access previous versions of your documentation via a simple dropdown menu.
+    - title: Multilingual Support
+      icon: translate
+      description: Lotus Docs supports Hugo's Multilingual Mode. Create documentation in multiple languages side by side with i18n support.
 
     - title: Bootstrap v5
       icon: palette

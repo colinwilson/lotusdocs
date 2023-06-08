@@ -2,7 +2,7 @@
 <div class="top-header">
     <div class="header-bar d-flex justify-content-between">
         <div class="d-flex align-items-center">
-            <a href="/" class="logo-icon me-3" alt="home">
+            <a href='{{ relLangURL "" }}' class="logo-icon me-3" alt="home">
                 <div class="small">
                     {{ with resources.Get "images/logos/mark.svg" }}
                             {{ .Content | safeHTML }}
@@ -59,6 +59,11 @@
                 </span>
             </button>
             {{ end -}}
+            {{ if .Site.IsMultiLingual }}
+                <button type="button" class="ps-2 btn btn-link btn-default" data-bs-toggle="modal" data-bs-target="#lang-selector-popup">
+                    {{ site.Language.Lang | upper }}
+                </button>
+            {{ end }}
         </div>
     </div>
 </div>

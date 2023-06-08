@@ -1,6 +1,5 @@
 baseURL = "/"
 languageCode = "en-GB"
-title = "Lotus Docs Example Site"
 theme = "lotusdocs"
 contentDir = "content"
 enableEmoji = true
@@ -8,6 +7,23 @@ enableGitInfo = true # N.B. .GitInfo does not currently function with git submod
 
 # !!! exampleSite only, you may need to delete the line: `themesDir: ../../`
 themesDir = "../../"
+
+defaultContentLanguage = 'en'
+[languages]
+  [languages.en]
+    title = "Lotus Docs Example Site"
+    languageName = "English"
+    weight = 10
+  [languages.fr]
+    title = "Lotus Docs Exemple de Site"
+    languageName = "Français"
+    contentDir = "content/fr"
+    weight = 20
+  [languages.de]
+    title = "Lotus Docs Beispiel Site"
+    languageName = "Deutsch"
+    contentDir = "content/de"
+    weight = 30
 
 [module]
   # uncomment line below for temporary local development of module
@@ -96,7 +112,7 @@ themesDir = "../../"
 [menu]
 [[menu.primary]]
     name  = "Docs"
-    url = "/docs"
+    url = "docs"
     identifier = "docs"
     weight = 10
 
