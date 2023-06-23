@@ -55,3 +55,4 @@ $code-block-padding-top: {{ if eq .Site.Params.docs.prism true -}}0{{ else }}1.2
 
 // Plugins
 {{ if eq .Site.Params.docs.prism true -}}@import "custom/plugins/prism/prism";{{ end }}
+{{ if eq .Site.Params.docs.flexsearch true -}}@import "custom/plugins/flexsearch/flexsearch";{{ end }}

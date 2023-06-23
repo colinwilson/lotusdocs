@@ -101,6 +101,11 @@ defaultContentLanguage = 'en'
 
         listDescTrunc   = 100                                 # Number of characters by which to truncate the list card description
 
+        # Search
+        flexSearch      = true
+
+        searchSectionsIndex = []
+
     [params.docsearch] # Parameters for DocSearch
         # appID     = "O2QIOCBDAK" # Algolia Application ID
         # apiKey    = "fdc60eee76a72a35d739b54521498b77" # Algolia Search-Only API (Public) Key

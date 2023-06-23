@@ -1,2 +1,5 @@
-[select-lang]
+[lang_select_title]
     other = "Select your language"
+
+[search_title]
+    other = "Search"

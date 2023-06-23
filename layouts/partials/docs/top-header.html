@@ -20,16 +20,15 @@
             {{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
             <span><div id="docsearch"></div></span>
             {{ end }}
-            <!-- <div class="search-bar p-0 d-none d-md-block ms-2">
-                <div id="search" class="menu-search mb-0">
-                    <form role="search" method="get" id="searchform" class="searchform">
-                        <div>
-                            <input type="text" class="form-control border rounded" name="s" id="s" placeholder="Search Documentation...">
-                            <input type="submit" id="searchsubmit" value="Search">
-                        </div>
-                    </form>
-                </div>
-            </div> -->
+            {{ if eq .Site.Params.docs.flexSearch true -}}
+            <!-- <form class="flexsearch position-relative flex-grow-1 ms-2 me-lg-2 d-none">
+                <input id="flexsearch" class="form-control is-search" type="search" placeholder="{{ i18n "search_title" }}" aria-label="{{ i18n "search_title" }}" autocomplete="off">
+                <div id="suggestions" class="shadow bg-white rounded d-none"></div>
+            </form> -->
+            <button id="flexsearch-modal-button" class="ms-2 btn btn-icon btn-soft" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <span class="material-icons size-20 menu-icon align-middle">search</span>
+            </button>
+            {{ end -}}
         </div>
 
         <div class="d-flex align-items-center">
@@ -66,5 +65,15 @@
             {{ end }}
         </div>
     </div>
+    <!-- FlexSearch Mobile Input Start -->
+    <div class="collapse" id="collapseExample">
+        <div class="flexsearch-container-mobile">
+            <form class="flexsearch position-relative flex-grow-1 ms-2 me-2">
+                <input id="flexsearch" class="form-control is-search" type="search" placeholder="{{ i18n "search_title" }}" aria-label="{{ i18n "search_title" }}" autocomplete="off">
+                <div id="suggestions" class="shadow bg-white rounded d-none"></div>
+            </form>
+        </div>
+    </div>
+    <!-- FlexSearch Mobile Input End -->
 </div>
 <!-- Top Header -->

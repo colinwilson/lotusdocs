@@ -13,13 +13,13 @@ hero:
 
   image:
     path: "images" # path to image under configured assets directory. default 'images'
-    filename: "screenshot_lotus_docs.png" # filename of your hero image (including file extension)
+    filename: "Lotus Docs Screenshot.png" # filename of your hero image (including file extension)
     alt: "Lotus Docs Screenshot" # Optional but recommended
     boxShadow: true # default 'false' (excludes .svg images)
     rounded: true # round the image corners? default 'false' (excludes .svg images)
 
   ctaButton:
-    icon: menu_book
+    icon: rocket_launch
     btnText: "Get Started"
     url: "/docs"
   cta2Button:

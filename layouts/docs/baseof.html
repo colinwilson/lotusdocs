@@ -78,6 +78,9 @@
     <!-- DocSearch Config -->
     {{- partialCached (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "footer/docsearch.html") . -}}
 
+    <!-- FlexSearch Config -->
+    {{- partialCached (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "footer/flexsearch.html") . -}}
+
 </body>
 {{- partial (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "modals.html") . -}}
 </html>

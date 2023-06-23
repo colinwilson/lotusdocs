@@ -1,0 +1,144 @@
+/* FlexSearch */
+
+:root {
+    --flexsearch-after-bg-color: var(--primary);
+    --flexsearch-after-color: var(--white);
+}
+
+[data-dark-mode] {
+    --flexsearch-after-bg-color: hsl(var(--primary-hsl),0.15);
+    --flexsearch-after-color: var(--primary-200);
+}
+
+// @media (max-width: 768px) {
+//     .flexsearch {
+//         display: none;
+//     }
+// }
+
+.flexsearch-container-mobile {
+    background-color: var(--body-bg);
+    padding: 0.8rem;
+}
+
+.flexsearch::after {
+    position: absolute;
+    top: 0.4625rem;
+    right: 0.5375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.4rem;
+    padding-right: 0.3125rem;
+    padding-left: 0.3125rem;
+    font-size: .65rem;
+    color: var(--flexsearch-after-color);
+    background-color: var(--flexsearch-after-bg-color);
+    content: "CTRL + /";
+    // border: 1px solid #dee2e6;
+    border-radius: 0.25rem
+}
+
+// @media (min-width: 768px) {
+//     .flexsearch::after {
+//         right: -1.4625rem
+//     }
+// }
+
+@media (min-width: 992px) {
+    .flexsearch::after {
+        right: 0.5125rem
+    }
+}
+
+#suggestions {
+    position: absolute;
+    left: 0;
+    margin-top: 0.5rem;
+    // width: calc(100vw - 0.3rem);
+    max-width: calc(100vw - 0.15rem);
+    z-index: 1000
+}
+
+@media (min-width: 768px) {
+    #suggestions {
+        right: -2rem
+    }
+}
+
+@media (min-width: 992px) {
+    #suggestions {
+        left: 0
+    }
+}
+
+#suggestions a,
+.suggestion__no-results {
+    padding: 0.75rem;
+    margin: 0 0.5rem
+}
+
+#suggestions a {
+    display: block;
+    text-decoration: none
+}
+
+#suggestions a:focus {
+    background: #f8f9fa;
+    outline: 0
+}
+
+#suggestions div:not(:first-child) {
+    border-top: 1px dashed #e9ecef
+}
+
+#suggestions div:first-child {
+    margin-top: 0.5rem
+}
+
+#suggestions div:last-child {
+    margin-bottom: 0.5rem
+}
+
+#suggestions a:hover {
+    background: #f8f9fa
+}
+
+#suggestions span {
+    display: flex;
+    font-size: 1rem
+}
+
+.suggestion__title {
+    font-weight: 700;
+    color: #1d2d35
+}
+
+.suggestion__description,
+.suggestion__no-results {
+    color: #495057
+}
+
+@media (min-width: 992px) {
+    #suggestions {
+        width: 31.125rem;
+        max-width: 31.125rem
+    }
+
+    #suggestions a {
+        display: flex
+    }
+
+    .suggestion__title {
+        width: 9rem;
+        padding-right: 1rem;
+        border-right: 1px solid #e9ecef;
+        display: inline-block;
+        text-align: left
+    }
+
+    .suggestion__description {
+        width: 19rem;
+        padding-left: 1rem
+    }
+}

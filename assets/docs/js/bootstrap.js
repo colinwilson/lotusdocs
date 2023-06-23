@@ -2,8 +2,10 @@
 // See https://github.com/twbs/bootstrap/blob/main/js/index.umd.js
 import Tab from "/js/bootstrap/src/tab";
 import Modal from "/js/bootstrap/src/modal";
+import Collapse from "/js/bootstrap/src/collapse";
 
 export default {
     Tab,
-    Modal
+    Modal,
+    Collapse
 }

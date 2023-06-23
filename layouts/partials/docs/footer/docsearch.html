@@ -7,7 +7,13 @@
                 appId: '{{ .Site.Params.docsearch.appID }}',
                 apiKey: '{{ .Site.Params.docsearch.apiKey }}',
                 indexName: '{{ .Site.Params.docsearch.indexName }}',
-                placeholder: 'Search Documentation'
+                placeholder: 'Search Documentation',
+                translations: {
+                    button: {
+                        buttonText: '{{ i18n "search_title" }}',
+                        buttonAriaLabel: 'Search',
+                    }
+                }
             });
         });
     </script>

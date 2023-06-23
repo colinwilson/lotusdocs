@@ -2,6 +2,22 @@
 // Forms.scss
 //
 
+:root {
+    --form-border-color: var(--gray-200);
+    --form-control-focus-color: var(--gray-900);
+    --form-control-focus-bg-color: none;
+    --form-control-focus-border-color: var(--primary);
+    --form-control-placeholder-color: #666d78;
+}
+
+[data-dark-mode] {
+    --form-border-color: var(--gray-800);
+    --form-control-focus-color: var(--gray-200);
+    --form-control-focus-bg-color: #000;
+    --form-control-focus-border-color: var(--primary-300);
+    --form-control-placeholder-color: #7f8497;
+}
+
 //Form
 .form-label,
 .form-check-label {
@@ -10,11 +26,12 @@
 }
 
 .form-control {
-    border: 1px solid $border-color;
+    border: 1px solid var(--form-border-color);
     font-size: 14px;
-    line-height: 26px;
-    border-radius: 6px;
-    color: var(--dark) !important;
+    line-height: 22px;
+    border-radius: 4px;
+    color: var(--text-default) !important;
+    background-color: var(--body-bg);
     text-align: left;
     &:focus {
         border-color: $primary;
@@ -27,8 +44,14 @@
         background-color: $gray-300;
     }
     &::placeholder{
-        color: var(--form-placeholder);
+        color: var(--form-control-placeholder-color);
     }
+}
+
+.form-control:focus {
+    color: var(--form-control-focus-color);
+    border-color: var(--form-control-focus-border-color);
+    background-color: var(--form-control-focus-bg-color);
 }
 
 .form-check-input {
