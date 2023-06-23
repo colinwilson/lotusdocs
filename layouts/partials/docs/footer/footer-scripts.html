@@ -4,14 +4,14 @@
 
 {{ $slice := slice $dayjs $relativeTime $app -}}
 
-{{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
-    {{ $docsearch := resources.Get (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "js/docsearch.min.js") }}
-    {{ $slice = $slice | append $docsearch -}}
-{{ end }}
-
 {{ if eq .Site.Params.docs.flexSearch true -}}
     {{ $flexSearch := resources.Get (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "js/flexsearch.bundle.js") }}
     {{ $slice = $slice | append $flexSearch -}}
+{{ end }}
+
+{{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
+    {{ $docsearch := resources.Get (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "js/docsearch.min.js") }}
+    {{ $slice = $slice | append $docsearch -}}
 {{ end }}
 
 {{ if eq .Site.Params.docs.scrollSpy true -}}
