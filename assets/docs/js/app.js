@@ -128,7 +128,7 @@ if (document.getElementById("close-sidebar")) {
 if (!window.matchMedia('(min-width: 1024px)').matches) {
     if (document.getElementById("close-sidebar")) {
         const closeSidebar = document.getElementById("close-sidebar");
-        const sidebar = document.getElementById("sidebar");        
+        const sidebar = document.getElementById("sidebar");
         const sidebarMenuLinks = Array.from(document.querySelectorAll(".sidebar-root-link,.sidebar-nested-link"));
         // Close sidebar by clicking outside
         document.addEventListener('click', function(elem) {
