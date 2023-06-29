@@ -6,6 +6,10 @@
     --flexsearch-button-hover-bg-color: none;
     --flexsearch-key-bg-color: var(--primary);
     --flexsearch-key-color: #fff;
+    --flexsearch-suggestion-bg-color: var(--white);
+    --flexsearch-suggestion-title-color: var(--primary);
+    --flexsearch-suggestion-title-border-color: var(--gray-300);
+    --flexsearch-suggestion-desc-color: var(--text-default);
 }
 
 [data-dark-mode] {
@@ -14,6 +18,10 @@
     --flexsearch-button-hover-bg-color: var(--black);
     --flexsearch-key-bg-color: hsl(var(--primary-hsl), 0.15);
     --flexsearch-key-color: var(--primary-200);
+    --flexsearch-suggestion-bg-color: var(--dark-secondary);
+    --flexsearch-suggestion-title-color: var(--primary-200);
+    --flexsearch-suggestion-title-border-color: var(--gray-700);
+    --flexsearch-suggestion-desc-color: var(--gray-300);
 }
 
 .flexsearch-container {
@@ -106,6 +114,7 @@
 
 #suggestions {
     position: absolute;
+    background-color: var(--flexsearch-suggestion-bg-color);
     left: 0;
     margin-top: 0.5rem;
     // width: calc(100vw - 0.3rem);
@@ -115,7 +124,7 @@
 
 @media (min-width: 768px) {
     #suggestions {
-        right: -2rem
+        // right: -2rem
     }
 }
 
@@ -142,7 +151,7 @@
 }
 
 #suggestions div:not(:first-child) {
-    border-top: 1px dashed #e9ecef
+    // border-top: 1px dashed #e9ecef
 }
 
 #suggestions div:first-child {
@@ -155,6 +164,7 @@
 
 #suggestions a:hover {
     background: var(--alert-primary-bg);
+    border-radius: 4px;
 }
 
 #suggestions span {
@@ -164,12 +174,12 @@
 
 .suggestion__title {
     font-weight: 700;
-    color: #1d2d35
+    color: var(--flexsearch-suggestion-title-color);
 }
 
 .suggestion__description,
 .suggestion__no-results {
-    color: #495057
+    color: var(--flexsearch-suggestion-desc-color);
 }
 
 @media (min-width: 992px) {
@@ -185,7 +195,7 @@
     .suggestion__title {
         width: 9rem;
         padding-right: 1rem;
-        border-right: 1px solid #e9ecef;
+        border-right: 1px solid var(--flexsearch-suggestion-title-border-color);
         display: inline-block;
         text-align: left
     }

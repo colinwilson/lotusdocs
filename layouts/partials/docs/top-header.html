@@ -1,5 +1,5 @@
 <!-- Top Header -->
-<div class="top-header">
+<div id="top-header" class="top-header">
     <div class="header-bar d-flex justify-content-between">
         <div class="d-flex align-items-center">
             <a href='{{ relLangURL "" }}' class="logo-icon me-3" aria-label="HomePage" alt="HomePage">
@@ -78,7 +78,7 @@
     </div>
     <!-- FlexSearch Input Start -->
     <div class="collapse" id="FlexSearchCollapse">
-        <div class="flexsearch-container shadow">
+        <div class="flexsearch-container shadow-sm">
             <form class="flexsearch position-relative flex-grow-1 ms-2 me-2">
                 <div class="d-flex flex-row">
                     <input id="flexsearch" class="form-control" type="search" placeholder="{{ i18n "search_title" }}" aria-label="{{ i18n "search_title" }}" autocomplete="off">
@@ -86,7 +86,7 @@
                         cancel
                     </button>
                 </div>
-                <div id="suggestions" class="shadow bg-white rounded d-none"></div>
+                <div id="suggestions" class="shadow rounded d-none"></div>
             </form>
         </div>
     </div>

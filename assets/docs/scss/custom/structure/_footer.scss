@@ -14,4 +14,13 @@ footer {
         letter-spacing: 1px;
         font-weight: 500;
     }
+    a {
+        color: var(--content-link-color);
+    }
+    a:hover {
+        color: var(--content-link-color);
+        text-decoration: underline 1.5px var(--primary-200);
+        text-underline-offset: 3px !important;
+        transition: 0s !important;
+    }
 }

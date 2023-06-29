@@ -24,6 +24,12 @@ if (search !== null) {
     flexsearchContainer.addEventListener('shown.bs.collapse', function () {
         search.focus();
     });
+    // hide search collapse containder by clicking outside (except top header)
+    var topHeader = document.getElementById("top-header");
+    document.addEventListener('click', function(elem) {            
+        if (!flexsearchContainer.contains(elem.target) && !topHeader.contains(elem.target))
+            flexsearchContainerCollapse.hide();
+    });
 }
 
 hideFlexsearchBtn.addEventListener('click', () =>{
@@ -37,6 +43,7 @@ function inputFocus(e) {
     }
     if (e.key === 'Escape' ) {
         search.blur();
-        suggestions.classList.add('d-none');
+        // suggestions.classList.add('d-none');
+        flexsearchContainerCollapse.hide();
     }
 };
