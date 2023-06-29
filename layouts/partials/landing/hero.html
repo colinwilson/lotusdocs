@@ -10,11 +10,26 @@
                     <span class="badge {{ if eq .Site.Data.landing.hero.badge.pill true }}rounded-pill{{ end }} bg-{{ if eq .Site.Data.landing.hero.badge.soft true }}soft-{{ end }}{{ .Site.Data.landing.hero.badge.color }} mb-1">{{ .Site.Data.landing.hero.badge.text }}</span>
                     {{ end }}
                     <h4 class="heading mt-0 mb-3">
-                        <span>
-                            {{ with $image := resources.Get "images/logos/hero.png" }}
-                                <img src="{{ .RelPermalink }}" height="70px">
+                        {{ with .Site.Data.landing.hero.titleLogo }}
+                            {{ $path := .path | default "images" }}
+                            {{ $filename := .filename }}
+                            {{ $height := .height | default "70px" }}
+                            {{ $alt := .alt | default "logo image" }}
+                            {{ $path := printf "%s/%s" $path $filename }}
+                            {{ with $filename }}
+                                <span>
+                                    {{ with $image := resources.Get $path }}
+                                        {{ if eq .MediaType.SubType "svg" }}
+                                            {{ .Content | safeHTML }}
+                                        {{ else }}
+                                            {{ with .Resize (printf "%dx%d webp q85 drawing Lanczos" .Width .Height) }}
+                                                <img src="{{ .RelPermalink }}" alt="{{ $alt }}" height="{{ $height }}">
+                                            {{ end }}
+                                        {{ end }}
+                                    {{ end }}
+                                </span>
                             {{ end }}
-                        </span>
+                        {{ end }}
                         {{ .Site.Data.landing.hero.title }}
                     </h4>
                     <p class="para-desc text-muted mb-0">{{ .Site.Data.landing.hero.subtitle | markdownify }}</p>

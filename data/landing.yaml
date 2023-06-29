@@ -8,11 +8,11 @@ hero:
   #   pill: false # boolean
   #   soft: true # boolean
 
-  logo:
-    path: "images"
-    filename: "hero_logo.png"
-    alt: "Lotus Docs Logo"
-    height: 70px
+  # titleLogo:
+  #   path: "images/logos"
+  #   filename: "title_logo.png"
+  #   alt: "Lotus Docs Logo"
+  #   height: 80px
 
   title: "Lotus Docs"
   subtitle: A lightweight, **modern documentation** theme for Hugo. Easily customised for building **fast**, **secure**, and **SEO-friendly** documentation sites.

@@ -11,6 +11,12 @@ hero:
   title: "Example Site"
   subtitle: A lightweight, **modern documentation** theme for Hugo. Easily customised for building **fast**, **secure**, and **SEO-friendly** documentation sites.
 
+  # titleLogo:
+  #   path: "images/logos"
+  #   filename: "title_logo.png"
+  #   alt: "Lotus Docs Logo"
+  #   height: 80px
+
   image:
     path: "images" # path to image under configured assets directory. default 'images'
     filename: "Lotus Docs Screenshot.png" # filename of your hero image (including file extension)
