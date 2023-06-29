@@ -1,31 +1,39 @@
 /* FlexSearch */
 
 :root {
+    --flexsearch-container-bg-color: var(--gray-100);
     --flexsearch-after-bg-color: var(--primary);
     --flexsearch-after-color: var(--white);
     --flexsearch-button-hover-bg-color: none;
     --flexsearch-key-bg-color: var(--primary);
     --flexsearch-key-color: #fff;
     --flexsearch-suggestion-bg-color: var(--white);
+    --flexsearch-suggestion-link-hover-bg-color: var(--gray-200);
     --flexsearch-suggestion-title-color: var(--primary);
     --flexsearch-suggestion-title-border-color: var(--gray-300);
     --flexsearch-suggestion-desc-color: var(--text-default);
 }
 
 [data-dark-mode] {
+    --flexsearch-container-bg-color: var(--body-bg);
     --flexsearch-after-bg-color: hsl(var(--primary-hsl),0.15);
     --flexsearch-after-color: var(--primary-200);
     --flexsearch-button-hover-bg-color: var(--black);
     --flexsearch-key-bg-color: hsl(var(--primary-hsl), 0.15);
     --flexsearch-key-color: var(--primary-200);
     --flexsearch-suggestion-bg-color: var(--dark-secondary);
+    --flexsearch-suggestion-link-hover-bg-color: var(--gray-800);
     --flexsearch-suggestion-title-color: var(--primary-200);
     --flexsearch-suggestion-title-border-color: var(--gray-700);
     --flexsearch-suggestion-desc-color: var(--gray-300);
 }
 
+#FlexSearchCollapse {
+        transition: 0.05s ease;    
+}
+
 .flexsearch-container {
-    background-color: var(--body-bg);
+    background-color: var(--flexsearch-container-bg-color);
     padding: 0.8rem;
     .form-control {
         border: 2px solid var(--primary);
@@ -38,6 +46,38 @@
         width: fit-content;
         border-radius: 0 0 4px 0;
     }
+}
+
+.flexsearch-keymap {
+    padding: 0 0 0.8rem 0.5rem;
+    list-style: none;
+    display: flex;
+
+    .flexsearch-button-cmd-key {
+        height: 20px;
+        width: 30px;
+    }
+
+    li:not(:last-of-type) {
+        margin-right: 0.8rem;
+    }
+
+    li {
+        align-items: center;
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .flexsearch-keymap {
+        display: none;
+    }
+}
+
+.flexsearch-key-label {
+    color: var(--form-control-placeholder-color);
+    font-size: 0.75em;
+    line-height: 1.6em;
 }
 
 .flexsearch-button-keys {
@@ -146,7 +186,8 @@
 }
 
 #suggestions a:focus {
-    background: var(--alert-primary-bg);
+    background: var(--flexsearch-suggestion-link-hover-bg-color);
+    border-radius: 4px;
     outline: 0
 }
 
@@ -163,7 +204,7 @@
 }
 
 #suggestions a:hover {
-    background: var(--alert-primary-bg);
+    background: var(--flexsearch-suggestion-link-hover-bg-color);
     border-radius: 4px;
 }
 
