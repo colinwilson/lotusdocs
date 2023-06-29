@@ -3,3 +3,15 @@
 
 [search_title]
     other = "Search"
+
+[search_navigate]
+    other = "to navigate"
+
+[search_select]
+    other = "to select"
+
+[search_close]
+    other = "to close"
+
+[search_cancel]
+    other = "cancel"

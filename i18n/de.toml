@@ -3,3 +3,15 @@
 
 [search_title]
     other = "Suche"
+
+[search_navigate]
+    other = "navigieren"
+
+[search_select]
+    other = "auswählen"
+
+[search_close]
+    other = "schließen"
+
+[search_cancel]
+    other = "stornieren"
