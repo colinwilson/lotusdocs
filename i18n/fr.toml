@@ -15,3 +15,6 @@
 
 [search_cancel]
     other = "annuler"
+
+[search_no_results]
+    other = "Aucun résultat pour"
