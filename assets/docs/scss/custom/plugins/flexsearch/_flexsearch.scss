@@ -1,14 +1,14 @@
 /* FlexSearch */
 
 :root {
-    --flexsearch-container-bg-color: var(--gray-100);
+    --flexsearch-container-bg-color: var(--white);
     --flexsearch-after-bg-color: var(--primary);
     --flexsearch-after-color: var(--white);
     --flexsearch-button-hover-bg-color: none;
     --flexsearch-key-bg-color: var(--primary);
     --flexsearch-key-color: #fff;
     --flexsearch-suggestion-bg-color: var(--white);
-    --flexsearch-suggestion-link-hover-bg-color: var(--gray-200);
+    --flexsearch-suggestion-link-hover-bg-color: #f5f6f7;
     --flexsearch-suggestion-title-color: var(--primary);
     --flexsearch-suggestion-title-border-color: var(--gray-300);
     --flexsearch-suggestion-desc-color: var(--text-default);
@@ -30,6 +30,7 @@
 
 #FlexSearchCollapse {
         transition: 0.05s ease;    
+        width: fit-content;
 }
 
 .flexsearch-container {
@@ -43,8 +44,12 @@
 
 @media (min-width: 768px) {
     .flexsearch-container {
-        width: fit-content;
         border-radius: 0 0 4px 0;
+    }
+
+    .flexsearch {
+        min-width: 500px;
+        width: 500px;
     }
 }
 
@@ -138,14 +143,6 @@
     }
 }
 
-@media (min-width: 768px) {
-    .flexsearch-container {
-        .form-control {
-            width: 400px;
-        }
-    }
-}
-
 @media (min-width: 992px) {
     .flexsearch::after {
         right: 0.5125rem
@@ -225,8 +222,8 @@
 
 @media (min-width: 992px) {
     #suggestions {
-        width: 31.125rem;
-        max-width: 31.125rem
+        width: 500px;
+        max-width: 500px
     }
 
     #suggestions a {
@@ -242,7 +239,7 @@
     }
 
     .suggestion__description {
-        width: 19rem;
+        width: 20.1rem;
         padding-left: 1rem
     }
 }
