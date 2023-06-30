@@ -5,13 +5,13 @@
     other = "Rechercher"
 
 [search_navigate]
-    other = "naviguer"
+    other = "pour parcourir"
 
 [search_select]
-    other = "choisir"
+    other = "pour sélectionner"
 
 [search_close]
-    other = "fermer"
+    other = "pour fermer"
 
 [search_cancel]
     other = "annuler"

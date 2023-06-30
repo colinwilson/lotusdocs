@@ -5,16 +5,16 @@
     other = "Suche"
 
 [search_navigate]
-    other = "navigieren"
+    other = "zu navigieren"
 
 [search_select]
-    other = "auswählen"
+    other = "zu auswählen"
 
 [search_close]
-    other = "schließen"
+    other = "zu schließen"
 
 [search_cancel]
-    other = "stornieren"
+    other = "abbrechen"
 
 [search_no_results]
     other = "Keine Ergebnisse für"
