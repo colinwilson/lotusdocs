@@ -15,7 +15,7 @@ hero:
   #   height: 80px
 
   title: "Lotus Docs"
-  subtitle: A lightweight, **modern documentation** theme for Hugo. Easily customised for building **fast**, **secure**, and **SEO-friendly** documentation sites.
+  subtitle: The lightweight, **modern documentation** theme for Hugo. Easily customised for building **fast**, **secure**, and **SEO-friendly** documentation sites.
 
   image:
     path: "images" # path to image under configured assets directory. default 'images'
@@ -40,7 +40,7 @@ features:
   enable: true
 
   title: Why choose Lotus Docs?
-  subtitle: Lotus Docs is a simple yet highly configurable Hugo theme. With Lotus Docs' default configuration you can deploy and publish documentation in a matter of minutes.
+  subtitle: Lotus Docs is a highly configurable Hugo documentation theme. Yet, with the default configuration you can deploy and publish your documentation site in a matter of minutes. Check out some core features below.
 
   items:
     - title: Fast
@@ -84,7 +84,7 @@ image_compare:
   enable: true
 
   title: Customise The Lotus Docs Appearance
-  subtitle: Much of Lotus Docs' appearance can be customised. Dark mode is optional (enabled by default) and you can choose a Google font that suites you via a single config setting.
+  subtitle: Much of Lotus Docs' appearance can be customised. Dark mode is optional (enabled by default) and you can choose a Google font that suites you via the config parameters.
 
   items:
     - title: Dark Mode
