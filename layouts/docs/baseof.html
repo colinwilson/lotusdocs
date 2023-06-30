@@ -76,10 +76,17 @@
     {{- partialCached (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "footer/footer-scripts.html") . -}}
 
     <!-- DocSearch Config -->
-    {{- partialCached (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "footer/docsearch.html") . -}}
+    {{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
+        {{- partialCached (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "footer/docsearch.html") . -}}
+    {{ end }}
 
     <!-- FlexSearch Config -->
-    {{- partialCached (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "footer/flexsearch.html") . -}}
+    {{ if eq .Site.Params.docs.flexSearch true -}}
+        {{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
+        {{ else }}
+            {{- partialCached (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "footer/flexsearch.html") . -}}
+        {{ end }}
+    {{ end }}
 
 </body>
 {{- partial (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "modals.html") . -}}

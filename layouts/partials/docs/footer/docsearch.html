@@ -1,20 +1,18 @@
-{{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
-    <script>
-        window.addEventListener('DOMContentLoaded', function() {
-            // DocSearch Config
-            docsearch({
-                container: '#docsearch',
-                appId: '{{ .Site.Params.docsearch.appID }}',
-                apiKey: '{{ .Site.Params.docsearch.apiKey }}',
-                indexName: '{{ .Site.Params.docsearch.indexName }}',
-                placeholder: 'Search Documentation',
-                translations: {
-                    button: {
-                        buttonText: '{{ i18n "search_title" }}',
-                        buttonAriaLabel: 'Search',
-                    }
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+        // DocSearch Config
+        docsearch({
+            container: '#docsearch',
+            appId: '{{ .Site.Params.docsearch.appID }}',
+            apiKey: '{{ .Site.Params.docsearch.apiKey }}',
+            indexName: '{{ .Site.Params.docsearch.indexName }}',
+            placeholder: 'Search Documentation',
+            translations: {
+                button: {
+                    buttonText: '{{ i18n "search_title" }}',
+                    buttonAriaLabel: 'Search',
                 }
-            });
+            }
         });
-    </script>
-{{ end }}
+    });
+</script>
