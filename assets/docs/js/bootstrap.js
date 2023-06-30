@@ -10,40 +10,4 @@ export default {
     Collapse
 }
 
-const search = document.getElementById('flexsearch');
-
-const flexsearchContainer = document.getElementById('FlexSearchCollapse');
-
-const hideFlexsearchBtn = document.getElementById('hideFlexsearch');
-
-const configObject = { toggle: false }
-const flexsearchContainerCollapse = new Collapse(flexsearchContainer, configObject) // initialized with no keyboard
-
-if (search !== null) {
-    document.addEventListener('keydown', inputFocus);
-    flexsearchContainer.addEventListener('shown.bs.collapse', function () {
-        search.focus();
-    });
-    // hide search collapse containder by clicking outside (except top header)
-    var topHeader = document.getElementById("top-header");
-    document.addEventListener('click', function(elem) {            
-        if (!flexsearchContainer.contains(elem.target) && !topHeader.contains(elem.target))
-            flexsearchContainerCollapse.hide();
-    });
-}
-
-hideFlexsearchBtn.addEventListener('click', () =>{
-    flexsearchContainerCollapse.hide()
-})
-
-function inputFocus(e) {
-    if (e.ctrlKey && e.key === '/') {
-        e.preventDefault();
-        flexsearchContainerCollapse.toggle();
-    }
-    if (e.key === 'Escape' ) {
-        search.blur();
-        // suggestions.classList.add('d-none');
-        flexsearchContainerCollapse.hide();
-    }
-};
+window.Collapse = Collapse;
