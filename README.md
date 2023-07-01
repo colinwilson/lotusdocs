@@ -2,7 +2,7 @@
 
 [Lotus Docs](https://lotusdocs.dev) is an easily updated and customisable [Hugo](https://gohugo.io/) theme for building fast, secure, and SEO-friendly documentation sites.
 
-![Lotus Docs Banner](https://res.cloudinary.com/lotuslabs/image/upload/v1688189020/Lotus%20Docs/Social%20Media/lotus_docs_banner_mockup_v1.0_rounded_opt_aulrwh.png)
+![Lotus Docs Banner](https://res.cloudinary.com/lotuslabs/image/upload/v1688223320/Lotus%20Docs/Social%20Media/lotus_docs_banner_mockup_v1.1_rounded_glwogb.webp)
 
 - Check out the demo site [https://lotusdocs.dev/docs](https://lotusdocs.dev/docs) (also doubles as the documentation guide for Lotus Docs 📖)
 

@@ -16,6 +16,12 @@
     --prism-code-scrollbar-thumb-color: var(--gray-600);
 }
 
+// Fit codeblock container to contents
+// .prism-codeblock {
+//     width: fit-content;
+//     max-width: 100%;
+// }
+
  code[class*="language-"],
  pre[class*="language-"] {
      color: #f5fbff !important;
