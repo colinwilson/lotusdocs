@@ -10,9 +10,11 @@
 
 * [x] Modern documentation layout
 * [x] Responsive design
-* [x] Fast, Accessible and SEO-Friendly (4 x 100 [Lighthouse](https://pagespeed.web.dev/) scores!)
+* [x] Fast, Accessible and SEO-Friendly (4 x 💯 [Google Lighthouse](https://pagespeed.web.dev/) scores!)
 * [x] Secure by default
-* [x] Multilingual support
+* [x] Built on Bootstrap 5
+* [x] Deploy on [Vercel](https://vercel.com/) with multiple options
+* [x] Multilingual support (i18n)
 * [x] Powerful Syntax Highlighting via [Prism.js](https://prismjs.com/)
 * [x] Dark Mode
 * [x] Custom fonts (via [Google Fonts](https://fonts.google.com/))
