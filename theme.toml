@@ -4,7 +4,7 @@
 name = "Lotus Docs"
 license = "MIT"
 licenselink = "https://github.com/colinwilson/lotusdocs/release/LICENSE"
-description = "The lightweight, modern documentation theme for Hugo"
+description = "A lightweight, modern documentation theme for Hugo"
 homepage = "https://github.com/colinwilson/lotusdocs"
 demosite = "https://lotusdocs.dev/docs"
 tags = ["documentation", "responsive", "minimal", "secure", "search", "customizable", "modern", "dark mode", "landing page"]
