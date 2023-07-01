@@ -28,12 +28,14 @@
 * [x] Custom shortcodes (PrismJS, Alerts, Tabs, Tables)
 * [ ] Analytics ([Google Analytics v4](https://analytics.google.com/analytics/web/), [Plausible Analytics](https://plausible.io/))
 * [ ] [Open Graph](https://ogp.me/)
+* [ ] [Mermaid](https://mermaid.js.org/) Support
+* [ ] Math equations powered by [KaTeX](https://katex.org/)
 
 ## Getting Started
 
 ### Requirements
 
-Hugo **Extended** minimum version: 0.110.0
+Hugo **Extended** minimum version: 0.100.0
 
 Default Markdown parser library `Goldmark`
 
