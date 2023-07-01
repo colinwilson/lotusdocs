@@ -10,7 +10,7 @@
 
 * [x] Modern documentation layout
 * [x] Responsive design
-* [x] Fast, Accessible and SEO-Friendly (4 x 💯 [Google Lighthouse](https://pagespeed.web.dev/) scores!)
+* [x] Fast, Accessible and SEO-Friendly (💯 scores on [Google Lighthouse](https://pagespeed.web.dev/)!)
 * [x] Secure by default
 * [x] Built on Bootstrap 5
 * [x] Deploy on [Vercel](https://vercel.com/) with multiple options
@@ -24,7 +24,7 @@
 * [x] Table of Contents menu for each page
 * [x] Customisable theme colour
 * [x] Social media links (Github, Twitter, Instagram etc)
-* [x] Search plugin options (support for [DocSearch](https://docsearch.algolia.com/) and [FlexSearch](https://github.com/nextapps-de/flexsearch))
+* [x] Static and Server-Side Search plugin options ([FlexSearch](https://github.com/nextapps-de/flexsearch) by default and support for [DocSearch](https://docsearch.algolia.com/))
 * [x] Custom shortcodes (PrismJS, Alerts, Tabs, Tables)
 * [ ] Analytics ([Google Analytics v4](https://analytics.google.com/analytics/web/), [Plausible Analytics](https://plausible.io/))
 * [ ] [Open Graph](https://ogp.me/)
