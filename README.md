@@ -1,16 +1,39 @@
 # Lotus Docs
 
-<p align="center">
-  <a href="https://lotusdocs.dev/">
-    <img alt="Lotus Docs" src="https://res.cloudinary.com/lotuslabs/image/upload/v1688045048/Lotus%20Docs/Social%20Media/lotus_docs_social_preview_github_colour_v1.2_mofy6x.svg" width="300">
-  </a>
-</p>
+[Lotus Docs](https://lotusdocs.dev) is an easily updated and customised [Hugo](https://gohugo.io/) theme for building fast, secure, and SEO-friendly documentation sites.
 
-<h3 align="center">
-  A Modern Documentation Theme for Hugo
-</h3>
+![Lotus Docs Banner](https://res.cloudinary.com/lotuslabs/image/upload/v1688172563/Lotus%20Docs/Social%20Media/lotus_docs_banner_mockup_v1.0_opt_oab0aq.jpg)
 
-[Lotus Docs](https://lotusdocs.dev) is an easily updated and customised Hugo theme for building fast, secure, and SEO-friendly documentation sites.
+- Check out the demo site [https://lotusdocs.dev](https://lotusdocs.dev) (which also doubles as the documentation guide for Lotus Docs)
 
+## Features
 
-![Lotus Docs Screenshot - Dec 2022](https://res.cloudinary.com/lotuslabs/image/upload/v1672327611/Lotus%20Docs/Social%20Media/LotusDocs_GitHub_Readme_Banner_beta_type_opt_k1eoqi.webp)
+* [x] Modern documentation layout
+* [x] Fast, Secure annd lightweight (4 x 100 Lighthouse scores!)
+* [x] Multilingual support
+* [x] Responsive design
+* [x] Dark Mode
+* [x] Custom fonts via Google Fonts
+* [x] Landing page template included
+* [x] Documentation sidebar menu (with optional icons)
+* [x] Table of Contents menu for each page
+* [x] Customisable theme colour
+* [x] Social media links (Github, Twitter, Instagram etc)
+* [x] Search plugins (support for DocSearch and FlexSearch)
+* [x] Custom shortcodes (PrismJS, Alerts, Tabs, Tables)
+* [ ] Analytics (Google Analytics v4, Plausible Analytics)
+* [ ] Open Graph
+
+## Getting Started
+
+### Requirements
+
+Hugo **Extended** minimum version: 0.110.0
+
+Default Markdown parser library `Goldmark`
+
+## Author
+
+[Colin Wilson](https://github.com/colinwilson)
+
+Copyright ©️ 2022-2023 [Colin Wilson](https://github.com/colinwilson)
