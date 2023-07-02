@@ -15,7 +15,7 @@ hero:
   #   height: 80px
 
   title: "Lotus Docs"
-  subtitle: The lightweight, **modern documentation** theme for Hugo. Easily customised for building **fast**, **secure**, and **SEO-friendly** documentation sites.
+  subtitle: A lightweight, **modern documentation** theme for Hugo. Easily customised for building **fast**, **secure**, and **SEO-friendly** documentation sites.
 
   image:
     path: "images" # path to image under configured assets directory. default 'images'
