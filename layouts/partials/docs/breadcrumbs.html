@@ -1,5 +1,5 @@
 <nav aria-label="breadcrumb" class="{{ if site.Params.docs.breadcrumbs | default true }}d-inline-block{{ else }}d-none{{ end }} pb-2 mt-2 mt-sm-0">
-    <ul class="breadcrumb bg-transparent mb-0 p-0">
+    <ul class="breadcrumb bg-transparent mb-0">
         {{ $currentPage := humanize .RelPermalink -}}
         {{ $docRoot := humanize .FirstSection.RelPermalink }}
         {{ $rellink := "" }}

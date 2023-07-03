@@ -16,3 +16,9 @@
 .breadcrumb .breadcrumb-item.active {
     color: var(--text-muted);
 }
+
+@media (max-width: 1199px) {
+    .breadcrumb {
+        --bs-breadcrumb-padding-x: 0.7rem;
+    }
+}
