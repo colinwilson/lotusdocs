@@ -5,7 +5,7 @@ html {
 body {
     font-family: $font-family-secondary;
     overflow-x: hidden !important;
-    font-size: $font-size-base;
+    font-size: unquote("clamp(1rem, 1rem + .125 * ((100vw - 20rem) / 58), 1.125rem)");
     color: var(--body-color);
     background-color: var(--body-bg);
 }
