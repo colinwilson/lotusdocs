@@ -89,7 +89,11 @@ table {
     }
 }
 
-.table-sm {
+.table-sm,
+.table-striped,
+.table-borderless,
+.table-hover,
+.table-striped-columns {
     > :not(caption) > * > * {
         padding: 0.6rem 0.6rem;
     }
