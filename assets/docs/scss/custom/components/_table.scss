@@ -99,6 +99,19 @@ table {
     }
 }
 
+@media (max-width: 1199px) {
+
+    .table-sm,
+    .table-striped,
+    .table-borderless,
+    .table-hover,
+    .table-striped-columns {
+        > :not(caption)>*>* {
+            padding: 0.6rem 0.25rem;
+        }
+    }
+}
+
 .table-xs {
     > :not(caption) > * > * {
         padding: 0.25rem 0.25rem;
