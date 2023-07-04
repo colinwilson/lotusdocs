@@ -58,7 +58,8 @@
     {{- if hugo.IsProduction }}
         {{- $style = $style | minify | fingerprint "sha384" }}
     {{- end -}}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $style.Data.Integrity }}"{{ end -}} crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="{{ $style.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $style.Data.Integrity }}"{{ end -}} crossorigin="anonymous"> -->
+    <style>{{ $style.Content | safeCSS }}</style>
     <!-- Plausible Analytics Config -->
     {{- if not .Site.IsServer }}
         {{- partialCached (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "head/plausible") . }}
