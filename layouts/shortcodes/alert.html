@@ -7,26 +7,23 @@
   "primary" "info"
 }}
 <div class="alert alert-{{ with .Get "context" }}{{.}}{{ else }}default{{ end }} d-flex" role="alert">
-    <div class="flex-shrink-1 alert-icon">
-      {{ with .Get "icon" }}
-        {{ . }}
-      {{ else }}
-        <span class="material-icons size-20 me-2">
-          {{ with .Get "context" }}
-            {{ index $icon_array . }}
-          {{ else }}
-            {{ $icon_array.default }}
-          {{ end }}
-        </span>
-      {{ end }}
-    </div>
-    {{ with .Get "text"}}
-      <div class="w-100">{{ . | safeHTML }} </div>
-    {{ else }}
-      {{ with .Inner}}
-        <div class="w-100"> {{ . | markdownify}}</div>
-      {{ else }}
-        {{ errorf "No valid text variable or Inner content given"}}
-      {{ end }}
-    {{ end}}
+  <div class="flex-shrink-1 alert-icon">
+  {{ with .Get "icon" }}
+  {{ . }}
+  {{ else }}
+  <span class="material-icons size-20 me-2">
+  {{ with .Get "context" }}{{ index $icon_array . }}{{ else }}{{ $icon_array.default }}{{ end }}
+  </span>
+  {{ end }}
+  </div>
+  {{ with .Get "text" }}<div class="w-100">{{ . | safeHTML }}</div>
+  {{ else }}
+  {{ with .Inner }}
+  <div class="w-100">
+  {{ . }}
+  </div>
+  {{ else }}
+  {{ errorf "No valid text variable or Inner content given"}}
+  {{ end }}
+  {{ end}}
 </div>
