@@ -89,6 +89,10 @@
     border-radius: 4px;
     color: var(--gray-700);
 
+    p {
+        line-height: 1.525rem;
+    }
+
     p:last-child {
         margin-bottom: 0;
     }
@@ -115,6 +119,7 @@
 
     > .alert-icon span {
         color: var(--alert-primary-icon-color);
+        margin-top: 0.2rem;
     }
 }
 
@@ -130,6 +135,7 @@
 
     > .alert-icon span {
         color: var(--alert-success-icon-color);
+        margin-top: 0.2rem;
     }
 }
 
@@ -144,6 +150,7 @@
 
     > .alert-icon span {
         color: var(--alert-info-icon-color);
+        margin-top: 0.2rem;
     }
 }
 
@@ -159,6 +166,7 @@
 
     > .alert-icon span {
         color: var(--alert-warning-icon-color);
+        margin-top: 0.2rem;
     }
 }
 
@@ -173,6 +181,7 @@
 
     > .alert-icon span {
         color: var(--alert-danger-icon-color);
+        margin-top: 0.2rem;
     }
 }
 
@@ -187,6 +196,7 @@
 
     > .alert-icon span {
         color: var(--alert-light-icon-color);
+        margin-top: 0.2rem;
     }
 }
 
@@ -201,6 +211,7 @@
 
     > .alert-icon span {
         color: var(--alert-dark-icon-color);
+        margin-top: 0.2rem;
     }
 }
 

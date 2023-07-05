@@ -101,10 +101,14 @@ defaultContentLanguage = 'en'
 
         listDescTrunc   = 100                                 # Number of characters by which to truncate the list card description
 
-        # Search
-        flexSearch      = true
-
-        searchSectionsIndex = []
+    [params.flexsearch] # Parameters for FlexSearch
+        enabled             = true
+        # tokenize            = "full"
+        # optimize            = true
+        # cache               = 100
+        # minQueryChar        = 3 # default is 0 (disabled)
+        # maxResult           = 5 # default is 5
+        # searchSectionsIndex = []
 
     [params.docsearch] # Parameters for DocSearch
         # appID     = "O2QIOCBDAK" # Algolia Application ID
