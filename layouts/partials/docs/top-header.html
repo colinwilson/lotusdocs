@@ -20,7 +20,7 @@
             {{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
             <span><div id="docsearch"></div></span>
             {{ end }}
-            {{ if eq .Site.Params.docs.flexSearch true -}}
+            {{ if or (not (isset .Site.Params.flexsearch "enabled")) (eq .Site.Params.flexsearch.enabled true) -}}
                 {{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
                 {{ else }}
                     <!-- <form class="flexsearch position-relative flex-grow-1 ms-2 me-lg-2 d-none">
@@ -80,7 +80,7 @@
         </div>
     </div>
     <!-- FlexSearch Input Start -->
-    {{ if eq .Site.Params.docs.flexSearch true -}}
+    {{ if or (not (isset .Site.Params.flexsearch "enabled")) (eq .Site.Params.flexsearch.enabled true) -}}
         {{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
         {{ else }}
             <div class="collapse" id="FlexSearchCollapse">

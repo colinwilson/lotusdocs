@@ -5,10 +5,10 @@
     const flexsearchContainer = document.getElementById('FlexSearchCollapse');
 
     const hideFlexsearchBtn = document.getElementById('hideFlexsearch');
-    
+
     const configObject = { toggle: false }
     const flexsearchContainerCollapse = new Collapse(flexsearchContainer, configObject) // initialized with no keyboard
-    
+
     if (search !== null) {
         document.addEventListener('keydown', inputFocus);
         flexsearchContainer.addEventListener('shown.bs.collapse', function () {
@@ -16,16 +16,16 @@
         });
         // hide search collapse containder by clicking outside (except top header)
         var topHeader = document.getElementById("top-header");
-        document.addEventListener('click', function(elem) {            
+        document.addEventListener('click', function(elem) {
             if (!flexsearchContainer.contains(elem.target) && !topHeader.contains(elem.target))
                 flexsearchContainerCollapse.hide();
         });
     }
-    
+
     hideFlexsearchBtn.addEventListener('click', () =>{
         flexsearchContainerCollapse.hide()
     })
-    
+
     function inputFocus(e) {
         if (e.ctrlKey && e.key === '/') {
             e.preventDefault();
@@ -86,8 +86,11 @@
     (function(){
 
     var index = new FlexSearch.Document({
-        tokenize: "forward",
-        cache: 100,
+        // charset: "latin:default",
+        tokenize: {{ .Site.Params.flexsearch.tokenize | default "forward" }},
+        minlength: {{ .Site.Params.flexsearch.minQueryChar | default 0}},
+        cache: {{ .Site.Params.flexsearch.cache | default 100 }},
+        optimize: {{ .Site.Params.flexsearch.optimize | default false }},
         document: {
         id: 'id',
         store: [
@@ -117,12 +120,12 @@
     // https://discourse.gohugo.io/t/range-length-or-last-element/3803/2
 
     {{ $list := slice }}
-    {{- if and (isset .Site.Params.docs "searchsectionsindex") (not (eq (len .Site.Params.docs.searchSectionsIndex) 0)) }}
+    {{- if and (isset .Site.Params.flexsearch "searchsectionsindex") (not (eq (len .Site.Params.flexsearch.searchSectionsIndex) 0)) }}
         {{- if eq .Site.Params.docs.searchSectionsIndex "ALL" }}
             {{- $list = .Site.Pages }}
         {{- else }}
-            {{- $list = (where .Site.Pages "Type" "in" .Site.Params.docs.searchSectionsIndex) }}
-        {{- if (in .Site.Params.docs.searchSectionsIndex "HomePage") }}
+            {{- $list = (where .Site.Pages "Type" "in" .Site.Params.flexsearch.searchSectionsIndex) }}
+        {{- if (in .Site.Params.flexsearch.searchSectionsIndex "HomePage") }}
             {{ $list = $list | append .Site.Home }}
         {{- end }}
         {{- end }}
@@ -151,7 +154,8 @@
     search.addEventListener('input', show_results, true);
 
     function show_results(){
-        const maxResult = 5;
+        const maxResult = {{ .Site.Params.flexsearch.maxResult | default 5}};
+        const minlength = {{ .Site.Params.flexsearch.minQueryChar | default 0}};
         var searchQuery = this.value;
         var results = index.search(searchQuery, {limit: maxResult, enrich: true});
 
@@ -165,13 +169,22 @@
         suggestions.innerHTML = "";
         suggestions.classList.remove('d-none');
 
-        // inform user that no results were found
-        if (flatResults.size === 0 && searchQuery) {
-        const noResultsMessage = document.createElement('div')
-        noResultsMessage.innerHTML = {{ i18n "search_no_results" | default "No results for" }} + ` "<strong>${searchQuery}</strong>"`
-        noResultsMessage.classList.add("suggestion__no-results");
-        suggestions.appendChild(noResultsMessage);
-        return;
+        // inform user of search query minimum character requirement
+        if (searchQuery.length < minlength) {
+            const minCharMessage = document.createElement('div')
+            minCharMessage.innerHTML = `Please type at least <strong>${minlength}</strong> characters`
+            minCharMessage.classList.add("suggestion__no-results");
+            suggestions.appendChild(minCharMessage);
+            return;
+        } else {
+            // inform user that no results were found
+            if (flatResults.size === 0 && searchQuery) {
+                const noResultsMessage = document.createElement('div')
+                noResultsMessage.innerHTML = {{ i18n "search_no_results" | default "No results for" }} + ` "<strong>${searchQuery}</strong>"`
+                noResultsMessage.classList.add("suggestion__no-results");
+                suggestions.appendChild(noResultsMessage);
+                return;
+            }
         }
 
         // construct a list of suggestions

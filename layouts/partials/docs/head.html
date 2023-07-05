@@ -34,7 +34,7 @@
         <script>{{ $darkModeInit.Content | safeJS }}</script>
     {{ end -}}
     <!-- FlexSearch -->
-    {{ if eq .Site.Params.docs.flexSearch true -}}
+    {{ if or (not (isset .Site.Params.flexsearch "enabled")) (eq .Site.Params.flexsearch.enabled true) -}}
         {{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
         {{ else }}
             {{ $flexSearch := resources.Get (printf "/%s/%s" (.Site.Params.docs.pathName | default "docs") "js/flexsearch.bundle.js") }}
@@ -59,7 +59,6 @@
         {{- $style = $style | minify | fingerprint "sha384" }}
     {{- end -}}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $style.Data.Integrity }}"{{ end -}} crossorigin="anonymous">
-    <!-- <style>{{ $style.Content | safeCSS }}</style> -->
     <!-- Plausible Analytics Config -->
     {{- if not .Site.IsServer }}
         {{- partialCached (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "head/plausible") . }}

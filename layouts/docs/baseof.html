@@ -81,7 +81,7 @@
     {{ end }}
 
     <!-- FlexSearch Config -->
-    {{ if eq .Site.Params.docs.flexSearch true -}}
+    {{ if or (not (isset .Site.Params.flexsearch "enabled")) (eq .Site.Params.flexsearch.enabled true) -}}
         {{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
         {{ else }}
             {{- partialCached (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "footer/flexsearch.html") . -}}
