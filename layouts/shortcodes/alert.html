@@ -16,7 +16,7 @@
   </span>
   {{ end }}
   </div>
-  {{ with .Get "text" }}<div class="w-100">{{ . | safeHTML }}</div>
+  {{ with .Get "text" }}<div class="w-100">{{ . | markdownify }}</div>
   {{ else }}
   {{ with .Inner }}
   <div class="w-100">
