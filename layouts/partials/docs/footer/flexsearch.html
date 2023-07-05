@@ -90,7 +90,7 @@
         tokenize: {{ .Site.Params.flexsearch.tokenize | default "forward" }},
         minlength: {{ .Site.Params.flexsearch.minQueryChar | default 0}},
         cache: {{ .Site.Params.flexsearch.cache | default 100 }},
-        optimize: {{ .Site.Params.flexsearch.optimize | default false }},
+        optimize: {{ .Site.Params.flexsearch.optimize | default true }},
         document: {
         id: 'id',
         store: [
