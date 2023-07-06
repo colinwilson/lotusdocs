@@ -51,4 +51,10 @@
     {{- if not .Site.IsServer }}
         {{- partialCached "head/plausible" . }}
     {{- end -}}
+    <!-- Google Analytics v4 Config -->
+    {{- if not .Site.IsServer }}
+    {{- if .Site.GoogleAnalytics }}
+        {{- template "_internal/google_analytics.html" . -}}
+    {{- end -}}
+    {{- end -}}
 </head>
