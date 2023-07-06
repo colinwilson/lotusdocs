@@ -6,6 +6,8 @@
 
 - Check out the demo site [https://lotusdocs.dev/docs](https://lotusdocs.dev/docs) (also doubles as the documentation guide for Lotus Docs 📖)
 
+🚨 **Lotus Docs is currently in pre-release development and thus not recommended for use in production at this time. But please do try it out 😊**
+
 ## Features
 
 * [x] Modern documentation layout
@@ -21,10 +23,11 @@
 * [x] Custom icons (via [Google Material Symbols](https://fonts.google.com/icons?icon.style=Outlined&icon.set=Material+Symbols))
 * [x] Landing page template included
 * [x] Documentation sidebar menu (with optional icons)
-* [x] Table of Contents menu for each page
-* [x] Customisable theme colour
+* [x] Table of Contents menu on each page (optional)
+* [x] Customisable theme accent colour
 * [x] Social media links (Github, Twitter, Instagram etc)
-* [x] Static and Server-Side Search plugin options ([FlexSearch](https://github.com/nextapps-de/flexsearch) by default and support for [DocSearch](https://docsearch.algolia.com/))
+* [x] Static Search plugin option (powered by [FlexSearch](https://github.com/nextapps-de/flexsearch), enabled by default)
+* [x] Support for [DocSearch](https://docsearch.algolia.com/)
 * [x] Custom shortcodes (PrismJS, Alerts, Tabs, Tables)
 * [ ] Analytics ([Google Analytics v4](https://analytics.google.com/analytics/web/), [Plausible Analytics](https://plausible.io/))
 * [ ] [Open Graph](https://ogp.me/)
