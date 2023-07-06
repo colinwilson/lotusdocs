@@ -49,7 +49,9 @@
     {{- end }}
     <!-- Plausible Analytics Config -->
     {{- if not .Site.IsServer }}
+    {{ if and (.Site.Params.plausible.scriptURL) (.Site.Params.plausible.dataDomain) -}}
         {{- partialCached "head/plausible" . }}
+    {{- end -}}
     {{- end -}}
     <!-- Google Analytics v4 Config -->
     {{- if not .Site.IsServer }}

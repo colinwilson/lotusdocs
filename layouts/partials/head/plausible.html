@@ -1,3 +1,1 @@
-{{ if and (.Site.Params.analytics.plausibleURL) (.Site.Params.analytics.plausibleDomain) -}}
-    <script defer data-domain="{{ .Site.Params.analytics.plausibleDomain }}" {{ if .Site.Params.analytics.plausibleAPI }}data-api="{{ .Site.Params.analytics.plausibleAPI | default }}/api/event"{{ end }} src="{{ .Site.Params.analytics.plausibleURL }}/js/script.js"></script>
-{{ end }}
+<script defer data-domain="{{ .Site.Params.plausible.dataDomain }}" {{ if .Site.Params.plausible.eventAPI }}data-api="{{ .Site.Params.plausible.eventAPI | default }}/api/event"{{ end }} src='{{ .Site.Params.plausible.scriptURL | default "plausible.io" }}/js/script.js'></script>
