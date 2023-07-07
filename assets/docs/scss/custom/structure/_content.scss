@@ -225,6 +225,13 @@
     }
 }
 
+// bold code
+.docs-content .main-content strong {
+    code {
+        font-weight: 700;
+    }
+}
+
 // Chroma Highlighter CSS
 .docs-content .main-content td pre {
 
