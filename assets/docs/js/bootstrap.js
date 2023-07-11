@@ -3,11 +3,15 @@
 import Tab from "/js/bootstrap/src/tab";
 import Modal from "/js/bootstrap/src/modal";
 import Collapse from "/js/bootstrap/src/collapse";
+import Dropdown from "/js/bootstrap/src/dropdown";
+import ScrollSpy from "js/bootstrap/src/scrollspy";
 
 export default {
     Tab,
     Modal,
-    Collapse
+    Collapse,
+    Dropdown,
+    ScrollSpy
 }
 
 window.Collapse = Collapse;

@@ -253,3 +253,23 @@ if (document.getElementById("relativetime")) {
     let modAgo = dayjs(modId.getAttribute('data-authdate')).fromNow();
     document.getElementById("relativetime").innerHTML = modAgo;
 };
+
+// ToC Mobile Menu (Bootstrap 5 Dropdown with ScrollSpy)
+var scrollArea = document.getElementById('content');
+var tocBtn = document.getElementById('toc-dropdown-btn');
+scrollArea.addEventListener("activate.bs.scrollspy", function(){
+    var currentItem = document.querySelector('.dropdown-menu li > a.active').innerHTML;
+    tocBtn.innerHTML = currentItem;
+})
+const tocMobileContainer = document.querySelector(".docs-toc-mobile");
+const tocMobileTopValue = parseInt((getComputedStyle(tocMobileContainer).top), 10);
+const rootMarginTop = -tocMobileTopValue - 1;
+// console.log(rootMarginTop)
+const observer = new IntersectionObserver( 
+    ([e]) => e.target.classList.toggle("toc-pinned", e.intersectionRatio < 1),
+    {
+        rootMargin: rootMarginTop.toString() + 'px 0px 0px 0px',
+        threshold: [1]
+    }
+);
+observer.observe(tocMobileContainer);

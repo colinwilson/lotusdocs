@@ -10,6 +10,9 @@ body {
     background-color: var(--body-bg);
 }
 @media (max-width: 1199px) {
+    html {
+        scroll-padding-top: 100px;
+    }
     body {
         font-size: 0.9rem;
     }

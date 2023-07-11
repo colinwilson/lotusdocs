@@ -25,9 +25,15 @@
                                     </div>
                                 </div>
                                 <div class="row flex-xl-nowrap">
-                                        <div class="docs-toc col-xl-3 {{ if .IsNode }}visually-hidden{{ else }}{{end}} {{ if and (ne .Params.toc false) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}{{ else }}visually-hidden{{ end }} {{ if site.Params.docs.toc | default true }}{{ else }}visually-hidden{{ end }} d-xl-block">
-                                            {{- partial (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "toc.html") . -}}
-                                        </div>
+                                    <div class="docs-toc col-xl-3 {{ if .IsNode }}visually-hidden{{ else }}{{end}} {{ if and (ne .Params.toc false) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}{{ else }}visually-hidden{{ end }} {{ if site.Params.docs.toc | default true }}{{ else }}visually-hidden{{ end }} d-xl-block">
+                                        {{- partial (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "toc.html") . -}}
+                                    </div>
+                                    <div id="toc-mobile" class="docs-toc-mobile {{ if .IsNode }}visually-hidden{{ else }}{{end}} {{ if and (ne .Params.toc false) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}{{ else }}visually-hidden{{ end }} {{ if site.Params.docs.toc | default true }}{{ else }}visually-hidden{{ end }} d-xl-none">
+                                        <button id="toc-dropdown-btn" class="btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-offset="0,0" aria-expanded="false">
+                                            Contents
+                                        </button>
+                                        {{- partial (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "toc-mobile.html") . -}}
+                                    </div>
                                     <div class="docs-content col-12 {{ if .IsNode }}{{ else }}{{ if site.Params.docs.toc | default true }}{{ if and (ne .Params.toc false) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}col-xl-9{{else}}{{end}}{{ else }}{{ end }}{{ end }} mt-0">
                                         <div class="mb-3">
                                             <h1 class="content-title mb-0">
@@ -45,7 +51,7 @@
                                             <p class="lead mb-0">{{ $currentPage.Description | markdownify }}</p>
                                             {{ end }}
                                         </div>
-                                        <div id="content" class="main-content">
+                                        <div id="content" class="main-content" {{ if eq .Site.Params.docs.toc true -}}data-bs-spy="scroll" data-bs-root-margin="0px 0px -65%" data-bs-target="#toc-mobile"{{ end }}>
                                             {{ block "main" . }}{{ end }}
                                         </div>
                                         <div>
@@ -87,7 +93,6 @@
             {{- partialCached (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "footer/flexsearch.html") . -}}
         {{ end }}
     {{ end }}
-
 </body>
 {{- partial (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "modals.html") . -}}
 </html>

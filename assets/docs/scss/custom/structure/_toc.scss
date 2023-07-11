@@ -4,14 +4,55 @@
 
 :root {
     --toc-link-hover-bg-color: var(--gray-300);
+    --toc-mobile-menu-bg-color: var(--white);
 }
 
 [data-dark-mode] {
     --toc-link-hover-bg-color: var(--gray-700);
+    --toc-mobile-menu-bg-color: var(--dark-secondary);
 }
 
-.docs-content {
-    order: 1;
+.docs-toc-mobile {
+    position: sticky;
+    top: 72px; // important (must be set)
+    padding: 0 0.5rem 0.5rem 0.5rem;
+    z-index: 1;
+
+    &.toc-pinned {
+        padding: 0;
+
+        .dropdown-toggle {
+            border-left: 0;
+            border-right: 0;
+            border-top: 0;
+            border-radius: 0;
+        }
+    }
+
+    .dropdown-toggle {
+        padding: 0 1.5rem;
+        background: var(--body-bg);
+        color: var(--text-default);
+        border: 1px solid var(--alert-border-color);
+        border-radius: 4px;
+        width: 100%;
+        white-space: normal;
+    }
+
+    .dropdown-menu {
+        background: var(--toc-mobile-menu-bg-color);
+        border: none;
+        border-radius: 0;
+        padding: 0 1.5rem;
+        width: 100%;
+        li {
+            list-style: none;
+            ul {
+                padding-left: 1rem;
+            }
+        }
+        // --bs-dropdown-bg: var(--body-bg);
+    }
 }
 
 .docs-toc {
