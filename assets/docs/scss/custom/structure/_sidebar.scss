@@ -121,13 +121,14 @@
                     transition: all 0.3s ease;
                     display: flex;
                     align-items: center;
+                    text-align: left;
 
                     @media (max-width: 1024px) {
                         padding: 6px 24px 6px 24px;
                     }
 
                     @media screen and (max-width: 425px) {
-                        padding: 6px 24px 6px 12px;
+                        padding: 6px 26px 6px 12px;
                     }
                     &:hover > i::before {
                         display: inline-block;
@@ -136,7 +137,7 @@
                         outline: none;
                     }
                     i {
-                        width: 36px;
+                        min-width: 36px;
                         height: 36px;
                         background-color: var(--sidebar-icon-bg);
                         display: inline-flex !important;

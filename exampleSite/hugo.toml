@@ -89,6 +89,7 @@ defaultContentLanguage = 'en'
 
         # ToC
         toc             = true                                # enable table of contents? default is true
+        tocMobile       = true                                # enable table of contents in mobile view? default is true
         scrollSpy       = true                                # enable scrollspy on ToC? default is true
 
         # front matter

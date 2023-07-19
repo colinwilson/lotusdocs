@@ -25,15 +25,19 @@
                                     </div>
                                 </div>
                                 <div class="row flex-xl-nowrap">
+                                    {{ if site.Params.docs.toc | default true }}
                                     <div class="docs-toc col-xl-3 {{ if .IsNode }}visually-hidden{{ else }}{{end}} {{ if and (ne .Params.toc false) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}{{ else }}visually-hidden{{ end }} {{ if site.Params.docs.toc | default true }}{{ else }}visually-hidden{{ end }} d-xl-block">
                                         {{- partial (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "toc.html") . -}}
                                     </div>
-                                    <div id="toc-mobile" class="docs-toc-mobile {{ if .IsNode }}visually-hidden{{ else }}{{end}} {{ if and (ne .Params.toc false) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}{{ else }}visually-hidden{{ end }} {{ if site.Params.docs.toc | default true }}{{ else }}visually-hidden{{ end }} d-xl-none">
+                                    {{ end }}
+                                    {{ if site.Params.docs.tocMobile | default true }}
+                                    <div class="docs-toc-mobile {{ if .IsNode }}visually-hidden{{ else }}{{end}} {{ if and (ne .Params.toc false) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}{{ else }}visually-hidden{{ end }} {{ if site.Params.docs.tocMobile | default true }}{{ else }}visually-hidden{{ end }} d-xl-none">
                                         <button id="toc-dropdown-btn" class="btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-offset="0,0" aria-expanded="false">
                                             Contents
                                         </button>
                                         {{- partial (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "toc-mobile.html") . -}}
                                     </div>
+                                    {{ end -}}
                                     <div class="docs-content col-12 {{ if .IsNode }}{{ else }}{{ if site.Params.docs.toc | default true }}{{ if and (ne .Params.toc false) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}col-xl-9{{else}}{{end}}{{ else }}{{ end }}{{ end }} mt-0">
                                         <div class="mb-3">
                                             <h1 class="content-title mb-0">
