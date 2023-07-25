@@ -9,9 +9,9 @@
 
 		{{ range $i, $sequence := (seq $tabTotal) }}
 
-		<a class="nav-link {{ if eq $i 0 }} active {{ end }}{{ if in $tabRightAlign (add 1 $i) }} ms-auto {{ end }}"
-		   id="{{ (index $tabID $i) }}-tab" data-bs-toggle="tab" data-bs-target="#{{ (index $tabID $i) }}"
-		   type="button" role="tab" aria-controls="nav-home" aria-selected="true">{{ (replaceRE "(\\s)" " " (index $tabName $i)) }}</a>
+		<a class="nav-link {{ if eq $i 0 }} active{{ end }}{{ if in $tabRightAlign (add 1 $i) }} ms-auto {{ end }}"
+		   id="{{ (index $tabID $i) }}Tab" data-bs-toggle="tab" data-bs-target="#{{ (index $tabID $i) }}"
+		   type="button" role="tab" aria-controls="{{ (index $tabID $i) }}" aria-selected="true">{{ (replaceRE "(\\s)" " " (index $tabName $i)) }}</a>
 
 		{{ end }}
 
