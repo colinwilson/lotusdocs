@@ -1,23 +1,46 @@
 <nav aria-label="breadcrumb" class="{{ if site.Params.docs.breadcrumbs | default true }}d-inline-block{{ else }}d-none{{ end }} pb-2 mt-1 mt-sm-0">
-    <ul id="breadcrumbs" class="breadcrumb bg-transparent mb-0">
+    <ul id="breadcrumbs" class="breadcrumb bg-transparent mb-0" itemscope itemtype="https://schema.org/BreadcrumbList">
+        {{- /* declare a 'variable' to store the each link position */}}
+        {{- $data := newScratch }}
         {{ $docRoot := .FirstSection.Title }}
-        {{- range after 1 .Ancestors.Reverse }}
+        {{- range $index, $value := (after 1 .Ancestors.Reverse) }}
             {{ if eq $docRoot .Title }}
-                <li class="breadcrumb-item text-capitalize active" aria-current="page">
+                <li class="breadcrumb-item text-capitalize active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    {{- /* read the index from loop and add 'one', because it starts counting from zero */}}
+                    {{- $data.Set "counter" $index }}
+                    {{- $data.Add "counter" 1 }}
                     <a href="{{ .RelPermalink }}">
                         <span class="material-icons size-20 align-text-bottom">home</span>
                     </a>
+                    {{- /* pass the counter value into schema attribute */}}
+                    <meta itemprop="position" content='{{ $data.Get "counter"}}' />
                 </li>
             {{ else }}
-                <li class="breadcrumb-item text-capitalize"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    {{- /* add 'one' one more time for the last link position */}}
+                    {{- $data.Add "counter" 1 }}
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    {{- /* pass the counter value into schema attribute */}}
+                    <meta itemprop="position" content='{{ $data.Get "counter"}}' />
+                </li>
             {{ end }}
         {{- end }}
         {{ if eq .Title $docRoot }}
-            <li class="breadcrumb-item text-capitalize active" aria-current="page">
+            <li class="breadcrumb-item text-capitalize active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                {{- /* add 'one' one more time for the last link position */}}
+                {{- $data.Add "counter" 1 }}
                 <span class="material-icons size-20 align-text-bottom">home</span>
+                {{- /* pass the counter value into schema attribute */}}
+                <meta itemprop="position" content='{{ $data.Get "counter"}}' />
             </li>
         {{ else }}
-            <li class="breadcrumb-item text-capitalize active">{{ .Title }}</li>
+            <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                {{- /* add 'one' one more time for the last link position */}}
+                {{- $data.Add "counter" 1 }}
+                {{ .Title }}
+                {{- /* pass the counter value into schema attribute */}}
+                <meta itemprop="position" content='{{ $data.Get "counter"}}' />
+            </li>
         {{ end }}
     </ul>
 </nav>
