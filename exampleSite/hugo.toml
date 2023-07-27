@@ -37,6 +37,9 @@ defaultContentLanguage = 'en'
 
 [markup]
   defaultMarkdownHandler = "goldmark"
+  [markup.tableOfContents]
+      endLevel = 3
+      startLevel = 1
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true # https://jdhao.github.io/2019/12/29/hugo_html_not_shown/
@@ -50,12 +53,12 @@ defaultContentLanguage = 'en'
 [params]
 
   google_fonts = [
-    ["Poppins", "300, 400, 600, 700"],
+    ["Inter", "300, 400, 600, 700"],
     ["Source Code Pro", "500, 700"]
   ]
 
-  sans_serif_font = "Poppins"     # Default is System font
-  secondary_font  = "Poppins"     # Default is System font
+  sans_serif_font = "Inter"     # Default is System font
+  secondary_font  = "Inter"     # Default is System font
   mono_font       = "Source Code Pro" # Default is System font
 
     [params.footer]
