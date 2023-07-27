@@ -9,8 +9,8 @@
                     {{- /* read the index from loop and add 'one', because it starts counting from zero */}}
                     {{- $data.Set "counter" $index }}
                     {{- $data.Add "counter" 1 }}
-                    <a href="{{ .RelPermalink }}">
-                        <span class="material-icons size-20 align-text-bottom">home</span>
+                    <a itemprop="item" href="{{ .RelPermalink }}">
+                        <span class="material-icons size-20 align-text-bottom" itemprop="name">home</span>
                     </a>
                     {{- /* pass the counter value into schema attribute */}}
                     <meta itemprop="position" content='{{ $data.Get "counter"}}' />
@@ -19,7 +19,9 @@
                 <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     {{- /* add 'one' one more time for the last link position */}}
                     {{- $data.Add "counter" 1 }}
-                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    <a itemprop="item" href="{{ .RelPermalink }}">
+                        <span itemprop="name">{{ .Title }}</span>
+                    </a>
                     {{- /* pass the counter value into schema attribute */}}
                     <meta itemprop="position" content='{{ $data.Get "counter"}}' />
                 </li>
@@ -29,7 +31,7 @@
             <li class="breadcrumb-item text-capitalize active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 {{- /* add 'one' one more time for the last link position */}}
                 {{- $data.Add "counter" 1 }}
-                <span class="material-icons size-20 align-text-bottom">home</span>
+                <span class="material-icons size-20 align-text-bottom" itemprop="name">home</span>
                 {{- /* pass the counter value into schema attribute */}}
                 <meta itemprop="position" content='{{ $data.Get "counter"}}' />
             </li>
@@ -37,7 +39,7 @@
             <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 {{- /* add 'one' one more time for the last link position */}}
                 {{- $data.Add "counter" 1 }}
-                {{ .Title }}
+                <span itemprop="name">{{ .Title }}</span>
                 {{- /* pass the counter value into schema attribute */}}
                 <meta itemprop="position" content='{{ $data.Get "counter"}}' />
             </li>
