@@ -61,7 +61,7 @@
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $style.Data.Integrity }}"{{ end -}} crossorigin="anonymous">
     <!-- Plausible Analytics Config -->
     {{- if not .Site.IsServer }}
-    {{ if and (.Site.Params.plausible.scriptURL) (.Site.Params.plausible.dataDomain) -}}
+    {{ if and (.Site.Params.plausible.scriptURL | default "https://plausible.io") (.Site.Params.plausible.dataDomain) -}}
         {{- partialCached (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "head/plausible") . }}
     {{- end -}}
     {{- end -}}
