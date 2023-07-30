@@ -4,14 +4,14 @@
 
 ![Lotus Docs Banner](https://res.cloudinary.com/lotuslabs/image/upload/v1688223320/Lotus%20Docs/Social%20Media/lotus_docs_banner_mockup_v1.1_rounded_glwogb.webp)
 
-- Check out the demo site [https://lotusdocs.dev/docs](https://lotusdocs.dev/docs) (also doubles as the documentation guide for Lotus Docs 📖)
+Check out the demo site [https://lotusdocs.dev/docs](https://lotusdocs.dev/docs) (also doubles as the documentation guide for Lotus Docs 📖)
 
-🚨 **Lotus Docs is currently in pre-release development and thus not recommended for use in production at this time. But please do try it out 😊**
+🚧 **WARNING** 🚧 - **Lotus Docs is currently in pre-release development and thus not recommended for use in production at this time. But please do try it out 😊**
 
 ## Features
 
 * [x] Modern documentation layout
-* [x] Responsive design
+* [x] Responsive design / Mobile support
 * [x] Fast, Accessible and SEO-Friendly (💯 scores on [Google Lighthouse](https://pagespeed.web.dev/)!)
 * [x] Secure by default
 * [x] Built on Bootstrap 5
