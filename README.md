@@ -38,7 +38,7 @@ Check out the demo site [https://lotusdocs.dev/docs](https://lotusdocs.dev/docs)
 
 ### Requirements
 
-Hugo **Extended** minimum version: 0.100.0
+Hugo **Extended** (minimum version: 0.100.0)
 
 Default Markdown parser library `Goldmark`
 
