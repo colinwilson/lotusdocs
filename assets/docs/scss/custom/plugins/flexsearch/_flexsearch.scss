@@ -1,7 +1,7 @@
 /* FlexSearch */
 
 :root {
-    --flexsearch-container-bg-color: var(--white);
+    --flexsearch-container-bg-color: var(--gray-100);
     --flexsearch-after-bg-color: var(--primary);
     --flexsearch-after-color: var(--white);
     --flexsearch-button-hover-bg-color: none;
@@ -15,7 +15,7 @@
 }
 
 [data-dark-mode] {
-    --flexsearch-container-bg-color: var(--body-bg);
+    --flexsearch-container-bg-color: var(--dark-secondary);
     --flexsearch-after-bg-color: hsl(var(--primary-hsl),0.15);
     --flexsearch-after-color: var(--primary-200);
     --flexsearch-button-hover-bg-color: var(--black);
