@@ -26,7 +26,7 @@
                                 {{ end }}
                                 <div class="row flex-xl-nowrap">
                                     {{ if site.Params.docs.toc | default true }}
-                                    <div class="docs-toc col-xl-3 {{ if .IsNode }}d-none{{ else }}{{end}} {{ if and (ne .Params.toc false) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}{{ else }}d-none{{ end }} {{ if site.Params.docs.toc | default true }}{{ else }}d-none{{ end }} d-xl-block">
+                                    <div class="docs-toc col-xl-3 {{ if .IsNode }}visually-hidden{{ else }}{{end}} {{ if and (ne .Params.toc false) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}{{ else }}visually-hidden{{ end }} {{ if site.Params.docs.toc | default true }}{{ else }}visually-hidden{{ end }} d-xl-block">
                                         {{- partial (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "toc.html") . -}}
                                     </div>
                                     {{ end }}

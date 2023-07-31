@@ -27,7 +27,7 @@ hero:
   ctaButton:
     icon: rocket_launch
     btnText: "Get Started"
-    url: "/docs"
+    url: "/docs/quickstart/#create-a-new-lotus-docs-site"
   cta2Button:
     icon: construction
     btnText: "In Development"
