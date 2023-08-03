@@ -42,23 +42,23 @@ Check out the demo site [https://lotusdocs.dev/docs](https://lotusdocs.dev/docs)
 - git
 - Go (minimum version v1.19)
 
-### Getting started
-
-The Lotus Docs theme can installed using one of the following methods:
-
-- As a Hugo Module[^1]
-- As a Git submodule
-- Clone the theme files locally
-
 ### Initialize your site as a Hugo Module
 
-The Lotus Docs theme makes use of the [Hugo Bootstrap Module](https://github.com/gohugoio/hugo-mod-bootstrap-scss). For this reason, it's necessary to initialize your site as a Hugo Module. If your site isn't already, use the `hugo mod init` command to initialize your site as a module:
+The Lotus Docs theme makes use of the [Hugo Bootstrap Module](https://github.com/gohugoio/hugo-mod-bootstrap-scss). For this reason, it's necessary to initialize your site as a Hugo Module. If your site isn't already, use the `hugo mod init` command to initialize your site as a Hugo module:
 
 ```bash
 hugo mod init github.com/<user>/<your-hugo-theme-name>
 ```
 
-### Install as a Hugo Module
+### Install Options
+
+The Lotus Docs theme can installed using one of the following methods:
+
+- As a Hugo Module[^1] (recommended)
+- As a Git submodule
+- Clone the theme files locally
+
+### Install as a Hugo Module (recommended)
 
 Now, edit the `hugo.toml` configuration file to include the [Lotus Docs theme](https://github.com/colinwilson/lotusdocs) and the [Hugo Bootstrap module](https://github.com/gohugoio/hugo-mod-bootstrap-scss) as modules:
 
@@ -123,6 +123,43 @@ title = 'My New Hugo Site'
     [[module.imports]]
         path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
 ```
+
+## Create New Content
+
+Navigate to the root of your Hugo project and use the `hugo new` command to create a file in the `content/docs` directory:
+
+```shell
+hugo new docs/example-page.md
+```
+
+This will create a markdown file named `example-page.md` with the following default front matter:
+
+```toml
++++
+title = "Example Page"
+description = ""
+icon = "article"
+date = "2023-05-22T00:27:57+01:00"
+lastmod = "2023-05-22T00:27:57+01:00"
+draft = false
+toc = true
+weight = 999
++++
+```
+
+Modify the above front matter options to suit your needs.
+
+## Preview your site locally
+
+Now that you've created some sample content you can preview your new Lotus Docs site using the `huge server` command:
+
+```shell
+hugo server -D
+```
+
+Navigate to `localhost:1313/docs` and you should see a card link to the **Example Page** created earlier:
+
+![New Lotus Docs Site - Example Content](https://res.cloudinary.com/lotuslabs/image/upload/v1690992310/Lotus%20Docs/images/lotus_docs_new_site_and_content_module_setup_oiuyex.png)
 
 ## Author
 
