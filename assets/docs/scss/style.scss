@@ -20,6 +20,7 @@ $code-block-padding-top: {{ if eq .Site.Params.docs.prism true -}}0{{ else }}1.2
 //Core files
 @import "../../scss/bootstrap/functions";
 @import "../../scss/bootstrap/variables";
+@import {{ printf "'%s%s'" "custom/colors/" (.Site.Params.docs.themeColor | default "blue") }}; // current theme color
 @import "../../scss/bootstrap/mixins";
 @import "../../scss/bootstrap/bootstrap";
 @import "variables";
