@@ -1,6 +1,6 @@
 # Lotus Docs Example Site
 
-This repository offers an example site for [Lotus Docs](https://github.com/colinwilson/lotusdocs) Hugo theme.
+This repository offers a multilingual example site for [Lotus Docs](https://github.com/colinwilson/lotusdocs) Hugo theme.
 
 # Using
 

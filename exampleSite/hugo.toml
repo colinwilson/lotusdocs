@@ -54,12 +54,12 @@ defaultContentLanguage = 'en'
 
   google_fonts = [
     ["Inter", "300, 400, 600, 700"],
-    ["Source Code Pro", "500, 700"]
+    ["Fira Code", "500, 700"]
   ]
 
   sans_serif_font = "Inter"     # Default is System font
   secondary_font  = "Inter"     # Default is System font
-  mono_font       = "Source Code Pro" # Default is System font
+  mono_font       = "Fira Code" # Default is System font
 
     [params.footer]
         copyright = "© :YEAR: Lotus Labs. Powered by [Vercel](https://vercel.com/), [Hugo](https://gohugo.io/) and [Lotus Docs](https://github.com/colinwilson/lotusdocs)"
