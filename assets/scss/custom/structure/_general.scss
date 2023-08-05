@@ -21,3 +21,10 @@ a {
 p {
     line-height: 1.6;
 }
+
+.four-oh-four {
+    min-height: calc(100vh - 180px);
+    @media (max-width: 767px) {
+        min-height: calc(100vh - 241px);
+    }
+}
