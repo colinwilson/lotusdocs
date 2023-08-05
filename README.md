@@ -134,17 +134,17 @@ hugo new docs/example-page.md
 
 This will create a markdown file named `example-page.md` with the following default front matter:
 
-```toml
-+++
-title = "Example Page"
-description = ""
-icon = "article"
-date = "2023-05-22T00:27:57+01:00"
-lastmod = "2023-05-22T00:27:57+01:00"
-draft = false
-toc = true
-weight = 999
-+++
+```yaml
+---
+title: "Example Page"
+description: ""
+icon: "article"
+date: "2023-05-22T00:27:57+01:00"
+lastmod: "2023-05-22T00:27:57+01:00"
+draft: false
+toc: true
+weight: 999
+---
 ```
 
 Modify the above front matter options to suit your needs.
