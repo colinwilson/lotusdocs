@@ -348,6 +348,7 @@
             transition: all 0.3s;
             .header-bar {
                 background: var(--top-header-bg);
+                backdrop-filter: saturate(180%) blur(5px);
                 height: 72px;
                 // box-shadow: $shadow;
                 border-bottom: 1px solid var(--sidebar-border-color);

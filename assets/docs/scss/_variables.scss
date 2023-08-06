@@ -374,7 +374,7 @@ $stretched-link-z-index:                  1;
     // Sidebar
     --sidebar-primary: var(--primary);
     --sidebar-bg: var(--white);
-    --top-header-bg: var(--white);
+    --top-header-bg: hsla(255,100%,100%,0.8);
     --sidebar-text-color: #606770;
     --sidebar-border-color: var(--gray-200);
     --sidebar-dropdown-hover-bg: #eff1f4;
@@ -420,7 +420,7 @@ $stretched-link-z-index:                  1;
     // sidebar
     --sidebar-primary: var(--primary-300);
     --sidebar-bg: var(--dark);
-    --top-header-bg: var(--dark);
+    --top-header-bg: hsla(233,16%,11%,0.8);
     --sidebar-text-color: #b6bbc9;
     --sidebar-border-color: var(--gray-900);
     --sidebar-dropdown-hover-bg: #2b303b;
