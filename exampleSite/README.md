@@ -8,11 +8,18 @@ This repository offers a multilingual example site for [Lotus Docs](https://gith
 2. Clone this repository
 
     ```bash
-    $ git clone https://github.com/colinwilson/lotusdocs
-    $ cd exampleSite
+    $ git clone https://github.com/colinwilson/lotusdocs lotusdocs
+    $ cd lotusdocs/exampleSite
     ```
-3. Run Hugo server. The exampleSite use theme `lotusdocs` by setting `themesDir` as `../../`
+3. Run Hugo server.
 
     ```bash
     $ hugo server
     ```
+## Notes:
+
+The `exampleSite` functions by using the Hugo [`replace`](https://gohugo.io/hugo-modules/use-modules/#make-and-test-changes-in-a-module) directive (in `go.mod`) to point the default `lotusdocs` module path, `github.com/colinwilson/lotusdocs`, to the local directory above where the theme was cloned.
+
+```go
+replace github.com/colinwilson/lotusdocs => ../
+```
