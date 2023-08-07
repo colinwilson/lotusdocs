@@ -26,6 +26,15 @@ table {
 
 // Shortcode Table
 .table {
+    --#{$prefix}table-color: var(--text-default);
+    --#{$prefix}table-bg: transparent;
+    --#{$prefix}table-border-color: #{$table-border-color};
+    --#{$prefix}table-accent-bg: none;
+    --#{$prefix}table-striped-color: var(--text-default);
+    --#{$prefix}table-striped-bg: var(--alert-primary-bg);
+    --#{$prefix}table-hover-color: var(--text-default);
+    --#{$prefix}table-hover-bg: var(--table-hover-bg);
+
     color: var(--text-default);
     font-size: 0.875rem;
     border-collapse: separate;
@@ -136,27 +145,8 @@ table {
     }
 }
 
-// .table tbody td:first-child, .table tbody td[rowspan] + td {
-//     border-left-width: 1px;
-// }
-
-.table-striped-columns > :not(caption) > tr > :nth-child(2n) {
-    --bs-table-accent-bg: var(--alert-primary-bg);
-    color: var(--text-default);
-}
-
 .table-striped-columns > :not(caption) > tr > th:nth-child(2n) {
-    --bs-table-accent-bg: none;
-}
-
-.table-striped > tbody > tr:nth-of-type(2n+1) > * {
-    --bs-table-accent-bg: var(--alert-primary-bg);
-    color: var(--text-default);
-}
-
-.table-hover > tbody > tr:hover > * {
-    --bs-table-accent-bg: var(--table-hover-bg);
-    color: var(--text-default);
+    --bs-table-striped-bg: none;
 }
 
 // Responsive Table

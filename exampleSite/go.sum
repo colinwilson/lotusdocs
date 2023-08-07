@@ -1,7 +1,5 @@
-github.com/colinwilson/lotusdocs v0.0.0-20230806021035-a20385278356 h1:NVCyr6X8KYd0bdUtGU5cy/7PYL+2wk/UIvlMo1Exdhg=
-github.com/colinwilson/lotusdocs v0.0.0-20230806021035-a20385278356/go.mod h1:mA3RrhkaiFn/9jfh+meAwSWnQyCYT9GaYCJeM+t1A4A=
-github.com/gohugoio/hugo-mod-bootstrap-scss/v5 v5.20300.20002 h1:6F6sjCSkFIIgqLp4SEIL1Ao9ZfKyM6OmgqEdTlc58Yk=
-github.com/gohugoio/hugo-mod-bootstrap-scss/v5 v5.20300.20002/go.mod h1:Q6TrjM78wB13zkOMBSV4IZIZ54tbshmE2fem9CYx2pU=
+github.com/gohugoio/hugo-mod-bootstrap-scss/v5 v5.20300.20003 h1:pt/JGVD5YYRsVVijOHPZI6YKTUvbR4e0hgV9B0S6rbI=
+github.com/gohugoio/hugo-mod-bootstrap-scss/v5 v5.20300.20003/go.mod h1:mvM05r93HiefwoaxQTaYiJxtJAhTebwQtU1Xh/J+Okk=
 github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2 v2.21100.20000 h1:GZxx4Hc+yb0/t3/rau1j8XlAxLE4CyXns2fqQbyqWfs=
 github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2 v2.21100.20000/go.mod h1:mFberT6ZtcchrsDtfvJM7aAH2bDKLdOnruUHl0hlapI=
-github.com/twbs/bootstrap v5.3.0-alpha3+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
+github.com/twbs/bootstrap v5.3.0+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
