@@ -60,7 +60,7 @@ The Lotus Docs theme can installed using one of the following methods:
 
 ### Install as a Hugo Module (recommended)
 
-Now, edit the `hugo.toml` configuration file to include the [Lotus Docs theme](https://github.com/colinwilson/lotusdocs) and the [Hugo Bootstrap module](https://github.com/gohugoio/hugo-mod-bootstrap-scss) as modules:
+Edit the `hugo.toml` configuration file to include the [Lotus Docs theme](https://github.com/colinwilson/lotusdocs) and the [Hugo Bootstrap module](https://github.com/gohugoio/hugo-mod-bootstrap-scss) as modules:
 
 ```toml
 baseURL = 'http://example.org/'
