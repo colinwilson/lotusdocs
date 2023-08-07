@@ -68,8 +68,6 @@ languageCode = 'en-us'
 title = 'My New Hugo Site'
 
 [module]
-    # this is needed when you add the theme as a submodule to your repo.
-    # replacements = "github.com/colinwilson/lotusdocs -> themes/lotusdocs"
     [[module.imports]]
         path = "github.com/colinwilson/lotusdocs"
         disable = false
@@ -94,8 +92,11 @@ languageCode = 'en-us'
 title = 'My New Hugo Site'
 
 [module]
+    # uncomment line below for temporary local development of module
+    # or when using a 'theme' as a git submodule
+    replacements = "github.com/colinwilson/lotusdocs -> lotusdocs"
     [[module.imports]]
-        path = "lotusdocs"
+        path = "github.com/colinwilson/lotusdocs"
         disable = false
     [[module.imports]]
         path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
@@ -117,8 +118,11 @@ languageCode = 'en-us'
 title = 'My New Hugo Site'
 
 [module]
+    # uncomment line below for temporary local development of module,
+    # when using a 'theme' as a git submodule or git cloned files
+    replacements = "github.com/colinwilson/lotusdocs -> lotusdocs"
     [[module.imports]]
-        path = "lotusdocs"
+        path = "github.com/colinwilson/lotusdocs"
         disable = false
     [[module.imports]]
         path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
