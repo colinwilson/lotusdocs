@@ -33,6 +33,7 @@ Check out the demo site [https://lotusdocs.dev/docs](https://lotusdocs.dev/docs)
 * [ ] [Open Graph](https://ogp.me/)
 * [ ] [Mermaid](https://mermaid.js.org/) Support
 * [ ] Math equations powered by [KaTeX](https://katex.org/)
+* [ ] Feedback widget
 
 ## Getting Started
 
