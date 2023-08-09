@@ -12,7 +12,7 @@ Check out the demo site [https://lotusdocs.dev/docs](https://lotusdocs.dev/docs)
 
 * [x] Modern documentation layout
 * [x] Responsive design / Mobile support
-* [x] Fast, Accessible and SEO-Friendly (💯 scores on [Google Lighthouse](https://pagespeed.web.dev/)!)
+* [x] Fast, Accessible and SEO-Friendly (4 x 💯 scores on [Google Lighthouse](https://pagespeed.web.dev/)!)
 * [x] Secure by default
 * [x] Built on Bootstrap 5
 * [x] Deploy on [Vercel](https://vercel.com/) with multiple options
@@ -47,12 +47,12 @@ Check out the demo site [https://lotusdocs.dev/docs](https://lotusdocs.dev/docs)
 The Lotus Docs theme makes use of the [Hugo Bootstrap Module](https://github.com/gohugoio/hugo-mod-bootstrap-scss). For this reason, it's necessary to initialize your site as a Hugo Module. If your site isn't already, use the `hugo mod init` command to initialize your site as a Hugo module:
 
 ```bash
-hugo mod init github.com/<user>/<your-hugo-theme-name>
+hugo mod init github.com/<username>/<your-hugo-site-name>
 ```
 
 ### Install Options
 
-The Lotus Docs theme can installed using one of the following methods:
+The Lotus Docs theme can be installed using one of the following methods:
 
 - As a Hugo Module[^1] (recommended)
 - As a Git submodule
@@ -73,6 +73,7 @@ title = 'My New Hugo Site'
         disable = false
     [[module.imports]]
         path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+        disable = false
 ```
 
 ### Install as a Git Submodule
@@ -100,6 +101,7 @@ title = 'My New Hugo Site'
         disable = false
     [[module.imports]]
         path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+        disable = false
 ```
 
 ### Install Locally
@@ -126,6 +128,7 @@ title = 'My New Hugo Site'
         disable = false
     [[module.imports]]
         path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+        disable = false
 ```
 
 ## Create New Content
