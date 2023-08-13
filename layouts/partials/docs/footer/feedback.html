@@ -1,0 +1,216 @@
+<div id="feedback-widget" class="feedback-container pt-4">
+    <div id="feedback-init" class="d-flex justify-content-md-start justify-content-sm-center">
+        <span class="fs-5 fw-bold me-2 align-self-center">Was this page helpful?</span>
+        <div class="d-flex">
+            <button id="posBtn" class="feedback-btn btn btn-primary btn-sm me-2" type="submit">
+                <span class="fs-6">
+                    <i class="material-icons size-20 me-1 align-middle">thumb_up</i>
+                    Yes
+                </span>
+            </button>
+            <button id="negBtn" class="feedback-btn btn btn-primary btn-sm me-2" type="submit">
+                <span class="fs-6">
+                    <i class="material-icons me-1 align-middle">thumb_down</i>
+                    No
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <div id="feedback-end" class="d-flex justify-content-md-start justify-content-sm-center fs-4 fw-bold me-2">
+    </div>
+
+    <div id="feedback-form-pos" data-type="positive" class="feedback-form justify-content-md-start justify-content-sm-center">
+        <p class="fw-bold fs-5">What did you like?</p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="feedback" value="accurate" id="accurate">
+            <label class="form-check-label" for="accurate">
+                Accurate
+            </label>
+            <p class="feedback-radio-desc mb-0">Accurately describes the product or feature.</p>
+        </div>
+        <div id="accurateTextContainer" class="feedback-textarea-container"></div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="feedback" value="solved" id="solved">
+            <label class="form-check-label" for="solved">
+                Solved my problem
+            </label>
+            <p class="feedback-radio-desc mb-0">Helped me resolve an issue.</p>
+        </div>
+        <div id="solvedTextContainer" class="feedback-textarea-container"></div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="feedback" value="easy" id="easy">
+            <label class="form-check-label" for="easy">
+                Easy to understand
+            </label>
+            <p class="feedback-radio-desc mb-0">Easy to follow and comprehend.</p>
+        </div>
+        <div id="easyTextContainer" class="feedback-textarea-container"></div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="feedback" value="other" id="otherPos">
+            <label class="form-check-label" for="otherPos">
+                Something else
+            </label>
+        </div>
+        <div id="otherPosTextContainer" class="feedback-textarea-container"></div>
+    </div>
+
+    <div id="feedback-form-neg" data-type="negative" class="feedback-form justify-content-sm-center">
+        <p class="fw-bold fs-5">What went wrong?</p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="feedback" value="inaccurate" id="inaccurate">
+            <label class="form-check-label" for="inaccurate">
+                Inaccurate
+            </label>
+            <p class="feedback-radio-desc mb-0">Doesn't accurately describe the product or feature.</p>
+        </div>
+        <div id="inaccurateTextContainer" class="feedback-textarea-container"></div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="feedback" value="missing" id="missing">
+            <label class="form-check-label" for="missing">
+                Couldn't find what I was looking for
+            </label>
+            <p class="feedback-radio-desc mb-0">Missing important information.</p>
+        </div>
+        <div id="missingTextContainer" class="feedback-textarea-container"></div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="feedback" value="hard" id="hard">
+            <label class="form-check-label" for="hard">
+                Hard to understand
+            </label>
+            <p class="feedback-radio-desc mb-0">Too complicated or unclear.</p>
+        </div>
+        <div id="hardTextContainer" class="feedback-textarea-container"></div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="feedback" value="errors" id="errors">
+            <label class="form-check-label" for="errors">
+                Code sample errors
+            </label>
+            <p class="feedback-radio-desc mb-0">One or more code samples are incorrect.</p>
+        </div>
+        <div id="errorsTextContainer" class="feedback-textarea-container"></div>        
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="feedback" value="other" id="otherNeg">
+            <label class="form-check-label" for="otherNeg">
+                Something else
+            </label>
+        </div>
+        <div id="otherNegTextContainer" class="feedback-textarea-container"></div>
+    </div>
+
+    <button id="feedback-submit" class="feedback-submit-btn btn btn-sm btn-primary mt-3" type="submit" disabled>
+        <span class="fs-6">                
+            Submit
+        </span>
+    </button>
+
+</div>
+
+<script>
+    // https://stackoverflow.com/a/29017547
+    const feedbackInit = document.getElementById("feedback-init");
+    const posBtn = document.getElementById("posBtn");
+    const negBtn = document.getElementById("negBtn");
+    const feedbackBtn = document.querySelectorAll('.feedback-btn');
+    const feedbackFormPos = document.getElementById("feedback-form-pos");
+    const feedbackFormNeg = document.getElementById("feedback-form-neg");
+    const feedbackSubmit = document.getElementById("feedback-submit")
+
+    // Show feedback form
+    feedbackBtn.forEach(btn => {
+        btn.addEventListener('click', event => {
+            const btnID = btn.id
+            feedbackInit.style.opacity = '0'
+            feedbackInit.addEventListener('transitionend', function () {
+                feedbackInit.remove();
+                if (btnID == 'posBtn') {
+                    feedbackFormPos.classList.add("is-visible");
+                    feedbackFormNeg.remove();
+                    feedbackSubmit.classList.add("is-visible");
+                } else if (btnID == 'negBtn') {
+                    feedbackFormNeg.classList.add("is-visible");
+                    feedbackFormPos.remove();
+                    feedbackSubmit.classList.add("is-visible");
+                }
+            }
+            );
+        })
+    });
+
+    // Add text area box to selected feedback radio
+    const Radios = document.querySelectorAll('input[name="feedback"]');
+    const textareas = document.querySelectorAll('.feedback-textarea-container');
+
+    Radios.forEach(radio => {
+        radio.addEventListener('change', function(event) {
+            const radioID = event.target.id;
+            const addOn = document.getElementById(radioID+"TextContainer");
+            // First, remove 'activeBox' class and <textarea> from all textarea containers
+            for (const textarea of textareas) {
+                textarea.classList.remove('activeBox');
+                while (textarea.firstChild) {
+                    textarea.removeChild(textarea.firstChild);
+                }
+            }
+            addOn.innerHTML +='<textarea id="textarea" cols="55" maxlength="500" rows="3" placeholder="(Optional) Try to be as specific and detailed as possible!" type="text" class="feedback-textarea p-2 mb-2"></textarea>';
+            addOn.classList.add("activeBox");
+            feedbackSubmit.removeAttribute("disabled");
+            feedbackSubmit.classList.add("opacity-100");
+            // console.log(radioID);
+        });
+    });
+
+    feedbackSubmit.addEventListener('click', event => {
+        const form = document.querySelector('.feedback-form');
+        const formType = form.getAttribute("data-type");
+        const result = document.getElementById("feedback-end");
+        const selected = document.querySelector('input[name="feedback"]:checked').value;
+        const message = document.getElementById('textarea').value;
+        function success(e) {
+            form.remove();
+            feedbackSubmit.remove();
+            result.innerHTML = "Thank you for helping to improve Lotus Docs' documentation!";
+            result.classList.add("is-visible");
+        }
+        try {
+            if (formType == "positive") {
+                plausible('Positive Feedback',
+                    {
+                        callback: success,
+                        props:
+                        {
+                            selection: selected,
+                            message: message
+                        }
+                    }
+                )
+            } else if (formType == "negative") {
+                plausible('Negative Feedback',
+                    {
+                        callback: success,
+                        props:
+                        {
+                            selection: selected,
+                            message: message
+                        }
+                    }
+                )                
+            }
+        } catch (err) {
+            console.log(err);
+            form.remove();
+            feedbackSubmit.remove();
+            result.innerHTML = "Sorry! There was an error when attempting to submit your feedback!";
+            result.classList.add("is-visible");
+        }
+        // console.log("feedback submitted")
+    });
+    
+</script>

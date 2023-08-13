@@ -9,4 +9,8 @@
         {{ partial (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "gitinfo") . }}
     {{ end -}}
 
+    {{ if .Site.Params.feedback.enabled | default false -}}
+        {{- partial (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "footer/feedback.html") . -}}
+    {{ end -}}
+
 {{ end }}
