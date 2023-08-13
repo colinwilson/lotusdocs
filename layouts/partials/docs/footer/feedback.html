@@ -27,7 +27,7 @@
             <label class="form-check-label" for="accurate">
                 Accurate
             </label>
-            <p class="feedback-radio-desc mb-0">Accurately describes the product or feature.</p>
+            <p class="feedback-radio-desc mb-0">Accurately describes the option or feature.</p>
         </div>
         <div id="accurateTextContainer" class="feedback-textarea-container"></div>
 
@@ -157,13 +157,11 @@
             const addOn = document.getElementById(radioID+"TextContainer");
             // First, remove 'activeBox' class and <textarea> from all textarea containers
             for (const textarea of textareas) {
-                textarea.classList.remove('activeBox');
                 while (textarea.firstChild) {
                     textarea.removeChild(textarea.firstChild);
                 }
             }
             addOn.innerHTML +='<textarea id="textarea" cols="55" maxlength="500" rows="3" placeholder="(Optional) Try to be as specific and detailed as possible!" type="text" class="feedback-textarea p-2 mb-2"></textarea>';
-            addOn.classList.add("activeBox");
             feedbackSubmitBtn.removeAttribute("disabled");
             // console.log(radioID);
         });
