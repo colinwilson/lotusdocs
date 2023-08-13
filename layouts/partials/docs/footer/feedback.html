@@ -23,7 +23,7 @@
     <div id="feedback-form-pos" data-type="positive" class="feedback-form justify-content-md-start justify-content-sm-center">
         <p class="fw-bold fs-5">What did you like?</p>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="feedback" value="accurate" id="accurate">
+            <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="accurate" id="accurate">
             <label class="form-check-label" for="accurate">
                 Accurate
             </label>
@@ -32,7 +32,7 @@
         <div id="accurateTextContainer" class="feedback-textarea-container"></div>
 
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="feedback" value="solved" id="solved">
+            <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="solved" id="solved">
             <label class="form-check-label" for="solved">
                 Solved my problem
             </label>
@@ -41,7 +41,7 @@
         <div id="solvedTextContainer" class="feedback-textarea-container"></div>
 
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="feedback" value="easy" id="easy">
+            <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="easy" id="easy">
             <label class="form-check-label" for="easy">
                 Easy to understand
             </label>
@@ -50,7 +50,7 @@
         <div id="easyTextContainer" class="feedback-textarea-container"></div>
 
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="feedback" value="other" id="otherPos">
+            <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="other" id="otherPos">
             <label class="form-check-label" for="otherPos">
                 Something else
             </label>
@@ -61,7 +61,7 @@
     <div id="feedback-form-neg" data-type="negative" class="feedback-form justify-content-sm-center">
         <p class="fw-bold fs-5">What went wrong?</p>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="feedback" value="inaccurate" id="inaccurate">
+            <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="inaccurate" id="inaccurate">
             <label class="form-check-label" for="inaccurate">
                 Inaccurate
             </label>
@@ -70,7 +70,7 @@
         <div id="inaccurateTextContainer" class="feedback-textarea-container"></div>
 
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="feedback" value="missing" id="missing">
+            <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="missing" id="missing">
             <label class="form-check-label" for="missing">
                 Couldn't find what I was looking for
             </label>
@@ -79,7 +79,7 @@
         <div id="missingTextContainer" class="feedback-textarea-container"></div>
 
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="feedback" value="hard" id="hard">
+            <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="hard" id="hard">
             <label class="form-check-label" for="hard">
                 Hard to understand
             </label>
@@ -88,16 +88,16 @@
         <div id="hardTextContainer" class="feedback-textarea-container"></div>
 
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="feedback" value="errors" id="errors">
+            <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="errors" id="errors">
             <label class="form-check-label" for="errors">
                 Code sample errors
             </label>
             <p class="feedback-radio-desc mb-0">One or more code samples are incorrect.</p>
         </div>
-        <div id="errorsTextContainer" class="feedback-textarea-container"></div>        
+        <div id="errorsTextContainer" class="feedback-textarea-container"></div>
 
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="feedback" value="other" id="otherNeg">
+            <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="other" id="otherNeg">
             <label class="form-check-label" for="otherNeg">
                 Something else
             </label>
@@ -105,11 +105,13 @@
         <div id="otherNegTextContainer" class="feedback-textarea-container"></div>
     </div>
 
-    <button id="feedback-submit" class="feedback-submit-btn btn btn-sm btn-primary mt-3" type="submit" disabled>
-        <span class="fs-6">                
-            Submit
-        </span>
-    </button>
+    <div id="feedback-submit-container">
+        <button id="feedback-submit-button" class="feedback-submit-btn btn btn-primary mt-3" role="button" type="submit" disabled>
+            <span class="fs-6">
+                Submit
+            </span>
+        </button>
+    </div>
 
 </div>
 
@@ -121,7 +123,8 @@
     const feedbackBtn = document.querySelectorAll('.feedback-btn');
     const feedbackFormPos = document.getElementById("feedback-form-pos");
     const feedbackFormNeg = document.getElementById("feedback-form-neg");
-    const feedbackSubmit = document.getElementById("feedback-submit")
+    const feedbackSubmitBtn = document.getElementById("feedback-submit-button");
+    const feedbackSubmitContainer = document.getElementById("feedback-submit-container");
 
     // Show feedback form
     feedbackBtn.forEach(btn => {
@@ -133,11 +136,11 @@
                 if (btnID == 'posBtn') {
                     feedbackFormPos.classList.add("is-visible");
                     feedbackFormNeg.remove();
-                    feedbackSubmit.classList.add("is-visible");
+                    feedbackSubmitContainer.classList.add("is-visible");
                 } else if (btnID == 'negBtn') {
                     feedbackFormNeg.classList.add("is-visible");
                     feedbackFormPos.remove();
-                    feedbackSubmit.classList.add("is-visible");
+                    feedbackSubmitContainer.classList.add("is-visible");
                 }
             }
             );
@@ -161,13 +164,12 @@
             }
             addOn.innerHTML +='<textarea id="textarea" cols="55" maxlength="500" rows="3" placeholder="(Optional) Try to be as specific and detailed as possible!" type="text" class="feedback-textarea p-2 mb-2"></textarea>';
             addOn.classList.add("activeBox");
-            feedbackSubmit.removeAttribute("disabled");
-            feedbackSubmit.classList.add("opacity-100");
+            feedbackSubmitBtn.removeAttribute("disabled");
             // console.log(radioID);
         });
     });
 
-    feedbackSubmit.addEventListener('click', event => {
+    feedbackSubmitBtn.addEventListener('click', event => {
         const form = document.querySelector('.feedback-form');
         const formType = form.getAttribute("data-type");
         const result = document.getElementById("feedback-end");
@@ -175,7 +177,7 @@
         const message = document.getElementById('textarea').value;
         function success(e) {
             form.remove();
-            feedbackSubmit.remove();
+            feedbackSubmitContainer.remove();
             result.innerHTML = "Thank you for helping to improve Lotus Docs' documentation!";
             result.classList.add("is-visible");
         }
@@ -201,16 +203,16 @@
                             message: message
                         }
                     }
-                )                
+                )
             }
         } catch (err) {
             console.log(err);
             form.remove();
-            feedbackSubmit.remove();
+            feedbackSubmitContainer.remove();
             result.innerHTML = "Sorry! There was an error when attempting to submit your feedback!";
             result.classList.add("is-visible");
         }
         // console.log("feedback submitted")
     });
-    
+
 </script>

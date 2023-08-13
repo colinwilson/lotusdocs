@@ -7,7 +7,7 @@
 #feedback-form-pos,
 #feedback-form-neg,
 #feedback-end,
-#feedback-submit {
+#feedback-submit-container {
     height: 0;
     line-height:0;
     overflow: hidden;
@@ -29,13 +29,6 @@
     .form-check-input {
         font-weight: 600;
         cursor: pointer;
-    }
-}
-
-
-#feedback-submit {
-    &.is-visible {
-        opacity: 0.65;
     }
 }
 
