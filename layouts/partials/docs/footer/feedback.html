@@ -21,89 +21,43 @@
     </div>
 
     <div id="feedback-form-pos" data-type="positive" class="feedback-form justify-content-md-start justify-content-sm-center">
-        <p class="fw-bold fs-5">What did you like?</p>
-        <div class="form-check pb-1">
-            <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="accurate" id="accurate">
-            <label class="form-check-label" for="accurate">
-                Accurate
-                <p class="feedback-radio-desc fw-normal mb-0">Accurately describes the option or feature.</p>
-            </label>
-        </div>
-        <div id="accurateTextContainer" class="feedback-textarea-container"></div>
+        <p class="fw-bold fs-5">{{ .Site.Params.feedback.positiveFormTitle | default "What did you like?" }}</p>
 
-        <div class="form-check pb-1">
-            <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="solved" id="solved">
-            <label class="form-check-label" for="solved">
-                Solved my problem
-                <p class="feedback-radio-desc fw-normal mb-0">Helped me resolve an issue.</p>
-            </label>
-        </div>
-        <div id="solvedTextContainer" class="feedback-textarea-container"></div>
+        {{ range $index, $value := .Site.Params.feedback.positiveForm }}
+            {{ $rating := (index (.)  0) }}
+            {{ $description := (index (.)  1) }}
+            <div class="form-check pb-1">
+                <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="{{ $rating | lower }}" id="radio{{ $index }}">
+                <label class="form-check-label" for="radio{{ $index }}">
+                    {{ $rating }}
+                    {{ if $description }}
+                        <p class="feedback-radio-desc fw-normal mb-0">{{ $description }}</p>
+                    {{ end }}
+                </label>
+            </div>
+            <div id="radio{{ $index }}TextContainer" class="feedback-textarea-container"></div>
+        {{ end }}
 
-        <div class="form-check pb-1">
-            <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="easy" id="easy">
-            <label class="form-check-label" for="easy">
-                Easy to understand
-                <p class="feedback-radio-desc fw-normal mb-0">Easy to follow and comprehend.</p>
-            </label>
-        </div>
-        <div id="easyTextContainer" class="feedback-textarea-container"></div>
-
-        <div class="form-check pb-1">
-            <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="other" id="otherPos">
-            <label class="form-check-label" for="otherPos">
-                Something else
-            </label>
-        </div>
-        <div id="otherPosTextContainer" class="feedback-textarea-container"></div>
     </div>
 
     <div id="feedback-form-neg" data-type="negative" class="feedback-form justify-content-sm-center">
-        <p class="fw-bold fs-5">What went wrong?</p>
+        <p class="fw-bold fs-5">{{ .Site.Params.feedback.negativeFormTitle | default "What went wrong?" }}</p>
 
-        <div class="form-check pb-1">
-            <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="inaccurate" id="inaccurate">
-            <label class="form-check-label" for="inaccurate">
-                Inaccurate
-                <p class="feedback-radio-desc fw-normal mb-0">Doesn't accurately describe the product or feature.</p>
-            </label>
-        </div>
-        <div id="inaccurateTextContainer" class="feedback-textarea-container"></div>
+        {{ range $index, $value := .Site.Params.feedback.negativeForm }}
+            {{ $rating := (index (.)  0) }}
+            {{ $description := (index (.)  1) }}
+            <div class="form-check pb-1">
+                <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="{{ $rating | lower }}" id="radio{{ $index }}">
+                <label class="form-check-label" for="radio{{ $index }}">
+                    {{ $rating }}
+                    {{ if $description }}
+                        <p class="feedback-radio-desc fw-normal mb-0">{{ $description }}</p>
+                    {{ end }}
+                </label>
+            </div>
+            <div id="radio{{ $index }}TextContainer" class="feedback-textarea-container"></div>
+        {{ end }}
 
-        <div class="form-check pb-1">
-            <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="missing" id="missing">
-            <label class="form-check-label" for="missing">
-                Couldn't find what I was looking for
-                <p class="feedback-radio-desc fw-normal mb-0">Missing important information.</p>
-            </label>
-        </div>
-        <div id="missingTextContainer" class="feedback-textarea-container"></div>
-
-        <div class="form-check pb-1">
-            <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="hard" id="hard">
-            <label class="form-check-label" for="hard">
-                Hard to understand
-                <p class="feedback-radio-desc fw-normal mb-0">Too complicated or unclear.</p>
-            </label>
-        </div>
-        <div id="hardTextContainer" class="feedback-textarea-container"></div>
-
-        <div class="form-check pb-1">
-            <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="errors" id="errors">
-            <label class="form-check-label" for="errors">
-                Code sample errors
-                <p class="feedback-radio-desc fw-normal mb-0">One or more code samples are incorrect.</p>
-            </label>
-        </div>
-        <div id="errorsTextContainer" class="feedback-textarea-container"></div>
-
-        <div class="form-check pb-1">
-            <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="other" id="otherNeg">
-            <label class="form-check-label" for="otherNeg">
-                Something else
-            </label>
-        </div>
-        <div id="otherNegTextContainer" class="feedback-textarea-container"></div>
     </div>
 
     <div id="feedback-submit-container">
@@ -183,7 +137,7 @@
         }
         try {
             if (formType == "positive") {
-                plausible('Positive Feedback',
+                plausible('{{ .Site.Params.feedback.positiveEventName | default "Positive Feedback" }}',
                     {
                         callback: success,
                         props:
@@ -194,7 +148,7 @@
                     }
                 )
             } else if (formType == "negative") {
-                plausible('Negative Feedback',
+                plausible('{{ .Site.Params.feedback.negativeEventName | default "Negative Feedback" }}',
                     {
                         callback: success,
                         props:
