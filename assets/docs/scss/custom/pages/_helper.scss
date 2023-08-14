@@ -81,12 +81,7 @@
     line-height: 0;
     border-radius: 4px;
     border: none;
-    text-align: center;
-    text-align: -moz-center;
-    text-align: -webkit-center;
-    // padding-top: 5px;
     background: var(--primary);
-    color: var(--back-to-top-color)  !important;
 
     svg {
         transition: all 0.5s ease;
@@ -94,7 +89,6 @@
 
     &:hover {
         transform: rotate(45deg);
-
         svg {
             transform: rotate(-45deg) !important;
         }
