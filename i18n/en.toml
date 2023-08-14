@@ -18,3 +18,15 @@
 
 [search_no_results]
     other = "No results for"
+
+[feedback_yes]
+    other = "Yes"
+
+[feedback_no]
+    other = "No"
+
+[feedback_helpful]
+    other = "Was this page helpful?"
+
+[feedback_submit]
+    other = "Submit"

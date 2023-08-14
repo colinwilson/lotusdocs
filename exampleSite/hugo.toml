@@ -123,6 +123,12 @@ defaultContentLanguage = 'en'
         # plausibleAPI    = "/docs/s" # optional - (or set via env variable HUGO_PARAM_ANALYTICS_plausibleAPI)
         # plausibleDomain = "lotusdocs.dev"      # (or set via env variable HUGO_PARAM_ANALYTICS_plausibleDomain)
 
+    [params.feedback]
+        enabled = true
+        analytics = "plausible"
+        positiveName = "Positive Feedback"
+        negativeName = "Negative Feedback"
+
 [menu]
 [[menu.primary]]
     name  = "Docs"

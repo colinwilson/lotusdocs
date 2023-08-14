@@ -18,3 +18,15 @@
 
 [search_no_results]
     other = "Keine Ergebnisse für"
+
+[feedback_yes]
+    other = "Ja"
+
+[feedback_no]
+    other = "Nein"
+
+[feedback_helpful]
+    other = "War diese Seite hilfreich?"
+
+[feedback_submit]
+    other = "Absenden"

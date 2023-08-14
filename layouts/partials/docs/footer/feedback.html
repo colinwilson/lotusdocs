@@ -1,17 +1,17 @@
 <div id="feedback-widget" class="feedback-container pt-4">
     <div id="feedback-init" class="d-flex justify-content-md-start justify-content-sm-center">
-        <span class="fs-5 fw-bold me-2 align-self-center">Was this page helpful?</span>
+        <span class="fs-5 fw-bold me-2 align-self-center">{{ i18n "feedback_helpful" | default "Was this page helpful?" }}</span>
         <div class="d-flex">
             <button id="posBtn" class="feedback-btn btn btn-primary btn-sm me-2" type="submit">
                 <span class="fs-6">
                     <i class="material-icons size-20 me-1 align-middle">thumb_up</i>
-                    Yes
+                    {{ i18n "feedback_yes" | default "Yes" }}
                 </span>
             </button>
             <button id="negBtn" class="feedback-btn btn btn-primary btn-sm me-2" type="submit">
                 <span class="fs-6">
                     <i class="material-icons me-1 align-middle">thumb_down</i>
-                    No
+                    {{ i18n "feedback_no" | default "No" }}
                 </span>
             </button>
         </div>
@@ -108,7 +108,7 @@
     <div id="feedback-submit-container">
         <button id="feedback-submit-button" class="feedback-submit-btn btn btn-primary mt-3" role="button" type="submit" disabled>
             <span class="fs-6">
-                Submit
+                {{ i18n "feedback_submit" | default "Submit" }}
             </span>
         </button>
     </div>
