@@ -24,18 +24,18 @@
         <p class="fw-bold fs-5">{{ .Site.Params.feedback.positiveFormTitle | default "What did you like?" }}</p>
 
         {{ range $index, $value := .Site.Params.feedback.positiveForm }}
-            {{ $rating := (index (.)  0) }}
-            {{ $description := (index (.)  1) }}
+            {{ $rating := (index . 0) }}
+            {{ $description := (index . 1) }}
             <div class="form-check pb-1">
-                <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="{{ $rating | lower }}" id="radio{{ $index }}">
-                <label class="form-check-label" for="radio{{ $index }}">
+                <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="{{ $rating | lower }}" id="radio{{ $index }}Pos" required>
+                <label class="form-check-label" for="radio{{ $index }}Pos">
                     {{ $rating }}
                     {{ if $description }}
                         <p class="feedback-radio-desc fw-normal mb-0">{{ $description }}</p>
                     {{ end }}
                 </label>
             </div>
-            <div id="radio{{ $index }}TextContainer" class="feedback-textarea-container"></div>
+            <div id="radio{{ $index }}PosTextContainer" class="feedback-textarea-container"></div>
         {{ end }}
 
     </div>
@@ -44,18 +44,18 @@
         <p class="fw-bold fs-5">{{ .Site.Params.feedback.negativeFormTitle | default "What went wrong?" }}</p>
 
         {{ range $index, $value := .Site.Params.feedback.negativeForm }}
-            {{ $rating := (index (.)  0) }}
-            {{ $description := (index (.)  1) }}
+            {{ $rating := (index . 0) }}
+            {{ $description := (index . 1) }}
             <div class="form-check pb-1">
-                <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="{{ $rating | lower }}" id="radio{{ $index }}">
-                <label class="form-check-label" for="radio{{ $index }}">
+                <input class="form-check-input" type="radio" name="feedback" autocomplete="off" value="{{ $rating | lower }}" id="radio{{ $index }}Neg" required>
+                <label class="form-check-label" for="radio{{ $index }}Neg">
                     {{ $rating }}
                     {{ if $description }}
                         <p class="feedback-radio-desc fw-normal mb-0">{{ $description }}</p>
                     {{ end }}
                 </label>
             </div>
-            <div id="radio{{ $index }}TextContainer" class="feedback-textarea-container"></div>
+            <div id="radio{{ $index }}NegTextContainer" class="feedback-textarea-container"></div>
         {{ end }}
 
     </div>
