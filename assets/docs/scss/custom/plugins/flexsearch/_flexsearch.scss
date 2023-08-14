@@ -29,7 +29,7 @@
 }
 
 #FlexSearchCollapse {
-        transition: 0.05s ease;    
+        transition: 0.05s ease;
         width: fit-content;
 }
 
@@ -113,7 +113,7 @@
     height: 18px;
     justify-content: center;
     margin-right: .4em;
-    padding: 0 0 2px 0;
+    padding: 0;
     position: relative;
     border: 0;
     width: 20px;
@@ -153,10 +153,24 @@
     position: absolute;
     background-color: var(--flexsearch-suggestion-bg-color);
     left: 0;
+    max-height: 70vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(155, 155, 155, 0.5);
+        border-radius: 2px;
+        border: transparent;
+    }
     margin-top: 0.5rem;
     // width: calc(100vw - 0.3rem);
     max-width: calc(100vw - 0.15rem);
-    z-index: 1000
+    z-index: 999
 }
 
 @media (min-width: 768px) {
