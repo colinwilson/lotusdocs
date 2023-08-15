@@ -8,6 +8,10 @@
     --form-control-focus-bg-color: none;
     --form-control-focus-border-color: var(--primary);
     --form-control-placeholder-color: #666d78;
+
+    --form-check-input-border-color:var(--gray-300);
+    --form-check-input-checked-border-color:var(--gray-500);
+    --form-check-input-checked-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='%233056d5'/></svg>");
 }
 
 [data-dark-mode] {
@@ -16,6 +20,10 @@
     --form-control-focus-bg-color: #000;
     --form-control-focus-border-color: var(--primary-300);
     --form-control-placeholder-color: #7f8497;
+
+    --form-check-input-border-color:var(--gray-800);
+    --form-check-input-checked-border-color:var(--primary-200);
+    --form-check-input-checked-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='%2394c6ff'/></svg>");
 }
 
 //Form
@@ -55,14 +63,15 @@
 }
 
 .form-check-input {
-    border: 1px solid $border-color;
-    background-color: $form-check-input-bg;
+    border: 1px solid var(--form-check-input-border-color);
+    background-color: var(--body-bg);
     &:focus {
         border-color: $primary;
         box-shadow: none;
     }
     &.form-check-input:checked {
-        background-color: $primary;
-        border-color: $primary;
+        background-color: var(--body-bg);
+        border-color: var(--form-check-input-checked-border-color);
+        --bs-form-check-bg-image: var(--form-check-input-checked-bg-image);
     }
 }
