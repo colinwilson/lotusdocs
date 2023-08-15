@@ -1,6 +1,6 @@
 # Lotus Docs Example Site
 
-This repository offers a multilingual example site for [Lotus Docs](https://github.com/colinwilson/lotusdocs) Hugo theme.
+This repository offers a multilingual example site using the [Lotus Docs](https://github.com/colinwilson/lotusdocs) Hugo theme.
 
 # Using
 
@@ -18,7 +18,7 @@ This repository offers a multilingual example site for [Lotus Docs](https://gith
     ```
 ## Notes:
 
-The `exampleSite` functions by using the Hugo [`replace`](https://gohugo.io/hugo-modules/use-modules/#make-and-test-changes-in-a-module) directive (in `go.mod`) to point the default `lotusdocs` module path, `github.com/colinwilson/lotusdocs`, to the local directory above where the theme was cloned.
+The `exampleSite` functions by using the Hugo [`replace`](https://gohugo.io/hugo-modules/use-modules/#make-and-test-changes-in-a-module) directive (in [`go.mod`](go.mod#L10)) to point the default `lotusdocs` module path, `github.com/colinwilson/lotusdocs`, to the local directory above where the theme was cloned.
 
 ```go
 replace github.com/colinwilson/lotusdocs => ../
