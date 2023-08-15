@@ -30,6 +30,7 @@ Check out the demo site [https://lotusdocs.dev/docs](https://lotusdocs.dev/docs)
 * [x] Support for [DocSearch](https://docsearch.algolia.com/)
 * [x] Custom shortcodes (PrismJS, Alerts, Tabs, Tables)
 * [x] Analytics ([Google Analytics v4](https://analytics.google.com/analytics/web/), [Plausible Analytics](https://plausible.io/))
+* [x] This project is tested with [BrowserStack](https://browserstack.com)
 * [ ] [Open Graph](https://ogp.me/)
 * [ ] [Mermaid](https://mermaid.js.org/) Support
 * [ ] Math equations powered by [KaTeX](https://katex.org/)
@@ -176,5 +177,3 @@ Navigate to `localhost:1313/docs` and you should see a card link to the **Exampl
 Copyright © 2022-2023 [Colin Wilson](https://github.com/colinwilson)
 
 [^1]: [Hugo Modules](https://gohugo.io/hugo-modules/)
-
-<a href="https://email.browserstack.com/c/eJwkyjtyxCAMANDT2B0ePsKwBUWavUYGIRET_9aAx9dPkf5RsGjJjRzU_NJKOiv9uIREBiw49wLJyiKA8ypmqWeDOrPlsYQZCL3Oho1P-VvrrCMZid657BJ4C4qmVojXcolc-br56CKT-Jx0N46tK7HHcliB282CPLp59oCi4u_VBpC8x7JNuXJbiNs6pXMft7D0_hnM16Dfg34_zzNhPZ_GtfWY_k0N6dzKMYCM5ae06V7_AgAA__8Uskgq" target="_blank">BrowserStack.</a>
