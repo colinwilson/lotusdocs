@@ -130,6 +130,8 @@ defaultContentLanguage = 'en'
         # negativeEventName = "Negative Feedback"
         # positiveFormTitle = "What did you like?"
         # negativeFormTitle = "What went wrong?"
+        # successMsg = "Thank you for helping to improve Lotus Docs' documentation!"
+        # errorMsg = "Sorry! There was an error while attempting to submit your feedback!"
         # positiveForm = [
         #   ["Accurate", "Accurately describes the feature or option."],
         #   ["Solved my problem", "Helped me resolve an issue."],
@@ -137,7 +139,7 @@ defaultContentLanguage = 'en'
         #   ["Something else"]
         # ]
         # negativeForm = [
-        #   ["Inaccurate", "Doesn't accurately describe the product or feature."],
+        #   ["Inaccurate", "Doesn't accurately describe the feature or option."],
         #   ["Couldn't find what I was looking for", "Missing important information."],
         #   ["Hard to understand", "Too complicated or unclear."],
         #   ["Code sample errors", "One or more code samples are incorrect."],
