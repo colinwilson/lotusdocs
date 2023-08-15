@@ -132,7 +132,7 @@
         function success(e) {
             form.remove();
             feedbackSubmitContainer.remove();
-            result.innerHTML = "Thank you for helping to improve Lotus Docs' documentation!";
+            result.innerHTML = '{{ .Site.Params.feedback.successMsg | default "Thank you for helping to improve our documentation!" }}';
             result.classList.add("is-visible");
         }
         try {
@@ -185,7 +185,7 @@
             console.log(err);
             form.remove();
             feedbackSubmitContainer.remove();
-            result.innerHTML = "Sorry! There was an error while attempting to submit your feedback!";
+            result.innerHTML = '{{ .Site.Params.feedback.errorMsg | default "Sorry! There was an error while attempting to submit your feedback!" }}';
             result.classList.add("is-visible");
         }
         // console.log("feedback submitted")

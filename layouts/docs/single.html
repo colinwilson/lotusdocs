@@ -10,7 +10,11 @@
     {{ end -}}
 
     {{ if .Site.Params.feedback.enabled | default false -}}
-        {{- partial (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "footer/feedback.html") . -}}
+        {{ if or (.Site.Params.plausible.dataDomain) (.Site.GoogleAnalytics) }}
+            {{- partial (printf "%s/%s" (.Site.Params.docs.pathName | default "docs") "footer/feedback.html") . -}}
+        {{ else }}
+            {{ errorf "Either Google Analytics or Plausible Analytics must be configured before enabling the Feedback Widget." }}
+        {{ end }}
     {{ end -}}
 
 {{ end }}
