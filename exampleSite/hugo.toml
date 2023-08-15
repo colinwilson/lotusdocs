@@ -124,10 +124,25 @@ defaultContentLanguage = 'en'
         # plausibleDomain = "lotusdocs.dev"      # (or set via env variable HUGO_PARAM_ANALYTICS_plausibleDomain)
 
     [params.feedback]
-        enabled = true
-        analytics = "plausible"
-        positiveName = "Positive Feedback"
-        negativeName = "Negative Feedback"
+        # enabled = true
+        # analytics = "plausible"
+        # positiveEventName = "Positive Feedback"
+        # negativeEventName = "Negative Feedback"
+        # positiveFormTitle = "What did you like?"
+        # negativeFormTitle = "What went wrong?"
+        # positiveForm = [
+        #   ["Accurate", "Accurately describes the feature or option."],
+        #   ["Solved my problem", "Helped me resolve an issue."],
+        #   ["Easy to understand", "Easy to follow and comprehend."],
+        #   ["Something else"]
+        # ]
+        # negativeForm = [
+        #   ["Inaccurate", "Doesn't accurately describe the product or feature."],
+        #   ["Couldn't find what I was looking for", "Missing important information."],
+        #   ["Hard to understand", "Too complicated or unclear."],
+        #   ["Code sample errors", "One or more code samples are incorrect."],
+        #   ["Something else"]
+        # ]
 
 [menu]
 [[menu.primary]]

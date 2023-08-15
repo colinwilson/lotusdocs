@@ -8,7 +8,7 @@ This repository offers a multilingual example site for [Lotus Docs](https://gith
 2. Clone this repository
 
     ```bash
-    $ git clone https://github.com/colinwilson/lotusdocs lotusdocs
+    $ git clone --depth 1 https://github.com/colinwilson/lotusdocs lotusdocs
     $ cd lotusdocs/exampleSite
     ```
 3. Run Hugo server.
