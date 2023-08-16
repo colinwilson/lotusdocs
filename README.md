@@ -4,7 +4,7 @@
 
 ![Lotus Docs Banner](https://res.cloudinary.com/lotuslabs/image/upload/v1688223320/Lotus%20Docs/Social%20Media/lotus_docs_banner_mockup_v1.1_rounded_glwogb.webp)
 
-Check out the demo site [https://lotusdocs.dev/docs](https://lotusdocs.dev/docs) (also doubles as the documentation guide for Lotus Docs 📖)
+Check out the demo site [https://lotusdocs.dev/docs/](https://lotusdocs.dev/docs/) (also doubles as the documentation guide for Lotus Docs 📖)
 
 🚧 **WARNING** 🚧 - **Lotus Docs is currently in pre-release development and thus not recommended for use in production at this time. But please do try it out 😊. Pull requests and feedback are most welcome.**
 
@@ -166,7 +166,7 @@ Now that you've created some sample content you can preview your new Lotus Docs 
 hugo server -D
 ```
 
-Navigate to `localhost:1313/docs` and you should see a card link to the **Example Page** created earlier:
+Navigate to `localhost:1313/docs/` and you should see a card link to the **Example Page** created earlier:
 
 ![New Lotus Docs Site - Example Content](https://res.cloudinary.com/lotuslabs/image/upload/v1690992310/Lotus%20Docs/images/lotus_docs_new_site_and_content_module_setup_oiuyex.png)
 

@@ -149,7 +149,7 @@ defaultContentLanguage = 'en'
 [menu]
 [[menu.primary]]
     name  = "Docs"
-    url = "docs"
+    url = "docs/"
     identifier = "docs"
     weight = 10
 
