@@ -1,6 +1,6 @@
 blank_issues_enabled: false
 contact_links:
-  - name: ❓ Questions?
+  - name: ❓ Questions
     url: https://github.com/colinwilson/lotusdocs/discussions/new?category=q-a
     about: Please use the community forum for help and questions regarding Lotus Docs
   - name: 💡 Feature requests and ideas
