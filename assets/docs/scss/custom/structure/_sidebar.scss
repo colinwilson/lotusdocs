@@ -148,6 +148,9 @@
                         border-radius: 4px;
                         transition: all 0.3s ease;
                     }
+                    &.sidebar-nested-link {
+                        align-items: normal;
+                    }
                 }
                 a:hover,
                 &.sidebar-dropdown button:hover {
