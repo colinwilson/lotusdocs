@@ -18,8 +18,11 @@ This repository offers a multilingual example site using the [Lotus Docs](https:
     ```
 ## Notes:
 
-The `exampleSite` functions by using the Hugo [`replace`](https://gohugo.io/hugo-modules/use-modules/#make-and-test-changes-in-a-module) directive (in [`go.mod`](go.mod#L10)) to point the default `lotusdocs` module path, `github.com/colinwilson/lotusdocs`, to the local directory above where the theme is cloned.
+The `exampleSite` functions by using the Hugo [`replace`](https://gohugo.io/hugo-modules/use-modules/#make-and-test-changes-in-a-module) directive (in [`go.mod`](go.mod#L10)) to point the default `lotusdocs` module path, `github.com/colinwilson/lotusdocs`, to the local directory above where the theme is cloned:
 
 ```go
+// go.mod
+...
+
 replace github.com/colinwilson/lotusdocs => ../
 ```
