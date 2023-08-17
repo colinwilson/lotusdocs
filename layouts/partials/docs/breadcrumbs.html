@@ -8,7 +8,7 @@
                     {{- $data.Set "counter" $index }}
                     {{- $data.Add "counter" 1 }}
                     <a itemprop="item" href="{{ .RelPermalink }}">
-                        <span class="material-icons size-20 align-text-bottom" itemprop="name">home</span>
+                        <span class="material-icons size-20 align-text-bottom" itemprop="name">Home</span>
                     </a>
                     <meta itemprop="position" content='{{ $data.Get "counter"}}' />
                 </li>
@@ -25,7 +25,7 @@
         {{ if eq .Title $docRoot }}
             <li class="breadcrumb-item text-capitalize active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                 {{- $data.Add "counter" 1 }}
-                <span class="material-icons size-20 align-text-bottom" itemprop="name">home</span>
+                <span class="material-icons size-20 align-text-bottom" itemprop="name">Home</span>
                 <meta itemprop="position" content='{{ $data.Get "counter"}}' />
             </li>
         {{ else }}
