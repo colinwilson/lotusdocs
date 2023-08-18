@@ -102,7 +102,7 @@
         })
     });
 
-    // Add text area box to selected feedback radio
+    // Add text area box to the selected feedback radio
     const Radios = document.querySelectorAll('input[name="feedback"]');
     const textareas = document.querySelectorAll('.feedback-textarea-container');
 
@@ -127,7 +127,7 @@
         const form = document.querySelector('.feedback-form');
         const formType = form.getAttribute("data-type");
         const result = document.getElementById("feedback-end");
-        const selected = document.querySelector('input[name="feedback"]:checked').value;
+        const rating = document.querySelector('input[name="feedback"]:checked').value;
         const message = document.getElementById('textarea').value;
         function success(e) {
             form.remove();
@@ -140,7 +140,7 @@
                 {{ if .Site.GoogleAnalytics -}}
                 gtag('event', '{{ replaceRE `( {1,})` "_" (.Site.Params.feedback.positiveEventName | default "Positive Feedback" | lower) }}',
                     {
-                        'rating': selected,
+                        'rating': rating,
                         'message': message,
                         'event_callback': success
                     }
@@ -152,7 +152,7 @@
                         callback: success,
                         props:
                         {
-                            selection: selected,
+                            rating: rating,
                             message: message
                         }
                     }
@@ -162,7 +162,7 @@
                 {{ if .Site.GoogleAnalytics -}}
                 gtag('event', '{{ replaceRE `( {1,})` "_" (.Site.Params.feedback.negativeEventName | default "Positive Feedback" | lower) }}',
                     {
-                        'rating': selected,
+                        'rating': rating,
                         'message': message,
                         'event_callback': success
                     }
@@ -174,7 +174,7 @@
                         callback: success,
                         props:
                         {
-                            selection: selected,
+                            rating: rating,
                             message: message
                         }
                     }
