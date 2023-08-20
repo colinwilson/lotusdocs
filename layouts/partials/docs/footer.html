@@ -7,6 +7,11 @@
                     <p class="mb-0">
                         {{ $yearToken := (cond (isset .Site.Params (lower "copyrightYearToken")) $.Site.Params.copyrightYearToken ":YEAR:") }}
                         {{ replace $.Site.Params.footer.copyright $yearToken (string (now.Format "2006")) | markdownify }}
+                        {{ if and .GitInfo .Site.Params.docs.ghrepo -}}
+                            {{ if .Site.Params.footer.version }}
+                                <span>(<strong><a href='https://{{ .Site.Params.docs.ghrepo }}/tree/{{ .GitInfo.Hash }}' target="_blank">{{ .GitInfo.AbbreviatedHash }}</a></strong>)</span>
+                            {{ end }}
+                        {{ end }}
                     </p>
                 </div>
             </div><!--end col-->
