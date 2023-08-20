@@ -36,10 +36,7 @@
         background: var(--body-bg);
         color: var(--text-default);
         padding: 4px;
-        border-top: 1px solid var(--alert-border-color);
-        border-bottom: 1px solid var(--alert-border-color);
-        border-right: 1px solid var(--alert-border-color);
-        border-left:  1px solid var(--alert-border-color);
+        border: 1px solid var(--alert-border-color);
         border-radius: 4px;
         width: calc(100% + 2px);
         white-space: normal;
@@ -49,10 +46,8 @@
         transform: translateY(-16.5px) !important;
         background: var(--toc-mobile-menu-bg-color);
         inset: -1px auto none (var(--bs-gutter-x)) !important;
+        border: 1px solid var(--alert-border-color);
         border-top: none;
-        border-bottom: 1px solid var(--alert-border-color);
-        border-right: 1px solid var(--alert-border-color);
-        border-left:  1px solid var(--alert-border-color);
         border-radius: 0 0 4px 4px;
         width: calc(100% - (var(--bs-gutter-x)*2));
         max-height: 40vh;
