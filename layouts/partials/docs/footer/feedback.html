@@ -71,6 +71,7 @@
         const rating = document.querySelector('input[name="feedback-emoticon"]:checked').value;
         const message = document.getElementById('textarea-emoji').value;
         function success(e) {
+            feedbackEmojiCta.remove();
             sendArea.remove();
             result.innerHTML = '{{ .Site.Params.feedback.successMsg | default "Thank you for helping to improve our documentation!" }}';
             result.classList.add("is-visible");
