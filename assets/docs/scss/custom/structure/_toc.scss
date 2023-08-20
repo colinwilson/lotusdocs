@@ -4,11 +4,13 @@
 
 :root {
     --toc-link-hover-bg-color: var(--gray-300);
+    --toc-mobile-btn-bg-color: var(--gray-100);
     --toc-mobile-menu-bg-color: var(--white);
 }
 
 [data-dark-mode] {
     --toc-link-hover-bg-color: var(--gray-700);
+    --toc-mobile-btn-bg-color: var(--gray-900);
     --toc-mobile-menu-bg-color: var(--body-bg);
 }
 
@@ -33,7 +35,7 @@
 
     .dropdown-toggle {
         margin-bottom: 16px;
-        background: var(--body-bg);
+        background: var(--toc-mobile-btn-bg-color);
         color: var(--text-default);
         padding: 4px;
         border: 1px solid var(--alert-border-color);
@@ -52,6 +54,7 @@
         width: calc(100% - (var(--bs-gutter-x)*2));
         max-height: 40vh;
         overflow-y: auto;
+        scrollbar-width: thin;
         li {
             list-style: none;
             padding: 0 0 4px 0;
