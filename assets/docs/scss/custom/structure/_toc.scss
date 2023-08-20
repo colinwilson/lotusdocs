@@ -41,7 +41,7 @@
         border-right: 1px solid var(--alert-border-color);
         border-left:  1px solid var(--alert-border-color);
         border-radius: 4px;
-        width: calc(100vw - (var(--bs-gutter-x)*2));
+        width: calc(100% + 2px);
         white-space: normal;
     }
 
@@ -53,12 +53,13 @@
         border-bottom: 1px solid var(--alert-border-color);
         border-right: 1px solid var(--alert-border-color);
         border-left:  1px solid var(--alert-border-color);
-        border-radius: 0;
-        width: calc(100vw - (var(--bs-gutter-x)*2));
+        border-radius: 0 0 4px 4px;
+        width: calc(100% - (var(--bs-gutter-x)*2));
         max-height: 40vh;
         overflow-y: auto;
         li {
             list-style: none;
+            padding: 0 0 4px 0;
             ul {
                 padding-left: 1rem;
             }
