@@ -253,3 +253,18 @@ if (document.getElementById("relativetime")) {
     let modAgo = dayjs(modId.getAttribute('data-authdate')).fromNow();
     document.getElementById("relativetime").innerHTML = modAgo;
 };
+
+// Mobile Table of Contents
+const myDropdown = document.getElementById('toc-dropdown-btn')
+    myDropdown.addEventListener('shown.bs.dropdown', event => {
+        // do something...
+        myDropdown.style.borderBottom = 'none'
+        myDropdown.style.borderRadius = '4px 4px 0 0'
+        console.log("dropdown opened");
+    })
+    myDropdown.addEventListener('hidden.bs.dropdown', event => {
+        // do something...
+        myDropdown.style.borderBottom = '1px solid var(--alert-border-color)'
+        myDropdown.style.borderRadius = '4px'
+        console.log("dropdown closed");
+});

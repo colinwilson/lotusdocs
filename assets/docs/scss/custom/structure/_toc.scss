@@ -14,8 +14,10 @@
 
 .docs-toc-mobile {
     position: sticky;
-    top: 71px; // important (must be set)
-    padding: 0 0 0.5rem 0;
+    // top: 71px; // important (must be set)
+    top: 85px; // important (must be set)
+    padding-left: calc(var(--bs-gutter-x) * 1.05);
+    padding-right: calc(var(--bs-gutter-x) * 1.05);
     z-index: 20;
 
     // &.toc-pinned {
@@ -30,25 +32,28 @@
     // }
 
     .dropdown-toggle {
-        padding: 0 1.5rem;
+        margin-bottom: 1rem;
         background: var(--body-bg);
         color: var(--text-default);
-        // border: 1px solid var(--alert-border-color);
+        padding: 4px;
         border-top: 1px solid var(--alert-border-color);
         border-bottom: 1px solid var(--alert-border-color);
-        border-right: none;
-        border-left:  none;
-        // border-radius: 4px;
-        width: 100%;
+        border-right: 1px solid var(--alert-border-color);
+        border-left:  1px solid var(--alert-border-color);
+        border-radius: 4px;
+        width: calc(100vw - (var(--bs-gutter-x)*2));
         white-space: normal;
     }
 
     .dropdown-menu {
         background: var(--toc-mobile-menu-bg-color);
-        border: none;
+        inset: -1px auto auto 0px !important;
+        border-top: none;
+        border-bottom: 1px solid var(--alert-border-color);
+        border-right: 1px solid var(--alert-border-color);
+        border-left:  1px solid var(--alert-border-color);
         border-radius: 0;
-        padding: 0 1.5rem;
-        width: 100%;
+        width: calc(100vw - (var(--bs-gutter-x)*2));
         max-height: 40vh;
         overflow-y: auto;
         li {
@@ -57,7 +62,6 @@
                 padding-left: 1rem;
             }
         }
-        // --bs-dropdown-bg: var(--body-bg);
     }
 }
 
