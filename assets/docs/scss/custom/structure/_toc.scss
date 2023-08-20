@@ -32,7 +32,7 @@
     // }
 
     .dropdown-toggle {
-        margin-bottom: 1rem;
+        margin-bottom: 16px;
         background: var(--body-bg);
         color: var(--text-default);
         padding: 4px;
@@ -46,8 +46,9 @@
     }
 
     .dropdown-menu {
+        transform: translateY(-16.5px) !important;
         background: var(--toc-mobile-menu-bg-color);
-        inset: -1px auto auto 0px !important;
+        inset: -1px auto none (var(--bs-gutter-x)) !important;
         border-top: none;
         border-bottom: 1px solid var(--alert-border-color);
         border-right: 1px solid var(--alert-border-color);
