@@ -1,4 +1,4 @@
-{{ if eq .Site.Params.feedback.template "emoticon" -}}
+{{ if eq .Site.Params.feedback.emoticonTpl true -}}
 {{ $emoticons := slice "very_satisfied" "satisfied" "dissatisfied" "very_dissatisfied" }}
 <div class="container d-flex align-items-center justify-content-center">
     <div id="feedback-widget-emoticon" class="mt-4">
