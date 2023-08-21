@@ -78,25 +78,29 @@
         }
         try {
             {{ if .Site.GoogleAnalytics -}}
-                gtag('event', '{{ replaceRE `( {1,})` "_" (.Site.Params.feedback.emoticonEventName | default "feedback" | lower) }}',
-                    {
-                        'rating': rating.replace(/\s+/g, '_').toLowerCase(),
-                        'message': message,
-                        'event_callback': success
-                    }
-                ),
+            {{ if not .Site.Params.feedback.eventDest | or (in .Site.Params.feedback.eventDest "google") -}}
+            gtag('event', '{{ replaceRE `( {1,})` "_" (.Site.Params.feedback.emoticonEventName | default "feedback" | lower) }}',
+                {
+                    'rating': rating.replace(/\s+/g, '_').toLowerCase(),
+                    'message': message,
+                    'event_callback': success
+                }
+            ),
+            {{ end -}}
             {{ end -}}
             {{ if .Site.Params.plausible.dataDomain -}}
-                plausible('{{ .Site.Params.feedback.emoticonEventName | default "Feedback" }}',
+            {{ if not .Site.Params.feedback.eventDest | or (in .Site.Params.feedback.eventDest "plausible") -}}
+            plausible('{{ .Site.Params.feedback.emoticonEventName | default "Feedback" }}',
+                {
+                    callback: success,
+                    props:
                     {
-                        callback: success,
-                        props:
-                        {
-                            rating: rating,
-                            message: message
-                        }
+                        rating: rating,
+                        message: message
                     }
-                )
+                }
+            )
+            {{ end -}}
             {{ end -}}
         } catch (err) {
             console.log(err);
@@ -250,6 +254,7 @@
         try {
             if (formType == "positive") {
                 {{ if .Site.GoogleAnalytics -}}
+                {{ if not .Site.Params.feedback.eventDest | or (in .Site.Params.feedback.eventDest "google") -}}
                 gtag('event', '{{ replaceRE `( {1,})` "_" (.Site.Params.feedback.positiveEventName | default "Positive Feedback" | lower) }}',
                     {
                         'rating': rating,
@@ -258,7 +263,9 @@
                     }
                 ),
                 {{ end -}}
+                {{ end -}}
                 {{ if .Site.Params.plausible.dataDomain -}}
+                {{ if not .Site.Params.feedback.eventDest | or (in .Site.Params.feedback.eventDest "plausible") -}}
                 plausible('{{ .Site.Params.feedback.positiveEventName | default "Positive Feedback" }}',
                     {
                         callback: success,
@@ -270,8 +277,10 @@
                     }
                 )
                 {{ end -}}
+                {{ end -}}
             } else if (formType == "negative") {
                 {{ if .Site.GoogleAnalytics -}}
+                {{ if not .Site.Params.feedback.eventDest | or (in .Site.Params.feedback.eventDest "google") -}}
                 gtag('event', '{{ replaceRE `( {1,})` "_" (.Site.Params.feedback.negativeEventName | default "Positive Feedback" | lower) }}',
                     {
                         'rating': rating,
@@ -280,7 +289,9 @@
                     }
                 ),
                 {{ end -}}
+                {{ end -}}
                 {{ if .Site.Params.plausible.dataDomain -}}
+                {{ if not .Site.Params.feedback.eventDest | or (in .Site.Params.feedback.eventDest "plausible") -}}
                 plausible('{{ .Site.Params.feedback.negativeEventName | default "Negative Feedback" }}',
                     {
                         callback: success,
@@ -291,6 +302,7 @@
                         }
                     }
                 )
+                {{ end -}}
                 {{ end -}}
             }
         } catch (err) {
