@@ -1,12 +1,12 @@
-/* Template Name: LotusLabs Docs
+/* Template Name: Lotus Docs
    Author: Colin Wilson
    E-mail: colin@aigis.uk
    Created: October 2022
-   Version: 1.0.0
-   File Description: Main Css file of the docs template
+   Version: 1.1.0
+   File Description: Main CSS file for Lotus Docs
 */
 
-//Custom Font Variables
+// Custom Font Variables
 $font-family-secondary:  {{ .Site.Params.secondary_font | default "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Ubuntu'" }};
 $font-family-sans-serif: {{ .Site.Params.sans_serif_font | default "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Ubuntu'" }};
 $font-family-monospace:  {{ .Site.Params.mono_font | default "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" }};
@@ -17,7 +17,7 @@ $code-block-padding-top: {{ if eq .Site.Params.docs.prism true -}}0{{ else }}1.2
 // Icon Fonts
 @import "custom/plugins/icons/google-material";
 
-//Core files
+// Core files
 @import "../../scss/bootstrap/functions";
 @import "../../scss/bootstrap/variables";
 @import {{ printf "'%s%s'" "custom/colors/" (.Site.Params.docs.themeColor | default "blue") }}; // current theme color
@@ -37,7 +37,7 @@ $code-block-padding-top: {{ if eq .Site.Params.docs.prism true -}}0{{ else }}1.2
 @import "custom/structure/toc";
 @import "custom/structure/footer";
 
-// // Components
+// Components
 @import "custom/components/buttons";
 @import "custom/components/modal";
 @import "custom/components/breadcrumb";
@@ -49,7 +49,7 @@ $code-block-padding-top: {{ if eq .Site.Params.docs.prism true -}}0{{ else }}1.2
 @import "custom/components/table";
 @import "custom/components/tabs";
 
-// // Pages
+// Pages
 @import "custom/pages/features";
 @import "custom/pages/helper";
 

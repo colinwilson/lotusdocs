@@ -3,6 +3,16 @@
 //
 
 #topnav {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    z-index: 999;
+    border: 0;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+
     .logo {
         float: left;
         color: $dark !important;
@@ -154,27 +164,10 @@
         }
     }
 
-    &.defaultscroll{
-        &.dark-menubar {
-            .logo {
-                line-height: 70px;
-            }
-        }
-        &.scroll {
-            .logo{
-                line-height: 62px;
-            }
-            &.dark-menubar {
-                .logo{
-                    line-height: 62px;
-                }
-            }
-        }
-    }
-
     &.nav-sticky{
-        background: $nav-sticky-bg;
-        box-shadow: $shadow;
+        background: #fff;
+        -webkit-box-shadow: 0 0 3px rgba(60,72,88,.15);
+        box-shadow: 0 0 3px rgba(60,72,88,.15);
         .navigation-menu {
             &.nav-light {
                 > li {

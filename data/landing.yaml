@@ -2,6 +2,12 @@
 hero:
   enable: true
 
+  backgroundImage:
+    path: "images/templates/hero"
+    filename:
+      desktop: "gradient-desktop.jpg"
+      mobile: "gradient-mobile.jpg"
+
   # badge:
   #   text: v0.0.2
   #   color: primary # primary, secondary, success, danger, warning, info, light, dark

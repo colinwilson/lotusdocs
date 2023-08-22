@@ -1,6 +1,28 @@
 {{ if .Site.Data.landing.hero.enable }}
 <!-- Hero Start -->
-<section class="d-table w-100 overflow-hidden">
+{{ with .Site.Data.landing.hero.backgroundImage }}
+    {{ $path := .path | default "images" }}
+    {{ $filename := .filename }}
+    {{ $pathDesktop := printf "%s/%s" $path $filename.desktop }}
+    {{ $pathMobile := printf "%s/%s" $path $filename.mobile }}
+        <style>
+            .hero {
+                {{ with $filename.desktop }}
+                    {{ with resources.Get $pathDesktop }}
+                        @media (min-width: 768px) {
+                            background-image: url("{{ .RelPermalink }}");
+                        }
+                    {{ end }}
+                {{ end }}
+                {{ with $filename.mobile }}
+                    {{ with resources.Get $pathMobile }}
+                        background-image: url("{{ .RelPermalink }}");
+                    {{ end }}
+                {{ end }}
+            }
+        </style>
+{{ end }}
+<section class="d-table w-100 overflow-hidden hero">
     <div class="container">
         <div class="row mt-5 align-items-center">
 

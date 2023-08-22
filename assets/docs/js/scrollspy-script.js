@@ -1,7 +1,7 @@
 //ScrollSpy - via https://github.com/kimyvgy/simple-scrollspy
 window.onload = function () {
     scrollSpy('toc', {
-        sectionClass: 'h1,h2,h3',
+        sectionClass: 'h1,h2,h3,h4',
         //   menuActiveTarget: 'href',
         offset: 100,
         // scrollContainer: null,
