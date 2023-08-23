@@ -111,25 +111,25 @@ image_compare:
         }
       }
       imagePath: "images/screenshots"
-      imageBefore: "lotusdocs_dark.webp"
-      imageAfter: "lotusdocs_light.webp"
+      imageBefore: "lotusdocs_dark_v0.8.webp"
+      imageAfter: "lotusdocs_light_v0.8.webp"
 
     - title: Custom Fonts
       config: {
         controlColor: "#3C4257",
-        startingPoint: 38,
+        startingPoint: 25,
         addCircle: true,
         addCircleBlur: false,
         showLabels: true,
         labelOptions: {
-          before: 'Poppins',
-          after: 'Comic Neue',
+          before: 'Inter',
+          after: 'Life Saver',
           onHover: false
         }
       }
       imagePath: "images/screenshots"
-      imageBefore: "lotusdocs_poppins.webp"
-      imageAfter: "lotusdocs_comic_neue_.webp"
+      imageBefore: "lotusdocs_google_font_demo_inter_screenshot.webp"
+      imageAfter: "lotusdocs_google_font_demo_lifesavers_screenshot.webp"
 
     - title: Accent Color
       config: {
@@ -139,10 +139,10 @@ image_compare:
         showLabels: true,
         labelOptions: {
           before: 'Blue',
-          after: 'Emerald',
+          after: 'Cardinal',
           onHover: false
         }
       }
       imagePath: "images/screenshots"
-      imageBefore: "lotusdocs_blue.webp"
-      imageAfter: "lotusdocs_emerald.webp"
+      imageBefore: "lotusdocs_blue_theme_colour.webp"
+      imageAfter: "lotusdocs_cardinal_theme_colour.webp"
