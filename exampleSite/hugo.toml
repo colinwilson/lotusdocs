@@ -60,7 +60,7 @@ defaultContentLanguage = 'en'
 
     [params.footer]
         copyright = "© :YEAR: Lotus Labs. Built with [**Lotus Docs**](https://github.com/colinwilson/lotusdocs)"
-        version = true # includes git commit info
+        # version = true # includes git commit info
 
     [params.social]
         github = ""        # YOUR_GITHUB_ID or YOUR_GITHUB_URL
@@ -114,37 +114,39 @@ defaultContentLanguage = 'en'
         # searchSectionsIndex = []
 
     [params.docsearch] # Parameters for DocSearch
-        # appID     = "O2QIOCBDAK" # Algolia Application ID
-        # apiKey    = "fdc60eee76a72a35d739b54521498b77" # Algolia Search-Only API (Public) Key
-        # indexName = "prod_lotusdocs.dev" # Index Name to perform search on (or set env variable HUGO_PARAM_DOCSEARCH_indexName)
+        # appID     = "" # Algolia Application ID
+        # apiKey    = "" # Algolia Search-Only API (Public) Key
+        # indexName = "" # Index Name to perform search on (or set env variable HUGO_PARAM_DOCSEARCH_indexName)
 
     [params.analytics] # Parameters for Analytics (Google, Plausible)
         # plausibleURL    = "/docs/s" # (or set via env variable HUGO_PARAM_ANALYTICS_plausibleURL)
         # plausibleAPI    = "/docs/s" # optional - (or set via env variable HUGO_PARAM_ANALYTICS_plausibleAPI)
-        # plausibleDomain = "lotusdocs.dev"      # (or set via env variable HUGO_PARAM_ANALYTICS_plausibleDomain)
+        # plausibleDomain = ""      # (or set via env variable HUGO_PARAM_ANALYTICS_plausibleDomain)
 
-    [params.feedback]
-        # enabled = true
-        # analytics = "plausible"
-        # positiveEventName = "Positive Feedback"
-        # negativeEventName = "Negative Feedback"
-        # positiveFormTitle = "What did you like?"
-        # negativeFormTitle = "What went wrong?"
-        # successMsg = "Thank you for helping to improve Lotus Docs' documentation!"
-        # errorMsg = "Sorry! There was an error while attempting to submit your feedback!"
-        # positiveForm = [
-        #   ["Accurate", "Accurately describes the feature or option."],
-        #   ["Solved my problem", "Helped me resolve an issue."],
-        #   ["Easy to understand", "Easy to follow and comprehend."],
-        #   ["Something else"]
-        # ]
-        # negativeForm = [
-        #   ["Inaccurate", "Doesn't accurately describe the feature or option."],
-        #   ["Couldn't find what I was looking for", "Missing important information."],
-        #   ["Hard to understand", "Too complicated or unclear."],
-        #   ["Code sample errors", "One or more code samples are incorrect."],
-        #   ["Something else"]
-        # ]
+    # [params.feedback]
+    #     enabled = true
+    #     emoticonTpl = true
+    #     eventDest = ["plausible","google"]
+    #     emoticonEventName = "Feedback"
+    #     positiveEventName = "Positive Feedback"
+    #     negativeEventName = "Negative Feedback"
+    #     positiveFormTitle = "What did you like?"
+    #     negativeFormTitle = "What went wrong?"
+    #     successMsg = "Thank you for helping to improve Lotus Docs' documentation!"
+    #     errorMsg = "Sorry! There was an error while attempting to submit your feedback!"
+    #     positiveForm = [
+    #       ["Accurate", "Accurately describes the feature or option."],
+    #       ["Solved my problem", "Helped me resolve an issue."],
+    #       ["Easy to understand", "Easy to follow and comprehend."],
+    #       ["Something else"]
+    #     ]
+    #     negativeForm = [
+    #       ["Inaccurate", "Doesn't accurately describe the feature or option."],
+    #       ["Couldn't find what I was looking for", "Missing important information."],
+    #       ["Hard to understand", "Too complicated or unclear."],
+    #       ["Code sample errors", "One or more code samples are incorrect."],
+    #       ["Something else"]
+    #     ]
 
 [menu]
 [[menu.primary]]

@@ -1,6 +1,15 @@
+# Note: Template blocks require a 'weight' parameter so they're correctly ordered on the landing page
+
 # Hero
 hero:
   enable: true
+  weight: 10
+
+  backgroundImage:
+    path: "images/templates/hero"
+    filename:
+      desktop: "gradient-desktop.webp"
+      mobile: "gradient-mobile.webp"
 
   # badge:
   #   text: v0.0.2
@@ -8,14 +17,14 @@ hero:
   #   pill: false # boolean
   #   soft: true # boolean
 
-  title: "Example Site"
-  subtitle: A lightweight, **modern documentation** theme for Hugo. Easily customised for building **fast**, **secure**, and **SEO-friendly** documentation sites.
-
   # titleLogo:
   #   path: "images/logos"
   #   filename: "title_logo.png"
   #   alt: "Lotus Docs Logo"
   #   height: 80px
+
+  title: "Lotus Docs"
+  subtitle: A lightweight, **modern documentation** theme for Hugo. Easily customised for building **fast**, **secure**, and **SEO-friendly** documentation sites.
 
   image:
     path: "images" # path to image under configured assets directory. default 'images'
@@ -27,7 +36,7 @@ hero:
   ctaButton:
     icon: rocket_launch
     btnText: "Get Started"
-    url: "/docs"
+    url: "/docs/quickstart/"
   cta2Button:
     icon: construction
     btnText: "In Development"
@@ -38,9 +47,10 @@ hero:
 # Features Grid
 features:
   enable: true
+  weight: 20
 
   title: Why choose Lotus Docs?
-  subtitle: Lotus Docs is a simple yet highly configurable Hugo theme. With Lotus Docs' default configuration you can deploy and publish documentation in a matter of minutes.
+  subtitle: Lotus Docs is a highly configurable Hugo documentation theme. Yet, with the default configuration you can deploy and publish your documentation site in a matter of minutes. Check out some core features below.
 
   items:
     - title: Fast
@@ -69,7 +79,7 @@ features:
 
     - title: Search by DocSearch
       icon: search
-      description: Search your docs with DocSearch. A powerful, efficient and accessible search solution built on Algolia Crawler & Autocomplete. TBC.
+      description: Search your docs with DocSearch. A powerful, efficient and accessible search solution built on Algolia Crawler & Autocomplete.
 
     - title: Multilingual Support
       icon: translate
@@ -82,9 +92,10 @@ features:
 # Image compare
 image_compare:
   enable: true
+  weight: 30
 
   title: Customise The Lotus Docs Appearance
-  subtitle: Much of Lotus Docs' appearance can be customised. Dark mode is optional (enabled by default) and you can choose a Google font that suites you via a single config setting.
+  subtitle: Much of Lotus Docs' appearance can be customised. Dark mode is optional (enabled by default) and you can choose a Google font that suites you via the config parameters.
 
   items:
     - title: Dark Mode
@@ -100,25 +111,25 @@ image_compare:
         }
       }
       imagePath: "images/screenshots"
-      imageBefore: "lotusdocs_dark.webp"
-      imageAfter: "lotusdocs_light.webp"
+      imageBefore: "lotusdocs_dark_v0.8.webp"
+      imageAfter: "lotusdocs_light_v0.8.webp"
 
     - title: Custom Fonts
       config: {
         controlColor: "#3C4257",
-        startingPoint: 38,
+        startingPoint: 25,
         addCircle: true,
         addCircleBlur: false,
         showLabels: true,
         labelOptions: {
-          before: 'Poppins',
-          after: 'Comic Neue',
+          before: 'Inter',
+          after: 'Life Saver',
           onHover: false
         }
       }
       imagePath: "images/screenshots"
-      imageBefore: "lotusdocs_poppins.webp"
-      imageAfter: "lotusdocs_comic_neue_.webp"
+      imageBefore: "lotusdocs_google_font_demo_inter_screenshot.webp"
+      imageAfter: "lotusdocs_google_font_demo_lifesavers_screenshot.webp"
 
     - title: Accent Color
       config: {
@@ -128,10 +139,10 @@ image_compare:
         showLabels: true,
         labelOptions: {
           before: 'Blue',
-          after: 'Emerald',
+          after: 'Cardinal',
           onHover: false
         }
       }
       imagePath: "images/screenshots"
-      imageBefore: "lotusdocs_blue.webp"
-      imageAfter: "lotusdocs_emerald.webp"
+      imageBefore: "lotusdocs_blue_theme_colour.webp"
+      imageAfter: "lotusdocs_cardinal_theme_colour.webp"
