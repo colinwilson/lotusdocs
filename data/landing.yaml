@@ -8,8 +8,8 @@ hero:
   backgroundImage:
     path: "images/templates/hero"
     filename:
-      desktop: "gradient-desktop.jpg"
-      mobile: "gradient-mobile.jpg"
+      desktop: "gradient-desktop.webp"
+      mobile: "gradient-mobile.webp"
 
   # badge:
   #   text: v0.0.2
