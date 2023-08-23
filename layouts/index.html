@@ -1,5 +1,21 @@
 {{ define "main" }}
-    {{ partialCached "landing/hero.html" . }}
-    {{ partialCached "landing/features.html" . }}
-    {{ partialCached "landing/image_compare.html" . }}
+    {{ $landingData := .Site.Data.landing }}
+    {{ $map := newScratch }}
+
+    {{ range $key, $value := $landingData }}
+        {{ $template := (index $key) }}
+        {{ $weight := string ($value.weight) }}
+        {{ with $weight }}
+            {{ $map.SetInMap "wgtTpl" $weight $template }}
+        {{ else }}
+            {{ $map.SetInMap "wgtTpl" (index $key) $template }}
+        {{ end }}
+    {{ end }}
+
+    {{ $indexContext := newScratch }}
+    {{ $indexContext.Set "indexContext" . }}
+    {{ range sort ($map.Get "wgtTpl") }}
+        {{ $path := printf "landing/%s.html" . }}
+        {{ partialCached $path ($indexContext.Get "indexContext") }}
+    {{ end }}
 {{ end }}

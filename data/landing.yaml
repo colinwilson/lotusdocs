@@ -1,6 +1,9 @@
+# Note: Template blocks require a 'weight' parameter so they're correctly ordered on the landing page
+
 # Hero
 hero:
   enable: true
+  weight: 10
 
   backgroundImage:
     path: "images/templates/hero"
@@ -44,6 +47,7 @@ hero:
 # Features Grid
 features:
   enable: true
+  weight: 20
 
   title: Why choose Lotus Docs?
   subtitle: Lotus Docs is a highly configurable Hugo documentation theme. Yet, with the default configuration you can deploy and publish your documentation site in a matter of minutes. Check out some core features below.
@@ -88,6 +92,7 @@ features:
 # Image compare
 image_compare:
   enable: true
+  weight: 30
 
   title: Customise The Lotus Docs Appearance
   subtitle: Much of Lotus Docs' appearance can be customised. Dark mode is optional (enabled by default) and you can choose a Google font that suites you via the config parameters.
