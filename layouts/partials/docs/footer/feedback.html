@@ -10,7 +10,7 @@
                 <div class="form-emoji d-flex ps-2">
                     {{ range $index, $value := $emoticons }}
                     <div class="radio-emoji">
-                        <input type="radio" name="feedback-emoticon" autocomplete="off" value="{{ $value | humanize | title }}" id="radio_{{ $index }}" />
+                        <input type="radio" name="feedback-emoticon" autocomplete="off" value="{{ $value | humanize | title }}" id="radio_{{ $index }}" required>
                         <label class="d-flex justify-content-center align-items-center" for="radio_{{ $index }}">
                             {{ $emoticon := resources.Get ( printf "%s%s.svg" "images/icons/feedback/" $value ) }}
                             {{ $emoticon.Content | safeHTML }}
@@ -52,7 +52,7 @@
     emojiRadios.forEach(emojiRadio => {
         emojiRadio.addEventListener('change', function(event) {
             const emojiRadioID = event.target.id;
-            emojiContainer.style.borderRadius = '10px'
+            emojiContainer.style.borderRadius = '8px'
             feedbackEmojiCta.classList.add("px-4");
             emojiTextWrapper.classList.add("is-visible");
             feedbackEmojiSubmitBtn.removeAttribute("disabled");
