@@ -156,6 +156,19 @@
     list-style: none;
     line-height: 26px;
 
+    ul {
+        li::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            left: 8px;
+            top: 10px;
+            padding: 0;
+            border-radius: 30%;
+            background: var(--gray-500);
+        }
+    }
+
     li {
         counter-increment: listitem;
         position: relative;
