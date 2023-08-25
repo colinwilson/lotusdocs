@@ -128,17 +128,15 @@
 
 // Unordered List Styling
 .docs-content .main-content ul {
-    list-style: none;
-    line-height: 26px;
     padding-left: 0;
 
-    li {
+    > li {
         position: relative;
         padding-left: 32px;
         // margin-bottom: 5px;
     }
 
-    li::before {
+    > li::before {
         content: "";
         position: absolute;
         width: 6px;
@@ -153,29 +151,13 @@
 // Ordered List Styling
 .docs-content .main-content ol {
     counter-reset: listitem;
-    list-style: none;
-    line-height: 26px;
-
-    ul {
-        li::before {
-            content: "";
-            width: 6px;
-            height: 6px;
-            left: 8px;
-            top: 10px;
-            padding: 0;
-            border-radius: 30%;
-            background: var(--gray-500);
-        }
-    }
-
-    li {
+    > li {
         counter-increment: listitem;
         position: relative;
         padding-left: 32px;
     }
 
-    li::before {
+    > li::before {
         content: counter(listitem);
         background: var(--ordered-list-bg);
         color: var(--ordered-list-color);
@@ -191,6 +173,13 @@
         left: 0;
         top: 3px;
     }
+}
+
+// Universal List Styling
+.docs-content .main-content ol,
+.docs-content .main-content ul {
+    list-style: none;
+    line-height: 26px;
 }
 
 // Blockquote
