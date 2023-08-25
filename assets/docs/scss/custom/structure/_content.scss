@@ -152,6 +152,7 @@
 
 // Ordered List Styling
 .docs-content .main-content ol {
+    counter-reset: listitem;
     list-style: none;
     line-height: 26px;
 
