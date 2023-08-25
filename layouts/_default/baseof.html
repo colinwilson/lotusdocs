@@ -3,9 +3,9 @@
 <!-- social_list -->
 {{ $social_params := slice "github" "twitter" "instagram" "rss" }}
 {{ range $social_params }}
-{{ if isset site.Params.social . }}
-{{ $.Scratch.Add "social_list" (slice .) }}
-{{ end }}
+    {{ if isset site.Params.social . }}
+        {{ $.Scratch.Add "social_list" (slice .) }}
+    {{ end }}
 {{ end }}
 
 <html lang="{{ site.LanguageCode }}" dir="ltr">

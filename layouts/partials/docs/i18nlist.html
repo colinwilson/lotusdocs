@@ -1,6 +1,6 @@
 {{ $pageLang := .Page.Lang }}
 {{ $translations := slice }}
-{{ $docspath := .Site.Params.docs.pathName | default "docs" }}
+{{ $docspath := $.Scratch.Get "pathName" }}
 
 <!-- List available translations (excluding current page)-->
 {{ range .Translations }}

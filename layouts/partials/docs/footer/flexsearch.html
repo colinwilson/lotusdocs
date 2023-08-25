@@ -130,7 +130,7 @@
         {{- end }}
         {{- end }}
     {{- else }}
-        {{- $list = (where .Site.Pages "Section" (.Site.Params.docs.pathName | default "docs")) }}
+        {{- $list = (where .Site.Pages "Section" ($.Scratch.Get "pathName")) }}
     {{- end }}
 
     {{ $len := (len $list) -}}
