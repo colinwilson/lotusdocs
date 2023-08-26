@@ -48,31 +48,6 @@
     {{ end }}
     <!-- Google Fonts -->
     {{- partialCached "google-fonts" . }}
-    <!-- Google Material Symbol Icons -->
-    {{- $options := dict "enableSourceMap" true }}
-    {{- if hugo.IsProduction}}
-        {{- $options := dict "enableSourceMap" false "outputStyle" "compressed" }}
-    {{- end }}
-    {{- $googleIcons := resources.Get (printf "/%s/%s" ($.Scratch.Get "pathName") "scss/google-icons.scss") }}
-    {{- $googleIcons = $googleIcons | resources.ExecuteAsTemplate (printf "/%s/%s" ($.Scratch.Get "pathName") "scss/google-icons.scss") . | resources.ToCSS $options }}
-    {{- if hugo.IsProduction }}
-        {{- $googleIcons = $googleIcons | minify | fingerprint "sha384" }}
-    {{- end -}}
-    <link rel="stylesheet" href="{{ $googleIcons.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $googleIcons.Data.Integrity }}"{{ end -}} crossorigin="anonymous">
-    <!-- Critical CSS -->
-    {{- $options := dict "enableSourceMap" false }}
-    {{- if hugo.IsProduction}}
-        {{- $options := dict "enableSourceMap" false "outputStyle" "compressed" }}
-    {{- end }}
-    {{- $critical := resources.Get (printf "/%s/%s" ($.Scratch.Get "pathName") "scss/critical.scss") }}
-    {{- $critical = $critical | resources.ExecuteAsTemplate (printf "/%s/%s" ($.Scratch.Get "pathName") "scss/critical.scss") . | resources.ToCSS $options }}
-    {{- if hugo.IsProduction }}
-        {{- $critical = $critical | minify | fingerprint "sha384" }}
-    {{- end -}}
-    <style>
-        {{ $critical.Content | safeCSS }}
-    </style>
-    <!-- <link rel="stylesheet" href="{{ $critical.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $critical.Data.Integrity }}"{{ end -}} crossorigin="anonymous"> -->
     <!-- Custom CSS -->
     {{- $options := dict "enableSourceMap" true }}
     {{- if hugo.IsProduction}}
