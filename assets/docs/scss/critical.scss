@@ -5,6 +5,7 @@
    Version: 1.0.0
    File Description: Critical CSS file for Lotus Docs
 */
+@import "custom/pages/helper";
 
 // Custom Font Variables
 $font-family-secondary:  {{ .Site.Params.secondary_font | default "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Ubuntu'" }};

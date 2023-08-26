@@ -29,6 +29,5 @@ $code-block-padding-top: {{ if eq .Site.Params.docs.prism true -}}0{{ else }}1.2
 
 // Pages
 @import "custom/pages/features";
-@import "custom/pages/helper";
 
 {{ if .Site.Params.feedback.enabled | default false -}}@import "custom/plugins/feedback/feedback";{{ end}}
