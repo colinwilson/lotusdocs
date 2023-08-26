@@ -17,6 +17,7 @@ $code-block-padding-top: {{ if eq .Site.Params.docs.prism true -}}0{{ else }}1.2
 // Icon Fonts
 @import "custom/plugins/icons/google-material";
 
+// Core files
 @import "../../scss/bootstrap/functions";
 @import "../../scss/bootstrap/variables";
 @import {{ printf "'%s%s'" "custom/colors/" (.Site.Params.docs.themeColor | default "blue") }}; // current theme color
