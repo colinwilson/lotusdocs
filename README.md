@@ -32,9 +32,9 @@ Check out the demo site [https://lotusdocs.dev/docs/](https://lotusdocs.dev/docs
 * [x] Analytics ([Google Analytics v4](https://analytics.google.com/analytics/web/), [Plausible Analytics](https://plausible.io/))
 * [x] Tested with [BrowserStack](https://browserstack.com)
 * [x] Feedback widget
+* [x] Math equations powered by [KaTeX](https://katex.org/)
 * [ ] [Open Graph](https://ogp.me/)
 * [ ] [Mermaid](https://mermaid.js.org/) Support
-* [ ] Math equations powered by [KaTeX](https://katex.org/)
 
 ## Getting Started
 

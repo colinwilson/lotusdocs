@@ -54,7 +54,12 @@ $code-block-padding-top: {{ if eq .Site.Params.docs.prism true -}}0{{ else }}1.2
 @import "custom/pages/helper";
 
 // Plugins
+
+// Prism
 {{ if eq .Site.Params.docs.prism true -}}@import "custom/plugins/prism/prism";{{ end }}
+
+// FlexSearch
 {{ if or (not (isset .Site.Params.flexsearch "enabled")) (eq .Site.Params.flexsearch.enabled true) -}}@import "custom/plugins/flexsearch/flexsearch";{{ end }}
 
+// Feedback Widget
 {{ if .Site.Params.feedback.enabled | default false -}}@import "custom/plugins/feedback/feedback";{{ end}}
