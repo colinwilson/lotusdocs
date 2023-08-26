@@ -236,18 +236,6 @@
     filter: invert(1) grayscale(100%) brightness(200%);
 }
 
-@include media-breakpoint-up(md) {
-    .alert-dismissible .btn-close {
-        background-size: 1.25rem;
-    }
-}
-
 [data-global-alert="closed"] #announcement {
     display: none;
-}
-
-.alert code {
-    background: tint-color($dark, 90%);
-    color: $black;
-    padding: 0.25rem 0.5rem;
 }

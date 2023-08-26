@@ -26,14 +26,13 @@ table {
 
 // Shortcode Table
 .table {
-    --#{$prefix}table-color: var(--text-default);
-    --#{$prefix}table-bg: transparent;
-    --#{$prefix}table-border-color: #{$table-border-color};
-    --#{$prefix}table-accent-bg: none;
-    --#{$prefix}table-striped-color: var(--text-default);
-    --#{$prefix}table-striped-bg: var(--alert-primary-bg);
-    --#{$prefix}table-hover-color: var(--text-default);
-    --#{$prefix}table-hover-bg: var(--table-hover-bg);
+    --bs-table-color: var(--text-default);
+    --bs-table-bg: transparent;
+    --bs-table-accent-bg: none;
+    --bs-table-striped-color: var(--text-default);
+    --bs-table-striped-bg: var(--alert-primary-bg);
+    --bs-table-hover-color: var(--text-default);
+    --bs-table-hover-bg: var(--table-hover-bg);
 
     color: var(--text-default);
     font-size: 0.875rem;

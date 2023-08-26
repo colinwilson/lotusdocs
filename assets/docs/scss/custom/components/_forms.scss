@@ -44,14 +44,14 @@
     background-color: var(--body-bg);
     text-align: left;
     &:focus {
-        border-color: $primary;
+        border-color: var(--primary);
         box-shadow: none;
     }
     &[readonly] {
-        background-color: $white;
+        background-color: var(--white);
     }
     &:disabled {
-        background-color: $gray-300;
+        background-color: var(--gray-300);
     }
     &::placeholder{
         color: var(--form-control-placeholder-color);
@@ -68,7 +68,7 @@
     border: 1px solid var(--form-check-input-border-color);
     background-color: var(--body-bg);
     &:focus {
-        border-color: $primary;
+        border-color: var(--primary);
         box-shadow: none;
     }
     &.form-check-input:checked {

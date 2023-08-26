@@ -48,6 +48,27 @@
     {{ end }}
     <!-- Google Fonts -->
     {{- partialCached "google-fonts" . }}
+    <!-- Critical CSS -->
+    {{- $options := dict "enableSourceMap" false }}
+    {{- if hugo.IsProduction}}
+        {{- $options := dict "enableSourceMap" false "outputStyle" "compressed" }}
+    {{- end }}
+    {{- $critical := resources.Get (printf "/%s/%s" ($.Scratch.Get "pathName") "scss/critical.scss") }}
+    {{- $critical = $critical | resources.ExecuteAsTemplate (printf "/%s/%s" ($.Scratch.Get "pathName") "scss/critical.scss") . | resources.ToCSS $options }}
+    {{- if hugo.IsProduction }}
+        {{- $critical = $critical | minify | fingerprint "sha384" }}
+    {{- end -}}
+    <style>
+        @font-face {
+        font-family: 'Material Symbols Outlined';
+        font-weight: 400 700;
+        font-display: block;
+        font-style: normal;
+        src: local("Material Symbols Outlined"), local("Material Icons"), local("MaterialIcons-Outlined"), url("/{{ $.Scratch.Get `pathName` }}/fonts/material-symbols-outlined.woff2") format("woff2")
+        }
+        {{ $critical.Content | safeCSS }}
+    </style>
+    <!-- <link rel="stylesheet" href="{{ $critical.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $critical.Data.Integrity }}"{{ end -}} crossorigin="anonymous"> -->
     <!-- Custom CSS -->
     {{- $options := dict "enableSourceMap" true }}
     {{- if hugo.IsProduction}}
@@ -58,7 +79,7 @@
     {{- if hugo.IsProduction }}
         {{- $style = $style | minify | fingerprint "sha384" }}
     {{- end -}}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $style.Data.Integrity }}"{{ end -}} crossorigin="anonymous">
+    <link rel="preload" href="{{ $style.RelPermalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'" {{ if hugo.IsProduction }}integrity="{{ $style.Data.Integrity }}"{{ end -}} crossorigin="anonymous">
     <!-- Plausible Analytics Config -->
     {{- if not .Site.IsServer }}
     {{ if and (.Site.Params.plausible.scriptURL | default "https://plausible.io") (.Site.Params.plausible.dataDomain) -}}

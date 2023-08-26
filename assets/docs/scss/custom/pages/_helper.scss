@@ -253,15 +253,6 @@
     border-radius: 30px !important;
 }
 
-//Border
-@each $name,
-$value in $theme-colors {
-    .border-#{$name} {
-        border-color: #{$value} !important;
-    }
-}
-
-
 .bg-white-color {
     background: var(--bg-white-color);
 }

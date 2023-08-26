@@ -1,78 +1,9 @@
-// scss-docs-start color-variables
-$blue:    #2f55d4;
-$indigo:  #6610f2;
-$purple:  #6f42c1;
-$pink:    #d63384;
-$red:     #e43f52;
-$orange:  #fd7e14;
-$yellow:  #f17425;
-$green:   #2eca8b;
-$teal:    #20c997;
-$cyan:    #17a2b8;
-$dark:    #0e1420;
-// scss-docs-end color-variables
-
-// scss-docs-start colors-map
-$colors: (
-  "blue":       $blue,
-  "indigo":     $indigo,
-  "purple":     $purple,
-  "pink":       $pink,
-  "red":        $red,
-  "orange":     $orange,
-  "yellow":     $yellow,
-  "green":      $green,
-  "teal":       $teal,
-  "cyan":       $cyan,
-  "black":      $black,
-  "white":      $white,
-  "gray":       $gray-600,
-  "gray-dark":  $gray-800
-);
-// scss-docs-end colors-map
-
-// scss-docs-start theme-color-variables
-$primary:       $blue;
-$secondary:     $gray-600;
-$success:       $green;
-$info:          $cyan;
-$warning:       $yellow;
-$danger:        $red;
-$light:         $gray-100;
-$dark:          $dark;
-// scss-docs-end theme-color-variables
-
-// scss-docs-start theme-colors-map
-$theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark
-);
-
 // Prefix for :root CSS variables
 
 $prefix:                      bs-;
 
 $btn-link-color:              var(--#{$prefix}link-color);
 $btn-link-hover-color:        var(--#{$prefix}link-hover-color);
-
-// Links
-//
-// Style anchor elements.
-
-$link-color:                              $primary;
-$link-decoration:                         underline;
-$link-shade-percentage:                   20%;
-$link-hover-color:                        shift-color($link-color, $link-shade-percentage);
-$link-hover-decoration:                   null;
-
-$stretched-link-pseudo-element:           after;
-$stretched-link-z-index:                  1;
 
 :root {
 
