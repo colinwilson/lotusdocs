@@ -9,7 +9,7 @@
 
 [data-dark-mode] {
     --card-title-color: var(--text-default);
-    --card-text-color: #6c757d;
+    --card-text-color: var(--gray-500);
 }
 
 .card {
@@ -35,4 +35,5 @@
 
 .card-text {
     color: var(--card-text-color);
+    font-weight: 500;
 }
