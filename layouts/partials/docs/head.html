@@ -59,13 +59,6 @@
         {{- $critical = $critical | minify | fingerprint "sha384" }}
     {{- end -}}
     <style>
-        @font-face {
-        font-family: 'Material Symbols Outlined';
-        font-weight: 400 700;
-        font-display: block;
-        font-style: normal;
-        src: local("Material Symbols Outlined"), local("Material Icons"), local("MaterialIcons-Outlined"), url("/{{ $.Scratch.Get `pathName` }}/fonts/material-symbols-outlined.woff2") format("woff2")
-        }
         {{ $critical.Content | safeCSS }}
     </style>
     <!-- <link rel="stylesheet" href="{{ $critical.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $critical.Data.Integrity }}"{{ end -}} crossorigin="anonymous"> -->

@@ -15,7 +15,7 @@ $font-family-monospace:  {{ .Site.Params.mono_font | default "SFMono-Regular, Me
 $code-block-padding-top: {{ if eq .Site.Params.docs.prism true -}}0{{ else }}1.25rem 0 0 0{{ end }};
 
 // Icon Fonts
-// @import "custom/plugins/icons/google-material";
+@import "custom/plugins/icons/google-material";
 
 @import "../../scss/bootstrap/functions";
 @import "../../scss/bootstrap/variables";
@@ -35,6 +35,9 @@ $code-block-padding-top: {{ if eq .Site.Params.docs.prism true -}}0{{ else }}1.2
 @import "custom/structure/doc-nav";
 @import "custom/structure/toc";
 @import "custom/structure/footer";
+
+// Components
+@import "custom/components/alerts";
 
 // Plugins
 {{ if eq .Site.Params.docs.prism true -}}@import "custom/plugins/prism/prism";{{ end }}
