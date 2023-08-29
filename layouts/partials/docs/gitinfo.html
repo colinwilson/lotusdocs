@@ -16,6 +16,7 @@
 
 {{ $repoURL = $repoURL | append "content" .Site.LanguagePrefix $filePath }}
 {{ $repoURL = delimit $repoURL "/" }}
+{{/* Remove multiple forward slahes in repoURL */}}
 {{ $editPageURL := replaceRE "(https?://)|(/)+" "$1$2" $repoURL }}
 
 <div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 {{ if and .Site.Params.docs.lastMod .Site.Params.docs.editPage -}}pt-3{{ else }}visually-hidden{{ end }}">
