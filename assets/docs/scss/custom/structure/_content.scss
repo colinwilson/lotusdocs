@@ -43,6 +43,7 @@
 
 // Links
 .docs-content .main-content a {
+    font-weight: 600;
     color: var(--content-link-color);
     &:hover {
         text-decoration: underline 2px var(--primary-200);
@@ -52,6 +53,9 @@
     // &.anchor i {
     //     transform: rotate(-45deg);
     // }
+    code {
+        color: var(--content-link-color);
+    }
 }
 
 .docs-content .main-content {
@@ -74,10 +78,6 @@
 .docs-content .main-content h5 {
     font-weight: 700;
     color: var(--body-color);
-}
-
-.docs-content .main-content a {
-    font-weight: 600;
 }
 
 .docs-content .content-title {
@@ -204,7 +204,7 @@
 .docs-content .main-content code {
     font-size: inherit;
     color: var(--text-default);
-    font-weight: 500;
+    font-weight: 400;
     padding: 1px 2px;
     background: var(--inline-code-bg);
     border: var(--inline-code-border);
