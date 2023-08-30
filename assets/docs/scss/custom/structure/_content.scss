@@ -122,8 +122,12 @@
 }
 
 // Images
-.docs-content .main-content img {
-    max-width: 100%;
+.docs-content .main-content {
+    img,
+    svg {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 // Unordered List Styling
