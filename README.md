@@ -2,7 +2,7 @@
 
 [Lotus Docs](https://lotusdocs.dev) is an easily updated and customisable [Hugo](https://gohugo.io/) theme for building fast, secure, and SEO-friendly documentation sites.
 
-![Lotus Docs Banner](https://res.cloudinary.com/lotuslabs/image/upload/v1688223320/Lotus%20Docs/Social%20Media/lotus_docs_banner_mockup_v1.1_rounded_glwogb.webp)
+![Lotus Docs Banner](https://res.cloudinary.com/lotuslabs/image/upload/v1693340144/Lotus%20Docs/Social%20Media/lotus-docs-screenshot_hugo-themes-website_v2_3200x1800_rd_m9y7xh.webp)
 
 Check out the demo site [https://lotusdocs.dev/docs/](https://lotusdocs.dev/docs/) (also doubles as the documentation guide for Lotus Docs 📖)
 
@@ -15,7 +15,7 @@ Check out the demo site [https://lotusdocs.dev/docs/](https://lotusdocs.dev/docs
 * [x] Fast, Accessible and SEO-Friendly (4 x 💯 scores on [Google Lighthouse](https://pagespeed.web.dev/)!)
 * [x] Secure by default
 * [x] Built on Bootstrap 5
-* [x] Deploy on [Vercel](https://vercel.com/) with multiple options
+* [x] Deploy on [GitHub Pages](https://pages.github.com/), [GitLab Pages](https://about.gitlab.com/stages-devops-lifecycle/pages/), [Vercel](https://vercel.com/), [Netlify](https://netlify.com), or [Cloudflare Pages](https://pages.cloudflare.com/)
 * [x] Multilingual support (i18n)
 * [x] Powerful Syntax Highlighting via [Prism.js](https://prismjs.com/)
 * [x] Dark Mode

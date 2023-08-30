@@ -4,11 +4,13 @@
 
 :root {
     --feature-icon-color: var(--primary);
+    --feature-icon-faint: var(--gray-300);
     --feature-link-hover-bg-color: var(--primary);
 }
 
 [data-dark-mode] {
     --feature-icon-color: var(--primary-300);
+    --feature-icon-faint: var(--gray-800);
     --feature-link-hover-bg-color: var(--gray-900);
 }
 
@@ -45,6 +47,9 @@
     &.feature-full-bg {
         .icon-color {
             color: var(--feature-icon-color) !important;
+        }
+        .icon-faint {
+            color: var(--feature-icon-faint) !important;
         }
         &:hover {
             background-color: var(--feature-link-hover-bg-color) !important;
