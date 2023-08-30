@@ -5,7 +5,7 @@
         {{ .Content }}
     </div>
 
-    {{ if and .GitInfo .Site.Params.docs.ghrepo -}}
+    {{ if and .GitInfo .Site.Params.docs.repoURL -}}
         {{ partial (printf "%s/%s" ($.Scratch.Get "pathName") "gitinfo") . }}
     {{ end -}}
 
