@@ -33,8 +33,9 @@ Check out the demo site [https://lotusdocs.dev/docs/](https://lotusdocs.dev/docs
 * [x] Cross-browser testing via [BrowserStack](https://browserstack.com)
 * [x] Feedback widget
 * [x] Math equations powered by [KaTeX](https://katex.org/)
+* [x] [Mermaid](https://mermaid.js.org/) Support
 * [ ] [Open Graph](https://ogp.me/)
-* [ ] [Mermaid](https://mermaid.js.org/) Support
+
 
 ## Getting Started
 

@@ -9,6 +9,8 @@ toc = true
 weight = 210
 +++
 
+{{% alert context="warning" text="The front matter `description` value for this page has been intentionally left empty in order to demonstrate FlexSearch's suggested results fallback behaviour." /%}}
+
 ## Code Block Examples
 
 Code block language examples

@@ -63,3 +63,6 @@ $code-block-padding-top: {{ if eq .Site.Params.docs.prism true -}}0{{ else }}1.2
 
 // Feedback Widget
 {{ if .Site.Params.feedback.enabled | default false -}}@import "custom/plugins/feedback/feedback";{{ end}}
+
+// Mermaid
+@import "custom/plugins/mermaid/mermaid";
