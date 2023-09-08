@@ -31,5 +31,11 @@
                 fill: var(--text-default) !important;
             }
         }
+        line {
+            stroke: var(--text-default) !important;
+        }
+        text {
+            fill: var(--text-default) !important;
+        }
     }
 }
