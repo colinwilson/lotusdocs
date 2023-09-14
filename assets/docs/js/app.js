@@ -20,7 +20,7 @@
  ================================*/
 
 
-//Menu
+// Menu
 // Toggle menu
 function toggleMenu() {
     document.getElementById('isToggle').classList.toggle('open');
@@ -32,7 +32,7 @@ function toggleMenu() {
     }
 };
 
-//Menu Active
+// Menu Active
 function getClosest(elem, selector) {
 
     // Element.matches() polyfill
@@ -99,7 +99,7 @@ function activateMenu() {
 }
 
 
-//Sidebar Menu
+// Sidebar Menu
 function activateSidebarMenu() {
     var current = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
     if (current !== "" && document.getElementById("sidebar")) {
@@ -222,7 +222,7 @@ if (document.getElementsByClassName("dd-menu")) {
     }
 }
 
-//Active Sidebar
+// Active Sidebar
 (function () {
     var current = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
     if (current === "") return;
@@ -234,22 +234,14 @@ if (document.getElementsByClassName("dd-menu")) {
     }
 })();
 
-//Tooltip
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl)
-});
-
-//Popovers
-var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-    return new bootstrap.Popover(popoverTriggerEl)
-})
-
-//Last Modified Date of current page (relative time format)
+// Last Modified Date of current page (relative time format)
 if (document.getElementById("relativetime")) {
     dayjs.extend(window.dayjs_plugin_relativeTime);
     const modId = document.getElementById('relativetime');
     let modAgo = dayjs(modId.getAttribute('data-authdate')).fromNow();
     document.getElementById("relativetime").innerHTML = modAgo;
 };
+
+// Initialize Bootstrap Tooltips
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl))
