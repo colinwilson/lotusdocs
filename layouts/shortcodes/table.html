@@ -1,4 +1,4 @@
-{{ $htmlTable := .Inner | markdownify }}
+{{ $htmlTable := .Inner | .Page.RenderString }}
 {{ $class := .Get 0 }}
 {{ $old := "<table>" }}
 {{ $new := printf "<table class=\"table %s\">" $class }}

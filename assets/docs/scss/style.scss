@@ -48,6 +48,7 @@ $code-block-padding-top: {{ if eq .Site.Params.docs.prism true -}}0{{ else }}1.2
 @import "custom/components/forms";
 @import "custom/components/table";
 @import "custom/components/tabs";
+@import "custom/components/tooltip";
 
 // Pages
 @import "custom/pages/features";
