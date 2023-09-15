@@ -1,4 +1,3 @@
-{{ $p :=.Page }}
 {{ $icon_array := dict
   "info" "info"
   "warning" "warning"
@@ -18,9 +17,9 @@
   {{- end -}}
   </div>
   {{ with .Get "text" }}
-  <div class="w-100">{{ . | $p.RenderString }}</div>
+  <div class="w-100">{{ . | $.Page.RenderString }}</div>
   {{ else }}
-  {{ with .Inner }}
+  {{ with .InnerDeindent }}
   <div class="w-100">
   {{ . }}
   </div>
