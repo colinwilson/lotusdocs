@@ -20,7 +20,7 @@
     --#{$prefix}tooltip-bg: var(--tooltip-bg);
     --#{$prefix}tooltip-opacity: 1.0;
     --#{$prefix}tooltip-font-size: 0.575rem;
-    --#{$prefix}tooltip-max-width: 250px;
+    --#{$prefix}tooltip-max-width: 300px;
 }
 
 .tooltip-inner {
@@ -32,8 +32,8 @@
 
     a {
         color: var(--tooltip-link-color);
-        font-size: 0.75rem;
-        line-height: 1.475;
+        font-size: 0.90rem;
+        line-height: 1.45;
         p {
             margin-bottom: 0.2rem;
             color: var(--text-muted);
