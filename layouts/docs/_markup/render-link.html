@@ -128,8 +128,8 @@ either of these shortcodes in conjunction with this render hook.
       {{- $tooltipDelay := dict "show" 550 "hide" 300 | jsonify | htmlEscape }}
       {{- $pathDesc := .Description }}
       {{- $pathTitle := .Title }}
-      {{- $pathSection := .CurrentSection.Title | upper }}
-      {{- $pathHTML := printf "<a href='%s'><p>%s</p><strong>%s</strong><br>%s</a>" $href $pathSection $pathTitle $pathDesc }}
+      {{- $pathParentSection := .Parent.Title | upper }}
+      {{- $pathHTML := printf "<a href='%s'><p>%s</p><strong>%s</strong><br>%s</a>" $href $pathParentSection $pathTitle $pathDesc }}
       {{- with $u.RawQuery }}
         {{- $href = printf "%s?%s" $href . }}
       {{- end }}
