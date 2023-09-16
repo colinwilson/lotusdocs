@@ -45,9 +45,7 @@
                                             <i class="material-icons title-icon me-2">{{- .Params.icon | default "article" }}</i>
                                             {{ end }}
                                             <h1 class="content-title mb-0">
-                                                <span class="title-text">
-                                                    {{ $currentPage.Title }}
-                                                </span>
+                                                {{ $currentPage.Title }}
                                                 {{ if .Draft }}
                                                     <span class="badge bg-default fs-6 mb-1 align-middle">DRAFT</span>
                                                 {{ end }}
