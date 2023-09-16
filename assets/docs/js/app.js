@@ -245,3 +245,10 @@ if (document.getElementById("relativetime")) {
 // Initialize Bootstrap Tooltips
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl))
+
+// Sanitize HTML function
+const sanitizeHTML = function (string) {
+	const temp = document.createElement('div');
+	temp.textContent = string;
+	return temp.innerHTML;
+};
