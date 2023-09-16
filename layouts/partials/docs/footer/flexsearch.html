@@ -156,7 +156,7 @@
     function show_results(){
         const maxResult = {{ .Site.Params.flexsearch.maxResult | default 5}};
         const minlength = {{ .Site.Params.flexsearch.minQueryChar | default 0}};
-        var searchQuery = this.value;
+        var searchQuery = sanitizeHTML(this.value);
         var results = index.search(searchQuery, {limit: maxResult, enrich: true});
 
         // flatten results since index.search() returns results for each indexed field
