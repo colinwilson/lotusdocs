@@ -18,54 +18,10 @@
     --prism-code-scrollbar-thumb-color: var(--gray-600);
 }
 
-// Fit codeblock container to contents
-// .prism-codeblock {
-//     width: fit-content;
-//     max-width: 100%;
-// }
-
-code {
-    color: var(--text-default);
-}
-
  code[class*="language-"],
  pre[class*="language-"] {
      color: #f5fbff !important;
      background: var(--prism-code-bg) !important;
-     border: none !important;
-     font-family: $font-family-monospace;
-     font-size: 0.8rem;
-     text-align: left;
-     white-space: pre;
-     word-spacing: normal;
-     word-break: normal;
-     word-wrap: normal;
-     line-height: 1.5;
-
-     -moz-tab-size: 4;
-     -o-tab-size: 4;
-     tab-size: 4;
-
-     -webkit-hyphens: none;
-     -moz-hyphens: none;
-     -ms-hyphens: none;
-     hyphens: none;
-
-     -webkit-font-smoothing: antialiased;
-     -moz-osx-font-smoothing: grayscale;
-     text-rendering: optimizeLegibility;
-
-     scrollbar-width: thin;
-     scrollbar-color: var(--prism-code-scrollbar-thumb-color) var(--prism-code-bg);
-
-     &::-webkit-scrollbar {
-         height: 5px;
-         background: var(--prism-code-bg);
-     }
-
-     &::-webkit-scrollbar-thumb {
-         background: var(--prism-code-scrollbar-thumb-color);
-     }
  }
 
 /* Code blocks */

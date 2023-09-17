@@ -56,11 +56,11 @@ $code-block-padding-top: {{ if eq .Site.Params.docs.prism true -}}0{{ else }}1.2
 
 // Plugins
 
-// Prism
+// Prism / Chroma
 {{- if eq .Site.Params.docs.prism true }}
 @import {{ printf "'%s%s'" "custom/plugins/prism/themes/" (.Site.Params.docs.prismTheme | default "lotusdocs") }}; // current prism theme
 @import "custom/plugins/prism/prism";
-{{- else -}}
+{{- else }}
 @import "custom/plugins/chroma/default";
 {{- end -}}
 
