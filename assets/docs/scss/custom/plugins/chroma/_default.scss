@@ -1,0 +1,11 @@
+/* Chroma CSS */
+
+.docs-content .main-content code {
+    color: var(--text-default);
+}
+
+.docs-content .main-content pre {
+    code {
+        color: #f5fbff;
+    }
+}

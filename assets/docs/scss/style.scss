@@ -57,7 +57,12 @@ $code-block-padding-top: {{ if eq .Site.Params.docs.prism true -}}0{{ else }}1.2
 // Plugins
 
 // Prism
-{{ if eq .Site.Params.docs.prism true -}}@import "custom/plugins/prism/prism";{{ end }}
+{{- if eq .Site.Params.docs.prism true }}
+@import {{ printf "'%s%s'" "custom/plugins/prism/themes/" (.Site.Params.docs.prismTheme | default "lotusdocs") }}; // current prism theme
+@import "custom/plugins/prism/prism";
+{{- else -}}
+@import "custom/plugins/chroma/default";
+{{- end -}}
 
 // FlexSearch
 {{ if or (not (isset .Site.Params.flexsearch "enabled")) (eq .Site.Params.flexsearch.enabled true) -}}@import "custom/plugins/flexsearch/flexsearch";{{ end }}
