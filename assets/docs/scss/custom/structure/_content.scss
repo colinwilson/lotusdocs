@@ -231,7 +231,7 @@ i {
 
 .docs-content .main-content pre {
     margin: 0;
-    background-color: var(--code-block-bg) !important;
+    // background-color: var(--code-block-bg) !important;
     border-radius: 4px;
     padding: $code-block-padding-top;
 
@@ -239,7 +239,7 @@ i {
         // color: #f5fbff;
         font-size: 0.8rem;
         display: block;
-        background: var(--code-block-bg);
+        // background: var(--code-block-bg);
         border: none;
         overflow-x: auto;
         line-height: 1.5;
