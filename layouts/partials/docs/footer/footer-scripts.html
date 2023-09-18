@@ -29,7 +29,10 @@
 
 {{ if eq .Site.Params.docs.prism true -}}
     {{ $prism := resources.Get (printf "/%s/%s" ($.Scratch.Get "pathName") "js/prism.js") }}
-    {{ $prism := $prism | js.Build -}}
+    {{- $opts := dict
+        "params" (dict "langPath" (urls.JoinPath .Site.BaseURL "docs/js/components/"))
+    -}}
+    {{ $prism := $prism | js.Build $opts -}}
     {{ $slice = $slice | append $prism -}}
 {{ end -}}
 
