@@ -41,9 +41,9 @@ Check out the demo site [https://lotusdocs.dev/docs/](https://lotusdocs.dev/docs
 
 ### Requirements
 
-- Hugo **Extended** (minimum version: 0.100.0)
+- Hugo **Extended** (minimum version: 0.117.0)
 - git
-- Go (minimum version v1.19)
+- Go (minimum version v1.20)
 
 ### Initialize your site as a Hugo Module
 
