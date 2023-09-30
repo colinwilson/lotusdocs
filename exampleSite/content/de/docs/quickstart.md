@@ -1,15 +1,15 @@
-+++
-weight = 100
-date = "2023-05-03T22:37:22+01:00"
-draft = false
-author = "Colin Wilson"
-title = "Schnellstart"
-icon = "rocket_launch"
-toc = true
-description = "Ein QuickStart -Leitfaden zum Erstellen neuer Inhalte in Lotus -Dokumenten"
-publishdate = "2023-05-03T22:37:22+01:00"
-tags = ["Beginners"]
-+++
+---
+weight: 100
+date: "2023-05-03T22:37:22+01:00"
+draft: false
+author: "Colin Wilson"
+title: "Schnellstart"
+icon: "rocket_launch"
+toc: true
+description: "Ein QuickStart -Leitfaden zum Erstellen neuer Inhalte in Lotus -Dokumenten"
+publishdate: "2023-05-03T22:37:22+01:00"
+tags: ["Beginners"]
+---
 
 ## Neue Inhalte erstellen
 
