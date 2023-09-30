@@ -8,9 +8,10 @@
 
     {{ $title := $.LinkTitle }}
     {{ $sizeTitle := 80 }}
+    {{ $sizeDesc := 50 }}
 
-    {{ if gt (len $title) 20 }}
-    {{ $sizeTitle = 70 }}
+    {{ if gt (len $title) 23 }}
+        {{ $sizeTitle = 60 }}
     {{ end }}
 
     {{ $textTitle := $title }}
@@ -32,7 +33,11 @@
     {{ end }}
 
     {{ if gt ($title | strings.RuneCount) 23 }}
-    {{ $descPadding = 100 }}
+    {{ $descPadding = -30 }}
+        {{ if gt ($title | strings.RuneCount) 40 }}
+            {{ $descPadding = 40 }}
+        {{ end }}
+        {{ $sizeDesc = 45 }}
     {{ end }}
 
     {{ $description := $.Description }}
@@ -40,7 +45,7 @@
         {{ $textDesc := $description }}
         {{ $textDescOptions := dict
             "color" "#8e8e8e"
-            "size" 50
+            "size" $sizeDesc
             "lineSpacing" 10
             "x" 65 "y" (add 290 $descPadding)
             "font" $font
