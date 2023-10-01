@@ -10,7 +10,7 @@
     {{ end -}}
 
     {{ if .Page.Store.Get "hasMermaid" }}
-    {{ $mermaid := resources.Get (printf "%s/%s" ($.Scratch.Get "pathName") "js/mermaid.min.js") }}
+    {{ $mermaid := resources.Get (printf "%s/%s" ($.Scratch.Get "pathName") "js/mermaid.js") }}
     {{ if hugo.IsProduction }}
         {{ $mermaid = $mermaid | minify | fingerprint "sha384" }}
     {{ end }}
