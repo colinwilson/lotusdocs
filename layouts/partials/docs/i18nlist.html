@@ -4,15 +4,9 @@
 
 <!-- List available translations (excluding current page)-->
 {{ range .Translations }}
-<!-- Create 'available translations' slice -->
-{{ $translations = $translations | append .Lang }}
-    <div class="d-flex col-md-4 col-6 py-1 justify-content-center">
-        <a class="btn btn-link-modal" role="button" rel="alternate" href="{{ .RelPermalink }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">
-            <span>
-                {{ .Language.LanguageName }}
-            </span>
-        </a>
-    </div>
+    <!-- Create 'available translations' slice -->
+    {{ $translations = $translations | append .Lang }}
+    <li><a class="dropdown-item" href="{{ .RelPermalink }}" role="button" rel="alternate" hreflang="{{ .Lang }}" lang="{{ .Lang }}">{{ .Language.LanguageName }}</a></li>
 {{ end }}
 
 <!-- List of configured languages without a translation for the current page (link to doc root) -->
@@ -21,13 +15,7 @@
         <!-- If .Lang is in the 'available translations' slice, ignore it -->
         {{ if in $translations .Lang }}
         {{ else }}
-            <div class="d-flex col-md-4 col-6 py-1 justify-content-center">
-                <a class="btn btn-link-modal" role="button" rel="alternate" href="{{ .Lang | relURL }}/{{ $docspath }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">
-                    <span>
-                        {{ .LanguageName }}
-                    </span>
-                </a>
-            </div>
+            <li><a class="dropdown-item" href="{{ .Lang | relURL }}/{{ $docspath }}" role="button" rel="alternate" hreflang="{{ .Lang }}" lang="{{ .Lang }}">{{ .LanguageName }}</a></li>
         {{ end }}
     {{ end }}
 {{ end }}

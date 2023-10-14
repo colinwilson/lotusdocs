@@ -39,10 +39,10 @@ $code-block-padding-top: {{ if eq .Site.Params.docs.prism true -}}0{{ else }}1.2
 
 // Components
 @import "custom/components/buttons";
-@import "custom/components/modal";
 @import "custom/components/breadcrumb";
 @import "custom/components/badge";
 @import "custom/components/backgrounds";
+@import "custom/components/dropdown";
 @import "custom/components/alerts";
 @import "custom/components/card";
 @import "custom/components/forms";

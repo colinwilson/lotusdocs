@@ -73,9 +73,14 @@
             </button>
             {{ end -}}
             {{ if .Site.IsMultiLingual }}
-                <button type="button" class="ps-2 btn btn-link btn-default" data-bs-toggle="modal" data-bs-target="#lang-selector-popup">
-                    {{ site.Language.Lang | upper }}
-                </button>
+                <div class="dropdown">
+                    <button class="btn btn-link btn-default dropdown-toggle ps-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ site.Language.Lang | upper }}
+                    </button>
+                    <ul class="dropdown-menu text-end">
+                        {{ partial (printf "%s/%s" ($.Scratch.Get "pathName") "i18nlist") . }}
+                    </ul>
+                </div>
             {{ end }}
         </div>
     </div>
