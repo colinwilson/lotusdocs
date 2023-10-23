@@ -1,3 +1,9 @@
+[enable_light_mode]
+    other = "Enable light mode"
+
+[enable_dark_mode]
+    other = "Enable dark mode"
+
 [lang_select_title]
     other = "Select your language"
 
