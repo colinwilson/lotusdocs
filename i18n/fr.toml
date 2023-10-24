@@ -30,3 +30,9 @@
 
 [feedback_submit]
     other = "Envoyer"
+
+[enable_light_mode]
+    other = "Activer le mode lumière"
+
+[enable_dark_mode]
+    other = "Activer le mode sombre"

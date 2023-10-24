@@ -30,3 +30,9 @@
 
 [feedback_submit]
     other = "Submit"
+
+[enable_light_mode]
+    other = "Enable light mode"
+
+[enable_dark_mode]
+    other = "Enable dark mode"
