@@ -30,3 +30,9 @@
 
 [feedback_submit]
     other = "Submeter"
+
+[enable_light_mode]
+    other = "Ativar o modo de luz"
+
+[enable_dark_mode]
+    other = "Ativar o modo escuro"
