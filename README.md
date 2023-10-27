@@ -94,6 +94,8 @@ Edit the `hugo.toml` config file:
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
+contentDir = "content"
+enableEmoji = true
 
 [module]
     # uncomment line below for temporary local development of module
@@ -105,6 +107,17 @@ title = 'My New Hugo Site'
     [[module.imports]]
         path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
         disable = false
+
+[markup]
+    [markup.tableOfContents]
+      endLevel = 3
+      startLevel = 1
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true # https://jdhao.github.io/2019/12/29/hugo_html_not_shown/
+  [markup.goldmark.parser]
+    [markup.goldmark.parser.attribute]
+      block = true
 ```
 
 ### Install Locally
