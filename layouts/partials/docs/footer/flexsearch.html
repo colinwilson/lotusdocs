@@ -121,7 +121,7 @@
 
     {{ $list := slice }}
     {{- if and (isset .Site.Params.flexsearch "searchsectionsindex") (not (eq (len .Site.Params.flexsearch.searchSectionsIndex) 0)) }}
-        {{- if eq .Site.Params.docs.searchSectionsIndex "ALL" }}
+        {{- if eq .Site.Params.flexsearch.searchSectionsIndex "ALL" }}
             {{- $list = .Site.Pages }}
         {{- else }}
             {{- $list = (where .Site.Pages "Type" "in" .Site.Params.flexsearch.searchSectionsIndex) }}
