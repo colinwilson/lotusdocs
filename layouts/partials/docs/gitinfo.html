@@ -18,7 +18,7 @@
 {{ $repoURL = delimit $repoURL "/" }}
 {{ $editPageURL := replaceRE "(https?://)|(/)+" "$1$2" $repoURL }}
 
-<div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 {{ if and .Site.Params.docs.lastMod .Site.Params.docs.editPage -}}pt-3{{ else }}visually-hidden{{ end }}">
+<div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 {{ if or .Site.Params.docs.lastMod .Site.Params.docs.editPage -}}pt-3{{ else }}visually-hidden{{ end }}">
     {{ if .Site.Params.docs.editPage | default false -}}
     <div id="edit-this-page" class="mt-1">
         <a href="{{ $editPageURL }}" alt="{{ .Title }}" rel="noopener noreferrer" target="_blank">
