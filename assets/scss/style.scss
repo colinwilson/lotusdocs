@@ -46,6 +46,6 @@ $font-family-monospace:  {{ .Site.Params.mono_font | default "SFMono-Regular, Me
 @import "custom/pages/features";
 @import "custom/pages/helper";
 @import "custom/pages/hero";
-{{ if .Site.Data.landing.image_compare.enable }}@import "custom/pages/image-compare-viewer";{{ end }}
+{{ if ($.Scratch.Get "image_compare_enabled") }}@import "custom/pages/image-compare-viewer";{{ end }}
 
 // @import "custom/pages/simplebar";

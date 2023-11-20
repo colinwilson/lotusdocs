@@ -3,19 +3,22 @@
     {{ $map := newScratch }}
 
     {{ range $key, $value := $landingData }}
-        {{ $template := (index $key) }}
+        {{ $sectionTitle := (index $key) }}
         {{ $weight := string ($value.weight) }}
-        {{ with $weight }}
-            {{ $map.SetInMap "wgtTpl" $weight $template }}
-        {{ else }}
-            {{ $map.SetInMap "wgtTpl" (index $key) $template }}
+        {{ $template := string (replaceRE `( |-{1,})` "_" $value.template) }}
+        {{ with and $template $weight }}
+            {{ $map.SetInMap "wgtTpl" $sectionTitle (dict
+            "weight" $weight
+            "template" $template
+            "sectionTitle" $sectionTitle
+            )}}
         {{ end }}
     {{ end }}
 
-    {{ $indexContext := newScratch }}
-    {{ $indexContext.Set "indexContext" . }}
-    {{ range sort ($map.Get "wgtTpl") }}
-        {{ $path := printf "landing/%s.html" . }}
-        {{ partialCached $path ($indexContext.Get "indexContext") }}
+    {{ range sort ($map.Get "wgtTpl") ".weight" }}
+        {{ $.Scratch.Set "sectionTitle" .sectionTitle }}
+        {{ $path := printf "landing/%s.html" .template }}
+        {{ partial $path $.Page }}
     {{ end }}
+    {{/* printf "%s" (sort ($map.Get "wgtTpl") ".weight" ) */}}
 {{ end }}

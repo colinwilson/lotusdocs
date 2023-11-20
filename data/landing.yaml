@@ -4,6 +4,7 @@
 hero:
   enable: true
   weight: 10
+  template: hero
 
   backgroundImage:
     path: "images/templates/hero"
@@ -11,11 +12,11 @@ hero:
       desktop: "gradient-desktop.webp"
       mobile: "gradient-mobile.webp"
 
-  # badge:
-  #   text: v0.0.2
-  #   color: primary # primary, secondary, success, danger, warning, info, light, dark
-  #   pill: false # boolean
-  #   soft: true # boolean
+  badge:
+    text: v0.1.0
+    color: primary # primary, secondary, success, danger, warning, info, light, dark
+    pill: false # boolean
+    soft: true # boolean
 
   # titleLogo:
   #   path: "images/logos"
@@ -44,10 +45,11 @@ hero:
 
   info: "**Open Source** MIT Licensed."
 
-# Features Grid
-features:
+# Feature Grid
+featureGrid:
   enable: true
   weight: 20
+  template: feature grid
 
   title: Why choose Lotus Docs?
   subtitle: Lotus Docs is a highly configurable Hugo documentation theme. Yet, with the default configuration you can deploy and publish your documentation site in a matter of minutes. Check out some core features below.
@@ -79,7 +81,7 @@ features:
 
     - title: Search by DocSearch
       icon: search
-      description: Search your docs with DocSearch. A powerful, efficient and accessible search solution built on Algolia Crawler & Autocomplete. TBC.
+      description: Search your docs with DocSearch. A powerful, efficient and accessible search solution built on Algolia Crawler & Autocomplete.
 
     - title: Multilingual Support
       icon: translate
@@ -90,9 +92,10 @@ features:
       description: Built on Bootstrap 5, Lotus Docs allows for a familiar, flexible, and intuitive developer experience. Easily customise your site via SCSS variables and files.
 
 # Image compare
-image_compare:
+imageCompare:
   enable: true
   weight: 30
+  template: image compare
 
   title: Customise The Lotus Docs Appearance
   subtitle: Much of Lotus Docs' appearance can be customised. Dark mode is optional (enabled by default) and you can choose a Google font that suites you via the config parameters.
