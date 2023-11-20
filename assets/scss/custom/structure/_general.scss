@@ -5,6 +5,11 @@ body {
     color: $body-color;
     background-color: $body-bg;
 }
+@media (max-width: 1199px) {
+    html {
+        scroll-padding-top: 80px;
+    }
+}
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: $font-family-base;
     line-height: 1.4;
