@@ -9,7 +9,7 @@ homepage = "https://github.com/colinwilson/lotusdocs"
 demosite = "https://lotusdocs.dev/docs/"
 tags = ["documentation", "responsive", "bootstrap", "minimal", "secure", "search", "customizable", "modern","dark", "dark mode", "landing page"]
 features = ["security aware", "fast by default", "seo-ready","custom shortcodes", "prismjs syntax highlighting", "deploy to vercel", "flexsearch static search", "docsearch", "landing page layouts", "dark mode"]
-min_version = "0.100.0"
+min_version = "0.120.0"
 
 [author]
   name = "Colin Wilson"
