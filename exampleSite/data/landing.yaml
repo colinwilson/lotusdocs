@@ -4,6 +4,7 @@
 hero:
   enable: true
   weight: 10
+  template: hero
 
   backgroundImage:
     path: "images/templates/hero"
@@ -11,11 +12,11 @@ hero:
       desktop: "gradient-desktop.webp"
       mobile: "gradient-mobile.webp"
 
-  # badge:
-  #   text: v0.0.2
-  #   color: primary # primary, secondary, success, danger, warning, info, light, dark
-  #   pill: false # boolean
-  #   soft: true # boolean
+  badge:
+    text: v0.1.0
+    color: primary # primary, secondary, success, danger, warning, info, light, dark
+    pill: false # boolean
+    soft: true # boolean
 
   # titleLogo:
   #   path: "images/logos"
@@ -36,7 +37,7 @@ hero:
   ctaButton:
     icon: rocket_launch
     btnText: "Get Started"
-    url: "/docs/quickstart/"
+    url: "/docs/quickstart/#create-a-new-lotus-docs-site"
   cta2Button:
     icon: construction
     btnText: "In Development"
@@ -44,10 +45,11 @@ hero:
 
   info: "**Open Source** MIT Licensed."
 
-# Features Grid
-features:
+# Feature Grid
+featureGrid:
   enable: true
   weight: 20
+  template: feature grid
 
   title: Why choose Lotus Docs?
   subtitle: Lotus Docs is a highly configurable Hugo documentation theme. Yet, with the default configuration you can deploy and publish your documentation site in a matter of minutes. Check out some core features below.
@@ -56,43 +58,102 @@ features:
     - title: Fast
       icon: speed
       description: 4 x 100's score on Google Lighthouse by default. Lotus Docs removes unused CSS, prefetches asset links, and lazy loads content images.
+      ctaLink:
+        text: learn more
+        url: /docs/
 
     - title: SEO Friendly
       icon: trending_up
       description: Data is automatically structured to be SEO friendly. Includes Meta tags, Opengraph, and Twitter cards. Choose the settings that best suit you.
+      ctaLink:
+        text: learn more
+        url: /docs/
 
     - title: Secure by default
       icon: lock
       description: Lotus Docs' default configuration scores A+ on Mozilla Observatory. You can update the default Security Headers to suit your requirements.
+      ctaLink:
+        text: learn more
+        url: /docs/
 
     - title: Optional Features
       icon: settings
       description: Many Lotus Docs features are configurable via optional parameters. Require DocSearch for your site? Then enable it via a single setting.
+      ctaLink:
+        text: learn more
+        url: /docs/
 
     - title: Deploy to Vercel
       icon: change_history
       description: Deploy to Vercel in seconds. Vercel Functions, Vercel Redirects/Rewrites, and Vercel Headers are all configurable for an enriched experience.
+      ctaLink:
+        text: learn more
+        url: /docs/
 
     - title: Dark Mode
       icon: dark_mode
-      description: "Prefer not to be blasted by the sun while reading? Switch to a low-light UI with the click of a button. Modify colour variables to match your branding."
+      description: Prefer not to be blasted by the sun while reading? Switch to a low-light UI with the click of a button. Modify colour variables to match your branding.
+      ctaLink:
+        text: learn more
+        url: /docs/
 
     - title: Search by DocSearch
       icon: search
-      description: Search your docs with DocSearch. A powerful, efficient and accessible search solution built on Algolia Crawler & Autocomplete.
+      description: Search your docs with DocSearch. A powerful, efficient and accessible search solution built on Algolia Crawler & Autocomplete. TBC.
+      ctaLink:
+        text: learn more
+        url: /docs/
 
     - title: Multilingual Support
       icon: translate
       description: Lotus Docs supports Hugo's Multilingual Mode. Create documentation in multiple languages side by side with i18n support.
+      ctaLink:
+        text: learn more
+        url: /docs/
 
     - title: Bootstrap v5
       icon: palette
       description: Built on Bootstrap 5, Lotus Docs allows for a familiar, flexible, and intuitive developer experience. Easily customise your site via SCSS variables and files.
+      ctaLink:
+        text: learn more
+        url: /docs/
+
+imageText:
+  enable: true
+  weight: 25
+  template: image text
+
+  title: Built with performance and accessability in mind. Top scores on Google's Lighthouse
+  subtitle: A default Lotus Docs deployment is capable of achieving 4 x 100 scores on Google's Lighthouse performance analysis tool.
+
+  list:
+    - text: Blazing fast page loads
+      icon: speed
+
+    - text: Sensible default SEO friendly settings
+      icon: area_chart
+
+    - text: Designed to be accessible
+      icon: accessibility
+
+  image:
+    path: "images/templates/single"
+    filename: "google_lighthouse_circle_v1.0.svg"
+    alt: "Google LightHouse 100% Illustration" # Optional but recommended
+
+  imgOrder:
+    desktop: 2
+    mobile: 1
+
+  ctaButton:
+    text: Learn more
+    url: "/docs/"
 
 # Image compare
-image_compare:
+imageCompare:
   enable: true
   weight: 30
+  template: image compare
 
   title: Customise The Lotus Docs Appearance
   subtitle: Much of Lotus Docs' appearance can be customised. Dark mode is optional (enabled by default) and you can choose a Google font that suites you via the config parameters.

@@ -1,7 +1,7 @@
 <!-- sidebar-wrapper -->
 <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-brand">
-        <a href='{{ relLangURL "" }}' aria-label="HomePage" alt="HomePage">
+        <a href='{{ with .Site.Params.docs.logoLinkURL }}{{ . }}{{ else }}{{ relLangURL "" }}{{ end }}' aria-label="HomePage" alt="HomePage">
             {{ with resources.Get "images/logos/logo.svg" }}
                 {{ .Content | safeHTML }}
             {{ end }}

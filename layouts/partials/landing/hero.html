@@ -1,6 +1,8 @@
-{{ if .Site.Data.landing.hero.enable }}
+{{ $sectionTitle := .Scratch.Get "sectionTitle" }}
+{{ with (index .Site.Data.landing $sectionTitle) }}
+{{ if eq .enable true }}
 <!-- Hero Start -->
-{{ with .Site.Data.landing.hero.backgroundImage }}
+{{ with .backgroundImage }}
     {{ $path := .path | default "images" }}
     {{ $filename := .filename }}
     {{ $pathDesktop := printf "%s/%s" $path $filename.desktop }}
@@ -22,17 +24,17 @@
             }
         </style>
 {{ end }}
-<section class="d-table w-100 overflow-hidden hero">
+<section id="{{ $sectionTitle }}" class="d-table w-100 overflow-hidden hero">
     <div class="container">
         <div class="row mt-5 align-items-center">
 
             <div class="col-lg-6 col-md-6">
                 <div class="title-heading">
-                    {{ if .Site.Data.landing.hero.badge }}
-                    <span class="badge {{ if eq .Site.Data.landing.hero.badge.pill true }}rounded-pill{{ end }} bg-{{ if eq .Site.Data.landing.hero.badge.soft true }}soft-{{ end }}{{ .Site.Data.landing.hero.badge.color }} mb-1">{{ .Site.Data.landing.hero.badge.text }}</span>
+                    {{ with .badge }}
+                    <span class="badge {{ if eq .pill true }}rounded-pill{{ end }} bg-{{ if eq .soft true }}soft-{{ else }}hard-{{ end }}{{ .color }} mb-1">{{ .text }}</span>
                     {{ end }}
                     <h4 class="heading mt-0 mb-3">
-                        {{ with .Site.Data.landing.hero.titleLogo }}
+                        {{ with .titleLogo }}
                             {{ $path := .path | default "images" }}
                             {{ $filename := .filename }}
                             {{ $height := .height | default "70px" }}
@@ -52,41 +54,43 @@
                                 </span>
                             {{ end }}
                         {{ end }}
-                        {{ .Site.Data.landing.hero.title }}
+                        {{ with .title }}{{ . }}{{ end }}
                     </h4>
-                    <p class="para-desc text-muted mb-0">{{ .Site.Data.landing.hero.subtitle | markdownify }}</p>
+                    {{ with .subtitle }}
+                    <p class="para-desc text-muted mb-0">{{ . | markdownify }}</p>
+                    {{ end }}
 
                     <div class="mt-3">
-                        {{ if .Site.Data.landing.hero.ctaButton }}
+                        {{ with .ctaButton }}
                             <a href="{{ relLangURL .Site.Data.landing.hero.ctaButton.url }}" class="btn btn-lg btn-primary me-2 mt-2">
-                                {{ if .Site.Data.landing.hero.ctaButton.icon }}
-                                    <span class="material-icons align-middle">{{ .Site.Data.landing.hero.ctaButton.icon }}</span>
+                                {{ with .icon }}
+                                    <span class="material-icons align-middle">{{ . }}</span>
                                 {{ end }}
-                                {{ if .Site.Data.landing.hero.ctaButton.btnText }}
-                                    {{ .Site.Data.landing.hero.ctaButton.btnText }}
+                                {{ with .btnText }}
+                                    {{ . }}
                                 {{ end }}
                             </a>
                         {{ end }}
-                        {{ if .Site.Data.landing.hero.cta2Button }}
-                        <a href="{{ relLangURL .Site.Data.landing.hero.cta2Button.url }}" class="btn btn-lg btn-outline-primary mt-2">
-                            {{ if .Site.Data.landing.hero.cta2Button.icon }}
-                                    <span class="material-icons align-middle">{{ .Site.Data.landing.hero.cta2Button.icon }}</span>
-                                {{ end }}
-                            {{ if .Site.Data.landing.hero.cta2Button.btnText }}
-                                {{ .Site.Data.landing.hero.cta2Button.btnText }}
+                        {{ with .cta2Button }}
+                        <a href="{{ relLangURL .url }}" class="btn btn-lg btn-outline-primary mt-2">
+                            {{ with .icon }}
+                                <span class="material-icons align-middle">{{ . }}</span>
+                            {{ end }}
+                            {{ with .btnText }}
+                                {{ . }}
                             {{ end }}
                         </a>
                         {{ end }}
                     </div>
 
-                    {{ if .Site.Data.landing.hero.info }}
-                    <p class="text-muted mb-0 mt-3">{{ .Site.Data.landing.hero.info | markdownify }}</p>
+                    {{ with .info }}
+                    <p class="text-muted mb-0 mt-3">{{ . | markdownify }}</p>
                     {{ end }}
                 </div>
             </div>
 
             <div class="col-lg-6 col-md-6 mt-4 pt-4 mt-sm-0 pt-sm-0">
-                {{ with .Site.Data.landing.hero.image }}
+                {{ with .image }}
                     {{ $path := .path | default "images" }}
                     {{ $filename := .filename }}
                     {{ $alt := .alt | default "hero image" }}
@@ -115,4 +119,5 @@
     </div> <!--end container-->
 </section><!--end section-->
 <!-- Hero End -->
+{{ end }}
 {{ end }}

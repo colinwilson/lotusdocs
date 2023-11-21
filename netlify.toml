@@ -7,4 +7,4 @@ command = "cd exampleSite && hugo --gc --minify --themesDir ../.. -b ${DEPLOY_PR
 ignore = "false"
 
 [build.environment]
-HUGO_VERSION = "0.118.2"
+HUGO_VERSION = "0.120.4"

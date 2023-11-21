@@ -37,7 +37,7 @@
     {{ end }}
         <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end -}} defer></script>
     <!-- Image Compare Viewer -->
-    {{ if .Site.Data.landing.image_compare.enable }}
+    {{ if ($.Scratch.Get "image_compare_enabled") }}
         {{ $imagecompare := resources.Get "js/image-compare-viewer.min.js" }}
         {{- if not .Site.IsServer }}
             {{- $js := (slice $imagecompare) | resources.Concat "/js/image-compare.js" | minify | fingerprint "sha384" }}
