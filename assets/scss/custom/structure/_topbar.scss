@@ -27,6 +27,25 @@
         &:focus {
             outline: none;
         }
+        
+        .small {
+            height: 31px;
+            display: none;
+            @media (max-width: 460px) {
+                display: inline-block;
+            }
+        }
+        .big {
+            height: 31px;
+            display: none;
+        
+            @media (min-width: 461px) {
+                display: inline-block;
+            }
+        }
+
+
+
     }
     #navigation {
         &.toggle-menu {

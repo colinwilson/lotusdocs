@@ -3,9 +3,16 @@
     <div class="container d-flex justify-content-between align-items-center">
         <!-- Logo container-->
         <a class="logo" aria-label="Home" href='{{ relLangURL "" }}'>
-            {{ with resources.Get "images/logos/mark.svg" }}
-                {{ .Content | safeHTML }}
-            {{ end }}
+            <div class="small">
+                {{ with resources.Get "images/logos/mark.svg" }}
+                        {{ .Content | safeHTML }}
+                {{ end }}
+            </div>
+            <div class="big">
+                {{ with resources.Get "images/logos/logo.svg" }}
+                        {{ .Content | safeHTML }}
+                {{ end }}
+            </div>
         </a>
         <!-- End Logo container-->
 
