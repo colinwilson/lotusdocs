@@ -59,6 +59,9 @@ The Lotus Docs theme can be installed using one of the following methods:
 - As a Git submodule
 - Clone the theme files locally
 
+Prerequisites:
+- `contentDir` present in project folder
+
 ### Install as a Hugo Module (recommended)
 
 Edit the `hugo.toml` configuration file to include the [Lotus Docs theme](https://github.com/colinwilson/lotusdocs) and the [Hugo Bootstrap module](https://github.com/gohugoio/hugo-mod-bootstrap-scss) as modules:
@@ -67,6 +70,8 @@ Edit the `hugo.toml` configuration file to include the [Lotus Docs theme](https:
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
+contentDir = 'content'
+enableEmoji = true
 
 [module]
     [[module.imports]]
@@ -75,6 +80,17 @@ title = 'My New Hugo Site'
     [[module.imports]]
         path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
         disable = false
+
+[markup]
+    [markup.tableOfContents]
+      endLevel = 3
+      startLevel = 1
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true # https://jdhao.github.io/2019/12/29/hugo_html_not_shown/
+  [markup.goldmark.parser]
+    [markup.goldmark.parser.attribute]
+      block = true
 ```
 
 ### Install as a Git Submodule
@@ -92,6 +108,8 @@ Edit the `hugo.toml` config file:
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
+contentDir = 'content'
+enableEmoji = true
 
 [module]
     # uncomment line below for temporary local development of module
@@ -103,6 +121,17 @@ title = 'My New Hugo Site'
     [[module.imports]]
         path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
         disable = false
+
+[markup]
+    [markup.tableOfContents]
+      endLevel = 3
+      startLevel = 1
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true # https://jdhao.github.io/2019/12/29/hugo_html_not_shown/
+  [markup.goldmark.parser]
+    [markup.goldmark.parser.attribute]
+      block = true
 ```
 
 ### Install Locally
