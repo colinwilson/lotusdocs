@@ -1,5 +1,5 @@
-{{ $sectionTitle := .Scratch.Get "sectionTitle" }}
-{{ with (index .Site.Data.landing $sectionTitle) }}
+{{ $sectionTitle := .sectionTitle }}
+{{with .data}}
 {{ if eq .enable true }}
 <!-- Single-Right Start -->
 <section id="{{ $sectionTitle }}">

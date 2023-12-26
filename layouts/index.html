@@ -1,5 +1,8 @@
 {{ define "main" }}
-    {{ $landingData := .Site.Data.landing }}
+
+    {{ $landingData := (default .Site.Data.landing_default .Site.Data.landing) }}
+    
+
     {{ $map := newScratch }}
 
     {{ range $key, $value := $landingData }}
@@ -11,14 +14,16 @@
             "weight" $weight
             "template" $template
             "sectionTitle" $sectionTitle
+            "data" $value
             )}}
         {{ end }}
     {{ end }}
 
     {{ range sort ($map.Get "wgtTpl") ".weight" }}
+
         {{ $.Scratch.Set "sectionTitle" .sectionTitle }}
         {{ $path := printf "landing/%s.html" .template }}
-        {{ partial $path $.Page }}
+        {{ partial $path . }}
     {{ end }}
     {{/* printf "%s" (sort ($map.Get "wgtTpl") ".weight" ) */}}
 {{ end }}

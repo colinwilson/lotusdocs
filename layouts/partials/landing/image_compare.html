@@ -1,6 +1,5 @@
-{{ $sectionTitle := .Scratch.Get "sectionTitle" }}
-{{ with (index .Site.Data.landing $sectionTitle) }}
-{{ if eq .enable true }}
+{{- $sectionTitle := .sectionTitle }}{{ with .data  }}{{ if eq .enable true }}
+{{- page.Scratch.Set "image_compare_used" true -}} {{- page.Scratch.Add "imageCompareConfig" (slice (.config | jsonify | safeJS)) -}}
 <section id="{{ $sectionTitle }}">
     <div class="container mt-100 mt-60">
         <div class="row justify-content-center">
@@ -39,6 +38,7 @@
                     <div class="tab-pane fade show{{ if (eq $index 0) }} active{{ end }}" id="pills-{{ $sectionTitle }}-{{ anchorize .title }}" role="tabpanel" aria-labelledby="{{ anchorize .title }}-tab">
                         <div class="row align-items-center">
                             <div class="col-md-12">
+                                {{ $icc := (default nil .config ) }}
                                 {{ $title := .title }}
                                 {{ $path := .imagePath | default "images" }}
                                 {{ $imageBefore := .imageBefore }}
@@ -46,7 +46,7 @@
                                 {{ $pathBefore := printf "%s/%s" $path $imageBefore }}
                                 {{ $pathAfter := printf "%s/%s" $path $imageAfter }}
                                 {{ with and $imageBefore $imageAfter }}
-                                    <div id="{{ anchorize $title }}-compare" class="image-compare rounded-md border">
+                                    <div id="{{ anchorize $title }}-compare" class="image-compare rounded-md border" data-ic-config='{{($icc | jsonify | safeJS)}}'>
                                         {{ with $imageBefore := resources.Get $pathBefore }}
                                             <img src="{{ .RelPermalink }}" alt="{{ $imageBefore }}" />
                                         {{ end }}
@@ -64,5 +64,6 @@
         </div><!--end row-->
     </div><!--end container-->
 </section>
+
 {{ end }}
 {{ end }}
