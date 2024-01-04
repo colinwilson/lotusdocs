@@ -1,6 +1,4 @@
-{{ $sectionTitle := .Scratch.Get "sectionTitle" }}
-{{ with .data }}
-{{ if eq .enable true }}
+{{- $sectionTitle := .sectionTitle }}{{ with .data  }}{{ if eq .enable true }}
 <!-- Hero Start -->
 {{ with .backgroundImage }}
     {{ $path := .path | default "images" }}
