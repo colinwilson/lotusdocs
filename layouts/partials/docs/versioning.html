@@ -1,0 +1,12 @@
+{{ $pageLang := .Page.Lang }}
+{{ $docspath := $.Scratch.Get "pathName" }}
+{{ $path := .Page.RelPermalink -}}
+
+<!-- List available translations (excluding current page)-->
+{{ range .Site.Params.versions }}
+    {{ $url := $path -}}
+    {{ if ne .url "" -}}
+      {{ $url = (printf "%s/%s" (strings.TrimSuffix "/" .url) (strings.TrimPrefix "/" $path) ) -}}
+    {{ end -}}
+    <li><a class="dropdown-item" href="{{ $url }}">{{ .version }}</a></li>
+{{ end }}

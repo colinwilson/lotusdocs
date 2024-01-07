@@ -17,6 +17,11 @@
                     {{- range .Site.Menus.primary }}
                     <li><a href="{{ relLangURL .URL }}">{{ .Name }}</a></li>
                     {{ end }}
+
+                    {{ if .Site.Params.versions -}}
+                    <li>{{ partial "navbar-version-selector.html" . -}}</li>
+                    {{ end -}}
+
                 </ul><!--end navigation menu-->
             </div><!--end navigation-->
 

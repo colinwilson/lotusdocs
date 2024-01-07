@@ -1,0 +1,22 @@
+{{ $color := "danger" }}
+{{ $latest_version_url := .Site.BaseURL }}
+{{ $current_version := "" }}
+
+{{ range .Site.Params.versions }}
+    {{ if .current -}}
+      {{ $current_version = .version }}
+      {{ break }}
+    {{ end -}}
+{{ end }}
+
+<div class="alert alert-{{ $color }} d-flex" role="alert">
+  <div class="flex-shrink-1 alert-icon">
+
+  <span class="material-icons size-20 me-2">
+  warning
+  </span></div>
+
+  <div class="w-100">
+    <p>Version <strong>{{ $current_version | markdownify }}</strong> documentation is no longer actively maintained. The version you are currently viewing is an archived snapshot. For up-to-date information, see the <a href="{{ $latest_version_url | safeURL }}" target="_blank"><strong>latest version</strong></a>.</p>
+  </div>
+</div>

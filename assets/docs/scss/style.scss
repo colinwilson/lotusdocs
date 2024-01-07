@@ -72,3 +72,7 @@ $code-block-padding-top: {{ if eq .Site.Params.docs.prism true -}}0{{ else }}1.2
 
 // Mermaid
 @import "custom/plugins/mermaid/mermaid";
+
+.dropdown-item {
+   text-align: left !important;
+}

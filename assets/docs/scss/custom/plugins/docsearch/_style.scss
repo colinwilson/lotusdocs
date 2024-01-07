@@ -81,7 +81,8 @@
 
 .DocSearch-Button-Container {
     align-items: center;
-    display: flex
+    display: flex;
+    width: 20rem;
 }
 
 .DocSearch-Search-Icon {
@@ -98,8 +99,8 @@
 }
 
 .DocSearch-Button-Keys {
-    display: flex;
-    min-width: calc(40px + .8em)
+    display: none;
+    min-width: calc(40px + .8em);
 }
 
 .DocSearch-Command-Key {
@@ -142,6 +143,9 @@
     .DocSearch-Button-Keys,
     .DocSearch-Button-Placeholder {
         display: none
+    }
+    .DocSearch-Button-Container {
+        width: 100%;
     }
 }
 
@@ -192,6 +196,9 @@
 @media (max-width:1024px) {
     .DocSearch-Modal {
         margin: 65px calc(100vw - 640px) auto auto;
+    }
+    .DocSearch-Button-Container {
+        width: 100%;
     }
 }
 

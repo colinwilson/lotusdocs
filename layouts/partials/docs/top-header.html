@@ -46,6 +46,31 @@
         </div>
 
         <div class="d-flex align-items-center">
+            {{ if .Site.IsMultiLingual }}
+                <div class="dropdown">
+                    <button class="btn btn-link btn-default dropdown-toggle ps-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ site.Language.LanguageName }}
+                    </button>
+                    <ul class="dropdown-menu text-end">
+                        {{ partial (printf "%s/%s" ($.Scratch.Get "pathName") "i18nlist") . }}
+                    </ul>
+                </div>
+            {{ end }}
+            {{ if .Site.Params.versions }}
+                <div class="dropdown">
+                    <button class="btn btn-link btn-default dropdown-toggle ps-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ range .Site.Params.versions }}
+                            {{ if .current -}}
+                                {{ .version -}}
+                                {{ break }}
+                            {{ end -}}
+                        {{ end }}
+                    </button>
+                    <ul class="dropdown-menu text-end">
+                        {{ partial (printf "%s/%s" ($.Scratch.Get "pathName") "versioning") . }}
+                    </ul>
+                </div>
+            {{ end }}
             <ul class="list-unstyled mb-0">
                 {{ with $.Scratch.Get "social_list" }}
                 {{ range . }}
@@ -78,16 +103,6 @@
                 </span>
             </button>
             {{ end -}}
-            {{ if .Site.IsMultiLingual }}
-                <div class="dropdown">
-                    <button class="btn btn-link btn-default dropdown-toggle ps-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        {{ site.Language.Lang | upper }}
-                    </button>
-                    <ul class="dropdown-menu text-end">
-                        {{ partial (printf "%s/%s" ($.Scratch.Get "pathName") "i18nlist") . }}
-                    </ul>
-                </div>
-            {{ end }}
         </div>
     </div>
     <!-- FlexSearch Input Start -->
