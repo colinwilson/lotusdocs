@@ -1,0 +1,37 @@
+{{ $latestVersionUrl := urls.Parse $.Site.Params.Baseurl }}
+{{ $currentVersion := "" }}
+
+{{ range .Site.Params.versions }}
+    {{ if .current -}}
+      {{ $currentVersion = .version }}
+      {{ break }}
+    {{ end -}}
+{{ end }}
+
+{{ if .Site.Params.versionInfo.archived }}
+  <br/>
+  <div class="alert alert-danger d-flex" role="alert">
+    <div class="flex-shrink-1 alert-icon">
+
+    <span class="material-icons size-20 me-2">
+    report
+    </span></div>
+
+    <div class="w-100">
+      <p>Version <strong>{{ $currentVersion | markdownify }}</strong> documentation is <strong>no longer actively maintained</strong>. The version you are currently viewing is an archived snapshot. For up-to-date information, see the <a href="{{ $latestVersionUrl | safeURL }}" target="_blank"><strong>latest version</strong></a>.</p>
+    </div>
+  </div>
+{{ else if .Site.Params.versionInfo.unreleased }}
+  <br/>
+  <div class="alert alert-warning d-flex" role="alert">
+    <div class="flex-shrink-1 alert-icon">
+
+    <span class="material-icons size-20 me-2">
+    warning
+    </span></div>
+
+    <div class="w-100">
+      <p>Version <strong>{{ $currentVersion | markdownify }}</strong> documentation is <strong>unreleased and frequently changed</strong>. For up-to-date information, see the <a href="{{ $latestVersionUrl | safeURL }}" target="_blank"><strong>latest version</strong></a>.</p>
+    </div>
+  </div>
+{{ end }}
