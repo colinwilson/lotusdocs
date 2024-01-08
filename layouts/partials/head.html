@@ -26,6 +26,9 @@
         {{- $style = $style | minify | fingerprint "sha384" }}
     {{- end -}}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $style.Data.Integrity }}"{{ end -}}/>
+    {{ range .Site.Params.customCss -}}
+        <link rel="stylesheet" href="{{ . | absURL }}"/>
+    {{- end }}
     <!-- Bootstrap JS -->
     {{ $js := resources.Get "js/bootstrap.js" }}
     {{ $params := dict }}
@@ -35,7 +38,13 @@
     {{ if hugo.IsProduction }}
         {{ $js = $js | fingerprint "sha384" }}
     {{ end }}
-        <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end -}} defer></script>
+    <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end -}} defer></script>
+
+    <!-- Custom JS -->
+    {{ range .Site.Params.customJs -}}
+        <script src="{{ . | absURL }}"></script>
+    {{- end }}
+
     <!-- Image Compare Viewer -->
     {{ if ($.Scratch.Get "image_compare_enabled") }}
         {{ $imagecompare := resources.Get "js/image-compare-viewer.min.js" }}

@@ -1,0 +1,11 @@
+{{ $path := .Page.RelPermalink -}}
+
+{{ range .Site.Params.versions }}
+    {{ $url := $path -}}
+    {{ if ne .url "" -}}
+      {{ $url = (printf "%s/%s" (strings.TrimSuffix "/" .url) (strings.TrimPrefix "/" $path) ) -}}
+    {{ end -}}
+    {{ if not .current -}}
+    <li><a class="dropdown-item" href="{{ $url }}">{{ .version }}</a></li>
+    {{ end }}
+{{ end }}
