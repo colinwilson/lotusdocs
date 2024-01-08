@@ -63,6 +63,15 @@
         {{- $style = $style | minify | fingerprint "sha384" }}
     {{- end -}}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $style.Data.Integrity }}"{{ end -}} crossorigin="anonymous">
+    {{ range .Site.Params.docCustomCss -}}
+        <link rel="stylesheet" href="{{ . | absURL }}"/>
+    {{- end }}
+
+    <!-- Custom JS -->
+    {{ range .Site.Params.docCustomJs -}}
+        <script src="{{ . | absURL }}"></script>
+    {{- end }}
+
     <!-- Katex CSS -->
     {{- if .Params.katex -}}
     {{- $options := dict "enableSourceMap" true }}
