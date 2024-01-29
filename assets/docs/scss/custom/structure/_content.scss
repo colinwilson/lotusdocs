@@ -257,6 +257,33 @@ i {
     }
 }
 
+
+// goat diagrams
+figure.goat.svg-container {
+
+    padding: 0.1rem;
+    align-items: center;
+    width: 100%;
+    @include media-breakpoint-up(md) {
+        width: auto;
+        padding:.5rem;
+        padding-left: auto;
+        padding-right: auto;
+    }
+    @include media-breakpoint-up(lg) {
+        padding: 1rem;
+    }
+    svg {
+        width:100%;
+        @include media-breakpoint-up(lg) {
+            max-width: 60rem;
+        }
+        font-family: var(--bs-font-monospace);
+        font-size: 0.7rem;
+    }
+}
+
+
 // Chroma Highlighter CSS
 .docs-content .main-content td pre {
 

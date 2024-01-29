@@ -27,25 +27,17 @@ $font-family-monospace:  {{ .Site.Params.mono_font | default "SFMono-Regular, Me
 // Structure
 @import "custom/structure/general";
 @import "custom/structure/topbar";
-// @import "custom/structure/content";
-// @import "custom/structure/sidebar-layouts";
-// @import "custom/structure/doc-nav";
-// @import "custom/structure/toc-layouts";
 @import "custom/structure/footer";
 
-// // Components
+// Components
 @import "custom/components/buttons";
 @import "custom/components/badge";
-@import "custom/components/backgrounds";
-// @import "custom/components/alerts";
-// @import "custom/components/card";
 
-// // Pages
+// Pages
 // @import "custom/pages/blog";
 
 @import "custom/pages/features";
 @import "custom/pages/helper";
 @import "custom/pages/hero";
-{{ if ($.Scratch.Get "image_compare_enabled") }}@import "custom/pages/image-compare-viewer";{{ end }}
+@import "custom/pages/image-compare-viewer";
 
-// @import "custom/pages/simplebar";

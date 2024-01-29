@@ -1,6 +1,4 @@
-{{ $sectionTitle := .Scratch.Get "sectionTitle" }}
-{{ with (index .Site.Data.landing $sectionTitle) }}
-{{ if eq .enable true }}
+{{- $sectionTitle := .sectionTitle }}{{ with .data  }}{{ if eq .enable true }}
 <!-- Features Start -->
 <section id="{{ $sectionTitle }}">
     <div class="container mt-100 mt-60">
