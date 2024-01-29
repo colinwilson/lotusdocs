@@ -26,33 +26,5 @@ If so, collect and consolidate the items config from each enabled instance
         </div>
             {{- partial "footer.html" . -}}
 
-        <!-- Lotus Docs JS -->
-        {{ $app := resources.Get "/js/app.js" }}
-        {{- if not .Site.IsServer }}
-            {{- $js := (slice $app) | resources.Concat "/js/bundle.js" | minify | fingerprint "sha384" }}
-            <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
-        {{- else }}
-            {{- $js := (slice $app) | resources.Concat "/js/bundle.js" }}
-            <script type="text/javascript" src="{{ $js.Permalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end }}></script>
-        {{- end }}
-        <!-- Image Compare Viewer Config -->
-        {{ if (default false ($.Scratch.Get "image_compare_used")) }}
-        {{ $imagecompare := resources.Get "js/image-compare-viewer.min.js" }}
-        {{- if not .Site.IsServer }}
-            {{- $js := (slice $imagecompare) | resources.Concat "/js/image-compare.js" | minify | fingerprint "sha384" }}
-            <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
-        {{- else }}
-            {{- $js := (slice $imagecompare) | resources.Concat "/js/image-compare.js" }}
-            <script type="text/javascript" src="{{ $js.Permalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end }}></script>
-        {{- end }}
-
-        <script>
-            const viewers = document.querySelectorAll(".image-compare");
-            viewers.forEach((element, i) => {
-                let view = new ImageCompare(element, JSON.parse(element.dataset.icConfig) ).mount();
-            });
-        </script>
-        {{ end }}
-
     </body>
 </html>

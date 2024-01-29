@@ -28,3 +28,11 @@ function toggleMenu() {
         isOpen.style.display = "block";
     }
 };
+
+window.addEventListener("DOMContentLoaded", (ev) => {
+    const viewers = document.querySelectorAll(".image-compare");
+    viewers.forEach((element, i) => {
+        let view = new ImageCompare(element, JSON.parse(element.dataset.icConfig) ).mount();
+    });
+
+});

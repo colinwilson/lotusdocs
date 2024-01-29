@@ -1,5 +1,5 @@
 {{- $sectionTitle := .sectionTitle }}{{ with .data  }}{{ if eq .enable true }}
-{{- page.Scratch.Set "image_compare_used" true -}} {{- page.Scratch.Add "imageCompareConfig" (slice (.config | jsonify | safeJS)) -}}
+{{- page.Scratch.Set "image_compare_used" true -}}
 <section id="{{ $sectionTitle }}">
     <div class="container mt-100 mt-60">
         <div class="row justify-content-center">
