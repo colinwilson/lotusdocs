@@ -77,7 +77,7 @@
 
 .docs-content .main-content li {
     color: var(--text-default);
-    font-weight: 250;
+    font-weight: 300;
     list-style: none; 
 
     strong {
@@ -117,6 +117,7 @@
 .docs-content .content-title {
     font-weight: 600;
     margin-top: 1rem;
+    color: var(--header-color);
 
     i {
         width: 44px;
@@ -134,7 +135,7 @@
 
 .docs-content p {
 
-    font-weight: 250;
+    font-weight: 300;
 
     &.lead {
         margin-top: 1em;
