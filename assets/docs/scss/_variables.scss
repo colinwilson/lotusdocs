@@ -304,7 +304,7 @@ $stretched-link-z-index:                  1;
     // Core
     --text-default: var(--text-dark);
     --text-default-inv: var(--text-light);
-    --text-muted: var(--gray-600);
+    --text-muted: var(--gray-700);
     --#{$prefix}secondary-color: var(--gray-600);
 
     --body-color: var(--text-default);
@@ -312,7 +312,7 @@ $stretched-link-z-index:                  1;
     --body-bg: var(--white);
 
     // Text
-    --text-dark: #3C4257;
+    --text-dark: #001219; //3C4257
     --text-light: #dee2e6;
 
     // Fonts
@@ -377,7 +377,7 @@ $stretched-link-z-index:                  1;
     --sidebar-primary: var(--primary);
     --sidebar-bg: var(--white);
     --top-header-bg: hsla(255,100%,100%,0.8);
-    --sidebar-text-color: #606770;
+    --sidebar-text-color: var(--header-color);
     --sidebar-border-color: var(--gray-200);
     --sidebar-dropdown-hover-bg: #eff1f4;
     --sidebar-menu-active-bg: #f5f6f8;
