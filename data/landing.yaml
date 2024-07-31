@@ -1,0 +1,127 @@
+# Note: Template blocks require a 'weight' parameter so they're correctly ordered on the landing page
+
+# Hero
+hero:
+  enable: true
+  weight: 10
+  template: hero
+
+  badge:
+    text: Powered by Hugo
+    color: primary # primary, secondary, success, danger, warning, info, light, dark
+    pill: false # boolean
+    soft: true # boolean
+
+  #titleLogo:
+    path: "images/logos"
+    filename: "logo-color.png"
+    alt: "SIS-CC Logo"
+    height: 80px
+
+  title: ".Stat Suite Documentation"
+  subtitle: The .Stat Suite is a standard-based, componentised, open-source platform for the efficient production and dissemination of high-quality statistical data. The product is based on the General Statistical Business Process Model (GSBPM and the Statistical Data and Metadata eXchange (SDMX) standards and is driven by the Statistical Information System Collaboration Community (SIS-CC).
+
+  image:
+    path: "images/logos" # path to image under configured assets directory. default 'images'
+    filename: "members.png" # filename of your hero image (including file extension)
+    alt: "Our Members" # Optional but recommended
+    boxShadow: true # default 'false' (excludes .svg images)
+    rounded: true # round the image corners? default 'false' (excludes .svg images)
+
+  ctaButton:
+    icon: rocket_launch
+    btnText: "Get Started"
+    url: "/docs/get-started/"
+  cta2Button:
+    icon: construction
+    btnText: "Changelog"
+    url: "https://github.com/colinwilson/lotusdocs"
+
+  info: "**Open Source** MIT Licensed."
+
+# Feature Grid
+featureGrid:
+  enable: true
+  weight: 20
+  template: feature grid
+
+  title: Our Products
+  subtitle: The .Stat Suite has three main modules. Explore them down below.
+
+  items:
+    - description: "A web-based application to easily find, access, and share data through a well-tuned navigation. Powered by the open-source platform .Stat Suite for the dissemination of official statistics."
+      image: "images/logos/de.png"
+      ctaLink: # 6
+        text: learn more
+        url: /docs/
+
+    - description: A set of adaptive back-office modules to efficiently and timely produce and (re-)use high quality statistical data by defining, running, automating, controlling and evaluating the underlying data processes.
+      image: "images/dlm.png"
+      ctaLink: # 6
+        text: learn more
+        url: /docs/
+
+    - description: A highly performing, secure SDMX-native Data Store based on standard protocols, to store and retrieve statistical data, structural and referential metadata, data process information and security settings.
+      image: "images/sc.png"
+      ctaLink: # 6
+        text: learn more
+        url: /docs/
+
+# Image compare
+imageCompare:
+  enable: true
+  weight: 30
+  template: image compare
+
+  title: Customise The Lotus Docs Appearance
+  subtitle: Much of Lotus Docs' appearance can be customised. Dark mode is optional (enabled by default) and you can choose a Google font that suites you via the config parameters.
+
+  items:
+    - title: Dark Mode
+      config: {
+        startingPoint: 50,
+        addCircle: true,
+        addCircleBlur: false,
+        showLabels: true,
+        labelOptions: {
+          before: 'Dark',
+          after: 'Light',
+          onHover: false
+        }
+      }
+      imagePath: "images/screenshots"
+      imageBefore: "lotusdocs_dark_v0.8.webp"
+      imageAfter: "lotusdocs_light_v0.8.webp"
+
+    - title: Custom Fonts
+      config: {
+        controlColor: "#3C4257",
+        startingPoint: 25,
+        addCircle: true,
+        addCircleBlur: false,
+        showLabels: true,
+        labelOptions: {
+          before: 'Inter',
+          after: 'Life Saver',
+          onHover: false
+        }
+      }
+      imagePath: "images/screenshots"
+      imageBefore: "lotusdocs_google_font_demo_inter_screenshot.webp"
+      imageAfter: "lotusdocs_google_font_demo_lifesavers_screenshot.webp"
+
+    - title: Accent Color
+      config: {
+        startingPoint: 25,
+        addCircle: true,
+        addCircleBlur: true,
+        showLabels: true,
+        labelOptions: {
+          before: 'Blue',
+          after: 'Cardinal',
+          onHover: false
+        }
+      }
+      imagePath: "images/screenshots"
+      imageBefore: "lotusdocs_blue_theme_colour.webp"
+      imageAfter: "lotusdocs_cardinal_theme_colour.webp"
