@@ -42,7 +42,7 @@
         {{ if and (.Site.Params.docsearch.appID) (.Site.Params.docsearch.apiKey) -}}
         {{ else }}
             {{ $flexSearch := resources.Get (printf "/%s/%s" ($.Scratch.Get "pathName") "js/flexsearch.bundle.js") }}
-            {{- if not .Site.IsServer }}
+            {{- if not hugo.IsServer }}
                 {{ $flexSearch := $flexSearch | minify | fingerprint "sha384" }}
                 <script type="text/javascript" src="{{ $flexSearch.Permalink }}" integrity="{{ $flexSearch.Data.Integrity }}" crossorigin="anonymous"></script>
                 {{ else }}
@@ -93,13 +93,13 @@
         {{- partialCached (printf "%s/%s" ($.Scratch.Get "pathName") "footer/katex.html") . -}}
     {{ end }}
     <!-- Plausible Analytics Config -->
-    {{- if not .Site.IsServer }}
+    {{- if not hugo.IsServer }}
     {{ if and (.Site.Params.plausible.scriptURL | default "https://plausible.io") (.Site.Params.plausible.dataDomain) -}}
         {{- partialCached (printf "%s/%s" ($.Scratch.Get "pathName") "head/plausible") . }}
     {{- end -}}
     {{- end -}}
     <!-- Google Analytics v4 Config -->
-    {{- if not .Site.IsServer }}
+    {{- if not hugo.IsServer }}
     {{- if .Site.GoogleAnalytics }}
         {{- template "_internal/google_analytics.html" . -}}
     {{- end -}}

@@ -39,7 +39,7 @@
     <!-- Image Compare Viewer -->
     {{ if ($.Scratch.Get "image_compare_enabled") }}
         {{ $imagecompare := resources.Get "js/image-compare-viewer.min.js" }}
-        {{- if not .Site.IsServer }}
+        {{- if not hugo.IsServer }}
             {{- $js := (slice $imagecompare) | resources.Concat "/js/image-compare.js" | minify | fingerprint "sha384" }}
             <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
         {{- else }}
@@ -48,13 +48,13 @@
         {{- end }}
     {{- end }}
     <!-- Plausible Analytics Config -->
-    {{- if not .Site.IsServer }}
+    {{- if not hugo.IsServer }}
     {{ if and (.Site.Params.plausible.scriptURL) (.Site.Params.plausible.dataDomain) -}}
         {{- partialCached "head/plausible" . }}
     {{- end -}}
     {{- end -}}
     <!-- Google Analytics v4 Config -->
-    {{- if not .Site.IsServer }}
+    {{- if not hugo.IsServer }}
     {{- if .Site.GoogleAnalytics }}
         {{- template "_internal/google_analytics.html" . -}}
     {{- end -}}

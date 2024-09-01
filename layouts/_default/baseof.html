@@ -40,7 +40,7 @@ If so, collect and consolidate the items config from each enabled instance
 
         <!-- Lotus Docs JS -->
         {{ $app := resources.Get "/js/app.js" }}
-        {{- if not .Site.IsServer }}
+        {{- if not hugo.IsServer }}
             {{- $js := (slice $app) | resources.Concat "/js/bundle.js" | minify | fingerprint "sha384" }}
             <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
         {{- else }}
