@@ -29,5 +29,7 @@
     {{ else }}
       <img src="{{ .RelPermalink | safeURL }}" alt="{{ $text }}" width="{{ .Width }}" height="{{ .Height }}" loading="lazy">
     {{ end }}
+  {{ else }}
+    <img src="{{ .Destination | safeURL }}" alt="{{ $text }}" loading="lazy">
   {{ end }}
 {{ end }}
