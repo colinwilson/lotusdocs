@@ -22,25 +22,35 @@
     {{ if .Site.Params.docs.editPage | default false -}}
     <div id="edit-this-page" class="mt-1">
         <a href="{{ $editPageURL }}" alt="{{ .Title }}" rel="noopener noreferrer" target="_blank">
-            <!-- <span class="material-icons size-20 align-text-bottom text-primary">edit</span> -->
             <span class="me-1 align-text-bottom">
                 {{ with resources.Get $iconPath }}
                     {{ .Content | safeHTML }}
                 {{ end }}
             </span>
             Edit this page
-            <!-- <span class="material-icons size-20 align-text-bottom text-primary">open_in_new</span> -->
         </a>
     </div>
     {{ end }}
     {{ if .Site.Params.docs.lastMod | default false -}}
     <div id="last-modified" class="mt-1">
-        <p class="mb-0 fw-semibold">Last updated <span
-            {{ if .Site.Params.docs.lastModRelative | default true -}}id="relativetime"{{ else }}{{ end }}
-            data-authdate="{{ dateFormat "2006-01-02T15:04:05Z0700" .GitInfo.AuthorDate }}"
-            {{ if .Site.Params.docs.lastModRelative | default true -}}title="{{ dateFormat "02 Jan 2006, 15:04 MST" .GitInfo.AuthorDate }}"{{ else }}{{ end }}>
-            {{ dateFormat "02 Jan 2006, 15:04 MST" .GitInfo.AuthorDate }}
-        </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
+        <p class="mb-0 fw-semibold">Last updated 
+            <span 
+                {{- if .Site.Params.docs.lastModRelative | default true }} id="relativetime"{{ end }}
+                {{- if .Params.lastmod }}
+                    data-authdate="{{ dateFormat "2006-01-02T15:04:05Z0700" .Params.lastmod }}"
+                {{- else if and (.Site.Params.docs.useLastmodTime | default false) (.Lastmod) }}
+                    data-authdate="{{ dateFormat "2006-01-02T15:04:05Z0700" .Lastmod }}"
+                {{- else }}
+                    data-authdate="{{ dateFormat "2006-01-02T15:04:05Z0700" .GitInfo.AuthorDate }}"
+                {{- end }}>
+                {{- if .Params.lastmod -}}
+                    {{ dateFormat "02 Jan 2006, 15:04 MST" .Params.lastmod }}
+                {{- else if and (.Site.Params.docs.useLastmodTime | default false) (.Lastmod) -}}
+                    {{ dateFormat "02 Jan 2006, 15:04 MST" .Lastmod }}
+                {{- else -}}
+                    {{ dateFormat "02 Jan 2006, 15:04 MST" .GitInfo.AuthorDate }}
+                {{- end -}}
+            </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
     {{ end }}

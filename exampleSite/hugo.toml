@@ -87,6 +87,7 @@ defaultContentLanguage = 'en'
         editPage        = true                                # enable 'Edit this page' feature - default false
         lastMod         = true                                # enable 'Last modified' date on pages - default false
         lastModRelative = true                                # format 'Last modified' time as relative - default true
+        useLastmodTime  = false                               # use lastmod time for content or fallback to git info - default false
 
         sidebarIcons    = true                                # enable sidebar icons? default false
         breadcrumbs     = true                                # default is true
