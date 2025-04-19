@@ -27,7 +27,7 @@ If so, collect and consolidate the items config from each enabled instance
 
 {{ $.Scratch.Set "image_compare_enabled" (in ($ic.Get "enabled") true) }}
 
-<html lang="{{ site.LanguageCode }}" dir="ltr">
+<html lang="{{ .Site.Language.Lang }}" dir="{{ .Site.Language.LanguageDirection | default "ltr" }}">
     {{- partial "head.html" . -}}
     <body>
         <div>
