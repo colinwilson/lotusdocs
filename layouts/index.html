@@ -1,24 +1,22 @@
-{{ define "main" }}
-    {{ $landingData := .Site.Data.landing }}
-    {{ $map := newScratch }}
-
-    {{ range $key, $value := $landingData }}
-        {{ $sectionTitle := (index $key) }}
-        {{ $weight := string ($value.weight) }}
-        {{ $template := string (replaceRE `( |-{1,})` "_" $value.template) }}
-        {{ with and $template $weight }}
-            {{ $map.SetInMap "wgtTpl" $sectionTitle (dict
-            "weight" $weight
-            "template" $template
-            "sectionTitle" $sectionTitle
-            )}}
-        {{ end }}
-    {{ end }}
-
-    {{ range sort ($map.Get "wgtTpl") ".weight" }}
-        {{ $.Scratch.Set "sectionTitle" .sectionTitle }}
-        {{ $path := printf "landing/%s.html" .template }}
-        {{ partial $path $.Page }}
-    {{ end }}
-    {{/* printf "%s" (sort ($map.Get "wgtTpl") ".weight" ) */}}
-{{ end }}
+{{- define "main" -}}
+    {{- $landingPageEnabled := .Site.Params.landingpage.enabled | default true -}}
+    {{- if not $landingPageEnabled -}}
+        <script>
+            window.location.href = "/docs/";
+        </script>
+    {{- else -}}
+        {{- $landingData := .Site.Data.landing -}}
+        {{- $sections := slice -}}
+        {{- range $sectionTitle, $value := $landingData -}}
+            {{- $weight := printf "%v" $value.weight -}}
+            {{- $template := replaceRE `( |-{1,})` "_" $value.template -}}
+            {{- $section := dict "sectionTitle" $sectionTitle "weight" $weight "template" $template -}}
+            {{- $sections = $sections | append $section -}}
+        {{- end -}}
+        {{- $sortedSections := sort $sections "weight" -}}
+        {{- range $sortedSections -}}
+            {{- $.Scratch.Set "sectionTitle" .sectionTitle -}}
+            {{- partial (printf "landing/%s.html" .template) $.Page -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}

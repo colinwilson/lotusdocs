@@ -58,6 +58,9 @@ defaultContentLanguage = 'en'
   secondary_font  = "Inter"     # Default is System font
   mono_font       = "Fira Code" # Default is System font
 
+    [params.landingpage]
+        enabled = true # (optional) - Set to 'false' to disable the landing page (default is true)
+
     [params.footer]
         copyright = "© :YEAR: Lotus Labs. Built with [**Lotus Docs**](https://github.com/colinwilson/lotusdocs)"
         # version = true # includes git commit info
