@@ -14,6 +14,11 @@
     --feature-link-hover-bg-color: var(--gray-900);
 }
 
+// Light theme only - Fix for card links making them white on hover
+html:not([data-dark-mode]) .features.feature-full-bg:hover a {
+    color: var(--white) !important;
+}
+
 .features {
     .icon {
         background: rgba(var(--primary), 0.1);
