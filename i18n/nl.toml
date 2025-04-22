@@ -1,0 +1,38 @@
+[lang_select_title]
+    other = "Selecteer je taal"
+
+[search_title]
+    other = "Zoeken"
+
+[search_navigate]
+    other = "navigeren"
+
+[search_select]
+    other = "selecteren"
+
+[search_close]
+    other = "sluiten"
+
+[search_cancel]
+    other = "annuleren"
+
+[search_no_results]
+    other = "Geen resultaten gevonden"
+
+[feedback_yes]
+    other = "Ja"
+
+[feedback_no]
+    other = "Nee"
+
+[feedback_helpful]
+    other = "Was deze pagina nuttig?"
+
+[feedback_submit]
+    other = "Versturen"
+
+[enable_light_mode]
+    other = "Schakel lichte modus in"
+
+[enable_dark_mode]
+    other = "Schakel donkere modus in"
