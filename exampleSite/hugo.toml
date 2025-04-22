@@ -15,11 +15,16 @@ defaultContentLanguage = 'en'
     languageName = "Français"
     contentDir = "content/fr"
     weight = 20
+  [languages.nl]
+    title = "Lotus Docs Voorbeeldsite"
+    languageName = "Nederlands"
+    contentDir = "content/nl"
+    weight = 30
   [languages.de]
     title = "Lotus Docs Beispiel Site"
     languageName = "Deutsch"
     contentDir = "content/de"
-    weight = 30
+    weight = 40
 
 [module]
   [module.hugoVersion]
