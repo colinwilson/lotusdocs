@@ -90,6 +90,7 @@ defaultContentLanguage = 'en'
 
         sidebarIcons    = true                                # enable sidebar icons? default false
         breadcrumbs     = true                                # default is true
+        breadcrumbsHomeLink = "/docs/"
         backToTop       = true                                # enable back-to-top button? default true
 
         # ToC

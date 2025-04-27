@@ -7,7 +7,7 @@
                 <li class="breadcrumb-item text-capitalize active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     {{- $data.Set "counter" $index }}
                     {{- $data.Add "counter" 1 }}
-                    <a itemprop="item" href="{{ .RelPermalink }}">
+                    <a itemprop="item" href="{{ with site.Params.docs.breadcrumbsHomeLink }}{{ . }}{{ else }}{{ .RelPermalink }}{{ end }}">
                         <i class="material-icons size-20 align-text-bottom" itemprop="name">Home</i>
                     </a>
                     <meta itemprop="position" content='{{ $data.Get "counter"}}' />
