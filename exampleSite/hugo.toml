@@ -74,6 +74,7 @@ defaultContentLanguage = 'en'
         # pathName        = "docs"                            # path name for documentation site | default "docs"
 
         # themeColor      = "cyan"                            # (optional) - Set theme accent colour. Options include: blue (default), green, red, yellow, emerald, cardinal, magenta, cyan
+        simpleIcons     = true
 
         darkMode        = true                                # enable dark mode option? default false
 

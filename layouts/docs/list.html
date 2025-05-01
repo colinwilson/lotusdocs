@@ -5,7 +5,11 @@
             <a class="text-decoration-none text-reset" href="{{ .Permalink }}">
                 <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1">
                     <span class="icon-color d-flex my-3">
+                        {{ if eq .Params.icontype "simple" -}}
+                        <i class="si si-{{ .Params.icon }} align-middle"></i>
+                        {{ else -}}
                         <i class="material-icons align-middle">{{- .Params.icon | default "article" }}</i>
+                        {{ end -}}
                         {{ if .Draft }}<span class="badge bg-default ms-2 fs-6 align-middle">DRAFT</span>{{ end }}
                         {{ if .IsSection }}<i class="material-icons icon-faint align-middle ms-auto" title="Directory">folder</i>{{ end }}
                     </span>
