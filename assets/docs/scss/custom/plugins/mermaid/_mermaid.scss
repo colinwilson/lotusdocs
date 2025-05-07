@@ -37,5 +37,12 @@
         text {
             fill: var(--text-default) !important;
         }
+        #sequencenumber circle {
+            fill: var(--bg-default) !important;
+            stroke: var(--text-default) !important;
+        }
+        .sequenceNumber {
+            fill: var(--text-default) !important;
+        }
     }
 }
