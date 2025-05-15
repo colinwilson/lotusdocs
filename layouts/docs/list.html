@@ -8,6 +8,7 @@
                     <span class="h1 icon-color">
                         <i class="material-icons align-middle">{{- .Params.icon | default "article" }}</i>
                         {{ if .Draft }}<span class="badge bg-default fs-6 align-middle">DRAFT</span>{{ end }}
+                        {{ if .Page.Params.Enterprise }}<span class="badge bg-default fs-6 align-middle">Enterprise</span>{{ end }}
                     </span>
                     <div class="card-body p-0 content">
                         <p class="fs-5 fw-semibold card-title mb-1">{{ .Title }}</p>
