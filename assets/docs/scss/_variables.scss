@@ -343,6 +343,10 @@ $stretched-link-z-index:                  1;
 
     // lightness variables
     --l-100: 100%;
+    
+    // Badge
+    --badge-primary-bg: var(--primary);
+    --badge-primary-color: var(--primary-200);
 
     // Buttons
     --btn-soft-color: var(--primary);
@@ -396,6 +400,10 @@ $stretched-link-z-index:                  1;
     --text-default-inv: var(--text-dark);
     --text-muted: #b6b9be;
     --#{$prefix}secondary-color: #6c757d;
+    
+    // Badge
+    --badge-primary-bg: var(--primary);
+    --badge-primary-color: var(--primary-200);
 
     // Buttons
     --btn-soft-color: var(--gray-400);
