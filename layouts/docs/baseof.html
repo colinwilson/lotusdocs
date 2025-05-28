@@ -69,6 +69,9 @@
                                                     {{ if $currentPage.Params.Enterprise }}
                                                         <span class="badge bg-default fs-6 mb-1 align-middle">ENTERPRISE</span>
                                                     {{ end }}
+                                                    {{ if $currentPage.Params.Oss }}
+                                                        <span class="badge bg-default fs-6 mb-1 align-middle">OPEN SOURCE</span>
+                                                    {{ end }}
                                                 </h1>
                                             </div>
                                             {{ if site.Params.docs.descriptions | default false }}
