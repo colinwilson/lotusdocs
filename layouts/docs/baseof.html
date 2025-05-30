@@ -57,6 +57,19 @@
                                             {{- partial (printf "%s/%s" ($.Scratch.Get "pathName") "versionbanner.html") . -}}
                                             </div>
                                             {{ end }}
+                                            {{ $version := .Page.FirstSection.RelPermalink }}
+                                            {{ $versionTrimmed := trim $version "/" }}
+                                            {{ range site.Params.versions }}                                
+                                              {{ if and (eq .linkVersion $versionTrimmed) (isset . "versionText" ) }}
+                                              <div class="banner">
+                                                <div class="alert alert-info d-flex">
+                                                    <div class="w-100">
+                                                     <p>{{ .versionText | markdownify }}</p>
+                                                    </div>
+                                                 </div>
+                                              </div>
+                                              {{ end }}
+                                            {{ end }}
                                             <div class="mb-0 d-flex">
                                                 {{ if site.Params.docs.titleIcon | default false }}
                                                 <i class="material-icons title-icon me-2">{{- .Params.icon | default "article" }}</i>
