@@ -99,6 +99,7 @@ function activateMenu() {
 }
 
 
+
 //Sidebar Menu
 function activateSidebarMenu() {
     var current = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
@@ -158,20 +159,19 @@ if (document.getElementById("navigation")) {
 }
 
 if (document.getElementById("sidebar")) {
-    var elements = document.getElementById("sidebar").getElementsByTagName("button");
-    for (var i = 0, len = elements.length; i < len; i++) {
-        elements[i].onclick = function (elem) {
-            // if(elem.target !== document.querySelectorAll("li.sidebar-dropdown.active > a")[0]){
-            //     document.querySelectorAll("li.sidebar-dropdown.active")[0]?.classList?.toggle("active");
-            //     document.querySelectorAll("div.sidebar-submenu.d-block")[0]?.classList?.toggle("d-block");
-            // }
-            // if(elem.target.getAttribute("href") === "javascript:void(0)") {
-            elem.target.parentElement.classList.toggle("active");
-            elem.target.nextElementSibling.classList.toggle("d-block");
-            // }
+    const elements = document.querySelectorAll("#sidebar button");
+    elements.forEach(function (button) {
+      button.addEventListener("click", function (event) {
+        const li = button.parentElement;
+        const submenu = button.nextElementSibling;
+  
+        if (li && submenu) {
+          li.classList.toggle("active");
+          submenu.classList.toggle("d-block");
         }
-    }
-}
+      });
+    });
+  }
 
 // Menu sticky
 function windowScroll() {
