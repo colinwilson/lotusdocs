@@ -81,7 +81,7 @@
                                 {{ if eq .Site.Params.docs.sidebarIcons true -}}
                                     <i class="material-icons me-2">{{- .Params.icon | default "notes" }}</i>
                                 {{ end }}
-                                <span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise .Params.enterpriseSidebar }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span>
+                                <span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise (not .Params.excludeEnterpriseFromSidebar) }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span>
                             </button>
                             <div class="sidebar-submenu {{ if $active }}d-block{{ end }}">
                                 <ul>
@@ -94,7 +94,7 @@
                                                     {{ if eq .Site.Params.docs.sidebarIcons true -}}
                                                         <!-- <span class="material-icons me-2">{{- .Params.icon }}</span> -->
                                                     {{ end }}
-                                                    <span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise .Params.enterpriseSidebar }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span>
+                                                    <span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise (not .Params.excludeEnterpriseFromSidebar) }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span>
                                                 </button>
                                                 <div class="sidebar-submenu {{ if $active }}d-block{{ end }}">
                                                     <ul>
@@ -107,7 +107,7 @@
                                                                         {{ if eq .Site.Params.docs.sidebarIcons true -}}
                                                                             <!-- <span class="material-icons me-2">{{- .Params.icon }}</span> -->
                                                                         {{ end }}
-                                                                        <span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise .Params.enterpriseSidebar }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span>
+                                                                        <span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise (not .Params.excludeEnterpriseFromSidebar) }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span>
                                                                     </button>
                                                                     <div class="sidebar-submenu {{ if $active }}d-block{{ end }}">
                                                                         <ul>
@@ -120,7 +120,7 @@
                                                                                             {{ if eq .Site.Params.docs.sidebarIcons true -}}
                                                                                                 <!-- <span class="material-icons me-2">{{- .Params.icon }}</span> -->
                                                                                             {{ end }}
-                                                                                            <span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise .Params.enterpriseSidebar }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span>
+                                                                                            <span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise (not .Params.excludeEnterpriseFromSidebar) }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span>
                                                                                         </button>
                                                                                         <div class="sidebar-submenu {{ if $active }}d-block{{ end }}">
                                                                                             <ul>
@@ -133,7 +133,7 @@
                                                                                                                 {{ if eq .Site.Params.docs.sidebarIcons true -}}
                                                                                                                     <!-- <span class="material-icons me-2">{{- .Params.icon }}</span> -->
                                                                                                                 {{ end }}
-                                                                                                                <span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise .Params.enterpriseSidebar }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span>
+                                                                                                                <span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise (not .Params.excludeEnterpriseFromSidebar) }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span>
                                                                                                             </button>
                                                                                                             <div class="sidebar-submenu {{ if $active }}d-block{{ end }}">
                                                                                                             <ul>
@@ -146,21 +146,21 @@
                                                                                                                                 {{ if eq .Site.Params.docs.sidebarIcons true -}}
                                                                                                                                     <!-- <span class="material-icons me-2">{{- .Params.icon }}</span> -->
                                                                                                                                 {{ end }}
-                                                                                                                                <span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise .Params.enterpriseSidebar }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span>
+                                                                                                                                <span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise (not .Params.excludeEnterpriseFromSidebar) }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span>
                                                                                                                             </button>
                                                                                                                             <div class="sidebar-submenu {{ if $active }}d-block{{ end }}">
                                                                                                                                 <ul>
                                                                                                                                     {{ range .Pages }}
                                                                                                                                     {{ if not .Params.hidden }}
                                                                                                                                         {{ $active := in $currentPage.RelPermalink .RelPermalink }}
-                                                                                                                                        <li class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}"><a class="sidebar-nested-link" href="{{ .Permalink }}"><span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise .Params.enterpriseSidebar }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span></a></li>
+                                                                                                                                        <li class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}"><a class="sidebar-nested-link" href="{{ .Permalink }}"><span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise (not .Params.excludeEnterpriseFromSidebar) }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span></a></li>
                                                                                                                                     {{ end }}
                                                                                                                                     {{ end }}
                                                                                                                                 </ul>
                                                                                                                             </div>
                                                                                                                         </li>
                                                                                                                     {{ else }}
-                                                                                                                        <li class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}"><a class="sidebar-nested-link" href="{{ .Permalink }}"><span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise .Params.enterpriseSidebar }} <span class="badge bg-default align-middle px-0 py-0" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span></a></li>
+                                                                                                                        <li class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}"><a class="sidebar-nested-link" href="{{ .Permalink }}"><span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise (not .Params.excludeEnterpriseFromSidebar) }} <span class="badge bg-default align-middle px-0 py-0" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span></a></li>
                                                                                                                     {{ end }}
                                                                                                                     {{ end }}
                                                                                                                 {{ end }}
@@ -168,7 +168,7 @@
                                                                                                         </div>
                                                                                                     </li>
                                                                                                 {{ else }}
-                                                                                                    <li class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}"><a class="sidebar-nested-link" href="{{ .Permalink }}"><span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise .Params.enterpriseSidebar }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span></a></li>
+                                                                                                    <li class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}"><a class="sidebar-nested-link" href="{{ .Permalink }}"><span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise (not .Params.excludeEnterpriseFromSidebar) }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span></a></li>
                                                                                                 {{ end }}
                                                                                                 {{ end }}
                                                                                             {{ end }}
@@ -176,7 +176,7 @@
                                                                                         </div>
                                                                                     </li>
                                                                                 {{ else }}
-                                                                                    <li class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}"><a class="sidebar-nested-link" href="{{ .Permalink }}"><span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise .Params.enterpriseSidebar }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span></a></li>
+                                                                                    <li class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}"><a class="sidebar-nested-link" href="{{ .Permalink }}"><span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise (not .Params.excludeEnterpriseFromSidebar) }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span></a></li>
                                                                                 {{ end }}
                                                                                 {{ end }}
                                                                             {{ end }}
@@ -184,7 +184,7 @@
                                                                     </div>
                                                                 </li>
                                                             {{ else }}
-                                                                <li class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}"><a class="sidebar-nested-link" href="{{ .Permalink }}"><span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise .Params.enterpriseSidebar }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span></a></li>
+                                                                <li class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}"><a class="sidebar-nested-link" href="{{ .Permalink }}"><span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise (not .Params.excludeEnterpriseFromSidebar) }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span></a></li>
                                                             {{ end }}
                                                             {{ end }}
                                                         {{ end }}
@@ -192,7 +192,7 @@
                                                 </div>
                                             </li>
                                         {{ else }}
-                                            <li class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}"><a class="sidebar-nested-link" href="{{ .Permalink }}"><span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise .Params.enterpriseSidebar }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span></a></li>
+                                            <li class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}"><a class="sidebar-nested-link" href="{{ .Permalink }}"><span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise (not .Params.excludeEnterpriseFromSidebar) }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span></a></li>
                                         {{ end }}
                                     {{ end }}
                                     {{ end }}
@@ -206,7 +206,7 @@
                                 {{ if eq .Site.Params.docs.sidebarIcons true -}}
                                     <i class="material-icons me-2">{{ .Params.icon }}</i>
                                 {{ end }}
-                                <span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise .Params.enterpriseSidebar }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span>
+                                <span class="d-inline-flex align-items-center">{{ .Title }}{{ if and .Params.enterprise (not .Params.excludeEnterpriseFromSidebar) }} <span class="badge bg-default align-middle px-1 py-1" style="font-size: 0.65rem;" title="Enterprise only">ENTERPRISE</span>{{ end }}</span>
                             </a>
                         </li>
                     {{ end }}
