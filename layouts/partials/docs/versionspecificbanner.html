@@ -1,0 +1,15 @@
+{{- $path := trim .Page.RelPermalink "/" -}}
+{{ $parts := split $path "/" }}
+{{ $version := index $parts 0 }}
+
+{{ range .Site.Params.versions }}
+  {{ if eq .version $version }} 
+   {{ if ne .banner "" }}
+   <div class="alert alert-info d-flex">
+       <div class="w-100">
+        <p>{{ .banner | markdownify }}</p>
+       </div>
+    </div>
+ {{ end }}
+ {{ end }}
+{{ end }}
