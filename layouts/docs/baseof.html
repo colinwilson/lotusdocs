@@ -57,6 +57,11 @@
                                             {{- partial (printf "%s/%s" ($.Scratch.Get "pathName") "versionbanner.html") . -}}
                                             </div>
                                             {{ end }}
+                                            {{ if site.Params.versionSpecificBanner | default false }}
+                                            <div class="banner">
+                                            {{- partial (printf "%s/%s" ($.Scratch.Get "pathName") "versionspecificbanner.html") . -}}
+                                            </div>
+                                            {{ end }}
                                             {{ $version := .Page.FirstSection.RelPermalink }}
                                             {{ $versionTrimmed := trim $version "/" }}
                                             {{ range site.Params.versions }}                                
