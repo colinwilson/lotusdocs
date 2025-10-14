@@ -1,20 +1,11 @@
-{{- $path := trim .Page.RelPermalink "/" -}}
-{{ $parts := split $path "/" }}
-{{ $version := index $parts 0 }}
-
-{{- $pathprod := .Page.RelPermalink -}}
-{{ $trimmedPath := strings.Replace $pathprod .Site.Params.folder "" -1 }}
+{- $path := .Page.RelPermalink -}}
+{{ $trimmedPath := strings.Replace $path .Site.Params.folder "" -1 }}
 {{/* If current version uses a subversion, strip it from the path */}}
 {{ $versionTrimmed := trim $trimmedPath "/" }}
-
-{{ range .Site.Params.versions }}
-  {{ if or (eq .version $version) (eq .version $versionTrimmed) }}
-   {{ if ne .banner "" }}
-   <div class="alert alert-info d-flex">
-       <div class="w-100">
-        <p>{{ .banner | markdownify }}</p>
-       </div>
+{{ if eq $versionTrimmed "main" }}
+<div class="alert alert-info d-flex">
+    <div class="w-100">
+     <p>{{ .Site.Params.versionBannerText | markdownify }}</p>
     </div>
+ </div>
  {{ end }}
- {{ end }}
-{{ end }}
