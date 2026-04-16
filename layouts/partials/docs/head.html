@@ -98,7 +98,7 @@
     {{ end }}
     <!-- Plausible Analytics Config -->
     {{- if not hugo.IsServer }}
-    {{ if and (.Site.Params.plausible.scriptURL | default "https://plausible.io") (.Site.Params.plausible.dataDomain) -}}
+    {{- if or (.Site.Params.plausible.scriptPath) (.Site.Params.plausible.src) -}}
         {{- partialCached (printf "%s/%s" ($.Scratch.Get "pathName") "head/plausible") . }}
     {{- end -}}
     {{- end -}}

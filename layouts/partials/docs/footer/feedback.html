@@ -88,7 +88,7 @@
             ),
             {{ end -}}
             {{ end -}}
-            {{ if .Site.Params.plausible.dataDomain -}}
+            {{ if or (.Site.Params.plausible.scriptPath) (.Site.Params.plausible.src) -}}
             {{ if not .Site.Params.feedback.eventDest | or (in .Site.Params.feedback.eventDest "plausible") -}}
             plausible('{{ .Site.Params.feedback.emoticonEventName | default "Feedback" }}',
                 {
@@ -264,7 +264,7 @@
                 ),
                 {{ end -}}
                 {{ end -}}
-                {{ if .Site.Params.plausible.dataDomain -}}
+                {{ if or (.Site.Params.plausible.scriptPath) (.Site.Params.plausible.src) -}}
                 {{ if not .Site.Params.feedback.eventDest | or (in .Site.Params.feedback.eventDest "plausible") -}}
                 plausible('{{ .Site.Params.feedback.positiveEventName | default "Positive Feedback" }}',
                     {
@@ -290,7 +290,7 @@
                 ),
                 {{ end -}}
                 {{ end -}}
-                {{ if .Site.Params.plausible.dataDomain -}}
+                {{ if or (.Site.Params.plausible.scriptPath) (.Site.Params.plausible.src) -}}
                 {{ if not .Site.Params.feedback.eventDest | or (in .Site.Params.feedback.eventDest "plausible") -}}
                 plausible('{{ .Site.Params.feedback.negativeEventName | default "Negative Feedback" }}',
                     {
