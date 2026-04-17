@@ -29,6 +29,8 @@
     {{ if .Site.Params.feedback.enabled | default false -}}
         {{ if or (.Site.Params.plausible.scriptPath) (.Site.Params.plausible.src) (.Site.Config.Services.GoogleAnalytics.ID) }}
             {{- partial (printf "%s/%s" ($.Scratch.Get "pathName") "footer/feedback.html") . -}}
+        {{ else if and (.Site.Params.plausible.scriptURL | default "https://plausible.io") (.Site.Params.plausible.dataDomain) -}}
+            {{- partial (printf "%s/%s" ($.Scratch.Get "pathName") "footer/feedback.html") . -}}
         {{ else }}
             {{ errorf "Either Google Analytics or Plausible Analytics must be configured before enabling the Feedback Widget." }}
         {{ end }}
