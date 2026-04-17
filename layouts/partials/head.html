@@ -49,7 +49,9 @@
     {{- end }}
     <!-- Plausible Analytics Config -->
     {{- if not hugo.IsServer }}
-    {{ if and (.Site.Params.plausible.scriptURL) (.Site.Params.plausible.dataDomain) -}}
+    {{- if or (.Site.Params.plausible.scriptPath) (.Site.Params.plausible.src) -}}
+        {{- partialCached "head/plausible_v3.1.0" . }}
+    {{ else if and (.Site.Params.plausible.scriptURL | default "https://plausible.io") (.Site.Params.plausible.dataDomain) -}}
         {{- partialCached "head/plausible" . }}
     {{- end -}}
     {{- end -}}

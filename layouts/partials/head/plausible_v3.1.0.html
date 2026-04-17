@@ -1,0 +1,21 @@
+<!-- Updated Plausible tracking script v3.1.0 (Oct 2025)-->
+<script async src="{{ if (.Site.Params.plausible.scriptPath) -}}{{ .Site.Params.plausible.scriptPath }}{{ else if (.Site.Params.plausible.src) -}}{{ .Site.Params.plausible.src }}{{ end }}"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+<script>
+  window.plausible = window.plausible || function() { (plausible.q = plausible.q || []).push(arguments) },plausible.init = plausible.init || function(i){plausible.o=i||{}};
+  plausible.init({
+    {{ if .Site.Params.plausible.eventAPI -}}
+    endpoint: {{ .Site.Params.plausible.eventAPI }},
+    {{ end -}}
+    {{ if .Site.Params.plausible.hashBasedRouting | default false -}}
+    {{ if eq .Site.Params.plausible.hashBasedRouting true -}}
+    hashBasedRouting: true,
+    {{ end -}}
+    {{ end -}}
+    {{ if .Site.Params.plausible.captureOnLocalhost | default false -}}
+    {{ if eq .Site.Params.plausible.captureOnLocalhost true -}}
+    captureOnLocalhost: true,
+    {{ end -}}
+    {{ end -}}
+})
+</script>
