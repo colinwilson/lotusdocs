@@ -6,12 +6,14 @@
     --bg-default: hsl(var(--primary-800-hsl),0.1);
     --bg-default-border: hsl(var(--primary-800-hsl),0.1);
     --bg-default-color: var(--text-default);
+    --bg-mermaid: var(--gray-100);
 }
 
 [data-dark-mode] {
     --bg-default: var(--gray-800);
     --bg-default-border: hsl(var(--primary-200-hsl),0.1);
     --bg-default-color: var(--text-default);
+    --bg-mermaid: var(--gray-800);
 }
 
 .bg-default {
