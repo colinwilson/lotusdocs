@@ -1178,6 +1178,10 @@
   stroke-opacity: 1;
 }
 
+.docs-content .main-content .katex svg {
+  height: inherit;
+}
+
 .katex svg path {
   stroke: none;
 }
