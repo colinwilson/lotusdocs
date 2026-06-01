@@ -68,7 +68,7 @@ Edit the `hugo.toml` configuration file to include the [Lotus Docs theme](https:
 
 ```toml
 baseURL = 'http://example.org/'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'My New Hugo Site'
 contentDir = 'content'
 enableEmoji = true
@@ -106,7 +106,7 @@ Edit the `hugo.toml` config file:
 
 ```toml
 baseURL = 'http://example.org/'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'My New Hugo Site'
 contentDir = 'content'
 enableEmoji = true
@@ -146,7 +146,7 @@ Edit the `hugo.toml` config file:
 
 ```toml
 baseURL = 'http://example.org/'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'My New Hugo Site'
 
 [module]

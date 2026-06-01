@@ -91,7 +91,7 @@ Edit the `hugo.toml` configuration file to include the [Lotus Docs theme](https:
 
 ```toml {linenos=table,hl_lines=["5-11"]}
 baseURL = 'http://example.org/'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'My New Hugo Site'
 
 [module]
@@ -118,7 +118,7 @@ Update your existing `hugo.toml` config file with the configuration below:
 
 ```toml {linenos=table,hl_lines=["5-11"]}
 baseURL = 'http://example.org/'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'My New Hugo Site'
 
 [module]
@@ -147,7 +147,7 @@ Edit the `hugo.toml` configuration file to include the Lotus Docs theme and the 
 
 ```toml {linenos=table,hl_lines=["5-11"]}
 baseURL = 'http://example.org/'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'My New Hugo Site'
 
 [module]

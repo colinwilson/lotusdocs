@@ -8,7 +8,7 @@
         {{ $.Scratch.Add "social_list" (slice .) }}
     {{ end }}
 {{ end }}
-<html lang="{{ site.LanguageCode }}">
+<html lang="{{ site.Language.Locale }}">
     {{- partial (printf "%s/%s" ($.Scratch.Get "pathName") "head.html") . -}}
     <body>
         <div class="content">
