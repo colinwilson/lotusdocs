@@ -66,8 +66,12 @@
 
     if (e.key === "ArrowUp") {
         e.preventDefault();
-        const nextIndex = index > 0 ? index - 1 : 0;
-        focusableSuggestions[nextIndex].focus();
+        const nextIndex = index >= 0 ? index - 1 : 0;
+        if (nextIndex === -1) {
+            search.focus()
+        } else {
+            focusableSuggestions[nextIndex].focus();
+        }
     }
     else if (e.key === "ArrowDown") {
         e.preventDefault();
