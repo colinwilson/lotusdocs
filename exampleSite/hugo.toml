@@ -1,5 +1,5 @@
 baseURL = "/"
-languageCode = "en-GB"
+locale = "en-GB"
 contentDir = "content"
 enableEmoji = true
 enableGitInfo = true # N.B. .GitInfo does not currently function with git submodule content directories
@@ -8,16 +8,16 @@ defaultContentLanguage = 'en'
 [languages]
   [languages.en]
     title = "Lotus Docs Example Site"
-    languageName = "English"
+    label = "English"
     weight = 10
   [languages.fr]
     title = "Lotus Docs Exemple de Site"
-    languageName = "Français"
+    label = "Français"
     contentDir = "content/fr"
     weight = 20
   [languages.de]
     title = "Lotus Docs Beispiel Site"
-    languageName = "Deutsch"
+    label = "Deutsch"
     contentDir = "content/de"
     weight = 30
 
