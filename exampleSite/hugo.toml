@@ -58,6 +58,14 @@ defaultContentLanguage = 'en'
   secondary_font  = "Inter"     # Default is System font
   mono_font       = "Fira Code" # Default is System font
 
+    [params.head] # Use these to override the default meta-tags in the page headers
+        # author = "Colin Wilson - Lotus Labs"
+        # description = "A Lightweight, Modern Documentation Theme for Hugo"
+        # keywords = "Documentation, Hugo, Hugo Theme, Bootstrap"
+        # email = "support@aigis.uk"
+        # website = "https://lotusdocs.dev"
+        # version = "v0.1.0"
+
     [params.footer]
         copyright = "© :YEAR: Lotus Labs. Built with [**Lotus Docs**](https://github.com/colinwilson/lotusdocs)"
         # version = true # includes git commit info

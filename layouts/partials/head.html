@@ -5,12 +5,12 @@
     <meta name="robots" content="noindex">
     {{- end }}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A Lightweight, Modern Documentation Theme for Hugo" />
-    <meta name="keywords" content="Documentation, Hugo, Hugo Theme, Bootstrap" />
-    <meta name="author" content="Colin Wilson - Lotus Labs" />
-    <meta name="email" content="support@aigis.uk" />
-    <meta name="website" content="https://lotusdocs.dev" />
-    <meta name="Version" content="v0.1.0" />
+    <meta name="description" content="{{ .Site.Params.head.description }}" />
+    <meta name="keywords" content="{{ .Site.Params.head.keywords}}" />
+    <meta name="author" content="{{ .Site.Params.head.author }}" />
+    <meta name="email" content="{{ .Site.Params.head.email}}" />
+    <meta name="website" content="{{ .Site.Params.head.website}}" />
+    <meta name="Version" content="{{ .Site.Params.head.version}}" />
     <!-- favicon -->
     {{ block "head/favicon" . }}{{ partialCached "head/favicon.html" . }}{{ end }}
     <!-- Google Fonts -->
