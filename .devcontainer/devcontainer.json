@@ -1,0 +1,30 @@
+{
+  "name": "Lotus Docs",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "HUGO_VERSION": "0.140.0",
+      "GO_VERSION": "1.21.0"
+    }
+  },
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/lotusdocs,type=bind,consistency=cached",
+  "workspaceFolder": "/workspaces/lotusdocs",
+  "containerUser": "vscode",
+  "remoteUser": "vscode",
+  "forwardPorts": [1313],
+  "portsAttributes": {
+    "1313": {
+      "label": "Hugo Development Server - Lotus Docs",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postCreateCommand": "hugo mod get",
+  "postAttachCommand": "hugo server --bind 0.0.0.0 --port 1313 --buildDrafts --buildFuture --disableFastRender --navigateToChanged",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}
