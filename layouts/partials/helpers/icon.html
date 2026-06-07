@@ -1,0 +1,12 @@
+{{ define "partials/icon.html" }}
+{{- $iconName := .name -}}
+{{- $type := .type | default "material" -}}
+{{- $class := .class | default "" -}}
+{{- $size := .size | default "" -}}
+
+{{- if eq $type "material" -}}
+<i class="material-icons align-middle {{- with $size }} size-{{.}}{{- end }} {{- with $class }} {{.}}{{- end }}">{{- $iconName -}}</i>
+{{- else if eq $type "simple" -}}
+<i class="si si-{{- $iconName }} align-middle {{- with $size }} size-{{.}}{{- end }} {{- with $class }} {{.}}{{- end }}"></i>
+{{- end -}}
+{{ end }}
