@@ -91,6 +91,13 @@
                 font-size: 24px;
                 transition: all 0.3s ease;
             }
+
+            // Change the logo text according to the dark/light mode
+            // This is how for example Mozilla docs change their logo
+            // In dark mode: https://developer.mozilla.org/en-US/docs/Web
+            svg .logo-text {
+                fill: var(--text-default) !important;
+            }
         }
         .sidebar-header {
             padding: 20px;
