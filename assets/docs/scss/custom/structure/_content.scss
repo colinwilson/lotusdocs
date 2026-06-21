@@ -269,6 +269,33 @@ i {
     font-size: var(--font-size-sm);
 }
 
+// Images with captions
+.docs-content .main-content {
+    // I wasn't sure if figures are used with mermaid or code classes so ensure that img is present
+    figure:has(img) {
+        max-width: 30rem;
+        margin:0 auto;
+        text-align: center !important;
+        padding: 0.5rem;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(rgba(0, 0, 0, 0.5) 1px 1px 5px);
+        }
+        figcaption {
+            padding: 0.5rem 0;
+        }
+        // Adds small rotated arrow towards the image
+        figcaption::before {
+            content: '⤶';
+            display: inline-block;
+            transform: rotate(90deg);
+            padding-right: 0.5rem;
+        }
+    }
+}
+
 // <figcaption>
 
 .docs-content figcaption {
