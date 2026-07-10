@@ -1,8 +1,55 @@
+{{ $isAdoc := false }}
+{{ if .File }}
+    {{ $isAdoc = or (eq .File.Ext ".adoc") (eq .File.Ext ".asciidoc") }}
+{{ end }}
+
 <toc>
     <div class="fw-bold text-uppercase mb-2">On this page</div>
-    {{ if eq .Site.Params.docs.scrollSpy true -}}
-        {{ .TableOfContents | replaceRE "<nav id=\"TableOfContents\">" "<nav id=\"toc\">" | safeHTML }}
-    {{ else -}}
-        {{ .TableOfContents }}
-    {{ end -}}
+    {{ if $isAdoc }}
+        <div class="js-toc"></div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.32.2/tocbot.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.32.2/tocbot.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                tocbot.init({
+                    tocSelector: '.js-toc',
+                    contentSelector: '.main-content',
+                    headingSelector: 'h2, h3, h4',
+                    collapseDepth: 6,
+                    hasInnerContainers: true,
+                    linkClass: 'toc-link',
+                    activeLinkClass: 'active',
+                    listClass: 'toc-list',
+                    listItemClass: 'toc-list-item'
+                });
+
+                // Clone TOC to mobile container if present
+                const desktopToc = document.querySelector('.js-toc');
+                const mobileTocContainer = document.querySelector('.js-toc-mobile-container');
+                if (desktopToc && mobileTocContainer) {
+                    const tocList = desktopToc.querySelector('.toc-list');
+                    if (tocList) {
+                        const clonedList = tocList.cloneNode(true);
+                        clonedList.classList.add('dropdown-menu');
+                        clonedList.classList.remove('toc-list');
+                        clonedList.querySelectorAll('.toc-list-item').forEach(item => {
+                            item.classList.remove('toc-list-item');
+                        });
+                        clonedList.querySelectorAll('a').forEach(link => {
+                            link.classList.add('dropdown-item');
+                            link.classList.remove('toc-link');
+                            link.classList.remove('active');
+                        });
+                        mobileTocContainer.appendChild(clonedList);
+                    }
+                }
+            });
+        </script>
+    {{ else }}
+        {{ if eq .Site.Params.docs.scrollSpy true -}}
+            {{ .TableOfContents | replaceRE "<nav id=\"TableOfContents\">" "<nav id=\"toc\">" | safeHTML }}
+        {{ else -}}
+            {{ .TableOfContents }}
+        {{ end -}}
+    {{ end }}
 </toc>
