@@ -1,2 +1,6 @@
-{{ $toc := .TableOfContents }}
-{{ replaceRE "<ul>" "<ul class=\"dropdown-menu\">" (replaceRE "<nav id=\"TableOfContents\">" "<nav id=\"toc-mobile\">" $toc) 1 | safeHTML }}
+{{ if $.Scratch.Get "needsAsciiDocTOC" -}}
+    <nav id="toc-mobile" data-asciidoc-toc="mobile"></nav>
+{{ else -}}
+    {{ $toc := .TableOfContents }}
+    {{ replaceRE "<ul>" "<ul class=\"dropdown-menu\">" (replaceRE "<nav id=\"TableOfContents\">" "<nav id=\"toc-mobile\">" $toc) 1 | safeHTML }}
+{{ end -}}

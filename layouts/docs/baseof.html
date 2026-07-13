@@ -24,6 +24,15 @@
                             <div class="container-fluid">
                                 <div class="layout-spacing">
                                     {{ $currentPage := . -}}
+                                    {{ $isAsciiDoc := false -}}
+                                    {{ with .File -}}
+                                        {{ $extension := strings.TrimPrefix "." (lower .Ext) -}}
+                                        {{ $isAsciiDoc = in (slice "ad" "adoc" "asciidoc") $extension -}}
+                                    {{ end -}}
+                                    {{ $hasNativeTOC := ne (strings.TrimSpace (plainify .TableOfContents)) "" -}}
+                                    {{ $hasAsciiDocHeadings := and $isAsciiDoc (gt (len (findRE `<h[2-6][ >]` .Content)) 0) -}}
+                                    {{ $hasTOC := and (ne .Params.toc false) (or $hasNativeTOC $hasAsciiDocHeadings) -}}
+                                    {{ $.Scratch.Set "needsAsciiDocTOC" (and $hasTOC $isAsciiDoc (not $hasNativeTOC)) -}}
                                     {{ if site.Params.docs.breadcrumbs | default true }}
                                         <div class="d-md-flex justify-content-between align-items-center">
                                             {{- partial (printf "%s/%s" ($.Scratch.Get "pathName") "breadcrumbs.html") . -}}
@@ -31,19 +40,19 @@
                                     {{ end }}
                                     <div class="row flex-xl-nowrap">
                                         {{ if site.Params.docs.toc | default true }}
-                                        <div class="docs-toc col-xl-3 {{ if .IsNode }}visually-hidden{{ else }}{{end}} {{ if and (ne .Params.toc false) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}{{ else }}visually-hidden{{ end }} {{ if site.Params.docs.toc | default true }}{{ else }}visually-hidden{{ end }} d-xl-block">
+                                        <div class="docs-toc col-xl-3 {{ if .IsNode }}visually-hidden{{ else }}{{end}} {{ if $hasTOC }}{{ else }}visually-hidden{{ end }} {{ if site.Params.docs.toc | default true }}{{ else }}visually-hidden{{ end }} d-xl-block">
                                             {{- partial (printf "%s/%s" ($.Scratch.Get "pathName") "toc.html") . -}}
                                         </div>
                                         {{ end }}
                                         {{ if site.Params.docs.tocMobile | default true }}
-                                        <div class="docs-toc-mobile {{ if .IsNode }}visually-hidden{{ else }}{{end}} {{ if and (ne .Params.toc false) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}{{ else }}visually-hidden{{ end }} {{ if site.Params.docs.tocMobile | default true }}{{ else }}visually-hidden{{ end }} d-print-none d-xl-none">
+                                        <div class="docs-toc-mobile {{ if .IsNode }}visually-hidden{{ else }}{{end}} {{ if $hasTOC }}{{ else }}visually-hidden{{ end }} {{ if site.Params.docs.tocMobile | default true }}{{ else }}visually-hidden{{ end }} d-print-none d-xl-none">
                                             <button id="toc-dropdown-btn" class="btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-offset="0,0" aria-expanded="false">
                                                 Table of Contents
                                             </button>
                                             {{- partial (printf "%s/%s" ($.Scratch.Get "pathName") "toc-mobile.html") . -}}
                                         </div>
                                         {{ end -}}
-                                        <div class="docs-content col-12 {{ if .IsNode }}{{ else }}{{ if site.Params.docs.toc | default true }}{{ if and (ne .Params.toc false) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}col-xl-9{{else}}{{end}}{{ else }}{{ end }}{{ end }} mt-0">
+                                        <div class="docs-content col-12 {{ if .IsNode }}{{ else }}{{ if site.Params.docs.toc | default true }}{{ if $hasTOC }}col-xl-9{{else}}{{end}}{{ else }}{{ end }}{{ end }} mt-0">
                                             <div class="mb-0 d-flex">
                                                 {{ if site.Params.docs.titleIcon | default false }}
                                                 <i class="material-icons title-icon me-2">{{- .Params.icon | default "article" }}</i>

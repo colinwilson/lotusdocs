@@ -10,6 +10,9 @@
 {{ end }}
 
 {{ if site.Params.docs.toc | default true }}
+    {{ $asciidocTOC := resources.Get (printf "/%s/%s" ($.Scratch.Get "pathName") "js/asciidoc-toc.js") }}
+    {{ $slice = $slice | append $asciidocTOC -}}
+
     {{ if eq .Site.Params.docs.scrollSpy true -}}
         {{ $simplescrollspy := resources.Get (printf "/%s/%s" ($.Scratch.Get "pathName") "js/simple-scrollspy.min.js") }}
         {{ $slice = $slice | append $simplescrollspy -}}

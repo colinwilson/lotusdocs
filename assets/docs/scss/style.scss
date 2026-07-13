@@ -37,6 +37,9 @@ $code-block-padding-top: {{ if eq .Site.Params.docs.prism true -}}0{{ else }}1.2
 @import "custom/structure/toc";
 @import "custom/structure/footer";
 
+// Content formats
+@import "custom/asciidoc";
+
 // Components
 @import "custom/components/buttons";
 @import "custom/components/breadcrumb";

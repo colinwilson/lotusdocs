@@ -22,6 +22,7 @@ Check out the demo site [https://lotusdocs.dev/docs/](https://lotusdocs.dev/docs
 * [x] Landing page template included
 * [x] Documentation sidebar menu (with optional icons)
 * [x] Table of Contents menu on each page (optional)
+* [x] AsciiDoc content support via Asciidoctor
 * [x] Customisable theme accent colour
 * [x] Social media links (Github, Twitter, Instagram etc)
 * [x] Static Search plugin option (powered by [FlexSearch](https://github.com/nextapps-de/flexsearch), enabled by default)
@@ -42,6 +43,7 @@ Check out the demo site [https://lotusdocs.dev/docs/](https://lotusdocs.dev/docs
 - Hugo **Extended** (minimum version: 0.140.0)
 - git
 - Go (minimum version v1.21)
+- Asciidoctor (only required when building AsciiDoc content)
 
 ### Initialize your site as a Hugo Module
 
@@ -160,6 +162,28 @@ title = 'My New Hugo Site'
         path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
         disable = false
 ```
+
+### Use AsciiDoc content
+
+Hugo renders `.ad`, `.adoc`, and `.asciidoc` files with the external Asciidoctor executable. Keep `noHeaderOrFooter` enabled so Asciidoctor returns an embeddable fragment instead of nesting another HTML document inside the Lotus Docs layout.
+
+```toml
+[markup]
+  [markup.asciidocExt]
+    noHeaderOrFooter = true
+    workingFolderCurrent = true
+
+    # Optional: lets Hugo render the TOC server-side. If omitted, Lotus Docs
+    # builds the AsciiDoc TOC in the browser from h2-h6 section headings.
+    [markup.asciidocExt.attributes]
+      toc = true
+
+[security]
+  [security.exec]
+    allow = ['^asciidoctor$', '^(dart-)?sass(-embedded)?$', '^go$', '^git$', '^npx$', '^postcss$', '^tailwindcss$']
+```
+
+When using this fork as a Hugo Module, set the Lotus Docs import path to `github.com/fofwisdom/lotusdocs-asciidoc`.
 
 ## Create New Content
 
