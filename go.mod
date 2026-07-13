@@ -1,3 +1,3 @@
-module github.com/colinwilson/lotusdocs
+module github.com/fofwisdom/lotusdocs-asciidoc
 
 go 1.21
