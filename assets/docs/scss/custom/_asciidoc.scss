@@ -13,12 +13,13 @@
 
 .docs-content .main-content {
     .admonitionblock {
-        margin: 1.5rem 0;
+        margin: 0 0 1rem;
         padding: 1rem;
-        border: 1px solid var(--asciidoc-border-color);
-        border-left: 4px solid var(--primary);
-        border-radius: 0.375rem;
-        background: var(--alert-primary-bg);
+        border: 1px solid var(--alert-default-border-color);
+        border-radius: 4px;
+        background-color: var(--alert-default-bg);
+        color: var(--text-default);
+        font-size: var(--font-size-sm);
 
         table,
         tbody,
@@ -36,60 +37,95 @@
         }
 
         td.icon {
-            width: 6.5rem;
-            padding-right: 1rem;
+            width: 1.55rem;
+            padding-right: 0.35rem;
             vertical-align: top;
-            color: var(--primary);
 
             .title {
-                font-size: 0.8rem;
-                font-weight: 700;
-                letter-spacing: 0.04em;
-                text-transform: uppercase;
+                overflow: hidden;
+                font-size: 0;
+                line-height: 1;
+                white-space: nowrap;
+
+                &::before {
+                    display: inline-block;
+                    margin-top: 0.15rem;
+                    font-family: 'Material Symbols Outlined';
+                    font-size: 20px;
+                    font-style: normal;
+                    font-variation-settings: 'OPSZ' 20;
+                    font-weight: normal;
+                    line-height: 1;
+                    letter-spacing: normal;
+                    text-transform: none;
+                    content: 'notifications';
+                    direction: ltr;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    font-feature-settings: 'liga';
+                    text-rendering: optimizeLegibility;
+                }
             }
         }
 
         td.content {
             vertical-align: top;
 
-            > :last-child {
+            p {
+                line-height: 1.525rem;
+            }
+
+            > :last-child,
+            > :last-child > :last-child {
                 margin-bottom: 0;
             }
         }
 
         &.tip {
-            border-left-color: var(--emerald-500);
-            background: var(--alert-success-bg);
+            border-color: var(--alert-success-border-color);
+            background-color: var(--alert-success-bg);
 
-            td.icon {
-                color: var(--emerald-500);
+            td.icon .title::before {
+                color: var(--alert-success-icon-color);
+                content: 'check_circle';
+            }
+
+            a {
+                font-weight: bold;
             }
         }
 
         &.important {
-            border-left-color: var(--blue-500);
-            background: var(--alert-info-bg);
+            border-color: var(--alert-info-border-color);
+            background-color: var(--alert-info-bg);
 
-            td.icon {
-                color: var(--blue-500);
+            td.icon .title::before {
+                color: var(--alert-info-icon-color);
+                content: 'info';
+            }
+
+            a {
+                font-weight: bold;
             }
         }
 
         &.warning {
-            border-left-color: var(--yellow);
-            background: var(--alert-warning-bg);
+            border-color: var(--alert-warning-border-color);
+            background-color: var(--alert-warning-bg);
 
-            td.icon {
-                color: var(--yellow-800);
+            td.icon .title::before {
+                color: var(--alert-warning-icon-color);
+                content: 'warning';
             }
         }
 
         &.caution {
-            border-left-color: var(--cardinal-500);
-            background: var(--alert-danger-bg);
+            border-color: var(--alert-danger-border-color);
+            background-color: var(--alert-danger-bg);
 
-            td.icon {
-                color: var(--cardinal-500);
+            td.icon .title::before {
+                color: var(--alert-danger-icon-color);
+                content: 'report';
             }
         }
     }
@@ -213,12 +249,5 @@
         border-top: 1px solid var(--asciidoc-border-color);
         color: var(--text-muted);
         font-size: 0.875rem;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .docs-content .main-content .admonitionblock td.icon {
-        width: 4.5rem;
-        padding-right: 0.75rem;
     }
 }
