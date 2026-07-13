@@ -10,3 +10,4 @@ package-lock.json
 .hugo_build.lock
 public
 resources
+assets/jsconfig.json

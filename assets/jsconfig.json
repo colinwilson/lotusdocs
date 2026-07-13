@@ -1,9 +1,0 @@
-{
- "compilerOptions": {
-  "paths": {
-   "*": [
-    "../../../../../../../home/fow/.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.8+incompatible/js/*"
-   ]
-  }
- }
-}
