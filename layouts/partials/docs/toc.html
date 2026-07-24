@@ -1,7 +1,7 @@
 <toc>
     <div class="fw-bold text-uppercase mb-2">On this page</div>
     {{ if $.Scratch.Get "needsAsciiDocTOC" -}}
-        <nav id="toc" data-asciidoc-toc="desktop"></nav>
+        <nav id="toc" data-asciidoc-toc="desktop" aria-label="Table of contents"></nav>
     {{ else if eq .Site.Params.docs.scrollSpy true -}}
         {{ .TableOfContents | replaceRE "<nav id=\"TableOfContents\">" "<nav id=\"toc\">" | safeHTML }}
     {{ else -}}

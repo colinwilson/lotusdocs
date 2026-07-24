@@ -171,19 +171,20 @@ Hugo renders `.ad`, `.adoc`, and `.asciidoc` files with the external Asciidoctor
 [markup]
   [markup.asciidocExt]
     noHeaderOrFooter = true
-    workingFolderCurrent = true
 
-    # Optional: lets Hugo render the TOC server-side. If omitted, Lotus Docs
-    # builds the AsciiDoc TOC in the browser from h2-h6 section headings.
+    # Enable when relative include or image paths should resolve from the
+    # AsciiDoc file's directory.
+    # workingFolderCurrent = true
+
+    # Optional: render the TOC server-side. When omitted, Lotus Docs builds a
+    # fallback TOC in the browser from rendered h2-h6 section headings.
     [markup.asciidocExt.attributes]
       toc = true
 
 [security]
   [security.exec]
-    allow = ['^asciidoctor$', '^(dart-)?sass(-embedded)?$', '^go$', '^git$', '^npx$', '^postcss$', '^tailwindcss$']
+    allow = ['^asciidoctor$', '^(dart-)?sass(-embedded)?$', '^go$', '^git$', '^node$', '^npx$', '^postcss$', '^tailwindcss$']
 ```
-
-When using this fork as a Hugo Module, set the Lotus Docs import path to `github.com/fofwisdom/lotusdocs-asciidoc`.
 
 ## Create New Content
 

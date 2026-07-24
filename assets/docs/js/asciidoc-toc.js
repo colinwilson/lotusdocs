@@ -1,6 +1,6 @@
 (function () {
     const content = document.querySelector('.main-content');
-    const targets = document.querySelectorAll('[data-asciidoc-toc]');
+    const targets = Array.from(document.querySelectorAll('[data-asciidoc-toc]'));
 
     if (!content || targets.length === 0) {
         return;
@@ -12,10 +12,26 @@
         return;
     }
 
+    const usedIds = new Set(
+        Array.from(document.querySelectorAll('[id]'), (element) => element.id)
+    );
+
     headings.forEach((heading, index) => {
-        if (!heading.id) {
-            heading.id = `asciidoc-heading-${index + 1}`;
+        if (heading.id) {
+            return;
         }
+
+        const base = `asciidoc-heading-${index + 1}`;
+        let candidate = base;
+        let suffix = 2;
+
+        while (usedIds.has(candidate)) {
+            candidate = `${base}-${suffix}`;
+            suffix += 1;
+        }
+
+        heading.id = candidate;
+        usedIds.add(candidate);
     });
 
     function createList(isMobile) {
@@ -61,6 +77,6 @@
     }
 
     targets.forEach((target) => {
-        target.appendChild(createList(target.dataset.asciidocToc === 'mobile'));
+        target.replaceChildren(createList(target.dataset.asciidocToc === 'mobile'));
     });
 })();

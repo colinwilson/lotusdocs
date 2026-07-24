@@ -1,0 +1,8 @@
+{{ $script := resources.Get (printf "/%s/%s" ($.Scratch.Get "pathName") "js/asciidoc-toc.js") -}}
+
+{{ if not hugo.IsServer -}}
+    {{ $script = $script | minify | fingerprint "sha384" -}}
+    <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous" defer></script>
+{{ else -}}
+    <script src="{{ $script.RelPermalink }}" defer></script>
+{{ end -}}

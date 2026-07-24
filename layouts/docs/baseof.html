@@ -24,35 +24,39 @@
                             <div class="container-fluid">
                                 <div class="layout-spacing">
                                     {{ $currentPage := . -}}
+                                    {{ $desktopTOCEnabled := ne site.Params.docs.toc false -}}
+                                    {{ $mobileTOCEnabled := ne site.Params.docs.tocMobile false -}}
+                                    {{ $pageTOCEnabled := ne .Params.toc false -}}
                                     {{ $isAsciiDoc := false -}}
                                     {{ with .File -}}
                                         {{ $extension := strings.TrimPrefix "." (lower .Ext) -}}
                                         {{ $isAsciiDoc = in (slice "ad" "adoc" "asciidoc") $extension -}}
                                     {{ end -}}
                                     {{ $hasNativeTOC := ne (strings.TrimSpace (plainify .TableOfContents)) "" -}}
-                                    {{ $hasAsciiDocHeadings := and $isAsciiDoc (gt (len (findRE `<h[2-6][ >]` .Content)) 0) -}}
-                                    {{ $hasTOC := and (ne .Params.toc false) (or $hasNativeTOC $hasAsciiDocHeadings) -}}
-                                    {{ $.Scratch.Set "needsAsciiDocTOC" (and $hasTOC $isAsciiDoc (not $hasNativeTOC)) -}}
+                                    {{ $hasAsciiDocHeadings := and $isAsciiDoc (not $hasNativeTOC) (gt (len (findRE `<h[2-6](?:[[:space:]]|>)` .Content)) 0) -}}
+                                    {{ $hasTOC := and (not .IsNode) $pageTOCEnabled (or $hasNativeTOC $hasAsciiDocHeadings) -}}
+                                    {{ $needsAsciiDocTOC := and $hasTOC $isAsciiDoc (not $hasNativeTOC) (or $desktopTOCEnabled $mobileTOCEnabled) -}}
+                                    {{ $.Scratch.Set "needsAsciiDocTOC" $needsAsciiDocTOC -}}
                                     {{ if site.Params.docs.breadcrumbs | default true }}
                                         <div class="d-md-flex justify-content-between align-items-center">
                                             {{- partial (printf "%s/%s" ($.Scratch.Get "pathName") "breadcrumbs.html") . -}}
                                         </div>
                                     {{ end }}
                                     <div class="row flex-xl-nowrap">
-                                        {{ if site.Params.docs.toc | default true }}
-                                        <div class="docs-toc col-xl-3 {{ if .IsNode }}visually-hidden{{ else }}{{end}} {{ if $hasTOC }}{{ else }}visually-hidden{{ end }} {{ if site.Params.docs.toc | default true }}{{ else }}visually-hidden{{ end }} d-xl-block">
+                                        {{ if $desktopTOCEnabled }}
+                                        <div class="docs-toc col-xl-3{{ if not $hasTOC }} visually-hidden{{ end }} d-xl-block">
                                             {{- partial (printf "%s/%s" ($.Scratch.Get "pathName") "toc.html") . -}}
                                         </div>
                                         {{ end }}
-                                        {{ if site.Params.docs.tocMobile | default true }}
-                                        <div class="docs-toc-mobile {{ if .IsNode }}visually-hidden{{ else }}{{end}} {{ if $hasTOC }}{{ else }}visually-hidden{{ end }} {{ if site.Params.docs.tocMobile | default true }}{{ else }}visually-hidden{{ end }} d-print-none d-xl-none">
+                                        {{ if $mobileTOCEnabled }}
+                                        <div class="docs-toc-mobile dropdown{{ if not $hasTOC }} visually-hidden{{ end }} d-print-none d-xl-none">
                                             <button id="toc-dropdown-btn" class="btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-offset="0,0" aria-expanded="false">
                                                 Table of Contents
                                             </button>
                                             {{- partial (printf "%s/%s" ($.Scratch.Get "pathName") "toc-mobile.html") . -}}
                                         </div>
                                         {{ end -}}
-                                        <div class="docs-content col-12 {{ if .IsNode }}{{ else }}{{ if site.Params.docs.toc | default true }}{{ if $hasTOC }}col-xl-9{{else}}{{end}}{{ else }}{{ end }}{{ end }} mt-0">
+                                        <div class="docs-content col-12{{ if and $desktopTOCEnabled $hasTOC }} col-xl-9{{ end }} mt-0">
                                             <div class="mb-0 d-flex">
                                                 {{ if site.Params.docs.titleIcon | default false }}
                                                 <i class="material-icons title-icon me-2">{{- .Params.icon | default "article" }}</i>
@@ -67,7 +71,7 @@
                                             {{ if site.Params.docs.descriptions | default false }}
                                                 <p class="lead mb-3">{{ $currentPage.Description | markdownify }}</p>
                                             {{ end }}
-                                            <div id="content" class="main-content" {{ if eq .Site.Params.docs.toc true -}}data-bs-spy="scroll" data-bs-root-margin="0px 0px -65%" data-bs-target="#toc-mobile"{{ end }}>
+                                            <div id="content" class="main-content"{{ if and $hasTOC $mobileTOCEnabled }} data-bs-spy="scroll" data-bs-root-margin="0px 0px -65%" data-bs-target="#toc-mobile"{{ end }}>
                                                 {{ block "main" . }}{{ end }}
                                             </div>
                                             <div>
@@ -95,6 +99,9 @@
             <script>{{ $darkModeSwitch.Content | safeJS }}</script>
         {{ end -}}
 
+        {{ if $.Scratch.Get "needsAsciiDocTOC" -}}
+            {{- partial (printf "%s/%s" ($.Scratch.Get "pathName") "footer/asciidoc-toc.html") . -}}
+        {{ end -}}
         {{- partialCached (printf "%s/%s" ($.Scratch.Get "pathName") "footer/footer-scripts.html") . -}}
 
         <!-- DocSearch Config -->

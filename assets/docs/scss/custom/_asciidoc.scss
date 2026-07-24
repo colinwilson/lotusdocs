@@ -3,28 +3,25 @@
 :root {
     --asciidoc-border-color: var(--card-border-color);
     --asciidoc-panel-bg: var(--gray-50);
-    --asciidoc-table-head-bg: var(--gray-100);
 }
 
 [data-dark-mode] {
     --asciidoc-panel-bg: var(--gray-900);
-    --asciidoc-table-head-bg: var(--gray-800);
 }
 
 .docs-content .main-content {
     .admonitionblock {
-        margin: 0 0 1rem;
-        padding: 1rem;
-        border: 1px solid var(--alert-default-border-color);
-        border-radius: 4px;
-        background-color: var(--alert-default-bg);
-        color: var(--text-default);
-        font-size: var(--font-size-sm);
+        @extend .alert;
 
-        table,
-        tbody,
-        tr,
-        td {
+        --asciidoc-admonition-icon: 'notifications';
+        --asciidoc-admonition-icon-color: currentColor;
+
+        margin: 0 0 1rem;
+
+        > table,
+        > table > tbody,
+        > table > tbody > tr,
+        > table > tbody > tr > td {
             width: auto;
             margin: 0;
             padding: 0;
@@ -32,11 +29,11 @@
             background: transparent;
         }
 
-        table {
+        > table {
             width: 100%;
         }
 
-        td.icon {
+        > table > tbody > tr > td.icon {
             width: 1.55rem;
             padding-right: 0.35rem;
             vertical-align: top;
@@ -58,7 +55,8 @@
                     line-height: 1;
                     letter-spacing: normal;
                     text-transform: none;
-                    content: 'notifications';
+                    color: var(--asciidoc-admonition-icon-color);
+                    content: var(--asciidoc-admonition-icon);
                     direction: ltr;
                     -webkit-font-smoothing: antialiased;
                     -moz-osx-font-smoothing: grayscale;
@@ -68,7 +66,7 @@
             }
         }
 
-        td.content {
+        > table > tbody > tr > td.content {
             vertical-align: top;
 
             p {
@@ -81,60 +79,44 @@
             }
         }
 
+        &.note {
+            @extend .alert-default;
+        }
+
         &.tip {
-            border-color: var(--alert-success-border-color);
-            background-color: var(--alert-success-bg);
+            @extend .alert-success;
 
-            td.icon .title::before {
-                color: var(--alert-success-icon-color);
-                content: 'check_circle';
-            }
-
-            a {
-                font-weight: bold;
-            }
+            --asciidoc-admonition-icon: 'check_circle';
+            --asciidoc-admonition-icon-color: var(--alert-success-icon-color, currentColor);
         }
 
         &.important {
-            border-color: var(--alert-info-border-color);
-            background-color: var(--alert-info-bg);
+            @extend .alert-info;
 
-            td.icon .title::before {
-                color: var(--alert-info-icon-color);
-                content: 'info';
-            }
-
-            a {
-                font-weight: bold;
-            }
+            --asciidoc-admonition-icon: 'info';
+            --asciidoc-admonition-icon-color: var(--alert-info-icon-color, currentColor);
         }
 
         &.warning {
-            border-color: var(--alert-warning-border-color);
-            background-color: var(--alert-warning-bg);
+            @extend .alert-warning;
 
-            td.icon .title::before {
-                color: var(--alert-warning-icon-color);
-                content: 'warning';
-            }
+            --asciidoc-admonition-icon: 'warning';
+            --asciidoc-admonition-icon-color: var(--alert-warning-icon-color, currentColor);
         }
 
         &.caution {
-            border-color: var(--alert-danger-border-color);
-            background-color: var(--alert-danger-bg);
+            @extend .alert-danger;
 
-            td.icon .title::before {
-                color: var(--alert-danger-icon-color);
-                content: 'report';
-            }
+            --asciidoc-admonition-icon: 'report';
+            --asciidoc-admonition-icon-color: var(--alert-danger-icon-color, currentColor);
         }
     }
 
     table.tableblock {
+        @extend .table;
+
         width: 100%;
         margin: 1.5rem 0;
-        border: 1px solid var(--asciidoc-border-color);
-        border-collapse: collapse;
 
         caption,
         > .title {
@@ -144,17 +126,6 @@
             font-size: 0.875rem;
             font-weight: 600;
             text-align: left;
-        }
-
-        th,
-        td {
-            padding: 0.75rem;
-            border: 1px solid var(--asciidoc-border-color);
-            vertical-align: top;
-        }
-
-        thead {
-            background: var(--asciidoc-table-head-bg);
         }
     }
 
@@ -225,8 +196,8 @@
         }
     }
 
-    .colist table,
-    .hdlist table {
+    .colist > table,
+    .hdlist > table {
         border: 0;
         background: transparent;
 
@@ -236,7 +207,7 @@
         }
     }
 
-    .colist td:first-child {
+    .colist > table > tbody > tr > td:first-child {
         width: 2.5rem;
         padding-right: 0.75rem;
         text-align: center;

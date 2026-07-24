@@ -9,10 +9,7 @@
     {{ $slice = $slice | append $docsearch -}}
 {{ end }}
 
-{{ if site.Params.docs.toc | default true }}
-    {{ $asciidocTOC := resources.Get (printf "/%s/%s" ($.Scratch.Get "pathName") "js/asciidoc-toc.js") }}
-    {{ $slice = $slice | append $asciidocTOC -}}
-
+{{ if ne site.Params.docs.toc false }}
     {{ if eq .Site.Params.docs.scrollSpy true -}}
         {{ $simplescrollspy := resources.Get (printf "/%s/%s" ($.Scratch.Get "pathName") "js/simple-scrollspy.min.js") }}
         {{ $slice = $slice | append $simplescrollspy -}}
@@ -25,7 +22,7 @@
     {{ end -}}
 {{ end -}}
 
-{{ if site.Params.docs.tocMobile | default true }}
+{{ if ne site.Params.docs.tocMobile false }}
     {{ $tocmobilescrollspy := resources.Get (printf "/%s/%s" ($.Scratch.Get "pathName") "js/toc-mobile-scrollspy.js") }}
     {{ $slice = $slice | append $tocmobilescrollspy -}}
 {{ end -}}
