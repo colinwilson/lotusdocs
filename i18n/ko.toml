@@ -1,0 +1,38 @@
+[lang_select_title]
+    other = "언어 선택"
+
+[search_title]
+    other = "검색"
+
+[search_navigate]
+    other = "이동"
+
+[search_select]
+    other = "선택"
+
+[search_close]
+    other = "닫기"
+
+[search_cancel]
+    other = "취소"
+
+[search_no_results]
+    other = "검색 결과가 없음:"
+
+[feedback_yes]
+    other = "예"
+
+[feedback_no]
+    other = "아니요"
+
+[feedback_helpful]
+    other = "이 페이지가 도움이 되었나요?"
+
+[feedback_submit]
+    other = "제출"
+
+[enable_light_mode]
+    other = "라이트 모드 활성화"
+
+[enable_dark_mode]
+    other = "다크 모드 활성화"
