@@ -28,6 +28,9 @@
 [feedback_helpful]
     other = "Foi esta página útil?"
 
+[feedback_placeholder]
+    other = "(Opcional) Tente ser o mais específico e detalhado possível!"
+
 [feedback_submit]
     other = "Submeter"
 

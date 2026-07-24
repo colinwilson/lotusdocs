@@ -29,7 +29,7 @@
 
         <div id="feedback-send">
             <div id="text-wrapper">
-                <textarea id="textarea-emoji" cols="55" maxlength="500" rows="3" placeholder="(Optional) Try to be as specific and detailed as possible!" type="text" class="feedback-textarea-emoji p-2 mb-2"></textarea>
+                <textarea id="textarea-emoji" cols="55" maxlength="500" rows="3" placeholder="{{ i18n "feedback_placeholder" | default "(Optional) Try to be as specific and detailed as possible!" }}" type="text" class="feedback-textarea-emoji p-2 mb-2"></textarea>
             </div>
             <div id="feedback-emoji-submit-container" class="d-flex justify-content-end">
                 <button type="button" id="feedback-emoji-submit-button" class="feedback-submit-emoji-btn btn btn-sm btn-primary mt-1 mb-2" role="button" type="submit" disabled>
@@ -232,7 +232,7 @@
                     textarea.removeChild(textarea.firstChild);
                 }
             }
-            addOn.innerHTML +='<textarea id="textarea" cols="55" maxlength="500" rows="3" placeholder="(Optional) Try to be as specific and detailed as possible!" type="text" class="feedback-textarea p-2 mb-2"></textarea>';
+            addOn.innerHTML +='<textarea id="textarea" cols="55" maxlength="500" rows="3" placeholder="{{ i18n "feedback_placeholder" | default "(Optional) Try to be as specific and detailed as possible!" }}" type="text" class="feedback-textarea p-2 mb-2"></textarea>';
             feedbackSubmitBtn.removeAttribute("disabled");
             // console.log(radioID);
         });
