@@ -28,6 +28,9 @@
 [feedback_helpful]
     other = "Was this page helpful?"
 
+[feedback_placeholder]
+    other = "(Optional) Try to be as specific and detailed as possible!"
+
 [feedback_submit]
     other = "Submit"
 
